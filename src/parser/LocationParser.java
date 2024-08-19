@@ -19,7 +19,7 @@ import org.python.antlr.PythonParser.continue_stmt_return;
 
 public class LocationParser {
     static final String checkStrings [] = {
-        "../settings.conf",  //Has the location of the locations file. Must be always be like this
+        "./settings.env",  //Has the location of the locations file. Must be always be like this
         "Export License: ",
         "Source Vivado: ",
         "Source RapidWright: ",
