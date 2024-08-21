@@ -60,12 +60,18 @@ Essentially only 1 field must be changed:
 To test if DynaRapid is working correctly or not, we can try generating a design from many dot files that exist in the ./dotfiles/ folder.
 
 ### Test 1: (Generating Designs with in-built placer)
-This test should generate a valid design using the simple_graph.dot file. This uses the in built placers of the toolflow. The options for the placer are rudimentary and greedy. Either of them can be used to generate designs. Here rudimentary is used for examples. You may use other existing placers as well. Follow the commands:
+This test should generate a valid design using the simple_graph.dot file. This uses the in built placers of the toolflow. 
+The options for the placer are rudimentary and greedy. Either of them can be used to generate designs. Here rudimentary is used for examples. Follow the commands:
 
 ```
-cd bin/
 java GenerateDesign -f ../dotFiles/simple_graph.dot -placer rudimentary
-cd ..
+
+```
+
+or 
+
+```
+java GenerateDesign -f ../dotFiles/simple_graph.dot -placer greedy
 
 ```
 
