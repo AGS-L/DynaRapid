@@ -49,11 +49,14 @@ If the above commands work, you can go ahead and start testing
 
 If DynaRapid is compiled correctly, we can now start changing the environment variables in DynaRapid to get the code running
 
-## Changing DynaRapid envronment variables (Required for synthesizer and pblock generator only)
-To change the environment variables of the code, we need to change a few fields in the file settings.conf found in the current folder.
-Essentially only 1 field must be changed:
+## Changing DynaRapid envronment variables
+To change the environment variables of the code, we need to change a few fields in the file settings.env to adapt the path to your installation.
+You can change it by hand, on just running the command below. 
 
-- [ ] Source RapidWright: Here after source you need to add the location of the rapidwright tcl file of rapidwright which you are using currently. You can find the location of the tcl file in the tcl folder of the RapidWright folder
+```
+sh dynarapid_setup.sh
+
+```
 
 
 ## Running DynaRapid
