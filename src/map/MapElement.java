@@ -17,7 +17,7 @@ import java.io.*;
 
 public class MapElement implements Serializable
 {
-    static Vector<Vector<MapElement>> map;
+    static ArrayList<ArrayList<MapElement>> map;
     
     String switchBoxName, switchBoxRootname;
     int switchBoxRow, switchBoxCol;
@@ -49,7 +49,7 @@ public class MapElement implements Serializable
 
     static HashMap<String, String> mapMap = new HashMap<>(); //Order of value is "i:j"
     static HashSet<Integer> rowsRemoved = new HashSet<>(); //Stores the rows in the device tile array which has been removed in the map
-    static Vector<Integer> colAdded = new Vector<>(); //Stores the columns in the device tile array which has been included in the map
+    static ArrayList<Integer> colAdded = new ArrayList<>(); //Stores the columns in the device tile array which has been included in the map
 
     //Additions for the IOB adjoing rows. Solving the antennas problem
     static Set<Integer> leftMapColToIOB, rightMapColToIOB;

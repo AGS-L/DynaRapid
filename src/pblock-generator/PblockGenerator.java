@@ -103,7 +103,7 @@ public class PblockGenerator
         d = component.dcp.dsp > 0;
         b = component.dcp.bram > 0;
 
-        Vector<Vector<MapElement>> map = MapElement.map;
+        ArrayList<ArrayList<MapElement>> map = MapElement.map;
 
         for(; j < map.get(i).size(); j++)
         {

@@ -558,11 +558,11 @@ public class Node implements Serializable
     //This stitches the remaining pins of the node that were not standard
     public void stitchRemainingPins()
     {
-        Map<String, Vector<Integer>> buses = component.modulePorts.buses;
+        Map<String, ArrayList<Integer>> buses = component.modulePorts.buses;
         EDIFCell top = design.getNetlist().getTopCell();
 
         //Connect input pins
-        for (Map.Entry<String,Vector<Integer>> entry : buses.entrySet()) 
+        for (Map.Entry<String,ArrayList<Integer>> entry : buses.entrySet()) 
         {
             String busName = entry.getKey();
             int busWidth = entry.getValue().get(0);
@@ -606,7 +606,7 @@ public class Node implements Serializable
         }
 
         //Connect the output pins
-        for (Map.Entry<String,Vector<Integer>> entry : buses.entrySet()) 
+        for (Map.Entry<String,ArrayList<Integer>> entry : buses.entrySet()) 
         {
             String busName = entry.getKey();
             int busWidth = entry.getValue().get(0);

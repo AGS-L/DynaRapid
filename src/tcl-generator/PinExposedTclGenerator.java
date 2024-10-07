@@ -127,10 +127,10 @@ public class PinExposedTclGenerator {
     //It gets all the required nets for the module
     public static void getNetsForModule (PinExposer obj, FileWriter tclFileWriter) throws IOException
     {
-        Map<String, Vector<Integer>> buses = obj.returnPblock().component.modulePorts.buses;
+        Map<String, ArrayList<Integer>> buses = obj.returnPblock().component.modulePorts.buses;
         String moduleName = obj.returnPblock().pblockName + "_cell";
 
-        for (Map.Entry<String, Vector<Integer>> entry : buses.entrySet()) 
+        for (Map.Entry<String, ArrayList<Integer>> entry : buses.entrySet()) 
         {
             String busName = entry.getKey();
             int busWidth = entry.getValue().get(0);
@@ -157,10 +157,10 @@ public class PinExposedTclGenerator {
     //This function generates ports for the design
     public static void getPortsForNets (PinExposer obj, FileWriter tclFileWriter) throws IOException
     {
-        Map<String, Vector<Integer>> buses = obj.returnPblock().component.modulePorts.buses;
+        Map<String, ArrayList<Integer>> buses = obj.returnPblock().component.modulePorts.buses;
         String moduleName = obj.returnPblock().pblockName + "_cell";
 
-        for (Map.Entry<String, Vector<Integer>> entry : buses.entrySet()) 
+        for (Map.Entry<String, ArrayList<Integer>> entry : buses.entrySet()) 
         {
             String busName = entry.getKey();
             int busWidth = entry.getValue().get(0);

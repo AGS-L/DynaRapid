@@ -67,7 +67,7 @@ public class ModulePorts implements Serializable
     static final String DOut = "dout"; //This does not have any underscore. Has a number appended to it in the end
 
 
-    Map<String, Vector<Integer>> buses; //This vector is of size 2. 1st integer is busSize and 2nd Integer is 0 - input and 1 - output
+    Map<String, ArrayList<Integer>> buses; //This ArrayList is of size 2. 1st integer is busSize and 2nd Integer is 0 - input and 1 - output
     ArrayList<String> portNames;
 
     public ModulePorts (Component component)
@@ -93,13 +93,13 @@ public class ModulePorts implements Serializable
     }
     
     //This gets the buses in the module
-    //Here for the bus the value is vector<Integer>. 
-    //This vector is of size 2. 1st integer is busSize and 2nd Integer is 0 - input and 1 - output
-    public static Map<String, Vector<Integer>> getBuses(Module module)
+    //Here for the bus the value is ArrayList<Integer>. 
+    //This ArrayList is of size 2. 1st integer is busSize and 2nd Integer is 0 - input and 1 - output
+    public static Map<String, ArrayList<Integer>> getBuses(Module module)
     {
         Collection<Port> ports = module.getPorts();
         System.out.println("Number of ports in this module: " + ports.size());
-        Map<String, Vector<Integer>> busMap = new HashMap<String,Vector<Integer>>();
+        Map<String, ArrayList<Integer>> busMap = new HashMap<String,ArrayList<Integer>>();
 
         for(Port p : ports)
         {
@@ -118,7 +118,7 @@ public class ModulePorts implements Serializable
 
             else
             {
-                Vector<Integer> temp = new Vector<>();
+                ArrayList<Integer> temp = new ArrayList<>();
                 temp.add(1);
                 if(p.isOutPort()) //output port
                     temp.add(1);
@@ -149,7 +149,7 @@ public class ModulePorts implements Serializable
     public void printAllBuses()
     {
         System.out.println("The buses in this module are: ");
-        for (Map.Entry<String, Vector<Integer>> entry : buses.entrySet()) 
+        for (Map.Entry<String, ArrayList<Integer>> entry : buses.entrySet()) 
         {
             String busName = entry.getKey();
             int busWidth = entry.getValue().get(0);

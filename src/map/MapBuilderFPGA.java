@@ -44,7 +44,7 @@ public class MapBuilderFPGA
     static int numRows, numCols;
 
     //Prints the contents of the map in a CSV file
-    public static boolean printMapCSV(Vector<Vector<MapElement>> tempMap, Vector<Vector<ResourceElement>> resourceMap)
+    public static boolean printMapCSV(ArrayList<ArrayList<MapElement>> tempMap, ArrayList<ArrayList<ResourceElement>> resourceMap)
     {
         try
         {
@@ -120,7 +120,7 @@ public class MapBuilderFPGA
     //This omits rows in which even one left AND right placement site in the entire row is not a valid site
     public static void omitRows()
     {
-        Vector<Vector<MapElement>> tempMap = new Vector<>();
+        ArrayList<ArrayList<MapElement>> tempMap = new ArrayList<>();
 
         for(int i = 0; i < numRows; i++)
             for(int j = 0; j < numCols; j++)
@@ -133,7 +133,7 @@ public class MapBuilderFPGA
             if(MapElement.rowsRemoved.contains(i))
                 continue;
 
-            tempMap.add(new Vector<MapElement>());
+            tempMap.add(new ArrayList<MapElement>());
             for(int j = 0; j < numCols; j++)
                 tempMap.get(tempMap.size()-1).add(MapElement.map.get(i).get(j));
                 
@@ -206,9 +206,9 @@ public class MapBuilderFPGA
     public static boolean basicMap()
     {
         int i, j;
-        Vector<Vector<MapElement>> tempMap = new Vector<>();
+        ArrayList<ArrayList<MapElement>> tempMap = new ArrayList<>();
         for(i = 0; i < numRows; i++)
-            tempMap.add(new Vector<MapElement>());
+            tempMap.add(new ArrayList<MapElement>());
 
         System.out.println("Reading tile map from RW");
         System.out.println("Given tile map from RapidWright has " + numRows + " rows and " + numCols + " columns");
@@ -221,7 +221,7 @@ public class MapBuilderFPGA
             if((i > 0) && (tileArray[0][i-1].getName().startsWith("INT"))) //Switchbox columns with left side as switchbox as well is ignored
                 continue;
 
-            Vector <MapElement> colMap = new Vector<>();
+            ArrayList <MapElement> colMap = new ArrayList<>();
             int count = 0; //Counts the number of valid placement sites in the column
 
             for(j = 0; j < numRows; j++)

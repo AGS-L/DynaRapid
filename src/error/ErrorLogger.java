@@ -44,7 +44,7 @@ public class ErrorLogger {
 
     public static void printErrorLogs()
     {
-        System.out.println("------------Printing Error Logs-------------");
+        System.out.println("------------Printing Warning Logs-------------");
         for (Map.Entry<String, ErrorElement> set : errorMap.entrySet()) 
         {
             System.out.println(set.getKey());
@@ -52,7 +52,7 @@ public class ErrorLogger {
             System.out.println("\n");
         }
 
-        System.out.println("--------------Error Logs Printed above. Number of error logs were: " + errorMap.size() + " ---------------------");
+        System.out.println("--------------Warning Logs Printed above. Number of warning logs were: " + errorMap.size() + " ---------------------");
     }
 
 

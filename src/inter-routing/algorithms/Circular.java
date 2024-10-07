@@ -106,11 +106,11 @@ public class Circular implements PinExposer{
 
     public int minFlops (Pblock pblock)
     {
-        Map<String, Vector<Integer>> buses = pblock.component.modulePorts.buses;
+        Map<String, ArrayList<Integer>> buses = pblock.component.modulePorts.buses;
         int in = 0;
         int out = 0;
 
-        for (Map.Entry<String,Vector<Integer>> entry : buses.entrySet()) 
+        for (Map.Entry<String,ArrayList<Integer>> entry : buses.entrySet()) 
         {
             String busName = entry.getKey();
             int busWidth = entry.getValue().get(0);
@@ -148,7 +148,7 @@ public class Circular implements PinExposer{
      * @param currLayer This gives the laye in which sites are to placed.
      * @return the name of the sites
      */
-    public ArrayList<String> formUniLayer (Vector<Vector<MapElement>> map, Device device, int starti, int startj, int endi, int endj, int tileIndex, int currLayer)
+    public ArrayList<String> formUniLayer (ArrayList<ArrayList<MapElement>> map, Device device, int starti, int startj, int endi, int endj, int tileIndex, int currLayer)
     {
         ArrayList<String> routeSiteNames = new ArrayList<>();
 
@@ -264,7 +264,7 @@ public class Circular implements PinExposer{
     public ArrayList<RouteSite> siteSelector (Pblock pblock, Design design)
     {
         int incFactor = pblock.incFactor;
-        Vector<Vector<MapElement>> map = MapElement.map;
+        ArrayList<ArrayList<MapElement>> map = MapElement.map;
 
         int starti = pblock.starti;
         int startj = pblock.startj;
@@ -328,13 +328,13 @@ public class Circular implements PinExposer{
     //This connects the input pins of the module with the flops
     public int connectInputPins(Pblock pblock, ArrayList<RouteSite> routeSites, EDIFCellInst moduleEDIFCellInst, EDIFCell top, boolean isVHDL)
     {
-        Map<String, Vector<Integer>> buses = pblock.component.modulePorts.buses;
+        Map<String, ArrayList<Integer>> buses = pblock.component.modulePorts.buses;
 
         int currLayer = 1;
         int index = 0;
         int num = 0;
 
-        for (Map.Entry<String,Vector<Integer>> entry : buses.entrySet()) 
+        for (Map.Entry<String,ArrayList<Integer>> entry : buses.entrySet()) 
         {
             String busName = entry.getKey();
             int busWidth = entry.getValue().get(0);
@@ -391,13 +391,13 @@ public class Circular implements PinExposer{
     //This connects the output pins of the module with the flops
     public int connectOutputPins(Pblock pblock, ArrayList<RouteSite> routeSites, EDIFCellInst moduleEDIFCellInst, EDIFCell top, boolean isVHDL)
     {
-        Map<String, Vector<Integer>> buses = pblock.component.modulePorts.buses;
+        Map<String, ArrayList<Integer>> buses = pblock.component.modulePorts.buses;
 
         int currLayer = 1;
         int index = 0;
         int num = 0;
 
-        for (Map.Entry<String,Vector<Integer>> entry : buses.entrySet()) 
+        for (Map.Entry<String,ArrayList<Integer>> entry : buses.entrySet()) 
         {
             String busName = entry.getKey();
             int busWidth = entry.getValue().get(0);

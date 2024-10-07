@@ -16,13 +16,13 @@ public class ResourceElement implements Serializable
 {
     public static int starti = 60, startj = 0, endi = 89, endj = 147;  //Cordinates of the starting and ending tiles of the fpga where the pblock can be created
     //START: CLEL_R_X0Y899 and END: CLEM_R_X147Y870
-    public static Vector<Vector<ResourceElement>> ResourceMap = new Vector<>();
+    public static ArrayList<ArrayList<ResourceElement>> ResourceMap = new ArrayList<>();
 
     public int clel, clem, dsp, bram;
     public int curri, currj;
     public int row, col;
 
-    public ResourceElement(int i, int j, Vector<Vector<ResourceElement>> tempMap) //For map ResourceElement
+    public ResourceElement(int i, int j, ArrayList<ArrayList<ResourceElement>> tempMap) //For map ResourceElement
     {
         //Here the resourceElement starts from the starti and startj as the top-left location in map and the curri and currj as the bottom-right location in the map
         //Here the rows and columns is the number of rows and columns in the resourceELement
@@ -125,7 +125,7 @@ public class ResourceElement implements Serializable
     }
 
     //Adds the resources of the given resourceElement
-    public void modifyResourceElement(Vector<Vector<ResourceElement>> tempMap) //For map resource
+    public void modifyResourceElement(ArrayList<ArrayList<ResourceElement>> tempMap) //For map resource
     {
         if(!inRange())
             return;
@@ -206,10 +206,10 @@ public class ResourceElement implements Serializable
     public static void resourceMapBuilder()
     {
         System.out.println("Building the resource map");
-        Vector<Vector<ResourceElement>> tempMap = new Vector<>();
+        ArrayList<ArrayList<ResourceElement>> tempMap = new ArrayList<>();
         for(int i = 0; i < MapElement.map.size(); i++)
         {
-            tempMap.add(new Vector<ResourceElement>());
+            tempMap.add(new ArrayList<ResourceElement>());
             for(int j = 0; j < MapElement.map.get(i).size(); j++)
             {
                 //ResourceMap = tempMap;
