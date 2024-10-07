@@ -37,7 +37,6 @@ import com.xilinx.rapidwright.router.Router;
 import com.xilinx.rapidwright.placer.handplacer.HandPlacer;
 import com.xilinx.rapidwright.rwroute.RWRoute;
 
-import static org.junit.jupiter.api.DynamicTest.stream;
 import java.io.*;
 import java.util.*;
 

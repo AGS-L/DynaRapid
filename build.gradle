@@ -1,0 +1,34 @@
+plugins {
+    id 'java-library'
+}
+
+dependencies {
+   api project(':RapidWright')
+}
+
+repositories {
+    mavenCentral()
+}
+
+sourceSets {
+    main {
+        java {
+            srcDirs = ['src']
+        }
+    }
+}
+
+task make(type: Exec) {
+    commandLine 'make'
+}
+compileJava.finalizedBy(make)
+
+task GenerateDesign(type: JavaExec) {
+    classpath = sourceSets.main.runtimeClasspath
+    main = 'GenerateDesign'
+}
+
+task run(type: JavaExec) {
+    classpath = sourceSets.main.runtimeClasspath
+    main = System.getProperty('main')
+}
