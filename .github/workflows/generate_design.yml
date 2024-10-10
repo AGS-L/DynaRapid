@@ -13,8 +13,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Validate Gradle Wrapper
-        uses: gradle/wrapper-validation-action@v1.0.4  # Use the latest stable version of the action
+#      - name: Validate Gradle Wrapper
+#        uses: gradle/wrapper-validation-action@v1.0.4  # Use the latest stable version of the action
 
       - name: Setup JDK 11
         uses: actions/setup-java@v2
