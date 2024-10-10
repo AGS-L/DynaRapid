@@ -1,19 +1,20 @@
 #DynaRapid Continuous Integration
 
 name: DynaRapid CI
+
 on:
-push:
-branches:
-- main
+    push:
+    branches:
+    - main
 
-jobs:
-build:
-runs-on: ubuntu-latest
+    jobs:
+        build:
+        runs-on: ubuntu-latest
 
-steps:
-- name: Checkout code
-uses: actions/checkout@v2
+    steps:
+        - name: Checkout code
+        uses: actions/checkout@v2
 
-- name: Run generate design simple_graph
-run: ./gradlew :GenerateDesign --args="-f dotFiles/simple_graph.dot -placer rudimentary"
+        - name: Run generate design simple_graph
+        run: ./gradlew :GenerateDesign --args="-f dotFiles/simple_graph.dot -placer rudimentary"
  
