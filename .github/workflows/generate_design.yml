@@ -13,13 +13,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: gradle/wrapper-validation-action@e6e38bacfdf1a337459f332974bb2327a31aaf4b
+      - name: Validate Gradle Wrapper
+        uses: gradle/wrapper-validation-action@v1.0.4  # Use the latest stable version of the action
 
-      - name: Setup JDK 1.11
+      - name: Setup JDK 11
         uses: actions/setup-java@v2
         with:
           distribution: 'temurin'
           java-version: '11'
           cache: 'gradle'
+
       - name: Generate design simple_graph
         run: ./gradlew :GenerateDesign --args="-f dotFiles/simple_graph.dot -placer rudimentary"
