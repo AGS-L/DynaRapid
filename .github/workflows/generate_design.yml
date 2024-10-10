@@ -1,5 +1,3 @@
-#DynaRapid Continuous Integration
-
 name: DynaRapid CI
 
 on:
