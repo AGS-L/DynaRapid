@@ -8,7 +8,6 @@ on:
         runs-on: ubuntu-latest
         
     steps:
-
         - name: Generate design simple_graph
         run: ./gradlew :GenerateDesign --args="-f dotFiles/simple_graph.dot -placer rudimentary"
  
