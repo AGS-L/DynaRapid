@@ -11,7 +11,7 @@ DynaRapid can be installed with gradlew using the following commands.
 ```
 git clone https://github.com/DynaRapid/DynaRapid
 cd DynaRapid
-git submodule update –init
+git submodule update --init
 ./gradlew :GenerateDesign --args="-f dotFiles/simple_graph.dot -placer rudimentary"
 ```
 If DynaRapid is installed correctly, this code should run to completion and you will find a folder with the name of "simple_graph" in the designs folder. This folder should have:

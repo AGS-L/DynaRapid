@@ -8,9 +8,9 @@
 
 
 main: | bin
-	g++ -std=c++11 ./src/synthesizer/*.cpp -o ./bin/main
-	g++ -std=c++11 ./src/run-command/run_command_bash.cpp -o ./bin/run_command_bash
-	g++ -std=c++11 ./src/run-command/run_command_tcsh.cpp -o ./bin/run_command_tcsh
+	g++ -std=c++11 ./src/ch/agsl/dynarapid/synthesizer/*.cpp -o ./bin/main
+	g++ -std=c++11 ./src/ch/agsl/dynarapid/run-command/run_command_bash.cpp -o ./bin/run_command_bash
+	g++ -std=c++11 ./src/ch/agsl/dynarapid/run-command/run_command_tcsh.cpp -o ./bin/run_command_tcsh
 
 bin:
 	mkdir -p $@

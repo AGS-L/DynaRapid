@@ -25,7 +25,7 @@ compileJava.finalizedBy(make)
 
 task GenerateDesign(type: JavaExec) {
     classpath = sourceSets.main.runtimeClasspath
-    main = 'GenerateDesign'
+    main = 'ch.agsl.dynarapid.GenerateDesign'
 }
 
 task run(type: JavaExec) {
