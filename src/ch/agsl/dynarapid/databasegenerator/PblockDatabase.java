@@ -7,6 +7,7 @@
 */
 
 package ch.agsl.dynarapid.databasegenerator;
+import ch.agsl.dynarapid.*;
 import ch.agsl.dynarapid.databasegenerator.*;
 import ch.agsl.dynarapid.debug.*;
 import ch.agsl.dynarapid.entry.*;
@@ -161,7 +162,7 @@ public class PblockDatabase {
 
         int coordinates[] = getCoordinatesFromName(pblockName); //The values are {starti}, {startj}, {endi}, {endj}
 
-        Design design = new Design("test", "xcvu13p-fsga2577-1-i");
+        Design design = new Design("test", GenerateDesign.fpga_part);
         Device device = design.getDevice();
 		EDIFNetlist netlist = design.getNetlist();
 		EDIFCell top = netlist.getTopCell();

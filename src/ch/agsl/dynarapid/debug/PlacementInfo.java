@@ -65,7 +65,7 @@ public class PlacementInfo {
     //This generates the first information lines for placement information file
     public static void writeStart(FileWriter fileWriter, String graphName, String placerName, int num) throws IOException
     {
-        fileWriter.write("Device: xcvu13p-fsga2577-1-i \n");
+        fileWriter.write("Device: xck26 \n");
         fileWriter.write("Graph Name: " + graphName + "\n");
         fileWriter.write("Placer Name: " + placerName + "\n");
         fileWriter.write("# of Nodes: " + Integer.toString(num) + "\n");
@@ -75,7 +75,7 @@ public class PlacementInfo {
     //This generates the first information for all the maps and the csv files
     public static void writeStart(FileWriter fileWriter, String graphName, String placerName) throws IOException
     {
-        fileWriter.write("Device: xcvu13p-fsga2577-1-i \n");
+        fileWriter.write("Device: xck26 \n");
         fileWriter.write("Graph Name: " + graphName + "\n");
         fileWriter.write("Placer Name: " + placerName + "\n");
         fileWriter.write("\n");

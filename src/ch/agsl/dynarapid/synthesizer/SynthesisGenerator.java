@@ -8,6 +8,7 @@
 
 package ch.agsl.dynarapid.synthesizer;
 
+import  ch.agsl.dynarapid.*;
 import ch.agsl.dynarapid.databasegenerator.*;
 import ch.agsl.dynarapid.debug.*;
 import ch.agsl.dynarapid.entry.*;
@@ -350,7 +351,7 @@ public class SynthesisGenerator {
             return true;
         }
 
-        String deviceName = "xcvu13p-fsga2577-1-i";
+        String deviceName = GenerateDesign.fpga_part;
         String topName = getTopNameForNode(node);
         if(topName.equals(""))
         {
@@ -456,7 +457,7 @@ public class SynthesisGenerator {
             return false;
         }
 
-        String deviceName = "xcvu13p-fsga2577-1-i";
+        String deviceName = GenerateDesign.fpga_part;
         String nodeTclLine = "synth_design -mode out_of_context -flatten_hierarchy none -part " + deviceName + " -top " + node.dcpName;
 
         System.out.println("Generating tcl file for the synthesis of DCP: " + node.dcpName);

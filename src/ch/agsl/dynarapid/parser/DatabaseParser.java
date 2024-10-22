@@ -7,6 +7,8 @@
 */
 
 package ch.agsl.dynarapid.parser;
+
+import  ch.agsl.dynarapid.*;
 import ch.agsl.dynarapid.databasegenerator.*;
 import ch.agsl.dynarapid.debug.*;
 import ch.agsl.dynarapid.entry.*;
@@ -85,7 +87,7 @@ public class DatabaseParser {
     public boolean databaseParser(Scanner in, String s) throws Exception
     {
         String deviceName = s.substring(s.indexOf(" : ") + 3);
-        if(deviceName.equals("xcvu13p-fsga2577-1-i"))
+        if(deviceName.equals(GenerateDesign.fpga_part))
             return true;
 
         return false;

@@ -7,6 +7,8 @@
 */
 
 package ch.agsl.dynarapid.parser;
+
+import  ch.agsl.dynarapid.*;
 import ch.agsl.dynarapid.databasegenerator.*;
 import ch.agsl.dynarapid.debug.*;
 import ch.agsl.dynarapid.entry.*;
@@ -110,7 +112,7 @@ public class PlacementParser {
             return null;
         }
 
-        Device device = Device.getDevice("xcvu13p-fsga2577-1-i");
+        Device device = Device.getDevice(GenerateDesign.fpga_part);
 
         Shape shape = null;
 

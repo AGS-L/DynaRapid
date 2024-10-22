@@ -7,6 +7,7 @@
 */
 
 package ch.agsl.dynarapid.modules;
+import  ch.agsl.dynarapid.*;
 import  ch.agsl.dynarapid.databasegenerator.*;
 import ch.agsl.dynarapid.debug.*;
 import ch.agsl.dynarapid.entry.*;
@@ -204,7 +205,7 @@ public class Component implements Serializable
     public String searchPblockList(ResourceElement re)
     {
         String s = "";
-        Device device = Device.getDevice("xcvu13p-fsga2577-1-i");
+        Device device = Device.getDevice(GenerateDesign.fpga_part);
 
         for(int i = 0; i < pblockList.size(); i++)
         {

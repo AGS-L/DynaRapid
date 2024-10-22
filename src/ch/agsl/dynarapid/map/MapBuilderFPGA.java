@@ -9,6 +9,7 @@
 
 package ch.agsl.dynarapid.map;
 
+import  ch.agsl.dynarapid.*;
 import ch.agsl.dynarapid.databasegenerator.*;
 import ch.agsl.dynarapid.debug.*;
 import ch.agsl.dynarapid.entry.*;
@@ -68,8 +69,8 @@ public class MapBuilderFPGA
         try
         {
             System.out.println("Writing the map");
-            FileWriter deviceMap = new FileWriter(LocationParser.map + "deviceMap-xcvu13p-fsga2577-1-i.csv");
-            deviceMap.write("Device: xcvu13p-fsga2577-1-i \n");
+            FileWriter deviceMap = new FileWriter(LocationParser.map + "deviceMap-xck26.csv");
+            deviceMap.write("Device: xck26 \n");
             for(int i = 0; i < tempMap.size(); i++)
             {
                 
@@ -87,8 +88,8 @@ public class MapBuilderFPGA
             deviceMap.close();
 
             System.out.println("Writing Resource map");
-            FileWriter resourceFile =  new FileWriter(LocationParser.map + "resourceMap-xcvu13p-fsga2577-1-i.csv");
-            resourceFile.write("Device: xcvu13p-fsga2577-1-i, Start: CLEL_R_X0Y899, End: CLEM_R_X147Y870, l = CLEL, m = CLEM, d = DSP, b = BRAM, r = rows, c = columns\n");
+            FileWriter resourceFile =  new FileWriter(LocationParser.map + "resourceMap-xck26.csv");
+            resourceFile.write("Device: xck26, Start: CLEL_R_X0Y899, End: CLEM_R_X147Y870, l = CLEL, m = CLEM, d = DSP, b = BRAM, r = rows, c = columns\n");
             for(int i = 0; i < resourceMap.size(); i++)
             {
                 
@@ -310,7 +311,7 @@ public class MapBuilderFPGA
 
     public static boolean mapBuilderFPGA()
     {
-        device = Device.getDevice("xcvu13p-fsga2577-1-i");
+        device = Device.getDevice(GenerateDesign.fpga_part);
         tileArray = device.getTiles();
         numRows = device.getRows();
         numCols = device.getColumns();

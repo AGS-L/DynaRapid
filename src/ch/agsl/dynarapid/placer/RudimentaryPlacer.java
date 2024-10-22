@@ -7,6 +7,8 @@
 */
 
 package ch.agsl.dynarapid.placer;
+
+import  ch.agsl.dynarapid.*;
 import ch.agsl.dynarapid.databasegenerator.*;
 import ch.agsl.dynarapid.debug.*;
 import ch.agsl.dynarapid.entry.*;
@@ -88,7 +90,7 @@ public class RudimentaryPlacer implements Placer{
      */
     public void setGlobalFields()
     {
-        device = Device.getDevice("xcvu13p-fsga2577-1-i");
+        device = Device.getDevice(GenerateDesign.fpga_part);
 
         int rows = MapElement.map.size();
         int cols = MapElement.map.get(0).size();

@@ -7,6 +7,8 @@
 */
 
 package ch.agsl.dynarapid.graphgenerator;
+
+import  ch.agsl.dynarapid.*;
 import ch.agsl.dynarapid.databasegenerator.*;
 import ch.agsl.dynarapid.debug.*;
 import ch.agsl.dynarapid.entry.*;
@@ -248,7 +250,7 @@ public class GraphGenerator {
         if(!TimeProfiler.addAndStartTimeElement("Parsing Databases", "Graph Generation"))
             return null;
 
-        Device device = Device.getDevice("xcvu13p-fsga2577-1-i");
+        Device device = Device.getDevice(GenerateDesign.fpga_part);
 
         StringUtils.printIntro("Parsing all required databases");
 

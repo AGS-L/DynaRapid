@@ -7,6 +7,8 @@
 */
 
 package ch.agsl.dynarapid.tclgenerator;
+
+import  ch.agsl.dynarapid.*;
 import ch.agsl.dynarapid.databasegenerator.*;
 import ch.agsl.dynarapid.debug.*;
 import ch.agsl.dynarapid.entry.*;

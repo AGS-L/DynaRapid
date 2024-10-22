@@ -8,6 +8,7 @@
 
 package ch.agsl.dynarapid.modules;
 
+import  ch.agsl.dynarapid.*;
 import ch.agsl.dynarapid.databasegenerator.*;
 import ch.agsl.dynarapid.debug.*;
 import ch.agsl.dynarapid.entry.*;
@@ -129,7 +130,7 @@ public class Pblock implements Serializable
         HashSet<String> siteSet = new HashSet<>();
 
         ArrayList<Site> sites = new ArrayList<>();
-        Device device = Device.getDevice("xcvu13p-fsga2577-1-i");
+        Device device = Device.getDevice(GenerateDesign.fpga_part);
 
         for(int j = startj; j < (startj + currCol); j++)
         {
@@ -247,7 +248,7 @@ public class Pblock implements Serializable
 
     public void setAnchorPosition()
     {
-        Design design = new Design("test", "xcvu13p-fsga2577-1-i");
+        Design design = new Design("test", GenerateDesign.fpga_part);
         Device device = design.getDevice();
 		EDIFNetlist netlist = design.getNetlist();
 		EDIFCell top = netlist.getTopCell();

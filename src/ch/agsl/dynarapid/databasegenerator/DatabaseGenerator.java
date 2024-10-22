@@ -90,7 +90,7 @@ public class DatabaseGenerator {
             String databaseLoc = LocationParser.placedRoutedDCPs + dcpName + ".data";
             FileWriter dataWriter = new FileWriter(new File(databaseLoc));
 
-            dataWriter.write(checkStrings[0] + sep + "xcvu13p-fsga2577-1-i\n");
+            dataWriter.write(checkStrings[0] + sep + "xck26\n");
 
             if(!ComponentDatabase.printDatabase(dataWriter, dcpName, pblocks))
                 throw new Exception();

@@ -42,6 +42,8 @@ import java.nio.file.*;
 
 
 public class GenerateDesign {
+
+    public static String fpga_part = "xcvu13p-fsga2577-1-i";
     
     public static void deleteDirectory(File sourceDir)
     {

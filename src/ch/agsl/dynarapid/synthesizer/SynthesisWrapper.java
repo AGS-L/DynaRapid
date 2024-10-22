@@ -7,6 +7,8 @@
 */
 
 package ch.agsl.dynarapid.synthesizer;
+
+import  ch.agsl.dynarapid.*;
 import ch.agsl.dynarapid.databasegenerator.*;
 import ch.agsl.dynarapid.debug.*;
 import ch.agsl.dynarapid.entry.*;
@@ -259,7 +261,7 @@ public class SynthesisWrapper {
         ModulePorts modulePorts = new ModulePorts(module);
         modulePorts.printAllBuses();
 
-        Design design = new Design(node.dcpName, "xcvu13p-fsga2577-1-i");
+        Design design = new Design(node.dcpName, GenerateDesign.fpga_part);
         ModuleInst moduleInst = design.createModuleInst(topName, module);
         
         // --- Component matching starts here --- //

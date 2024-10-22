@@ -6,6 +6,8 @@
 * For any questions, please contact Andrea Guerrieri <andrea.guerrieri@ieee.org> (C) 2024
 */
 package ch.agsl.dynarapid.graphplacer;
+
+import  ch.agsl.dynarapid.*;
 import ch.agsl.dynarapid.databasegenerator.*;
 import ch.agsl.dynarapid.debug.*;
 import ch.agsl.dynarapid.entry.*;
@@ -72,7 +74,7 @@ public class GraphPlacer {
         StringUtils.printIntro("Loading modules for graph: " + graphName);
 
         //create a design
-        Design design = new Design(graphName, "xcvu13p-fsga2577-1-i");
+        Design design = new Design(graphName, GenerateDesign.fpga_part);
         EDIFCell top = design.getNetlist().getTopCell();
 
         HashSet<Shape> shapes = new HashSet<>();

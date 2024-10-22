@@ -7,6 +7,8 @@
 */
 
 package ch.agsl.dynarapid.interrouting.algorithms;
+
+import  ch.agsl.dynarapid.*;
 import ch.agsl.dynarapid.databasegenerator.*;
 import ch.agsl.dynarapid.debug.*;
 import ch.agsl.dynarapid.entry.*;
@@ -589,7 +591,7 @@ public class Circular implements PinExposer{
         pblock = p;
         boolean isVHDL = pblock.component.isVHDL;
 
-        design = new Design(pblock.pblockName, "xcvu13p-fsga2577-1-i");
+        design = new Design(pblock.pblockName, GenerateDesign.fpga_part);
 
         Module module = new Module(Design.readCheckpoint(pblock.component.moduleLoc), pblock.component.metaLoc);
         design.createModuleInst(pblock.pblockName + "_cell", module);
