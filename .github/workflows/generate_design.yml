@@ -3,34 +3,132 @@ name: DynaRapid CI
 on:
   push:
     branches: 
-      - "main"
   pull_request:
     branches: 
-      - "main"
 
 jobs:
   build:
     runs-on: ubuntu-latest
-
+    strategy:
+      fail-fast: false
+      matrix:
+        dotFile:
+          # Benchmarks from FPL paper
+          - vector_rescale_graph_buf_adjusted
+          - fir_graph_buf_adjusted
+          - iir_graph_buf_adjusted
+          - image_resize_graph_buf_adjusted
+          - matrix_graph_buf_adjusted
+          - gaussian_graph_buf_adjusted
+          - video_filter_graph_buf_adjusted
+          - mm_graph_buf_adjusted
+          - mttkrp_graph_buf_adjusted
+          - convolutional_neural_network_graph_buf_adjusted
+          # Other benchmarks
+          - bufferSynthesis
+          #- convolutional_neural_network_graph_buf_adjusted
+          - convolutional_neural_network_graph_buf
+          - convolutional_neural_network_optimized
+          - fir_adjusted
+          - fir
+          #- fir_graph_buf_adjusted
+          - fir_graph_buf
+          - fir_ob_optimized
+          - fir_optimized_adjusted
+          - fir_optimized
+          #- gaussian_graph_buf_adjusted
+          - gaussian_graph_buf
+          #- gaussian_optimized_adjusted # (truncated)
+          - gaussian_optimized
+          - gaussian_optimized__mod
+          - gemver_big_graph_buf_adjusted
+          - gemver_big_graph_buf
+          - gemver_graph_buf_adjusted
+          - gemver_graph_buf
+          - gemver_optimized_big
+          - gemver_optimized
+          - gemver_optimized_multiple
+          - if_loop_1
+          - if_loop_2
+          - if_loop_3
+          - if_loop_3_graph_buf
+          - if_loop_3_optimized
+          - iir_graph_buf_4
+          #- iir_graph_buf_adjusted
+          - iir_graph_buf
+          - iir_optimized (copy)
+          - iir_optimized
+          #- image_resize_graph_buf_adjusted
+          - image_resize_graph_buf
+          - image_resize_optimized
+          - kernel_2mm
+          - lu
+          - lu_graph_buf_adjusted
+          - lu_graph_buf
+          - lu_graph_buf_no_lsq
+          #- matrix_graph_buf_adjusted
+          - matrix_graph_buf
+          - matrix_optimized
+          - matvec
+          - mm
+          #- mm_graph_buf_adjusted
+          - mm_graph_buf
+          #- mttkrp_graph_buf_adjusted
+          - mttkrp_graph_buf_adjusted_old
+          - mttkrp_graph_buf
+          - mttkrp_graph_buf_old
+          - mttkrp_graph_buf_prev
+          - my
+          #- simple # (effectively empty)
+          - simple_example_1
+          - simple_example_1_graph_buf
+          - simple_example_1_optimized
+          - simple_example_2
+          - simple_graph
+          - sobel_optimized
+          - stencil_2d
+          - temp # (effectively empty)
+          - threshold
+          - threshold_optimized
+          - triangular
+          #- vector_rescale_graph_buf_adjusted_adjusted (empty)
+          #- vector_rescale_graph_buf_adjusted
+          - vector_rescale_graph_buf
+          - vector_rescale_optimized
+          #- video_filter_graph_buf_adjusted
+          - video_filter_graph_buf
+          - video_filter_optimized
+          - while_loop_1_graph_buf
+          - while_loop_optimized
+        placer:
+          - greedy
+        include:
+          - dotFile: simple_graph
+            placer: rudimentary
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           submodules: true            # Fetch submodules
           fetch-depth: 0               # Fetch full history for proper submodule support
 
-      - name: Validate Gradle Wrapper
-        uses: gradle/wrapper-validation-action@v1.0.4
-
       - name: Setup JDK 11
-        uses: actions/setup-java@v2
+        uses: actions/setup-java@v4
         with:
           distribution: 'temurin'
           java-version: '11'
           cache: 'gradle'
 
-      - name: Make Gradle wrapper executable
-        run: chmod +x ./gradlew
+      - name: Generate design
+        run: ./gradlew :GenerateDesign --args="-f dotFiles/${{ matrix.dotFile }}.dot -placer ${{ matrix.placer }}"
 
-      - name: Generate design simple_graph
-        run: ./gradlew :GenerateDesign --args="-f dotFiles/simple_graph.dot -placer rudimentary"
+      - name: Report route status
+        run: RapidWright/bin/rapidwright ReportRouteStatus designs/${{ matrix.dotFile }}/${{ matrix.dotFile }}_routed.dcp
+
+      - name: Upload DCP
+        uses: actions/upload-artifact@v4
+        if: always() # Always try to upload, even if above steps fail
+        with:
+          name: ${{ matrix.dotFile }}-${{ matrix.placer }}
+          compression-level: 0
+          path: designs/${{ matrix.dotFile }}/${{ matrix.dotFile }}_routed.dcp

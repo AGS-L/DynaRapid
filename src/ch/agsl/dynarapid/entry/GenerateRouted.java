@@ -48,6 +48,7 @@ import com.xilinx.rapidwright.edif.EDIFCell;
 import com.xilinx.rapidwright.edif.EDIFDirection;
 import com.xilinx.rapidwright.edif.EDIFNet;
 import com.xilinx.rapidwright.edif.EDIFNetlist;
+import com.xilinx.rapidwright.edif.EDIFTools;
 import com.xilinx.rapidwright.tests.CodePerfTracker;
 import com.xilinx.rapidwright.examples.SLRCrosserGenerator;
 import com.xilinx.rapidwright.router.Router;
@@ -89,8 +90,8 @@ public class GenerateRouted {
     public static boolean routeDesignPartially(Design design, String finalLocation)
     {
         StringUtils.printIntro("Started partial routing using RWRouter");
-        design.getNetlist().resetParentNetMap();
-        DesignTools.makePhysNetNamesConsistent(design);
+        design.flattenDesign();
+        EDIFTools.uniqueifyNetlist(design);
         boolean softPreserve = true;
         design = PartialRouter.routeDesignPartialNonTimingDriven(design, null, softPreserve);
         design.writeCheckpoint(finalLocation);

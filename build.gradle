@@ -26,9 +26,11 @@ compileJava.finalizedBy(make)
 task GenerateDesign(type: JavaExec) {
     classpath = sourceSets.main.runtimeClasspath
     main = 'ch.agsl.dynarapid.GenerateDesign'
+    maxHeapSize = '6G'
 }
 
 task run(type: JavaExec) {
     classpath = sourceSets.main.runtimeClasspath
     main = System.getProperty('main')
+    maxHeapSize = '6G'
 }
