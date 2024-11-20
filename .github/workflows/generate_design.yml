@@ -40,7 +40,6 @@ jobs:
           - gaussian_graph_buf
           #- gaussian_optimized_adjusted # (truncated)
           - gaussian_optimized
-          - gaussian_optimized__mod
           - gemver_big_graph_buf_adjusted
           - gemver_big_graph_buf
           - gemver_graph_buf_adjusted
@@ -56,7 +55,6 @@ jobs:
           - iir_graph_buf_4
           #- iir_graph_buf_adjusted
           - iir_graph_buf
-          - iir_optimized (copy)
           - iir_optimized
           #- image_resize_graph_buf_adjusted
           - image_resize_graph_buf
@@ -74,10 +72,7 @@ jobs:
           #- mm_graph_buf_adjusted
           - mm_graph_buf
           #- mttkrp_graph_buf_adjusted
-          - mttkrp_graph_buf_adjusted_old
           - mttkrp_graph_buf
-          - mttkrp_graph_buf_old
-          - mttkrp_graph_buf_prev
           - my
           #- simple # (effectively empty)
           - simple_example_1
