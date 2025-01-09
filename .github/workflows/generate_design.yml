@@ -114,7 +114,7 @@ jobs:
           cache: 'gradle'
 
       - name: Enable Multiple Gradle Instances
-        run: echo "GRADLE_USER_HOME=$(`pwd`/.gradle_home)" >> $GITHUB_ENV
+        run: mkdir .gradle_home && echo "GRADLE_USER_HOME=$(`pwd`/.gradle_home)" >> $GITHUB_ENV
       - name: Test GRADLE_USER_HOME is set
         run: echo $GRADLE_USER_HOME
 
