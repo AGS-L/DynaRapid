@@ -84,7 +84,6 @@ jobs:
           - threshold
           - threshold_optimized
           - triangular
-          - vector_rescale_graph_buf_adjusted_adjusted
           - vector_rescale_graph_buf_adjusted
           - vector_rescale_graph_buf
           - vector_rescale_optimized
