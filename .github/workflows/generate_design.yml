@@ -37,7 +37,6 @@ jobs:
           - fir_optimized
           - gaussian_graph_buf_adjusted
           - gaussian_graph_buf
-          - gaussian_optimized_adjusted # (truncated)
           - gaussian_optimized
           - gemver_big_graph_buf_adjusted
           - gemver_big_graph_buf
@@ -85,7 +84,7 @@ jobs:
           - threshold
           - threshold_optimized
           - triangular
-          - vector_rescale_graph_buf_adjusted_adjusted (empty)
+          - vector_rescale_graph_buf_adjusted_adjusted
           - vector_rescale_graph_buf_adjusted
           - vector_rescale_graph_buf
           - vector_rescale_optimized
