@@ -23,7 +23,6 @@ jobs:
           - video_filter_graph_buf_adjusted
           - mm_graph_buf_adjusted
           - mttkrp_graph_buf_adjusted
-          - convolutional_neural_network_graph_buf_adjusted
           # Other benchmarks
           - bufferSynthesis
 	  - convolutional_neural_network_graph_buf_adjusted
