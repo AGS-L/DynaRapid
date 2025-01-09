@@ -113,6 +113,9 @@ jobs:
           java-version: '11'
           cache: 'gradle'
 
+      - name: Enable Multiple Gradle Instances
+        run: export GRADLE_USER_HOME=`pwd`/.gradle_home
+
       - name: Generate design
         run: ./gradlew :GenerateDesign --args="-f dotFiles/${{ matrix.dotFile }}.dot -placer ${{ matrix.placer }}"
 
