@@ -8,39 +8,38 @@
 
 package ch.agsl.dynarapid;
 
-
-import ch.agsl.dynarapid.map.MapElement;
+import ch.agsl.dynarapid.debug.PlacementInfo;
 import ch.agsl.dynarapid.debug.TimeProfiler;
+import ch.agsl.dynarapid.entry.Start;
+import ch.agsl.dynarapid.error.ErrorLogger;
+import ch.agsl.dynarapid.graphgenerator.GraphGenerator;
+import ch.agsl.dynarapid.graphplacer.GraphPlacer;
+import ch.agsl.dynarapid.map.MapElement;
+import ch.agsl.dynarapid.modules.Node;
+import ch.agsl.dynarapid.parser.LocationParser;
+import ch.agsl.dynarapid.parser.PlacementParser;
+import ch.agsl.dynarapid.placer.GreedyPlacer;
+import ch.agsl.dynarapid.placer.Placer;
+import ch.agsl.dynarapid.placer.RudimentaryPlacer;
+import ch.agsl.dynarapid.strings.StringUtils;
 
-import ch.agsl.dynarapid.databasegenerator.*;
-import ch.agsl.dynarapid.debug.*;
-import ch.agsl.dynarapid.entry.*;
-import ch.agsl.dynarapid.error.*;
-import ch.agsl.dynarapid.graphgenerator.*;
-import ch.agsl.dynarapid.graphplacer.*;
-import ch.agsl.dynarapid.interrouting.*;
-import ch.agsl.dynarapid.map.*;
-import ch.agsl.dynarapid.modules.*;
-import ch.agsl.dynarapid.parser.*;
-import ch.agsl.dynarapid.pblockgenerator.*;
-import ch.agsl.dynarapid.placer.*;
-import ch.agsl.dynarapid.strings.*;
-import ch.agsl.dynarapid.synthesizer.*;
-import ch.agsl.dynarapid.tclgenerator.*; 
-import ch.agsl.dynarapid.vivado.*; 
+import com.xilinx.rapidwright.util.FileTools;
+import com.xilinx.rapidwright.util.VivadoTools;
 
-
-//This has the main function of the designGenerator.
-import com.xilinx.rapidwright.device.Site;
-
-import java.io.*;
-import java.util.*;
-import java.util.regex.*;
-import java.lang.*;
-import java.nio.file.*;
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.Map;
+import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 
-
+/**
+ * This has the main function of the designGenerator.
+ */
 public class GenerateDesign {
 
     public static String fpga_part = "xcvu13p-fsga2577-1-i";
@@ -61,68 +60,73 @@ public class GenerateDesign {
 
     public static void getConstrainValues(int [] constrainCoordinates) throws IOException
     {
-        Scanner in = new Scanner(System.in);
-        boolean confirm = false;
+        try (Scanner in = new Scanner(System.in)) {
+            boolean confirm = false;
+    
+            StringUtils.printIntro("Starting FPGA constrain directive");
+            System.out.println("> FPGA map has " + MapElement.map.size() + " rows. So the top-row constrain and bottom-row constrain must range between [0:" + (MapElement.map.size()-1) + "]");
+            System.out.println("> FPGA map has " + MapElement.map.get(0).size() + " columns. So the left-column constrain and right-column constrain must range between [0:" + (MapElement.map.get(0).size()-1) + "]");
+            System.out.println("> Make sure that the design center is within the specified constraints or else an ERROR will be reported and design generation will be aborted");
+    
+            int topRow, bottomRow, leftCol, rightCol;
+            topRow = 0;
+            bottomRow = MapElement.map.size()-1;
+            leftCol = 0;
+            rightCol = MapElement.map.get(0).size()-1;
+    
+            while(!confirm)
+            {
+                System.out.println();
+                System.out.print("> Top-most row constrain: [0:" + (MapElement.map.size()-1) + "]: ");
+                topRow = in.nextInt();
+                if(topRow >= MapElement.map.size())
+                    topRow = MapElement.map.size()-1;
+                else if(topRow < 0)
+                    topRow = 0;
+    
+                System.out.print("> Bottom-most row constrain: [" + (topRow + 1) + ":" + (MapElement.map.size()-1) + "]: ");
+                bottomRow = in.nextInt();
+                if(bottomRow >= MapElement.map.size())
+                    bottomRow = MapElement.map.size()-1;
+                else if(bottomRow <= topRow)
+                    bottomRow = topRow+1;
+    
+                System.out.print("> Left-most column constrain: [0:" + (MapElement.map.get(0).size()-1) + "]: ");
+                leftCol = in.nextInt();
+                if(leftCol >= MapElement.map.get(0).size())
+                    leftCol = MapElement.map.get(0).size()-1;
+                else if(leftCol < 0)
+                    leftCol = 0;
+    
+                System.out.print("> right-most column constrain: [" + (leftCol+1) + ":" + (MapElement.map.get(0).size()-1) + "]: ");
+                rightCol = in.nextInt();
+                if(rightCol >= MapElement.map.get(0).size())
+                    rightCol = MapElement.map.get(0).size()-1;
+                else if(rightCol <= leftCol)
+                    rightCol = leftCol+1;
+    
+                System.out.println();
+                System.out.println("> The applied constraints on the fabric are: ");
+                System.out.println("> Top-most row: " + topRow);
+                System.out.println("> Bottom-most row: " + bottomRow);
+                System.out.println("> Left-most column: " + leftCol);
+                System.out.println("> Right-most columns: " + rightCol);
+                System.out.print("> Confirm? [y/n]: ");
+                String s = in.next();
+                if(s.equalsIgnoreCase("y"))
+                    confirm = true;
+            }
 
-        StringUtils.printIntro("Starting FPGA constrain directive");
-        System.out.println("> FPGA map has " + MapElement.map.size() + " rows. So the top-row constrain and bottom-row constrain must range between [0:" + (MapElement.map.size()-1) + "]");
-        System.out.println("> FPGA map has " + MapElement.map.get(0).size() + " columns. So the left-column constrain and right-column constrain must range between [0:" + (MapElement.map.get(0).size()-1) + "]");
-        System.out.println("> Make sure that the design center is within the specified constraints or else an ERROR will be reported and design generation will be aborted");
-
-        int topRow, bottomRow, leftCol, rightCol;
-        topRow = 0;
-        bottomRow = MapElement.map.size()-1;
-        leftCol = 0;
-        rightCol = MapElement.map.get(0).size()-1;
-
-        while(!confirm)
-        {
-            System.out.println();
-            System.out.print("> Top-most row constrain: [0:" + (MapElement.map.size()-1) + "]: ");
-            topRow = in.nextInt();
-            if(topRow >= MapElement.map.size())
-                topRow = MapElement.map.size()-1;
-            else if(topRow < 0)
-                topRow = 0;
-
-            System.out.print("> Bottom-most row constrain: [" + (topRow + 1) + ":" + (MapElement.map.size()-1) + "]: ");
-            bottomRow = in.nextInt();
-            if(bottomRow >= MapElement.map.size())
-                bottomRow = MapElement.map.size()-1;
-            else if(bottomRow <= topRow)
-                bottomRow = topRow+1;
-
-            System.out.print("> Left-most column constrain: [0:" + (MapElement.map.get(0).size()-1) + "]: ");
-            leftCol = in.nextInt();
-            if(leftCol >= MapElement.map.get(0).size())
-                leftCol = MapElement.map.get(0).size()-1;
-            else if(leftCol < 0)
-                leftCol = 0;
-
-            System.out.print("> right-most column constrain: [" + (leftCol+1) + ":" + (MapElement.map.get(0).size()-1) + "]: ");
-            rightCol = in.nextInt();
-            if(rightCol >= MapElement.map.get(0).size())
-                rightCol = MapElement.map.get(0).size()-1;
-            else if(rightCol <= leftCol)
-                rightCol = leftCol+1;
-
-            System.out.println();
-            System.out.println("> The applied constraints on the fabric are: ");
-            System.out.println("> Top-most row: " + topRow);
-            System.out.println("> Bottom-most row: " + bottomRow);
-            System.out.println("> Left-most column: " + leftCol);
-            System.out.println("> Right-most columns: " + rightCol);
-            System.out.print("> Confirm? [y/n]: ");
-            String s = in.next();
-            if(s.equalsIgnoreCase("y"))
-                confirm = true;
+            System.out.println("FPGA constrained");
+            constrainCoordinates[0] = topRow;
+            constrainCoordinates[1] = bottomRow;
+            constrainCoordinates[2] = leftCol;
+            constrainCoordinates[3] = rightCol;
         }
+    }
 
-        System.out.println("FPGA constrained");
-        constrainCoordinates[0] = topRow;
-        constrainCoordinates[1] = bottomRow;
-        constrainCoordinates[2] = leftCol;
-        constrainCoordinates[3] = rightCol;
+    public static Path getDefaultOutputDCPPath(String graphName) {
+        return Paths.get(LocationParser.designs + graphName + "/" + graphName + "_routed.dcp");
     }
 
     public static void main(String args[]) throws IOException
@@ -147,6 +151,7 @@ public class GenerateDesign {
             System.out.println("-center <arg> - Center of the design.");
             System.out.println("\t<arg> : Can be the name of SLICE site like SLICE_X#_Y#");
             System.out.println("\t<arg> : Can be R<row_number>_C<column_number>_Side<side>. The side can be -1 for left and +1 for right");
+            System.out.println("-bit <arg> - Use Vivado (if on PATH) to generate a bitstream");
             return;
         }
 
@@ -550,6 +555,21 @@ public class GenerateDesign {
 
         if(debug)
             TimeProfiler.printTimingProfile(timingLoc);
+
+        //////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        int bitOptionIdx = StringUtils.findInArray("-bit", args);
+        if (bitOptionIdx != -1) {
+            // Use Vivado to generate a bitstream if it is on PATH
+            if (FileTools.isVivadoOnPath()) {
+                Path bitFile = Paths.get(args[bitOptionIdx + 1]);
+                Path dcpFile = getDefaultOutputDCPPath(graphName);
+                VivadoTools.writeBitstream(dcpFile, bitFile, false);                
+            } else {
+                System.out.println("[WARNING]: Cannot use Vivado to generate bitstream, "
+                        + "could not find 'vivado' on PATH.");
+            }
+        }
 
         ErrorLogger.printErrorLogs();
     }

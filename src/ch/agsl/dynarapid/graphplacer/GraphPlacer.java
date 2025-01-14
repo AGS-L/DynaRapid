@@ -7,59 +7,29 @@
 */
 package ch.agsl.dynarapid.graphplacer;
 
-import  ch.agsl.dynarapid.*;
-import ch.agsl.dynarapid.databasegenerator.*;
-import ch.agsl.dynarapid.debug.*;
-import ch.agsl.dynarapid.entry.*;
-import ch.agsl.dynarapid.error.*;
-import ch.agsl.dynarapid.graphgenerator.*;
-import ch.agsl.dynarapid.graphplacer.*;
-import ch.agsl.dynarapid.interrouting.*;
-import ch.agsl.dynarapid.map.*;
-import ch.agsl.dynarapid.modules.*;
-import ch.agsl.dynarapid.parser.*;
-import ch.agsl.dynarapid.pblockgenerator.*;
-import ch.agsl.dynarapid.placer.*;
-     
-import ch.agsl.dynarapid.strings.*;
-import ch.agsl.dynarapid.synthesizer.*;
-import ch.agsl.dynarapid.tclgenerator.*;
-import ch.agsl.dynarapid.vivado.*;
-//This places the moduified graph of nodes that it recieves from the placement algorithm
-//It is supposed to run checks but can be overridden for quick dcp generation
+import ch.agsl.dynarapid.GenerateDesign;
+import ch.agsl.dynarapid.debug.TimeProfiler;
+import ch.agsl.dynarapid.entry.GenerateRouted;
+import ch.agsl.dynarapid.modules.Node;
+import ch.agsl.dynarapid.modules.Shape;
+import ch.agsl.dynarapid.parser.LocationParser;
+import ch.agsl.dynarapid.strings.StringUtils;
 
-import com.xilinx.rapidwright.design.DesignTools;
-import com.xilinx.rapidwright.design.Cell;
 import com.xilinx.rapidwright.design.Design;
 import com.xilinx.rapidwright.design.Module;
-import com.xilinx.rapidwright.design.ModuleInst;
-import com.xilinx.rapidwright.design.SiteInst;
-import com.xilinx.rapidwright.design.SitePinInst;
-import com.xilinx.rapidwright.design.Net;
-import com.xilinx.rapidwright.device.Device;
-import com.xilinx.rapidwright.device.BEL;
-import com.xilinx.rapidwright.device.BELPin;
-import com.xilinx.rapidwright.device.Site;
-import com.xilinx.rapidwright.device.Tile;
-import com.xilinx.rapidwright.device.SiteTypeEnum;
-import com.xilinx.rapidwright.device.TileTypeEnum;
-import com.xilinx.rapidwright.device.helper.TileColumnPattern;
 import com.xilinx.rapidwright.edif.EDIFCell;
 import com.xilinx.rapidwright.edif.EDIFDirection;
 import com.xilinx.rapidwright.edif.EDIFNet;
 import com.xilinx.rapidwright.edif.EDIFPort;
-import com.xilinx.rapidwright.edif.EDIFNetlist;
-import com.xilinx.rapidwright.tests.CodePerfTracker;
 import com.xilinx.rapidwright.examples.SLRCrosserGenerator;
-import com.xilinx.rapidwright.router.Router;
-import com.xilinx.rapidwright.placer.handplacer.HandPlacer;
-import com.xilinx.rapidwright.rwroute.RWRoute;
-import com.xilinx.rapidwright.rwroute.PartialRouter;
 
-import java.io.*;
-import java.util.*;
-import java.util.concurrent.*;
-import java.lang.*;
+import java.nio.file.Path;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
 
 public class GraphPlacer {
     
@@ -230,10 +200,11 @@ public class GraphPlacer {
             return false;
         
         //Starting the routing of the design
+        Path dcpFile = GenerateDesign.getDefaultOutputDCPPath(graphName);
         if(!complete)
-            return GenerateRouted.routeDesignPartially(design, LocationParser.designs + graphName + "/" + graphName + "_routed.dcp");
+            return GenerateRouted.routeDesignPartially(design, dcpFile);
 
         else 
-            return GenerateRouted.routeDesignFully(design, LocationParser.designs + graphName + "/" + graphName + "_routed.dcp");
+            return GenerateRouted.routeDesignFully(design, dcpFile);
     }
 }
