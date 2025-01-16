@@ -127,7 +127,7 @@ jobs:
         run: RapidWright/bin/rapidwright ReportRouteStatus designs/${{ matrix.dotFile }}/${{ matrix.dotFile }}_routed.dcp
 
       - name: Upload DCP
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         if: always() # Always try to upload, even if above steps fail
         with:
           name: ${{ matrix.dotFile }}-${{ matrix.placer }}
