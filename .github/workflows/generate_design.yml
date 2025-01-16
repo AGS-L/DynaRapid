@@ -30,12 +30,10 @@ jobs:
           - convolutional_neural_network_optimized
           - fir_adjusted
           - fir
-          - fir_graph_buf_adjusted
           - fir_graph_buf
           - fir_ob_optimized
           #- fir_optimized_adjusted
           - fir_optimized
-          - gaussian_graph_buf_adjusted
           - gaussian_graph_buf
           - gaussian_optimized
           - gemver_big_graph_buf_adjusted
@@ -51,10 +49,8 @@ jobs:
           - if_loop_3_graph_buf
           - if_loop_3_optimized
           - iir_graph_buf_4
-          - iir_graph_buf_adjusted
           - iir_graph_buf
           - iir_optimized
-          - image_resize_graph_buf_adjusted
           - image_resize_graph_buf
           - image_resize_optimized
           - kernel_2mm
@@ -62,14 +58,11 @@ jobs:
           - lu_graph_buf_adjusted
           - lu_graph_buf
           - lu_graph_buf_no_lsq
-          - matrix_graph_buf_adjusted
           - matrix_graph_buf
           - matrix_optimized
           - matvec
           - mm
-          - mm_graph_buf_adjusted
           - mm_graph_buf
-          - mttkrp_graph_buf_adjusted
           - mttkrp_graph_buf
           - my
           - simple # (effectively empty)
@@ -84,10 +77,8 @@ jobs:
           - threshold
           - threshold_optimized
           - triangular
-          - vector_rescale_graph_buf_adjusted
           - vector_rescale_graph_buf
           - vector_rescale_optimized
-          - video_filter_graph_buf_adjusted
           - video_filter_graph_buf
           - video_filter_optimized
           - while_loop_1_graph_buf
@@ -127,7 +118,7 @@ jobs:
         run: RapidWright/bin/rapidwright ReportRouteStatus designs/${{ matrix.dotFile }}/${{ matrix.dotFile }}_routed.dcp
 
       - name: Upload DCP
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v3
         if: always() # Always try to upload, even if above steps fail
         with:
           name: ${{ matrix.dotFile }}-${{ matrix.placer }}
