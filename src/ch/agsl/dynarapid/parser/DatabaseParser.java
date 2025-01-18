@@ -8,56 +8,25 @@
 
 package ch.agsl.dynarapid.parser;
 
-import  ch.agsl.dynarapid.*;
-import ch.agsl.dynarapid.databasegenerator.*;
-import ch.agsl.dynarapid.debug.*;
-import ch.agsl.dynarapid.entry.*;
-import ch.agsl.dynarapid.error.*;
-import ch.agsl.dynarapid.graphgenerator.*;
-import ch.agsl.dynarapid.graphplacer.*;
-import ch.agsl.dynarapid.interrouting.*;
-import ch.agsl.dynarapid.map.*;
-import ch.agsl.dynarapid.modules.*;
-import ch.agsl.dynarapid.parser.*;
-import ch.agsl.dynarapid.pblockgenerator.*;
-import ch.agsl.dynarapid.placer.*;
-     
-import ch.agsl.dynarapid.strings.*;
-import ch.agsl.dynarapid.synthesizer.*;
-import ch.agsl.dynarapid.tclgenerator.*;
-import ch.agsl.dynarapid.vivado.*;
-
-//This class parses through the database and builds a component with all the values and shapes.
-
-import com.google.protobuf.MapEntryLite;
-import com.xilinx.rapidwright.design.Design;
-import com.xilinx.rapidwright.design.Module;
-import com.xilinx.rapidwright.design.ModuleInst;
-import com.xilinx.rapidwright.design.SiteInst;
+import ch.agsl.dynarapid.GenerateDesign;
+import ch.agsl.dynarapid.databasegenerator.ComponentDatabase;
+import ch.agsl.dynarapid.databasegenerator.DatabaseGenerator;
+import ch.agsl.dynarapid.databasegenerator.PblockDatabase;
+import ch.agsl.dynarapid.modules.Component;
+import ch.agsl.dynarapid.modules.Shape;
 import com.xilinx.rapidwright.device.Device;
-import com.xilinx.rapidwright.device.Site;
-import com.xilinx.rapidwright.device.Tile;
-import com.xilinx.rapidwright.device.SiteTypeEnum;
-import com.xilinx.rapidwright.device.TileTypeEnum;
-import com.xilinx.rapidwright.device.helper.TileColumnPattern;
-import com.xilinx.rapidwright.edif.EDIFCell;
-import com.xilinx.rapidwright.edif.EDIFDirection;
-import com.xilinx.rapidwright.edif.EDIFNet;
-import com.xilinx.rapidwright.edif.EDIFNetlist;
-import com.xilinx.rapidwright.tests.CodePerfTracker;
-import com.xilinx.rapidwright.examples.SLRCrosserGenerator;
-import com.xilinx.rapidwright.design.blocks.PBlock;
-import com.xilinx.rapidwright.router.Router;
-import com.xilinx.rapidwright.placer.handplacer.HandPlacer;
-import com.xilinx.rapidwright.rwroute.RWRoute;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.util.ArrayList;
+import java.util.HashSet;
 
-import java.io.*;
-import java.util.*;
-import java.lang.*;
-
-import org.python.antlr.PythonParser.else_clause_return;
-import org.python.core.util.StringUtil;
-
+/**
+ * This class parses through the database and builds a component with all the values and shapes.
+ */
 public class DatabaseParser {
 
     int shapeNum;
@@ -68,14 +37,14 @@ public class DatabaseParser {
     }
 
     //Gets all the for num lines 
-    public ArrayList<String> getValues(Scanner in, String s, int num)
+    public ArrayList<String> getValues(BufferedReader in, String s, int num) throws IOException
     {
         ArrayList<String> values = new ArrayList<>();
         values.add(s.substring(s.indexOf(" : ") + 3));
 
         for(int i = 1; i < num; i++)
         {
-            s = in.nextLine();
+            s = in.readLine();
             s = s.substring(s.indexOf(" : ") + 3);
             values.add(s);
         }
@@ -84,7 +53,7 @@ public class DatabaseParser {
     }
 
     //parses the database part of the database
-    public boolean databaseParser(Scanner in, String s) throws Exception
+    public boolean databaseParser(String s)
     {
         String deviceName = s.substring(s.indexOf(" : ") + 3);
         if(deviceName.equals(GenerateDesign.fpga_part))
@@ -94,7 +63,7 @@ public class DatabaseParser {
     }
 
     //parses the component part of the database and returns the component
-    public Component componentParser(Scanner in, String s) throws Exception
+    public Component componentParser(BufferedReader in, String s) throws Exception
     {
         ArrayList<String> values = getValues(in, s, ComponentDatabase.checkStrings.length);
         
@@ -109,8 +78,13 @@ public class DatabaseParser {
         int numShapes = Integer.parseInt(values.get(6));
 
         int num = 0;
-        while((in.hasNextLine() && in.nextLine().length() > 2))
-            num++;
+        String line = null;
+        while ((line = in.readLine()) != null) {
+            if (line.length() > 2)
+                num++;
+            else
+                break;
+        }
 
         if(num != numShapes)
         {
@@ -123,17 +97,17 @@ public class DatabaseParser {
     }
 
     //parses the pblock part of the database and sets the shape in the shapes list in the component
-    public boolean pblockParser(Scanner in, String s, Component component)
+    public boolean pblockParser(BufferedReader in, String s, Component component) throws IOException
     {
         ArrayList<String> values = getValues(in, s, PblockDatabase.checkStrings.length);
 
-        ArrayList<String> lineValues;
+        String[] lineValues;
 
         String pblockName = values.get(0);
         
-        lineValues = StringUtils.stringTokenizer(values.get(1), " ");
-        int starti = Integer.parseInt(lineValues.get(0));
-        int startj = Integer.parseInt(lineValues.get(1));
+        lineValues = values.get(1).split(" ");
+        int starti = Integer.parseInt(lineValues[0]);
+        int startj = Integer.parseInt(lineValues[1]);
 
         int rows = Integer.parseInt(values.get(3));
         int cols = Integer.parseInt(values.get(4));
@@ -141,10 +115,10 @@ public class DatabaseParser {
         String anchorSiteName = values.get(5);
         String anchorTileName = values.get(6);
 
-        lineValues = StringUtils.stringTokenizer(values.get(7), " ");
-        int reli = Integer.parseInt(lineValues.get(0));
-        int relj = Integer.parseInt(lineValues.get(1));
-        int side = Integer.parseInt(lineValues.get(2));
+        lineValues = values.get(7).split(" ");
+        int reli = Integer.parseInt(lineValues[0]);
+        int relj = Integer.parseInt(lineValues[1]);
+        int side = Integer.parseInt(lineValues[2]);
 
         int siteIndex = Integer.parseInt(values.get(8));
 
@@ -155,9 +129,9 @@ public class DatabaseParser {
         HashSet<String> validTopLeftAnchorLocations = new HashSet<>();
         for(int i = 0; i < lines; i++)
         {
-            lineValues = StringUtils.stringTokenizer(in.nextLine(), "\t");
+            lineValues = in.readLine().split("\t");
 
-            if((lineValues.size() != 10) && (i != lines-1))
+            if ((lineValues.length != 10) && (i != lines - 1))
             {
                 System.out.println("ERROR: Line " + i + " does not have 10 positions");
                 return false;
@@ -184,22 +158,14 @@ public class DatabaseParser {
         Component component = null;
         shapeNum = -1;
 
-        try
-        {
-            File file = new File(dataLoc);
-            if(!file.exists())
-                throw new IOException("ERROR: Could not trace database: " + dataLoc);
-            
-            Scanner in = new Scanner (file);
-
-            while(in.hasNextLine())
-            {
-                String s = in.nextLine();
+        try (BufferedReader in = new BufferedReader(new FileReader(dataLoc))) {
+            String s = null;
+            while ((s = in.readLine()) != null) {
                 if(s.length() <= 1)
                     continue;
 
                 if(s.startsWith(DatabaseGenerator.checkStrings[0]))
-                    if(!databaseParser(in, s))
+                    if (!databaseParser(s))
                         throw new Exception("ERROR: Device Name is not matching with the design required");
 
                 if(s.startsWith(ComponentDatabase.checkStrings[0]))
