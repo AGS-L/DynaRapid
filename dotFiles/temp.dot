@@ -1,1 +1,0 @@
-  MC_A [type=MC, in="in1:32*c0 in2:10*l0a in3:10*l1a in4:10*s0a in5:32*s0d", out="out1:32*l0d out2:32*l1d out3:0*e", bbID = 0, memory = "A", bbcount = 1, ldcount = 2, stcount = 1, ];
