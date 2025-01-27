@@ -130,13 +130,29 @@ public class GreedyPlacer implements Placer {
     public void setGlobalFields()
     {
         device = Device.getDevice(GenerateDesign.fpga_part);
+        
+        System.out.println("Greedy placer " + GenerateDesign.fpga_part);
+        
         nodeQ = new LinkedList<>();
 
         int rows = MapElement.map.size();
         int cols = MapElement.map.get(0).size();
         fabric = new Node [rows][cols];
-
-        String siteName = "SLICE_X67Y624"; //Near the center
+        
+        String siteName = "SLICE_X67Y624";
+        
+         switch(GenerateDesign.fpga_part)
+         {
+                case "xczu3eg-sbva484-1-e":
+                case "xck26-sfvc784-2LV-c":
+                    siteName = "SLICE_X11Y124";
+                    break;
+                case "xcvu13p-fsga2577-1-i":
+                    siteName = "SLICE_X67Y624";
+                    break;
+                default:
+                    siteName = "SLICE_X67Y624";
+         }
 
         centerSite = device.getSite(siteName);
         String tileName = centerSite.getTile().getName();
