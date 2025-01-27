@@ -1,0 +1,123 @@
+begin block
+  name transpFIFO_1_1_1_1_3_I60_J138_R2_C2_placedRouted
+  pblocks 1
+  clocks 1
+  inputs 5
+  outputs 3
+
+  begin pblock
+    name pblock_1 
+    grid_ranges SLICE_X219Y898:SLICE_X220Y899
+  end pblock
+  begin clock
+    name clk 
+    period 2.500
+  end clock
+
+  begin input
+    name clk
+    netname clk
+    numprims 7
+    type input clock local
+    maxdelay 0.000
+    begin connections
+      pin transpFIFO_1_1_1_1_3_I60_J138_R2_C2_cell/transpFIFO/fifo/Empty_reg/C SLICE_X220Y898 SLICE_X220Y898/CLK2
+      pin transpFIFO_1_1_1_1_3_I60_J138_R2_C2_cell/transpFIFO/fifo/Full_reg/C SLICE_X220Y898 SLICE_X220Y898/CLK2
+      pin transpFIFO_1_1_1_1_3_I60_J138_R2_C2_cell/transpFIFO/fifo/Head_reg[0]/C SLICE_X220Y899 SLICE_X220Y899/CLK2
+      pin transpFIFO_1_1_1_1_3_I60_J138_R2_C2_cell/transpFIFO/fifo/Head_reg[1]/C SLICE_X220Y899 SLICE_X220Y899/CLK2
+      pin transpFIFO_1_1_1_1_3_I60_J138_R2_C2_cell/transpFIFO/fifo/Tail_reg[0]/C SLICE_X220Y898 SLICE_X220Y898/CLK1
+      pin transpFIFO_1_1_1_1_3_I60_J138_R2_C2_cell/transpFIFO/fifo/Tail_reg[1]/C SLICE_X220Y898 SLICE_X220Y898/CLK1
+      pin transpFIFO_1_1_1_1_3_I60_J138_R2_C2_cell/transpFIFO/fifo/Memory_reg_0_3_0_0/DP/CLK SLICE_X220Y899 SLICE_X220Y899/LCLK
+      pin transpFIFO_1_1_1_1_3_I60_J138_R2_C2_cell/transpFIFO/fifo/Memory_reg_0_3_0_0/SP/CLK SLICE_X220Y899 SLICE_X220Y899/LCLK
+    end connections
+  end input
+  begin input
+    name dataInArray_0
+    netname dataInArray_0_net
+    numprims 0
+    type input signal
+    maxdelay 0.110
+    begin connections
+      pin transpFIFO_1_1_1_1_3_I60_J138_R2_C2_cell/transpFIFO/dataOutArray[0][0]_INST_0/I1 SLICE_X219Y899 SLICE_X219Y899/D5
+      pin transpFIFO_1_1_1_1_3_I60_J138_R2_C2_cell/transpFIFO/fifo/Memory_reg_0_3_0_0/DP/I SLICE_X220Y899 SLICE_X220Y899/GX
+      pin transpFIFO_1_1_1_1_3_I60_J138_R2_C2_cell/transpFIFO/fifo/Memory_reg_0_3_0_0/SP/I SLICE_X220Y899 SLICE_X220Y899/HX
+    end connections
+  end input
+  begin input
+    name nReadyArray_0
+    netname nReadyArray_0_net
+    numprims 0
+    type input signal
+    maxdelay 0.616
+    begin connections
+      pin transpFIFO_1_1_1_1_3_I60_J138_R2_C2_cell/transpFIFO/fifo_i_1/I1 SLICE_X220Y898 SLICE_X220Y898/F4
+      pin transpFIFO_1_1_1_1_3_I60_J138_R2_C2_cell/transpFIFO/readyArray[0]_INST_0/I1 SLICE_X220Y898 SLICE_X220Y898/F4
+      pin transpFIFO_1_1_1_1_3_I60_J138_R2_C2_cell/transpFIFO/fifo/Head[1]_i_1/I0 SLICE_X220Y899 SLICE_X220Y899/C2
+      pin transpFIFO_1_1_1_1_3_I60_J138_R2_C2_cell/transpFIFO/fifo/readyArray[0]_INST_0/I0 SLICE_X220Y898 SLICE_X220Y898/C2
+      pin transpFIFO_1_1_1_1_3_I60_J138_R2_C2_cell/transpFIFO/fifo/Full_i_1/I1 SLICE_X220Y898 SLICE_X220Y898/G2
+      pin transpFIFO_1_1_1_1_3_I60_J138_R2_C2_cell/transpFIFO/fifo/Memory_reg_0_3_0_0_i_1/I1 SLICE_X220Y898 SLICE_X220Y898/E5
+      pin transpFIFO_1_1_1_1_3_I60_J138_R2_C2_cell/transpFIFO/fifo/Tail[1]_i_1/I1 SLICE_X220Y898 SLICE_X220Y898/C2
+      pin transpFIFO_1_1_1_1_3_I60_J138_R2_C2_cell/transpFIFO/fifo/Empty_i_1/I2 SLICE_X220Y898 SLICE_X220Y898/H2
+      pin transpFIFO_1_1_1_1_3_I60_J138_R2_C2_cell/transpFIFO/fifo/Empty_i_2/I5 SLICE_X220Y899 SLICE_X220Y899/B1
+    end connections
+  end input
+  begin input
+    name pValidArray_0
+    netname pValidArray_0_net
+    numprims 0
+    type input signal
+    maxdelay 0.596
+    begin connections
+      pin transpFIFO_1_1_1_1_3_I60_J138_R2_C2_cell/transpFIFO/fifo_i_1/I0 SLICE_X220Y898 SLICE_X220Y898/F2
+      pin transpFIFO_1_1_1_1_3_I60_J138_R2_C2_cell/transpFIFO/validArray[0]_INST_0/I0 SLICE_X219Y899 SLICE_X219Y899/D4
+    end connections
+  end input
+  begin input
+    name rst
+    netname rst
+    numprims 7
+    type input signal
+    maxdelay 0.333
+    begin connections
+      pin transpFIFO_1_1_1_1_3_I60_J138_R2_C2_cell/transpFIFO/fifo/Memory_reg_0_3_0_0_i_1/I3 SLICE_X220Y898 SLICE_X220Y898/E6
+      pin transpFIFO_1_1_1_1_3_I60_J138_R2_C2_cell/transpFIFO/fifo/Empty_i_1/I5 SLICE_X220Y898 SLICE_X220Y898/H6
+      pin transpFIFO_1_1_1_1_3_I60_J138_R2_C2_cell/transpFIFO/fifo/Full_i_1/I5 SLICE_X220Y898 SLICE_X220Y898/G6
+      pin transpFIFO_1_1_1_1_3_I60_J138_R2_C2_cell/transpFIFO/fifo/Head_reg[0]/R SLICE_X220Y899 SLICE_X220Y899/SRST2
+      pin transpFIFO_1_1_1_1_3_I60_J138_R2_C2_cell/transpFIFO/fifo/Head_reg[1]/R SLICE_X220Y899 SLICE_X220Y899/SRST2
+      pin transpFIFO_1_1_1_1_3_I60_J138_R2_C2_cell/transpFIFO/fifo/Tail_reg[0]/R SLICE_X220Y898 SLICE_X220Y898/SRST1
+      pin transpFIFO_1_1_1_1_3_I60_J138_R2_C2_cell/transpFIFO/fifo/Tail_reg[1]/R SLICE_X220Y898 SLICE_X220Y898/SRST1
+    end connections
+  end input
+
+  begin output
+    name dataOutArray_0
+    netname dataOutArray_0_net
+    numprims 0
+    type output signal
+    maxdelay 0.772
+    begin connections
+      pin transpFIFO_1_1_1_1_3_I60_J138_R2_C2_cell/transpFIFO/dataOutArray[0][0]_INST_0/O SLICE_X219Y899 SLICE_X219Y899/DMUX
+    end connections
+  end output
+  begin output
+    name readyArray_0
+    netname readyArray_0_net
+    numprims 0
+    type output signal
+    maxdelay 0.757
+    begin connections
+      pin transpFIFO_1_1_1_1_3_I60_J138_R2_C2_cell/transpFIFO/readyArray[0]_INST_0/O SLICE_X220Y898 SLICE_X220Y898/FMUX
+    end connections
+  end output
+  begin output
+    name validArray_0
+    netname validArray_0_net
+    numprims 0
+    type output signal
+    maxdelay 0.682
+    begin connections
+      pin transpFIFO_1_1_1_1_3_I60_J138_R2_C2_cell/transpFIFO/validArray[0]_INST_0/O SLICE_X219Y899 SLICE_X219Y899/D_O
+    end connections
+  end output
+
+end block

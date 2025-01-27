@@ -1,0 +1,99 @@
+begin block
+  name ret_op_1_1_0_0_I60_J142_R1_C1_placedRouted
+  pblocks 1
+  clocks 1
+  inputs 5
+  outputs 3
+
+  begin pblock
+    name pblock_1 
+    grid_ranges SLICE_X224Y899:SLICE_X224Y899
+  end pblock
+  begin clock
+    name clk 
+    period 2.500
+  end clock
+
+  begin input
+    name clk
+    netname clk
+    numprims 1
+    type input clock local
+    maxdelay 0.000
+    begin connections
+      pin ret_op_1_1_0_0_I60_J142_R1_C1_cell/ret_op_sub/tehb/full_reg_reg/C SLICE_X224Y899 SLICE_X224Y899/CLK1
+    end connections
+  end input
+  begin input
+    name dataInArray_0
+    netname dataInArray_0_net
+    numprims 0
+    type input signal
+    maxdelay 0.000
+    begin connections
+    end connections
+  end input
+  begin input
+    name nReadyArray_0
+    netname nReadyArray_0_net
+    numprims 0
+    type input signal
+    maxdelay 0.121
+    begin connections
+      pin ret_op_1_1_0_0_I60_J142_R1_C1_cell/ret_op_sub/tehb/full_reg_i_1/I2 SLICE_X224Y899 SLICE_X224Y899/D5
+    end connections
+  end input
+  begin input
+    name pValidArray_0
+    netname pValidArray_0_net
+    numprims 0
+    type input signal
+    maxdelay 0.232
+    begin connections
+      pin ret_op_1_1_0_0_I60_J142_R1_C1_cell/ret_op_sub/tehb/validArray[0]_INST_0/I0 SLICE_X224Y899 SLICE_X224Y899/D1
+      pin ret_op_1_1_0_0_I60_J142_R1_C1_cell/ret_op_sub/tehb/full_reg_i_1/I1 SLICE_X224Y899 SLICE_X224Y899/D1
+    end connections
+  end input
+  begin input
+    name rst
+    netname rst
+    numprims 1
+    type input signal
+    maxdelay 0.000
+    begin connections
+      pin ret_op_1_1_0_0_I60_J142_R1_C1_cell/ret_op_sub/tehb/full_reg_reg/CLR SLICE_X224Y899 SLICE_X224Y899/SRST1
+    end connections
+  end input
+
+  begin output
+    name dataOutArray_0
+    netname dataOutArray_0_net
+    numprims 0
+    type output ground
+    maxdelay 0.000
+    begin connections
+      pin ret_op_1_1_0_0_I60_J142_R1_C1_cell/GND/G  
+    end connections
+  end output
+  begin output
+    name readyArray_0
+    netname readyArray_0_net
+    numprims 0
+    type output signal
+    maxdelay 0.457
+    begin connections
+      pin ret_op_1_1_0_0_I60_J142_R1_C1_cell/ret_op_sub/tehb/readyArray[0]_INST_0/O SLICE_X224Y899 SLICE_X224Y899/HMUX SLICE_X224Y899/H_O
+    end connections
+  end output
+  begin output
+    name validArray_0
+    netname validArray_0_net
+    numprims 0
+    type output signal
+    maxdelay 0.298
+    begin connections
+      pin ret_op_1_1_0_0_I60_J142_R1_C1_cell/ret_op_sub/tehb/validArray[0]_INST_0/O SLICE_X224Y899 SLICE_X224Y899/DMUX
+    end connections
+  end output
+
+end block

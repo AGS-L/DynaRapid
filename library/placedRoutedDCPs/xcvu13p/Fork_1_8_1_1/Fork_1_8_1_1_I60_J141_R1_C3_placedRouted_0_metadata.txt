@@ -1,0 +1,394 @@
+begin block
+  name Fork_1_8_1_1_I60_J141_R1_C3_placedRouted
+  pblocks 1
+  clocks 1
+  inputs 12
+  outputs 17
+
+  begin pblock
+    name pblock_1 
+    grid_ranges SLICE_X222Y899:SLICE_X226Y899
+  end pblock
+  begin clock
+    name clk 
+    period 2.500
+  end clock
+
+  begin input
+    name clk
+    netname clk
+    numprims 8
+    type input clock local
+    maxdelay 0.000
+    begin connections
+      pin Fork_1_8_1_1_I60_J141_R1_C3_cell/fork/generateBlocks[0].regblock/reg_value_reg/C SLICE_X223Y899 SLICE_X223Y899/CLK2
+      pin Fork_1_8_1_1_I60_J141_R1_C3_cell/fork/generateBlocks[1].regblock/reg_value_reg/C SLICE_X223Y899 SLICE_X223Y899/CLK2
+      pin Fork_1_8_1_1_I60_J141_R1_C3_cell/fork/generateBlocks[2].regblock/reg_value_reg/C SLICE_X223Y899 SLICE_X223Y899/CLK2
+      pin Fork_1_8_1_1_I60_J141_R1_C3_cell/fork/generateBlocks[3].regblock/reg_value_reg/C SLICE_X225Y899 SLICE_X225Y899/CLK2
+      pin Fork_1_8_1_1_I60_J141_R1_C3_cell/fork/generateBlocks[4].regblock/reg_value_reg/C SLICE_X224Y899 SLICE_X224Y899/CLK1
+      pin Fork_1_8_1_1_I60_J141_R1_C3_cell/fork/generateBlocks[5].regblock/reg_value_reg/C SLICE_X224Y899 SLICE_X224Y899/CLK1
+      pin Fork_1_8_1_1_I60_J141_R1_C3_cell/fork/generateBlocks[6].regblock/reg_value_reg/C SLICE_X224Y899 SLICE_X224Y899/CLK2
+      pin Fork_1_8_1_1_I60_J141_R1_C3_cell/fork/generateBlocks[7].regblock/reg_value_reg/C SLICE_X225Y899 SLICE_X225Y899/CLK2
+    end connections
+  end input
+  begin input
+    name dataInArray_0
+    netname dataInArray_0_net
+    numprims 0
+    type input signal
+    maxdelay 0.000
+    begin connections
+      port dataOutArray_0
+      port dataOutArray_1
+      port dataOutArray_2
+      port dataOutArray_3
+      port dataOutArray_4
+      port dataOutArray_5
+      port dataOutArray_6
+      port dataOutArray_7
+    end connections
+  end input
+  begin input
+    name nReadyArray_0
+    netname nReadyArray_0_net
+    numprims 0
+    type input signal
+    maxdelay 1.196
+    begin connections
+      pin Fork_1_8_1_1_I60_J141_R1_C3_cell/fork/generateBlocks[7].regblock_i_1/I0 SLICE_X226Y899 SLICE_X226Y899/G6
+    end connections
+  end input
+  begin input
+    name nReadyArray_1
+    netname nReadyArray_1_net
+    numprims 0
+    type input signal
+    maxdelay 1.410
+    begin connections
+      pin Fork_1_8_1_1_I60_J141_R1_C3_cell/fork/generateBlocks[6].regblock_i_1/I0 SLICE_X222Y899 SLICE_X222Y899/H6
+    end connections
+  end input
+  begin input
+    name nReadyArray_2
+    netname nReadyArray_2_net
+    numprims 0
+    type input signal
+    maxdelay 1.238
+    begin connections
+      pin Fork_1_8_1_1_I60_J141_R1_C3_cell/fork/generateBlocks[5].regblock_i_1/I0 SLICE_X226Y899 SLICE_X226Y899/F6
+    end connections
+  end input
+  begin input
+    name nReadyArray_3
+    netname nReadyArray_3_net
+    numprims 0
+    type input signal
+    maxdelay 1.305
+    begin connections
+      pin Fork_1_8_1_1_I60_J141_R1_C3_cell/fork/generateBlocks[4].regblock_i_1/I0 SLICE_X225Y899 SLICE_X225Y899/G5
+    end connections
+  end input
+  begin input
+    name nReadyArray_4
+    netname nReadyArray_4_net
+    numprims 0
+    type input signal
+    maxdelay 1.452
+    begin connections
+      pin Fork_1_8_1_1_I60_J141_R1_C3_cell/fork/generateBlocks[3].regblock_i_1/I0 SLICE_X224Y899 SLICE_X224Y899/E6
+    end connections
+  end input
+  begin input
+    name nReadyArray_5
+    netname nReadyArray_5_net
+    numprims 0
+    type input signal
+    maxdelay 1.354
+    begin connections
+      pin Fork_1_8_1_1_I60_J141_R1_C3_cell/fork/generateBlocks[2].regblock_i_1/I0 SLICE_X223Y899 SLICE_X223Y899/E6
+    end connections
+  end input
+  begin input
+    name nReadyArray_6
+    netname nReadyArray_6_net
+    numprims 0
+    type input signal
+    maxdelay 1.553
+    begin connections
+      pin Fork_1_8_1_1_I60_J141_R1_C3_cell/fork/generateBlocks[1].regblock_i_1/I0 SLICE_X223Y899 SLICE_X223Y899/F3
+    end connections
+  end input
+  begin input
+    name nReadyArray_7
+    netname nReadyArray_7_net
+    numprims 0
+    type input signal
+    maxdelay 1.539
+    begin connections
+      pin Fork_1_8_1_1_I60_J141_R1_C3_cell/fork/generateBlocks[0].regblock_i_1/I0 SLICE_X222Y899 SLICE_X222Y899/E6
+    end connections
+  end input
+  begin input
+    name pValidArray_0
+    netname pValidArray_0_net
+    numprims 0
+    type input signal
+    maxdelay 0.836
+    begin connections
+      pin Fork_1_8_1_1_I60_J141_R1_C3_cell/fork/generateBlocks[7].regblock_i_2/I0 SLICE_X224Y899 SLICE_X224Y899/H4
+      pin Fork_1_8_1_1_I60_J141_R1_C3_cell/fork/generateBlocks[0].regblock/valid_INST_0/I1 SLICE_X223Y899 SLICE_X223Y899/H2
+      pin Fork_1_8_1_1_I60_J141_R1_C3_cell/fork/generateBlocks[1].regblock/valid_INST_0/I1 SLICE_X223Y899 SLICE_X223Y899/H2
+      pin Fork_1_8_1_1_I60_J141_R1_C3_cell/fork/generateBlocks[2].regblock/valid_INST_0/I1 SLICE_X225Y899 SLICE_X225Y899/B3
+      pin Fork_1_8_1_1_I60_J141_R1_C3_cell/fork/generateBlocks[3].regblock/valid_INST_0/I1 SLICE_X225Y899 SLICE_X225Y899/A4
+      pin Fork_1_8_1_1_I60_J141_R1_C3_cell/fork/generateBlocks[4].regblock/valid_INST_0/I1 SLICE_X223Y899 SLICE_X223Y899/A5
+      pin Fork_1_8_1_1_I60_J141_R1_C3_cell/fork/generateBlocks[5].regblock/valid_INST_0/I1 SLICE_X223Y899 SLICE_X223Y899/A5
+      pin Fork_1_8_1_1_I60_J141_R1_C3_cell/fork/generateBlocks[6].regblock/valid_INST_0/I1 SLICE_X225Y899 SLICE_X225Y899/B3
+      pin Fork_1_8_1_1_I60_J141_R1_C3_cell/fork/generateBlocks[7].regblock/valid_INST_0/I1 SLICE_X225Y899 SLICE_X225Y899/A4
+    end connections
+  end input
+  begin input
+    name rst
+    netname rst
+    numprims 0
+    type input signal
+    maxdelay 0.000
+    begin connections
+      pin Fork_1_8_1_1_I60_J141_R1_C3_cell/fork/generateBlocks[0].regblock/reg_value_reg/PRE SLICE_X223Y899 SLICE_X223Y899/SRST2
+      pin Fork_1_8_1_1_I60_J141_R1_C3_cell/fork/generateBlocks[1].regblock/reg_value_reg/PRE SLICE_X223Y899 SLICE_X223Y899/SRST2
+      pin Fork_1_8_1_1_I60_J141_R1_C3_cell/fork/generateBlocks[2].regblock/reg_value_reg/PRE SLICE_X223Y899 SLICE_X223Y899/SRST2
+      pin Fork_1_8_1_1_I60_J141_R1_C3_cell/fork/generateBlocks[3].regblock/reg_value_reg/PRE SLICE_X225Y899 SLICE_X225Y899/SRST2
+      pin Fork_1_8_1_1_I60_J141_R1_C3_cell/fork/generateBlocks[4].regblock/reg_value_reg/PRE SLICE_X224Y899 SLICE_X224Y899/SRST1
+      pin Fork_1_8_1_1_I60_J141_R1_C3_cell/fork/generateBlocks[5].regblock/reg_value_reg/PRE SLICE_X224Y899 SLICE_X224Y899/SRST1
+      pin Fork_1_8_1_1_I60_J141_R1_C3_cell/fork/generateBlocks[6].regblock/reg_value_reg/PRE SLICE_X224Y899 SLICE_X224Y899/SRST2
+      pin Fork_1_8_1_1_I60_J141_R1_C3_cell/fork/generateBlocks[7].regblock/reg_value_reg/PRE SLICE_X225Y899 SLICE_X225Y899/SRST2
+    end connections
+  end input
+
+  begin output
+    name dataOutArray_0
+    netname dataOutArray_0_net
+    numprims 0
+    type output signal
+    maxdelay 0.000
+    begin connections
+      port dataInArray_0
+      port dataOutArray_1
+      port dataOutArray_2
+      port dataOutArray_3
+      port dataOutArray_4
+      port dataOutArray_5
+      port dataOutArray_6
+      port dataOutArray_7
+    end connections
+  end output
+  begin output
+    name dataOutArray_1
+    netname dataOutArray_1_net
+    numprims 0
+    type output signal
+    maxdelay 0.000
+    begin connections
+      port dataInArray_0
+      port dataOutArray_0
+      port dataOutArray_2
+      port dataOutArray_3
+      port dataOutArray_4
+      port dataOutArray_5
+      port dataOutArray_6
+      port dataOutArray_7
+    end connections
+  end output
+  begin output
+    name dataOutArray_2
+    netname dataOutArray_2_net
+    numprims 0
+    type output signal
+    maxdelay 0.000
+    begin connections
+      port dataInArray_0
+      port dataOutArray_0
+      port dataOutArray_1
+      port dataOutArray_3
+      port dataOutArray_4
+      port dataOutArray_5
+      port dataOutArray_6
+      port dataOutArray_7
+    end connections
+  end output
+  begin output
+    name dataOutArray_3
+    netname dataOutArray_3_net
+    numprims 0
+    type output signal
+    maxdelay 0.000
+    begin connections
+      port dataInArray_0
+      port dataOutArray_0
+      port dataOutArray_1
+      port dataOutArray_2
+      port dataOutArray_4
+      port dataOutArray_5
+      port dataOutArray_6
+      port dataOutArray_7
+    end connections
+  end output
+  begin output
+    name dataOutArray_4
+    netname dataOutArray_4_net
+    numprims 0
+    type output signal
+    maxdelay 0.000
+    begin connections
+      port dataInArray_0
+      port dataOutArray_0
+      port dataOutArray_1
+      port dataOutArray_2
+      port dataOutArray_3
+      port dataOutArray_5
+      port dataOutArray_6
+      port dataOutArray_7
+    end connections
+  end output
+  begin output
+    name dataOutArray_5
+    netname dataOutArray_5_net
+    numprims 0
+    type output signal
+    maxdelay 0.000
+    begin connections
+      port dataInArray_0
+      port dataOutArray_0
+      port dataOutArray_1
+      port dataOutArray_2
+      port dataOutArray_3
+      port dataOutArray_4
+      port dataOutArray_6
+      port dataOutArray_7
+    end connections
+  end output
+  begin output
+    name dataOutArray_6
+    netname dataOutArray_6_net
+    numprims 0
+    type output signal
+    maxdelay 0.000
+    begin connections
+      port dataInArray_0
+      port dataOutArray_0
+      port dataOutArray_1
+      port dataOutArray_2
+      port dataOutArray_3
+      port dataOutArray_4
+      port dataOutArray_5
+      port dataOutArray_7
+    end connections
+  end output
+  begin output
+    name dataOutArray_7
+    netname dataOutArray_7_net
+    numprims 0
+    type output signal
+    maxdelay 0.000
+    begin connections
+      port dataInArray_0
+      port dataOutArray_0
+      port dataOutArray_1
+      port dataOutArray_2
+      port dataOutArray_3
+      port dataOutArray_4
+      port dataOutArray_5
+      port dataOutArray_6
+    end connections
+  end output
+  begin output
+    name readyArray_0
+    netname readyArray_0_net
+    numprims 0
+    type output signal
+    maxdelay 1.004
+    begin connections
+      pin Fork_1_8_1_1_I60_J141_R1_C3_cell/fork/readyArray[0]_INST_0/O SLICE_X224Y899 SLICE_X224Y899/H_O
+    end connections
+  end output
+  begin output
+    name validArray_0
+    netname validArray_0_net
+    numprims 0
+    type output signal
+    maxdelay 0.504
+    begin connections
+      pin Fork_1_8_1_1_I60_J141_R1_C3_cell/fork/generateBlocks[7].regblock/valid_INST_0/O SLICE_X225Y899 SLICE_X225Y899/AMUX
+    end connections
+  end output
+  begin output
+    name validArray_1
+    netname validArray_1_net
+    numprims 0
+    type output signal
+    maxdelay 0.435
+    begin connections
+      pin Fork_1_8_1_1_I60_J141_R1_C3_cell/fork/generateBlocks[6].regblock/valid_INST_0/O SLICE_X225Y899 SLICE_X225Y899/BMUX
+    end connections
+  end output
+  begin output
+    name validArray_2
+    netname validArray_2_net
+    numprims 0
+    type output signal
+    maxdelay 0.698
+    begin connections
+      pin Fork_1_8_1_1_I60_J141_R1_C3_cell/fork/generateBlocks[5].regblock/valid_INST_0/O SLICE_X223Y899 SLICE_X223Y899/AMUX
+    end connections
+  end output
+  begin output
+    name validArray_3
+    netname validArray_3_net
+    numprims 0
+    type output signal
+    maxdelay 0.471
+    begin connections
+      pin Fork_1_8_1_1_I60_J141_R1_C3_cell/fork/generateBlocks[4].regblock/valid_INST_0/O SLICE_X223Y899 SLICE_X223Y899/A_O
+    end connections
+  end output
+  begin output
+    name validArray_4
+    netname validArray_4_net
+    numprims 0
+    type output signal
+    maxdelay 0.413
+    begin connections
+      pin Fork_1_8_1_1_I60_J141_R1_C3_cell/fork/generateBlocks[3].regblock/valid_INST_0/O SLICE_X225Y899 SLICE_X225Y899/A_O
+    end connections
+  end output
+  begin output
+    name validArray_5
+    netname validArray_5_net
+    numprims 0
+    type output signal
+    maxdelay 0.507
+    begin connections
+      pin Fork_1_8_1_1_I60_J141_R1_C3_cell/fork/generateBlocks[2].regblock/valid_INST_0/O SLICE_X225Y899 SLICE_X225Y899/B_O
+    end connections
+  end output
+  begin output
+    name validArray_6
+    netname validArray_6_net
+    numprims 0
+    type output signal
+    maxdelay 0.452
+    begin connections
+      pin Fork_1_8_1_1_I60_J141_R1_C3_cell/fork/generateBlocks[1].regblock/valid_INST_0/O SLICE_X223Y899 SLICE_X223Y899/H_O
+    end connections
+  end output
+  begin output
+    name validArray_7
+    netname validArray_7_net
+    numprims 0
+    type output signal
+    maxdelay 0.374
+    begin connections
+      pin Fork_1_8_1_1_I60_J141_R1_C3_cell/fork/generateBlocks[0].regblock/valid_INST_0/O SLICE_X223Y899 SLICE_X223Y899/HMUX
+    end connections
+  end output
+
+end block

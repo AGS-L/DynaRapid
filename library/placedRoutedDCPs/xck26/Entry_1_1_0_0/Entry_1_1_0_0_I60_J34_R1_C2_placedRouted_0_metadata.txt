@@ -1,0 +1,89 @@
+begin block
+  name Entry_1_1_0_0_I60_J34_R1_C2_placedRouted
+  pblocks 1
+  clocks 1
+  inputs 4
+  outputs 2
+
+  begin pblock
+    name pblock_1 
+    grid_ranges SLICE_X48Y179:SLICE_X49Y179
+  end pblock
+  begin clock
+    name clk 
+    period 2.500
+  end clock
+
+  begin input
+    name clk
+    netname clk
+    numprims 4
+    type input clock local
+    maxdelay 0.000
+    begin connections
+      pin Entry_1_1_0_0_I60_J34_R1_C2_cell/start_node/set_reg/C SLICE_X49Y179 SLICE_X49Y179/CLK1
+      pin Entry_1_1_0_0_I60_J34_R1_C2_cell/start_node/start_internal_reg/C SLICE_X49Y179 SLICE_X49Y179/CLK1
+      pin Entry_1_1_0_0_I60_J34_R1_C2_cell/start_node/startBuff/oehb1/validArray_reg[0]/C SLICE_X49Y179 SLICE_X49Y179/CLK2
+      pin Entry_1_1_0_0_I60_J34_R1_C2_cell/start_node/startBuff/tehb1/full_reg_reg/C SLICE_X49Y179 SLICE_X49Y179/CLK2
+    end connections
+  end input
+  begin input
+    name nReadyArray_0
+    netname nReadyArray_0_net
+    numprims 0
+    type input signal
+    maxdelay 1.016
+    begin connections
+      pin Entry_1_1_0_0_I60_J34_R1_C2_cell/start_node/startBuff/oehb1/readyArray[0]_INST_0/I0 SLICE_X49Y179 SLICE_X49Y179/C4
+      pin Entry_1_1_0_0_I60_J34_R1_C2_cell/start_node/startBuff/oehb1/validArray[0]_i_1/I2 SLICE_X49Y179 SLICE_X49Y179/C4
+    end connections
+  end input
+  begin input
+    name pValidArray_0
+    netname pValidArray_0_net
+    numprims 0
+    type input signal
+    maxdelay 0.288
+    begin connections
+      pin Entry_1_1_0_0_I60_J34_R1_C2_cell/start_node/set_i_1/I0 SLICE_X49Y179 SLICE_X49Y179/D1
+      pin Entry_1_1_0_0_I60_J34_R1_C2_cell/start_node/start_internal_i_1/I0 SLICE_X49Y179 SLICE_X49Y179/D1
+    end connections
+  end input
+  begin input
+    name rst
+    netname rst
+    numprims 4
+    type input signal
+    maxdelay 0.000
+    begin connections
+      pin Entry_1_1_0_0_I60_J34_R1_C2_cell/start_node/set_reg/CLR SLICE_X49Y179 SLICE_X49Y179/SRST1
+      pin Entry_1_1_0_0_I60_J34_R1_C2_cell/start_node/start_internal_reg/CLR SLICE_X49Y179 SLICE_X49Y179/SRST1
+      pin Entry_1_1_0_0_I60_J34_R1_C2_cell/start_node/startBuff/oehb1/validArray_reg[0]/CLR SLICE_X49Y179 SLICE_X49Y179/SRST2
+      pin Entry_1_1_0_0_I60_J34_R1_C2_cell/start_node/startBuff/tehb1/full_reg_reg/CLR SLICE_X49Y179 SLICE_X49Y179/SRST2
+    end connections
+  end input
+
+  begin output
+    name readyArray_0
+    netname readyArray_0_net
+    numprims 0
+    type output signal
+    maxdelay 0.641
+    begin connections
+      pin Entry_1_1_0_0_I60_J34_R1_C2_cell/start_node/startBuff/tehb1/readyArray[0]_INST_0/O SLICE_X49Y179 SLICE_X49Y179/HMUX SLICE_X49Y179/H_O
+    end connections
+  end output
+  begin output
+    name validArray_0
+    netname validArray_0_net
+    numprims 0
+    type output signal
+    maxdelay 0.114
+    begin connections
+      pin Entry_1_1_0_0_I60_J34_R1_C2_cell/start_node/startBuff/oehb1/readyArray[0]_INST_0/I1 SLICE_X49Y179 SLICE_X49Y179/C2
+      pin Entry_1_1_0_0_I60_J34_R1_C2_cell/start_node/startBuff/oehb1/validArray[0]_i_1/I1 SLICE_X49Y179 SLICE_X49Y179/C2
+      pin Entry_1_1_0_0_I60_J34_R1_C2_cell/start_node/startBuff/oehb1/validArray_reg[0]/Q SLICE_X49Y179 SLICE_X49Y179/EQ
+    end connections
+  end output
+
+end block

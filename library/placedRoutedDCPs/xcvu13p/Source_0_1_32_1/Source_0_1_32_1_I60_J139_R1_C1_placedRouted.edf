@@ -1,0 +1,138 @@
+(edif Source_0_1_32_1_I60_J139_R1_C1
+  (edifversion 2 0 0)
+  (edifLevel 0)
+  (keywordmap (keywordlevel 0))
+(status
+ (written
+  (timeStamp 2023 06 09 21 59 08)
+  (program "Vivado" (version "2020.2"))
+  (comment "Built on 'Wed Nov 18 09:12:47 MST 2020'")
+  (comment "Built by 'xbuild'")
+ )
+)
+  (Library hdi_primitives
+    (edifLevel 0)
+    (technology (numberDefinition ))
+   (cell VCC (celltype GENERIC)
+     (view netlist (viewtype NETLIST)
+       (interface 
+        (port P (direction OUTPUT))
+       )
+     )
+   )
+   (cell LUT1 (celltype GENERIC)
+     (view netlist (viewtype NETLIST)
+       (interface 
+        (port O (direction OUTPUT))
+        (port I0 (direction INPUT))
+       )
+     )
+   )
+   (cell INV (celltype GENERIC)
+     (view netlist (viewtype NETLIST)
+       (interface
+         (port I (direction INPUT))
+         (port O (direction OUTPUT))
+       )
+     )
+   )
+  )
+  (Library work
+    (edifLevel 0)
+    (technology (numberDefinition ))
+   (cell Source_0_1_32_1 (celltype GENERIC)
+     (view Source_0_1_32_1 (viewtype NETLIST)
+       (interface 
+        (port clk (direction INPUT))
+        (port nReadyArray_0 (direction INPUT))
+        (port rst (direction INPUT))
+        (port useless_net (direction OUTPUT))
+        (port validArray_0 (direction OUTPUT))
+        (port (rename dataOutArray_0_0_ "dataOutArray_0[0]") (direction OUTPUT))
+       )
+       (contents
+         (instance VCC (viewref netlist (cellref VCC (libraryref hdi_primitives))))
+         (instance useless_net_INST_0 (viewref netlist (cellref LUT1 (libraryref hdi_primitives)))
+           (property INIT (string "2'h1"))
+         )
+         (net (rename &_const1_ "<const1>") (joined
+          (portref P (instanceref VCC))
+          (portref validArray_0)
+          )
+         )
+         (net rst (joined
+          (portref I0 (instanceref useless_net_INST_0))
+          (portref rst)
+          )
+         )
+         (net useless_net (joined
+          (portref O (instanceref useless_net_INST_0))
+          (portref useless_net)
+          )
+         )
+       )
+     )
+   )
+   (cell Source_0_1_32_1_I60_J139_R1_C1 (celltype GENERIC)
+     (view netlist (viewtype NETLIST)
+       (interface 
+        (port clk (direction INPUT))
+        (port dataOutArray_0 (direction OUTPUT))
+        (port nReadyArray_0 (direction INPUT))
+        (port rst (direction INPUT))
+        (port useless_net (direction OUTPUT))
+        (port validArray_0 (direction OUTPUT))
+       )
+       (contents
+         (instance Source_0_1_32_1_I60_J139_R1_C1_cell (viewref Source_0_1_32_1 (cellref Source_0_1_32_1 (libraryref work))))
+         (net clk (joined
+          (portref clk (instanceref Source_0_1_32_1_I60_J139_R1_C1_cell))
+          (portref clk)
+          )
+         )
+         (net dataOutArray_0_net (joined
+          (portref dataOutArray_0_0_ (instanceref Source_0_1_32_1_I60_J139_R1_C1_cell))
+          (portref dataOutArray_0)
+          )
+
+           (property IOSTANDARD (string "LVCMOS18"))
+         )
+         (net nReadyArray_0_net (joined
+          (portref nReadyArray_0 (instanceref Source_0_1_32_1_I60_J139_R1_C1_cell))
+          (portref nReadyArray_0)
+          )
+
+           (property IOSTANDARD (string "LVCMOS18"))
+         )
+         (net rst (joined
+          (portref rst (instanceref Source_0_1_32_1_I60_J139_R1_C1_cell))
+          (portref rst)
+          )
+         )
+         (net useless_net_net (joined
+          (portref useless_net (instanceref Source_0_1_32_1_I60_J139_R1_C1_cell))
+          (portref useless_net)
+          )
+
+           (property IOSTANDARD (string "LVCMOS18"))
+         )
+         (net validArray_0_net (joined
+          (portref validArray_0 (instanceref Source_0_1_32_1_I60_J139_R1_C1_cell))
+          (portref validArray_0)
+          )
+
+           (property IOSTANDARD (string "LVCMOS18"))
+         )
+       )
+
+           (property ECO_CHECKSUM (string "c3836f4e"))
+     )
+   )
+  )
+(comment "Reference To The Cell Of Highest Level")
+
+  (design Source_0_1_32_1_I60_J139_R1_C1
+    (cellref Source_0_1_32_1_I60_J139_R1_C1 (libraryref work))
+    (property PART (string "xcvu13p-fsga2577-1-i"))
+  )
+)

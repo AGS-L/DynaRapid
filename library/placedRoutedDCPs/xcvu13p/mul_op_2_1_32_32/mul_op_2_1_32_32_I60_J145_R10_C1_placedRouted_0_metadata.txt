@@ -1,0 +1,1145 @@
+begin block
+  name mul_op_2_1_32_32_I60_J145_R10_C1_placedRouted
+  pblocks 1
+  clocks 1
+  inputs 69
+  outputs 35
+
+  begin pblock
+    name pblock_1 
+    grid_ranges DSP48E2_X31Y356:DSP48E2_X31Y359 SLICE_X229Y890:SLICE_X229Y899
+  end pblock
+  begin clock
+    name clk 
+    period 2.500
+  end clock
+
+  begin input
+    name clk
+    netname clk
+    numprims 41
+    type input clock local
+    maxdelay 0.000
+    begin connections
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/buff/gen_assignements[0].first_assignment.regs_reg[0]/C SLICE_X229Y899 SLICE_X229Y899/CLK1
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/buff/gen_assignements[1].other_assignments.regs_reg[1]/C SLICE_X229Y898 SLICE_X229Y898/CLK2
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/buff/gen_assignements[2].other_assignments.regs_reg[2]/C SLICE_X229Y898 SLICE_X229Y898/CLK2
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q1_reg[0]/C SLICE_X229Y895 SLICE_X229Y895/CLK2
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q1_reg[10]/C SLICE_X229Y896 SLICE_X229Y896/CLK2
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q1_reg[11]/C SLICE_X229Y896 SLICE_X229Y896/CLK2
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q1_reg[12]/C SLICE_X229Y897 SLICE_X229Y897/CLK2
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q1_reg[13]/C SLICE_X229Y897 SLICE_X229Y897/CLK2
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q1_reg[14]/C SLICE_X229Y897 SLICE_X229Y897/CLK2
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q1_reg[15]/C SLICE_X229Y899 SLICE_X229Y899/CLK1
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q1_reg[16]/C SLICE_X229Y897 SLICE_X229Y897/CLK2
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q1_reg[1]/C SLICE_X229Y896 SLICE_X229Y896/CLK1
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q1_reg[2]/C SLICE_X229Y896 SLICE_X229Y896/CLK1
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q1_reg[3]/C SLICE_X229Y896 SLICE_X229Y896/CLK1
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q1_reg[4]/C SLICE_X229Y896 SLICE_X229Y896/CLK2
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q1_reg[5]/C SLICE_X229Y895 SLICE_X229Y895/CLK2
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q1_reg[6]/C SLICE_X229Y896 SLICE_X229Y896/CLK1
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q1_reg[7]/C SLICE_X229Y896 SLICE_X229Y896/CLK1
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q1_reg[8]/C SLICE_X229Y896 SLICE_X229Y896/CLK2
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q1_reg[9]/C SLICE_X229Y896 SLICE_X229Y896/CLK1
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q2_reg[0]/C SLICE_X229Y897 SLICE_X229Y897/CLK2
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q2_reg[10]/C SLICE_X229Y896 SLICE_X229Y896/CLK2
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q2_reg[11]/C SLICE_X229Y899 SLICE_X229Y899/CLK1
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q2_reg[12]/C SLICE_X229Y898 SLICE_X229Y898/CLK1
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q2_reg[13]/C SLICE_X229Y899 SLICE_X229Y899/CLK1
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q2_reg[14]/C SLICE_X229Y898 SLICE_X229Y898/CLK1
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q2_reg[15]/C SLICE_X229Y899 SLICE_X229Y899/CLK1
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q2_reg[16]/C SLICE_X229Y898 SLICE_X229Y898/CLK1
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q2_reg[1]/C SLICE_X229Y897 SLICE_X229Y897/CLK2
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q2_reg[2]/C SLICE_X229Y897 SLICE_X229Y897/CLK2
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q2_reg[3]/C SLICE_X229Y896 SLICE_X229Y896/CLK1
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q2_reg[4]/C SLICE_X229Y897 SLICE_X229Y897/CLK2
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q2_reg[5]/C SLICE_X229Y896 SLICE_X229Y896/CLK2
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q2_reg[6]/C SLICE_X229Y896 SLICE_X229Y896/CLK2
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q2_reg[7]/C SLICE_X229Y896 SLICE_X229Y896/CLK2
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q2_reg[8]/C SLICE_X229Y898 SLICE_X229Y898/CLK1
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q2_reg[9]/C SLICE_X229Y898 SLICE_X229Y898/CLK1
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q0_reg/DSP_ALU_INST/CLK DSP48E2_X31Y356 DSP48E2_X31Y356/CLK
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q0_reg/DSP_A_B_DATA_INST/CLK DSP48E2_X31Y356 DSP48E2_X31Y356/CLK
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q0_reg/DSP_C_DATA_INST/CLK DSP48E2_X31Y356 DSP48E2_X31Y356/CLK
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q0_reg/DSP_M_DATA_INST/CLK DSP48E2_X31Y356 DSP48E2_X31Y356/CLK
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q0_reg/DSP_OUTPUT_INST/CLK DSP48E2_X31Y356 DSP48E2_X31Y356/CLK
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q0_reg/DSP_PREADD_DATA_INST/CLK DSP48E2_X31Y356 DSP48E2_X31Y356/CLK
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q1_reg/DSP_ALU_INST/CLK DSP48E2_X31Y357 DSP48E2_X31Y357/CLK
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q1_reg/DSP_A_B_DATA_INST/CLK DSP48E2_X31Y357 DSP48E2_X31Y357/CLK
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q1_reg/DSP_C_DATA_INST/CLK DSP48E2_X31Y357 DSP48E2_X31Y357/CLK
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q1_reg/DSP_M_DATA_INST/CLK DSP48E2_X31Y357 DSP48E2_X31Y357/CLK
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q1_reg/DSP_OUTPUT_INST/CLK DSP48E2_X31Y357 DSP48E2_X31Y357/CLK
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q1_reg/DSP_PREADD_DATA_INST/CLK DSP48E2_X31Y357 DSP48E2_X31Y357/CLK
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q2_reg/DSP_ALU_INST/CLK DSP48E2_X31Y358 DSP48E2_X31Y358/CLK
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q2_reg/DSP_A_B_DATA_INST/CLK DSP48E2_X31Y358 DSP48E2_X31Y358/CLK
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q2_reg/DSP_C_DATA_INST/CLK DSP48E2_X31Y358 DSP48E2_X31Y358/CLK
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q2_reg/DSP_M_DATA_INST/CLK DSP48E2_X31Y358 DSP48E2_X31Y358/CLK
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q2_reg/DSP_OUTPUT_INST/CLK DSP48E2_X31Y358 DSP48E2_X31Y358/CLK
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q2_reg/DSP_PREADD_DATA_INST/CLK DSP48E2_X31Y358 DSP48E2_X31Y358/CLK
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/oehb/validArray_reg[0]/C SLICE_X229Y899 SLICE_X229Y899/CLK2
+    end connections
+  end input
+  begin input
+    name dataInArray_0[0]
+    netname dataInArray_0_net[0]
+    numprims 0
+    type input signal
+    maxdelay 0.000
+    begin connections
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q0_reg/DSP_A_B_DATA_INST/A[0] DSP48E2_X31Y356 DSP48E2_X31Y356/A0
+    end connections
+  end input
+  begin input
+    name dataInArray_0[10]
+    netname dataInArray_0_net[10]
+    numprims 0
+    type input signal
+    maxdelay 0.000
+    begin connections
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q0_reg/DSP_A_B_DATA_INST/A[10] DSP48E2_X31Y356 DSP48E2_X31Y356/A10
+    end connections
+  end input
+  begin input
+    name dataInArray_0[11]
+    netname dataInArray_0_net[11]
+    numprims 0
+    type input signal
+    maxdelay 0.000
+    begin connections
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q0_reg/DSP_A_B_DATA_INST/A[11] DSP48E2_X31Y356 DSP48E2_X31Y356/A11
+    end connections
+  end input
+  begin input
+    name dataInArray_0[12]
+    netname dataInArray_0_net[12]
+    numprims 0
+    type input signal
+    maxdelay 0.000
+    begin connections
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q0_reg/DSP_A_B_DATA_INST/A[12] DSP48E2_X31Y356 DSP48E2_X31Y356/A12
+    end connections
+  end input
+  begin input
+    name dataInArray_0[13]
+    netname dataInArray_0_net[13]
+    numprims 0
+    type input signal
+    maxdelay 0.000
+    begin connections
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q0_reg/DSP_A_B_DATA_INST/A[13] DSP48E2_X31Y356 DSP48E2_X31Y356/A13
+    end connections
+  end input
+  begin input
+    name dataInArray_0[14]
+    netname dataInArray_0_net[14]
+    numprims 0
+    type input signal
+    maxdelay 0.000
+    begin connections
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q0_reg/DSP_A_B_DATA_INST/A[14] DSP48E2_X31Y356 DSP48E2_X31Y356/A14
+    end connections
+  end input
+  begin input
+    name dataInArray_0[15]
+    netname dataInArray_0_net[15]
+    numprims 0
+    type input signal
+    maxdelay 0.000
+    begin connections
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q0_reg/DSP_A_B_DATA_INST/A[15] DSP48E2_X31Y356 DSP48E2_X31Y356/A15
+    end connections
+  end input
+  begin input
+    name dataInArray_0[16]
+    netname dataInArray_0_net[16]
+    numprims 0
+    type input signal
+    maxdelay 0.000
+    begin connections
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q0_reg/DSP_A_B_DATA_INST/A[16] DSP48E2_X31Y356 DSP48E2_X31Y356/A16
+    end connections
+  end input
+  begin input
+    name dataInArray_0[17]
+    netname dataInArray_0_net[17]
+    numprims 0
+    type input signal
+    maxdelay 0.000
+    begin connections
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q2_reg/DSP_A_B_DATA_INST/B[0] DSP48E2_X31Y358 DSP48E2_X31Y358/B0
+    end connections
+  end input
+  begin input
+    name dataInArray_0[18]
+    netname dataInArray_0_net[18]
+    numprims 0
+    type input signal
+    maxdelay 0.000
+    begin connections
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q2_reg/DSP_A_B_DATA_INST/B[1] DSP48E2_X31Y358 DSP48E2_X31Y358/B1
+    end connections
+  end input
+  begin input
+    name dataInArray_0[19]
+    netname dataInArray_0_net[19]
+    numprims 0
+    type input signal
+    maxdelay 0.000
+    begin connections
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q2_reg/DSP_A_B_DATA_INST/B[2] DSP48E2_X31Y358 DSP48E2_X31Y358/B2
+    end connections
+  end input
+  begin input
+    name dataInArray_0[1]
+    netname dataInArray_0_net[1]
+    numprims 0
+    type input signal
+    maxdelay 0.000
+    begin connections
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q0_reg/DSP_A_B_DATA_INST/A[1] DSP48E2_X31Y356 DSP48E2_X31Y356/A1
+    end connections
+  end input
+  begin input
+    name dataInArray_0[20]
+    netname dataInArray_0_net[20]
+    numprims 0
+    type input signal
+    maxdelay 0.000
+    begin connections
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q2_reg/DSP_A_B_DATA_INST/B[3] DSP48E2_X31Y358 DSP48E2_X31Y358/B3
+    end connections
+  end input
+  begin input
+    name dataInArray_0[21]
+    netname dataInArray_0_net[21]
+    numprims 0
+    type input signal
+    maxdelay 0.000
+    begin connections
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q2_reg/DSP_A_B_DATA_INST/B[4] DSP48E2_X31Y358 DSP48E2_X31Y358/B4
+    end connections
+  end input
+  begin input
+    name dataInArray_0[22]
+    netname dataInArray_0_net[22]
+    numprims 0
+    type input signal
+    maxdelay 0.000
+    begin connections
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q2_reg/DSP_A_B_DATA_INST/B[5] DSP48E2_X31Y358 DSP48E2_X31Y358/B5
+    end connections
+  end input
+  begin input
+    name dataInArray_0[23]
+    netname dataInArray_0_net[23]
+    numprims 0
+    type input signal
+    maxdelay 0.000
+    begin connections
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q2_reg/DSP_A_B_DATA_INST/B[6] DSP48E2_X31Y358 DSP48E2_X31Y358/B6
+    end connections
+  end input
+  begin input
+    name dataInArray_0[24]
+    netname dataInArray_0_net[24]
+    numprims 0
+    type input signal
+    maxdelay 0.000
+    begin connections
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q2_reg/DSP_A_B_DATA_INST/B[7] DSP48E2_X31Y358 DSP48E2_X31Y358/B7
+    end connections
+  end input
+  begin input
+    name dataInArray_0[25]
+    netname dataInArray_0_net[25]
+    numprims 0
+    type input signal
+    maxdelay 0.000
+    begin connections
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q2_reg/DSP_A_B_DATA_INST/B[8] DSP48E2_X31Y358 DSP48E2_X31Y358/B8
+    end connections
+  end input
+  begin input
+    name dataInArray_0[26]
+    netname dataInArray_0_net[26]
+    numprims 0
+    type input signal
+    maxdelay 0.000
+    begin connections
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q2_reg/DSP_A_B_DATA_INST/B[9] DSP48E2_X31Y358 DSP48E2_X31Y358/B9
+    end connections
+  end input
+  begin input
+    name dataInArray_0[27]
+    netname dataInArray_0_net[27]
+    numprims 0
+    type input signal
+    maxdelay 0.000
+    begin connections
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q2_reg/DSP_A_B_DATA_INST/B[10] DSP48E2_X31Y358 DSP48E2_X31Y358/B10
+    end connections
+  end input
+  begin input
+    name dataInArray_0[28]
+    netname dataInArray_0_net[28]
+    numprims 0
+    type input signal
+    maxdelay 0.000
+    begin connections
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q2_reg/DSP_A_B_DATA_INST/B[11] DSP48E2_X31Y358 DSP48E2_X31Y358/B11
+    end connections
+  end input
+  begin input
+    name dataInArray_0[29]
+    netname dataInArray_0_net[29]
+    numprims 0
+    type input signal
+    maxdelay 0.000
+    begin connections
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q2_reg/DSP_A_B_DATA_INST/B[12] DSP48E2_X31Y358 DSP48E2_X31Y358/B12
+    end connections
+  end input
+  begin input
+    name dataInArray_0[2]
+    netname dataInArray_0_net[2]
+    numprims 0
+    type input signal
+    maxdelay 0.000
+    begin connections
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q0_reg/DSP_A_B_DATA_INST/A[2] DSP48E2_X31Y356 DSP48E2_X31Y356/A2
+    end connections
+  end input
+  begin input
+    name dataInArray_0[30]
+    netname dataInArray_0_net[30]
+    numprims 0
+    type input signal
+    maxdelay 0.000
+    begin connections
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q2_reg/DSP_A_B_DATA_INST/B[13] DSP48E2_X31Y358 DSP48E2_X31Y358/B13
+    end connections
+  end input
+  begin input
+    name dataInArray_0[31]
+    netname dataInArray_0_net[31]
+    numprims 0
+    type input signal
+    maxdelay 0.000
+    begin connections
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q2_reg/DSP_A_B_DATA_INST/B[14] DSP48E2_X31Y358 DSP48E2_X31Y358/B14
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q2_reg/DSP_A_B_DATA_INST/B[15] DSP48E2_X31Y358 DSP48E2_X31Y358/B15
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q2_reg/DSP_A_B_DATA_INST/B[16] DSP48E2_X31Y358 DSP48E2_X31Y358/B16
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q2_reg/DSP_A_B_DATA_INST/B[17] DSP48E2_X31Y358 DSP48E2_X31Y358/B17
+    end connections
+  end input
+  begin input
+    name dataInArray_0[3]
+    netname dataInArray_0_net[3]
+    numprims 0
+    type input signal
+    maxdelay 0.000
+    begin connections
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q0_reg/DSP_A_B_DATA_INST/A[3] DSP48E2_X31Y356 DSP48E2_X31Y356/A3
+    end connections
+  end input
+  begin input
+    name dataInArray_0[4]
+    netname dataInArray_0_net[4]
+    numprims 0
+    type input signal
+    maxdelay 0.000
+    begin connections
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q0_reg/DSP_A_B_DATA_INST/A[4] DSP48E2_X31Y356 DSP48E2_X31Y356/A4
+    end connections
+  end input
+  begin input
+    name dataInArray_0[5]
+    netname dataInArray_0_net[5]
+    numprims 0
+    type input signal
+    maxdelay 0.000
+    begin connections
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q0_reg/DSP_A_B_DATA_INST/A[5] DSP48E2_X31Y356 DSP48E2_X31Y356/A5
+    end connections
+  end input
+  begin input
+    name dataInArray_0[6]
+    netname dataInArray_0_net[6]
+    numprims 0
+    type input signal
+    maxdelay 0.000
+    begin connections
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q0_reg/DSP_A_B_DATA_INST/A[6] DSP48E2_X31Y356 DSP48E2_X31Y356/A6
+    end connections
+  end input
+  begin input
+    name dataInArray_0[7]
+    netname dataInArray_0_net[7]
+    numprims 0
+    type input signal
+    maxdelay 0.000
+    begin connections
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q0_reg/DSP_A_B_DATA_INST/A[7] DSP48E2_X31Y356 DSP48E2_X31Y356/A7
+    end connections
+  end input
+  begin input
+    name dataInArray_0[8]
+    netname dataInArray_0_net[8]
+    numprims 0
+    type input signal
+    maxdelay 0.000
+    begin connections
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q0_reg/DSP_A_B_DATA_INST/A[8] DSP48E2_X31Y356 DSP48E2_X31Y356/A8
+    end connections
+  end input
+  begin input
+    name dataInArray_0[9]
+    netname dataInArray_0_net[9]
+    numprims 0
+    type input signal
+    maxdelay 0.000
+    begin connections
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q0_reg/DSP_A_B_DATA_INST/A[9] DSP48E2_X31Y356 DSP48E2_X31Y356/A9
+    end connections
+  end input
+  begin input
+    name dataInArray_1[0]
+    netname dataInArray_1_net[0]
+    numprims 0
+    type input signal
+    maxdelay 0.000
+    begin connections
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q2_reg/DSP_A_B_DATA_INST/A[0] DSP48E2_X31Y358 DSP48E2_X31Y358/A0
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q0_reg/DSP_A_B_DATA_INST/B[0] DSP48E2_X31Y356 DSP48E2_X31Y356/B0
+    end connections
+  end input
+  begin input
+    name dataInArray_1[10]
+    netname dataInArray_1_net[10]
+    numprims 0
+    type input signal
+    maxdelay 0.000
+    begin connections
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q2_reg/DSP_A_B_DATA_INST/A[10] DSP48E2_X31Y358 DSP48E2_X31Y358/A10
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q0_reg/DSP_A_B_DATA_INST/B[10] DSP48E2_X31Y356 DSP48E2_X31Y356/B10
+    end connections
+  end input
+  begin input
+    name dataInArray_1[11]
+    netname dataInArray_1_net[11]
+    numprims 0
+    type input signal
+    maxdelay 0.000
+    begin connections
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q2_reg/DSP_A_B_DATA_INST/A[11] DSP48E2_X31Y358 DSP48E2_X31Y358/A11
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q0_reg/DSP_A_B_DATA_INST/B[11] DSP48E2_X31Y356 DSP48E2_X31Y356/B11
+    end connections
+  end input
+  begin input
+    name dataInArray_1[12]
+    netname dataInArray_1_net[12]
+    numprims 0
+    type input signal
+    maxdelay 0.000
+    begin connections
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q2_reg/DSP_A_B_DATA_INST/A[12] DSP48E2_X31Y358 DSP48E2_X31Y358/A12
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q0_reg/DSP_A_B_DATA_INST/B[12] DSP48E2_X31Y356 DSP48E2_X31Y356/B12
+    end connections
+  end input
+  begin input
+    name dataInArray_1[13]
+    netname dataInArray_1_net[13]
+    numprims 0
+    type input signal
+    maxdelay 0.000
+    begin connections
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q2_reg/DSP_A_B_DATA_INST/A[13] DSP48E2_X31Y358 DSP48E2_X31Y358/A13
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q0_reg/DSP_A_B_DATA_INST/B[13] DSP48E2_X31Y356 DSP48E2_X31Y356/B13
+    end connections
+  end input
+  begin input
+    name dataInArray_1[14]
+    netname dataInArray_1_net[14]
+    numprims 0
+    type input signal
+    maxdelay 0.000
+    begin connections
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q2_reg/DSP_A_B_DATA_INST/A[14] DSP48E2_X31Y358 DSP48E2_X31Y358/A14
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q0_reg/DSP_A_B_DATA_INST/B[14] DSP48E2_X31Y356 DSP48E2_X31Y356/B14
+    end connections
+  end input
+  begin input
+    name dataInArray_1[15]
+    netname dataInArray_1_net[15]
+    numprims 0
+    type input signal
+    maxdelay 0.000
+    begin connections
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q2_reg/DSP_A_B_DATA_INST/A[15] DSP48E2_X31Y358 DSP48E2_X31Y358/A15
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q0_reg/DSP_A_B_DATA_INST/B[15] DSP48E2_X31Y356 DSP48E2_X31Y356/B15
+    end connections
+  end input
+  begin input
+    name dataInArray_1[16]
+    netname dataInArray_1_net[16]
+    numprims 0
+    type input signal
+    maxdelay 0.000
+    begin connections
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q2_reg/DSP_A_B_DATA_INST/A[16] DSP48E2_X31Y358 DSP48E2_X31Y358/A16
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q0_reg/DSP_A_B_DATA_INST/B[16] DSP48E2_X31Y356 DSP48E2_X31Y356/B16
+    end connections
+  end input
+  begin input
+    name dataInArray_1[17]
+    netname dataInArray_1_net[17]
+    numprims 0
+    type input signal
+    maxdelay 0.000
+    begin connections
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q1_reg/DSP_A_B_DATA_INST/B[0] DSP48E2_X31Y357 DSP48E2_X31Y357/B0
+    end connections
+  end input
+  begin input
+    name dataInArray_1[18]
+    netname dataInArray_1_net[18]
+    numprims 0
+    type input signal
+    maxdelay 0.000
+    begin connections
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q1_reg/DSP_A_B_DATA_INST/B[1] DSP48E2_X31Y357 DSP48E2_X31Y357/B1
+    end connections
+  end input
+  begin input
+    name dataInArray_1[19]
+    netname dataInArray_1_net[19]
+    numprims 0
+    type input signal
+    maxdelay 0.000
+    begin connections
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q1_reg/DSP_A_B_DATA_INST/B[2] DSP48E2_X31Y357 DSP48E2_X31Y357/B2
+    end connections
+  end input
+  begin input
+    name dataInArray_1[1]
+    netname dataInArray_1_net[1]
+    numprims 0
+    type input signal
+    maxdelay 0.000
+    begin connections
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q2_reg/DSP_A_B_DATA_INST/A[1] DSP48E2_X31Y358 DSP48E2_X31Y358/A1
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q0_reg/DSP_A_B_DATA_INST/B[1] DSP48E2_X31Y356 DSP48E2_X31Y356/B1
+    end connections
+  end input
+  begin input
+    name dataInArray_1[20]
+    netname dataInArray_1_net[20]
+    numprims 0
+    type input signal
+    maxdelay 0.000
+    begin connections
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q1_reg/DSP_A_B_DATA_INST/B[3] DSP48E2_X31Y357 DSP48E2_X31Y357/B3
+    end connections
+  end input
+  begin input
+    name dataInArray_1[21]
+    netname dataInArray_1_net[21]
+    numprims 0
+    type input signal
+    maxdelay 0.000
+    begin connections
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q1_reg/DSP_A_B_DATA_INST/B[4] DSP48E2_X31Y357 DSP48E2_X31Y357/B4
+    end connections
+  end input
+  begin input
+    name dataInArray_1[22]
+    netname dataInArray_1_net[22]
+    numprims 0
+    type input signal
+    maxdelay 0.000
+    begin connections
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q1_reg/DSP_A_B_DATA_INST/B[5] DSP48E2_X31Y357 DSP48E2_X31Y357/B5
+    end connections
+  end input
+  begin input
+    name dataInArray_1[23]
+    netname dataInArray_1_net[23]
+    numprims 0
+    type input signal
+    maxdelay 0.000
+    begin connections
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q1_reg/DSP_A_B_DATA_INST/B[6] DSP48E2_X31Y357 DSP48E2_X31Y357/B6
+    end connections
+  end input
+  begin input
+    name dataInArray_1[24]
+    netname dataInArray_1_net[24]
+    numprims 0
+    type input signal
+    maxdelay 0.000
+    begin connections
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q1_reg/DSP_A_B_DATA_INST/B[7] DSP48E2_X31Y357 DSP48E2_X31Y357/B7
+    end connections
+  end input
+  begin input
+    name dataInArray_1[25]
+    netname dataInArray_1_net[25]
+    numprims 0
+    type input signal
+    maxdelay 0.000
+    begin connections
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q1_reg/DSP_A_B_DATA_INST/B[8] DSP48E2_X31Y357 DSP48E2_X31Y357/B8
+    end connections
+  end input
+  begin input
+    name dataInArray_1[26]
+    netname dataInArray_1_net[26]
+    numprims 0
+    type input signal
+    maxdelay 0.000
+    begin connections
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q1_reg/DSP_A_B_DATA_INST/B[9] DSP48E2_X31Y357 DSP48E2_X31Y357/B9
+    end connections
+  end input
+  begin input
+    name dataInArray_1[27]
+    netname dataInArray_1_net[27]
+    numprims 0
+    type input signal
+    maxdelay 0.000
+    begin connections
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q1_reg/DSP_A_B_DATA_INST/B[10] DSP48E2_X31Y357 DSP48E2_X31Y357/B10
+    end connections
+  end input
+  begin input
+    name dataInArray_1[28]
+    netname dataInArray_1_net[28]
+    numprims 0
+    type input signal
+    maxdelay 0.000
+    begin connections
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q1_reg/DSP_A_B_DATA_INST/B[11] DSP48E2_X31Y357 DSP48E2_X31Y357/B11
+    end connections
+  end input
+  begin input
+    name dataInArray_1[29]
+    netname dataInArray_1_net[29]
+    numprims 0
+    type input signal
+    maxdelay 0.000
+    begin connections
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q1_reg/DSP_A_B_DATA_INST/B[12] DSP48E2_X31Y357 DSP48E2_X31Y357/B12
+    end connections
+  end input
+  begin input
+    name dataInArray_1[2]
+    netname dataInArray_1_net[2]
+    numprims 0
+    type input signal
+    maxdelay 0.000
+    begin connections
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q2_reg/DSP_A_B_DATA_INST/A[2] DSP48E2_X31Y358 DSP48E2_X31Y358/A2
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q0_reg/DSP_A_B_DATA_INST/B[2] DSP48E2_X31Y356 DSP48E2_X31Y356/B2
+    end connections
+  end input
+  begin input
+    name dataInArray_1[30]
+    netname dataInArray_1_net[30]
+    numprims 0
+    type input signal
+    maxdelay 0.000
+    begin connections
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q1_reg/DSP_A_B_DATA_INST/B[13] DSP48E2_X31Y357 DSP48E2_X31Y357/B13
+    end connections
+  end input
+  begin input
+    name dataInArray_1[31]
+    netname dataInArray_1_net[31]
+    numprims 0
+    type input signal
+    maxdelay 0.000
+    begin connections
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q1_reg/DSP_A_B_DATA_INST/B[14] DSP48E2_X31Y357 DSP48E2_X31Y357/B14
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q1_reg/DSP_A_B_DATA_INST/B[15] DSP48E2_X31Y357 DSP48E2_X31Y357/B15
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q1_reg/DSP_A_B_DATA_INST/B[16] DSP48E2_X31Y357 DSP48E2_X31Y357/B16
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q1_reg/DSP_A_B_DATA_INST/B[17] DSP48E2_X31Y357 DSP48E2_X31Y357/B17
+    end connections
+  end input
+  begin input
+    name dataInArray_1[3]
+    netname dataInArray_1_net[3]
+    numprims 0
+    type input signal
+    maxdelay 0.000
+    begin connections
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q2_reg/DSP_A_B_DATA_INST/A[3] DSP48E2_X31Y358 DSP48E2_X31Y358/A3
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q0_reg/DSP_A_B_DATA_INST/B[3] DSP48E2_X31Y356 DSP48E2_X31Y356/B3
+    end connections
+  end input
+  begin input
+    name dataInArray_1[4]
+    netname dataInArray_1_net[4]
+    numprims 0
+    type input signal
+    maxdelay 0.000
+    begin connections
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q2_reg/DSP_A_B_DATA_INST/A[4] DSP48E2_X31Y358 DSP48E2_X31Y358/A4
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q0_reg/DSP_A_B_DATA_INST/B[4] DSP48E2_X31Y356 DSP48E2_X31Y356/B4
+    end connections
+  end input
+  begin input
+    name dataInArray_1[5]
+    netname dataInArray_1_net[5]
+    numprims 0
+    type input signal
+    maxdelay 0.000
+    begin connections
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q2_reg/DSP_A_B_DATA_INST/A[5] DSP48E2_X31Y358 DSP48E2_X31Y358/A5
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q0_reg/DSP_A_B_DATA_INST/B[5] DSP48E2_X31Y356 DSP48E2_X31Y356/B5
+    end connections
+  end input
+  begin input
+    name dataInArray_1[6]
+    netname dataInArray_1_net[6]
+    numprims 0
+    type input signal
+    maxdelay 0.000
+    begin connections
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q2_reg/DSP_A_B_DATA_INST/A[6] DSP48E2_X31Y358 DSP48E2_X31Y358/A6
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q0_reg/DSP_A_B_DATA_INST/B[6] DSP48E2_X31Y356 DSP48E2_X31Y356/B6
+    end connections
+  end input
+  begin input
+    name dataInArray_1[7]
+    netname dataInArray_1_net[7]
+    numprims 0
+    type input signal
+    maxdelay 0.000
+    begin connections
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q2_reg/DSP_A_B_DATA_INST/A[7] DSP48E2_X31Y358 DSP48E2_X31Y358/A7
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q0_reg/DSP_A_B_DATA_INST/B[7] DSP48E2_X31Y356 DSP48E2_X31Y356/B7
+    end connections
+  end input
+  begin input
+    name dataInArray_1[8]
+    netname dataInArray_1_net[8]
+    numprims 0
+    type input signal
+    maxdelay 0.000
+    begin connections
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q2_reg/DSP_A_B_DATA_INST/A[8] DSP48E2_X31Y358 DSP48E2_X31Y358/A8
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q0_reg/DSP_A_B_DATA_INST/B[8] DSP48E2_X31Y356 DSP48E2_X31Y356/B8
+    end connections
+  end input
+  begin input
+    name dataInArray_1[9]
+    netname dataInArray_1_net[9]
+    numprims 0
+    type input signal
+    maxdelay 0.000
+    begin connections
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q2_reg/DSP_A_B_DATA_INST/A[9] DSP48E2_X31Y358 DSP48E2_X31Y358/A9
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q0_reg/DSP_A_B_DATA_INST/B[9] DSP48E2_X31Y356 DSP48E2_X31Y356/B9
+    end connections
+  end input
+  begin input
+    name nReadyArray_0
+    netname nReadyArray_0_net
+    numprims 0
+    type input signal
+    maxdelay 0.663
+    begin connections
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/oehb/readyArray[0]_INST_0/I0 SLICE_X229Y899 SLICE_X229Y899/B4
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/oehb/validArray[0]_i_1/I2 SLICE_X229Y899 SLICE_X229Y899/B4
+    end connections
+  end input
+  begin input
+    name pValidArray_0
+    netname pValidArray_0_net
+    numprims 0
+    type input signal
+    maxdelay 0.457
+    begin connections
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/join/readyArray[1]_INST_0/I0 SLICE_X229Y899 SLICE_X229Y899/C4
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/join/allPValidAndGate/res_INST_0/I0 SLICE_X229Y899 SLICE_X229Y899/H3
+    end connections
+  end input
+  begin input
+    name pValidArray_1
+    netname pValidArray_1_net
+    numprims 0
+    type input signal
+    maxdelay 0.406
+    begin connections
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/join/readyArray[0]_INST_0/I0 SLICE_X229Y899 SLICE_X229Y899/C2
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/join/allPValidAndGate/res_INST_0/I1 SLICE_X229Y899 SLICE_X229Y899/H5
+    end connections
+  end input
+  begin input
+    name rst
+    netname rst
+    numprims 4
+    type input signal
+    maxdelay 0.144
+    begin connections
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/buff/gen_assignements[0].first_assignment.regs[0]_i_1/I2 SLICE_X229Y899 SLICE_X229Y899/D5
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/buff/gen_assignements[1].other_assignments.regs_reg[1]/R SLICE_X229Y898 SLICE_X229Y898/SRST2
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/buff/gen_assignements[2].other_assignments.regs_reg[2]/R SLICE_X229Y898 SLICE_X229Y898/SRST2
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/oehb/validArray_reg[0]/CLR SLICE_X229Y899 SLICE_X229Y899/SRST2
+    end connections
+  end input
+
+  begin output
+    name dataOutArray_0[0]
+    netname dataOutArray_0_net[0]
+    numprims 0
+    type output signal
+    maxdelay 0.095
+    begin connections
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q2_reg[0]/Q SLICE_X229Y897 SLICE_X229Y897/GQ
+    end connections
+  end output
+  begin output
+    name dataOutArray_0[10]
+    netname dataOutArray_0_net[10]
+    numprims 0
+    type output signal
+    maxdelay 0.095
+    begin connections
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q2_reg[10]/Q SLICE_X229Y896 SLICE_X229Y896/GQ
+    end connections
+  end output
+  begin output
+    name dataOutArray_0[11]
+    netname dataOutArray_0_net[11]
+    numprims 0
+    type output signal
+    maxdelay 0.094
+    begin connections
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q2_reg[11]/Q SLICE_X229Y899 SLICE_X229Y899/CQ2
+    end connections
+  end output
+  begin output
+    name dataOutArray_0[12]
+    netname dataOutArray_0_net[12]
+    numprims 0
+    type output signal
+    maxdelay 0.093
+    begin connections
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q2_reg[12]/Q SLICE_X229Y898 SLICE_X229Y898/AQ
+    end connections
+  end output
+  begin output
+    name dataOutArray_0[13]
+    netname dataOutArray_0_net[13]
+    numprims 0
+    type output signal
+    maxdelay 0.097
+    begin connections
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q2_reg[13]/Q SLICE_X229Y899 SLICE_X229Y899/BQ2
+    end connections
+  end output
+  begin output
+    name dataOutArray_0[14]
+    netname dataOutArray_0_net[14]
+    numprims 0
+    type output signal
+    maxdelay 0.097
+    begin connections
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q2_reg[14]/Q SLICE_X229Y898 SLICE_X229Y898/AQ2
+    end connections
+  end output
+  begin output
+    name dataOutArray_0[15]
+    netname dataOutArray_0_net[15]
+    numprims 0
+    type output signal
+    maxdelay 0.097
+    begin connections
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q2_reg[15]/Q SLICE_X229Y899 SLICE_X229Y899/AQ2
+    end connections
+  end output
+  begin output
+    name dataOutArray_0[16]
+    netname dataOutArray_0_net[16]
+    numprims 0
+    type output signal
+    maxdelay 0.095
+    begin connections
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q2_reg[16]/Q SLICE_X229Y898 SLICE_X229Y898/BQ
+    end connections
+  end output
+  begin output
+    name dataOutArray_0[17]
+    netname dataOutArray_0_net[17]
+    numprims 0
+    type output signal
+    maxdelay 0.268
+    begin connections
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q2_reg/DSP_OUTPUT_INST/P[0] DSP48E2_X31Y358 DSP48E2_X31Y358/P0
+    end connections
+  end output
+  begin output
+    name dataOutArray_0[18]
+    netname dataOutArray_0_net[18]
+    numprims 0
+    type output signal
+    maxdelay 0.267
+    begin connections
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q2_reg/DSP_OUTPUT_INST/P[1] DSP48E2_X31Y358 DSP48E2_X31Y358/P1
+    end connections
+  end output
+  begin output
+    name dataOutArray_0[19]
+    netname dataOutArray_0_net[19]
+    numprims 0
+    type output signal
+    maxdelay 0.274
+    begin connections
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q2_reg/DSP_OUTPUT_INST/P[2] DSP48E2_X31Y358 DSP48E2_X31Y358/P2
+    end connections
+  end output
+  begin output
+    name dataOutArray_0[1]
+    netname dataOutArray_0_net[1]
+    numprims 0
+    type output signal
+    maxdelay 0.098
+    begin connections
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q2_reg[1]/Q SLICE_X229Y897 SLICE_X229Y897/GQ2
+    end connections
+  end output
+  begin output
+    name dataOutArray_0[20]
+    netname dataOutArray_0_net[20]
+    numprims 0
+    type output signal
+    maxdelay 0.280
+    begin connections
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q2_reg/DSP_OUTPUT_INST/P[3] DSP48E2_X31Y358 DSP48E2_X31Y358/P3
+    end connections
+  end output
+  begin output
+    name dataOutArray_0[21]
+    netname dataOutArray_0_net[21]
+    numprims 0
+    type output signal
+    maxdelay 0.263
+    begin connections
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q2_reg/DSP_OUTPUT_INST/P[4] DSP48E2_X31Y358 DSP48E2_X31Y358/P4
+    end connections
+  end output
+  begin output
+    name dataOutArray_0[22]
+    netname dataOutArray_0_net[22]
+    numprims 0
+    type output signal
+    maxdelay 0.271
+    begin connections
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q2_reg/DSP_OUTPUT_INST/P[5] DSP48E2_X31Y358 DSP48E2_X31Y358/P5
+    end connections
+  end output
+  begin output
+    name dataOutArray_0[23]
+    netname dataOutArray_0_net[23]
+    numprims 0
+    type output signal
+    maxdelay 0.256
+    begin connections
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q2_reg/DSP_OUTPUT_INST/P[6] DSP48E2_X31Y358 DSP48E2_X31Y358/P6
+    end connections
+  end output
+  begin output
+    name dataOutArray_0[24]
+    netname dataOutArray_0_net[24]
+    numprims 0
+    type output signal
+    maxdelay 0.250
+    begin connections
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q2_reg/DSP_OUTPUT_INST/P[7] DSP48E2_X31Y358 DSP48E2_X31Y358/P7
+    end connections
+  end output
+  begin output
+    name dataOutArray_0[25]
+    netname dataOutArray_0_net[25]
+    numprims 0
+    type output signal
+    maxdelay 0.248
+    begin connections
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q2_reg/DSP_OUTPUT_INST/P[8] DSP48E2_X31Y358 DSP48E2_X31Y358/P8
+    end connections
+  end output
+  begin output
+    name dataOutArray_0[26]
+    netname dataOutArray_0_net[26]
+    numprims 0
+    type output signal
+    maxdelay 0.263
+    begin connections
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q2_reg/DSP_OUTPUT_INST/P[9] DSP48E2_X31Y358 DSP48E2_X31Y358/P9
+    end connections
+  end output
+  begin output
+    name dataOutArray_0[27]
+    netname dataOutArray_0_net[27]
+    numprims 0
+    type output signal
+    maxdelay 0.242
+    begin connections
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q2_reg/DSP_OUTPUT_INST/P[10] DSP48E2_X31Y358 DSP48E2_X31Y358/P10
+    end connections
+  end output
+  begin output
+    name dataOutArray_0[28]
+    netname dataOutArray_0_net[28]
+    numprims 0
+    type output signal
+    maxdelay 0.246
+    begin connections
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q2_reg/DSP_OUTPUT_INST/P[11] DSP48E2_X31Y358 DSP48E2_X31Y358/P11
+    end connections
+  end output
+  begin output
+    name dataOutArray_0[29]
+    netname dataOutArray_0_net[29]
+    numprims 0
+    type output signal
+    maxdelay 0.263
+    begin connections
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q2_reg/DSP_OUTPUT_INST/P[12] DSP48E2_X31Y358 DSP48E2_X31Y358/P12
+    end connections
+  end output
+  begin output
+    name dataOutArray_0[2]
+    netname dataOutArray_0_net[2]
+    numprims 0
+    type output signal
+    maxdelay 0.096
+    begin connections
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q2_reg[2]/Q SLICE_X229Y897 SLICE_X229Y897/HQ
+    end connections
+  end output
+  begin output
+    name dataOutArray_0[30]
+    netname dataOutArray_0_net[30]
+    numprims 0
+    type output signal
+    maxdelay 0.243
+    begin connections
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q2_reg/DSP_OUTPUT_INST/P[13] DSP48E2_X31Y358 DSP48E2_X31Y358/P13
+    end connections
+  end output
+  begin output
+    name dataOutArray_0[31]
+    netname dataOutArray_0_net[31]
+    numprims 0
+    type output signal
+    maxdelay 0.246
+    begin connections
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q2_reg/DSP_OUTPUT_INST/P[14] DSP48E2_X31Y358 DSP48E2_X31Y358/P14
+    end connections
+  end output
+  begin output
+    name dataOutArray_0[3]
+    netname dataOutArray_0_net[3]
+    numprims 0
+    type output signal
+    maxdelay 0.096
+    begin connections
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q2_reg[3]/Q SLICE_X229Y896 SLICE_X229Y896/DQ
+    end connections
+  end output
+  begin output
+    name dataOutArray_0[4]
+    netname dataOutArray_0_net[4]
+    numprims 0
+    type output signal
+    maxdelay 0.095
+    begin connections
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q2_reg[4]/Q SLICE_X229Y897 SLICE_X229Y897/HQ2
+    end connections
+  end output
+  begin output
+    name dataOutArray_0[5]
+    netname dataOutArray_0_net[5]
+    numprims 0
+    type output signal
+    maxdelay 0.098
+    begin connections
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q2_reg[5]/Q SLICE_X229Y896 SLICE_X229Y896/GQ2
+    end connections
+  end output
+  begin output
+    name dataOutArray_0[6]
+    netname dataOutArray_0_net[6]
+    numprims 0
+    type output signal
+    maxdelay 0.096
+    begin connections
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q2_reg[6]/Q SLICE_X229Y896 SLICE_X229Y896/HQ
+    end connections
+  end output
+  begin output
+    name dataOutArray_0[7]
+    netname dataOutArray_0_net[7]
+    numprims 0
+    type output signal
+    maxdelay 0.095
+    begin connections
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q2_reg[7]/Q SLICE_X229Y896 SLICE_X229Y896/HQ2
+    end connections
+  end output
+  begin output
+    name dataOutArray_0[8]
+    netname dataOutArray_0_net[8]
+    numprims 0
+    type output signal
+    maxdelay 0.097
+    begin connections
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q2_reg[8]/Q SLICE_X229Y898 SLICE_X229Y898/BQ2
+    end connections
+  end output
+  begin output
+    name dataOutArray_0[9]
+    netname dataOutArray_0_net[9]
+    numprims 0
+    type output signal
+    maxdelay 0.095
+    begin connections
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/multiply_unit/q2_reg[9]/Q SLICE_X229Y898 SLICE_X229Y898/CQ
+    end connections
+  end output
+  begin output
+    name readyArray_0
+    netname readyArray_0_net
+    numprims 0
+    type output signal
+    maxdelay 0.788
+    begin connections
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/join/readyArray[0]_INST_0/O SLICE_X229Y899 SLICE_X229Y899/CMUX
+    end connections
+  end output
+  begin output
+    name readyArray_1
+    netname readyArray_1_net
+    numprims 0
+    type output signal
+    maxdelay 0.722
+    begin connections
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/join/readyArray[1]_INST_0/O SLICE_X229Y899 SLICE_X229Y899/C_O
+    end connections
+  end output
+  begin output
+    name validArray_0
+    netname validArray_0_net
+    numprims 0
+    type output signal
+    maxdelay 0.093
+    begin connections
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/oehb/readyArray[0]_INST_0/I1 SLICE_X229Y899 SLICE_X229Y899/B2
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/oehb/validArray[0]_i_1/I1 SLICE_X229Y899 SLICE_X229Y899/B2
+      pin mul_op_2_1_32_32_I60_J145_R10_C1_cell/mul_op_sub/oehb/validArray_reg[0]/Q SLICE_X229Y899 SLICE_X229Y899/EQ
+    end connections
+  end output
+
+end block

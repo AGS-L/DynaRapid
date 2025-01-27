@@ -1,0 +1,97 @@
+begin block
+  name Constant_1_1_1_1_0_I60_J139_R1_C1_placedRouted
+  pblocks 1
+  clocks 1
+  inputs 5
+  outputs 3
+
+  begin pblock
+    name pblock_1 
+    grid_ranges SLICE_X220Y899:SLICE_X220Y899
+  end pblock
+  begin clock
+    name clk 
+    period 2.500
+  end clock
+
+  begin input
+    name clk
+    netname clk
+    numprims 0
+    type input signal
+    maxdelay 0.000
+    begin connections
+    end connections
+  end input
+  begin input
+    name dataInArray_0
+    netname dataInArray_0_net
+    numprims 0
+    type input signal
+    maxdelay 0.000
+    begin connections
+    end connections
+  end input
+  begin input
+    name nReadyArray_0
+    netname nReadyArray_0_net
+    numprims 0
+    type input signal
+    maxdelay 0.182
+    begin connections
+      pin Constant_1_1_1_1_0_I60_J139_R1_C1_cell/Const_sub/ReadyArray[0]_INST_0/I0 SLICE_X220Y899 SLICE_X220Y899/H1
+    end connections
+  end input
+  begin input
+    name pValidArray_0
+    netname pValidArray_0_net
+    numprims 0
+    type input signal
+    maxdelay 0.000
+    begin connections
+      port validArray_0
+    end connections
+  end input
+  begin input
+    name rst
+    netname rst
+    numprims 1
+    type input signal
+    maxdelay 0.041
+    begin connections
+      pin Constant_1_1_1_1_0_I60_J139_R1_C1_cell/Const_sub/ReadyArray[0]_INST_0/I1 SLICE_X220Y899 SLICE_X220Y899/H6
+    end connections
+  end input
+
+  begin output
+    name dataOutArray_0
+    netname dataOutArray_0_net
+    numprims 0
+    type output ground
+    maxdelay 0.000
+    begin connections
+      pin Constant_1_1_1_1_0_I60_J139_R1_C1_cell/GND/G  
+    end connections
+  end output
+  begin output
+    name readyArray_0
+    netname readyArray_0_net
+    numprims 0
+    type output signal
+    maxdelay 0.182
+    begin connections
+      pin Constant_1_1_1_1_0_I60_J139_R1_C1_cell/Const_sub/ReadyArray[0]_INST_0/O SLICE_X220Y899 SLICE_X220Y899/HMUX SLICE_X220Y899/H_O
+    end connections
+  end output
+  begin output
+    name validArray_0
+    netname validArray_0_net
+    numprims 0
+    type output signal
+    maxdelay 0.000
+    begin connections
+      port pValidArray_0
+    end connections
+  end output
+
+end block

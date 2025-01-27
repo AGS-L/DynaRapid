@@ -1,0 +1,105 @@
+begin block
+  name TEHB_1_1_1_1_I60_J139_R1_C1_placedRouted
+  pblocks 1
+  clocks 1
+  inputs 5
+  outputs 3
+
+  begin pblock
+    name pblock_1 
+    grid_ranges SLICE_X220Y899:SLICE_X220Y899
+  end pblock
+  begin clock
+    name clk 
+    period 2.500
+  end clock
+
+  begin input
+    name clk
+    netname clk
+    numprims 2
+    type input clock local
+    maxdelay 0.000
+    begin connections
+      pin TEHB_1_1_1_1_I60_J139_R1_C1_cell/TEHB_sub/data_reg_reg[0]/C SLICE_X220Y899 SLICE_X220Y899/CLK1
+      pin TEHB_1_1_1_1_I60_J139_R1_C1_cell/TEHB_sub/full_reg_reg/C SLICE_X220Y899 SLICE_X220Y899/CLK1
+    end connections
+  end input
+  begin input
+    name dataInArray_0
+    netname dataInArray_0_net
+    numprims 0
+    type input signal
+    maxdelay 0.213
+    begin connections
+      pin TEHB_1_1_1_1_I60_J139_R1_C1_cell/TEHB_sub/data_reg[0]_i_1/I0 SLICE_X220Y899 SLICE_X220Y899/D5
+      pin TEHB_1_1_1_1_I60_J139_R1_C1_cell/TEHB_sub/dataOutArray[0][0]_INST_0/I2 SLICE_X220Y899 SLICE_X220Y899/C2
+    end connections
+  end input
+  begin input
+    name nReadyArray_0
+    netname nReadyArray_0_net
+    numprims 0
+    type input signal
+    maxdelay 0.256
+    begin connections
+      pin TEHB_1_1_1_1_I60_J139_R1_C1_cell/TEHB_sub/data_reg[0]_i_1/I1 SLICE_X220Y899 SLICE_X220Y899/D1
+      pin TEHB_1_1_1_1_I60_J139_R1_C1_cell/TEHB_sub/full_reg_i_1/I2 SLICE_X220Y899 SLICE_X220Y899/D1
+    end connections
+  end input
+  begin input
+    name pValidArray_0
+    netname pValidArray_0_net
+    numprims 0
+    type input signal
+    maxdelay 0.229
+    begin connections
+      pin TEHB_1_1_1_1_I60_J139_R1_C1_cell/TEHB_sub/validArray[0]_INST_0/I0 SLICE_X220Y899 SLICE_X220Y899/C4
+      pin TEHB_1_1_1_1_I60_J139_R1_C1_cell/TEHB_sub/full_reg_i_1/I1 SLICE_X220Y899 SLICE_X220Y899/D2
+      pin TEHB_1_1_1_1_I60_J139_R1_C1_cell/TEHB_sub/data_reg[0]_i_1/I2 SLICE_X220Y899 SLICE_X220Y899/D2
+    end connections
+  end input
+  begin input
+    name rst
+    netname rst
+    numprims 2
+    type input signal
+    maxdelay 0.000
+    begin connections
+      pin TEHB_1_1_1_1_I60_J139_R1_C1_cell/TEHB_sub/data_reg_reg[0]/CLR SLICE_X220Y899 SLICE_X220Y899/SRST1
+      pin TEHB_1_1_1_1_I60_J139_R1_C1_cell/TEHB_sub/full_reg_reg/CLR SLICE_X220Y899 SLICE_X220Y899/SRST1
+    end connections
+  end input
+
+  begin output
+    name dataOutArray_0
+    netname dataOutArray_0_net
+    numprims 0
+    type output signal
+    maxdelay 0.493
+    begin connections
+      pin TEHB_1_1_1_1_I60_J139_R1_C1_cell/TEHB_sub/dataOutArray[0][0]_INST_0/O SLICE_X220Y899 SLICE_X220Y899/CMUX
+    end connections
+  end output
+  begin output
+    name readyArray_0
+    netname readyArray_0_net
+    numprims 0
+    type output signal
+    maxdelay 0.415
+    begin connections
+      pin TEHB_1_1_1_1_I60_J139_R1_C1_cell/TEHB_sub/readyArray[0]_INST_0/O SLICE_X220Y899 SLICE_X220Y899/HMUX SLICE_X220Y899/H_O
+    end connections
+  end output
+  begin output
+    name validArray_0
+    netname validArray_0_net
+    numprims 0
+    type output signal
+    maxdelay 0.427
+    begin connections
+      pin TEHB_1_1_1_1_I60_J139_R1_C1_cell/TEHB_sub/validArray[0]_INST_0/O SLICE_X220Y899 SLICE_X220Y899/C_O
+    end connections
+  end output
+
+end block

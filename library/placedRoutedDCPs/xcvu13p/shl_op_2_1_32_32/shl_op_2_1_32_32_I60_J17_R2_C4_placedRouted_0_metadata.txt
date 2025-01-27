@@ -1,0 +1,1301 @@
+begin block
+  name shl_op_2_1_32_32_I60_J17_R2_C4_placedRouted
+  pblocks 1
+  clocks 1
+  inputs 69
+  outputs 35
+
+  begin pblock
+    name pblock_1 
+    grid_ranges SLICE_X27Y898:SLICE_X32Y899
+  end pblock
+  begin clock
+    name clk 
+    period 2.500
+  end clock
+
+  begin input
+    name clk
+    netname clk
+    numprims 0
+    type input signal
+    maxdelay 0.000
+    begin connections
+    end connections
+  end input
+  begin input
+    name dataInArray_0[0]
+    netname dataInArray_0_net[0]
+    numprims 0
+    type input signal
+    maxdelay 0.947
+    begin connections
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][15]_INST_0_i_2/I0 SLICE_X31Y898 SLICE_X31Y898/H2
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][1]_INST_0/I0 SLICE_X30Y898 SLICE_X30Y898/C6
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][3]_INST_0_i_1/I0 SLICE_X30Y898 SLICE_X30Y898/F1
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][7]_INST_0_i_1/I0 SLICE_X32Y899 SLICE_X32Y899/F1
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][11]_INST_0_i_1/I2 SLICE_X32Y898 SLICE_X32Y898/G5
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][23]_INST_0_i_2/I2 SLICE_X31Y898 SLICE_X31Y898/H2
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][5]_INST_0_i_1/I2 SLICE_X31Y898 SLICE_X31Y898/A1
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][0]_INST_0/I3 SLICE_X32Y899 SLICE_X32Y899/H2
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][31]_INST_0_i_7/I3 SLICE_X30Y899 SLICE_X30Y899/C6
+    end connections
+  end input
+  begin input
+    name dataInArray_0[10]
+    netname dataInArray_0_net[10]
+    numprims 0
+    type input signal
+    maxdelay 1.035
+    begin connections
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][25]_INST_0_i_2/I0 SLICE_X31Y899 SLICE_X31Y899/D1
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][17]_INST_0_i_2/I1 SLICE_X31Y899 SLICE_X31Y899/D1
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][31]_INST_0_i_6/I1 SLICE_X32Y899 SLICE_X32Y899/G2
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][11]_INST_0_i_2/I3 SLICE_X32Y898 SLICE_X32Y898/F3
+    end connections
+  end input
+  begin input
+    name dataInArray_0[11]
+    netname dataInArray_0_net[11]
+    numprims 0
+    type input signal
+    maxdelay 0.918
+    begin connections
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][26]_INST_0_i_2/I0 SLICE_X29Y899 SLICE_X29Y899/D3
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][18]_INST_0_i_2/I1 SLICE_X29Y899 SLICE_X29Y899/D3
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][31]_INST_0_i_9/I1 SLICE_X29Y899 SLICE_X29Y899/C3
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][14]_INST_0_i_2/I3 SLICE_X29Y898 SLICE_X29Y898/H3
+    end connections
+  end input
+  begin input
+    name dataInArray_0[12]
+    netname dataInArray_0_net[12]
+    numprims 0
+    type input signal
+    maxdelay 0.871
+    begin connections
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][27]_INST_0_i_2/I0 SLICE_X31Y898 SLICE_X31Y898/D5
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][19]_INST_0_i_2/I1 SLICE_X31Y898 SLICE_X31Y898/D5
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][31]_INST_0_i_8/I1 SLICE_X30Y899 SLICE_X30Y899/B1
+    end connections
+  end input
+  begin input
+    name dataInArray_0[13]
+    netname dataInArray_0_net[13]
+    numprims 0
+    type input signal
+    maxdelay 0.906
+    begin connections
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][28]_INST_0_i_2/I0 SLICE_X27Y898 SLICE_X27Y898/H5
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][20]_INST_0_i_2/I1 SLICE_X27Y898 SLICE_X27Y898/H5
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][31]_INST_0_i_12/I1 SLICE_X27Y898 SLICE_X27Y898/C2
+    end connections
+  end input
+  begin input
+    name dataInArray_0[14]
+    netname dataInArray_0_net[14]
+    numprims 0
+    type input signal
+    maxdelay 0.972
+    begin connections
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][29]_INST_0_i_2/I0 SLICE_X30Y899 SLICE_X30Y899/H2
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][21]_INST_0_i_2/I1 SLICE_X30Y899 SLICE_X30Y899/H2
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][31]_INST_0_i_5/I1 SLICE_X27Y899 SLICE_X27Y899/G1
+    end connections
+  end input
+  begin input
+    name dataInArray_0[15]
+    netname dataInArray_0_net[15]
+    numprims 0
+    type input signal
+    maxdelay 1.016
+    begin connections
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][30]_INST_0_i_2/I0 SLICE_X27Y898 SLICE_X27Y898/G3
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][22]_INST_0_i_2/I1 SLICE_X27Y898 SLICE_X27Y898/G3
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][31]_INST_0_i_10/I1 SLICE_X27Y898 SLICE_X27Y898/E3
+    end connections
+  end input
+  begin input
+    name dataInArray_0[16]
+    netname dataInArray_0_net[16]
+    numprims 0
+    type input signal
+    maxdelay 0.855
+    begin connections
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][23]_INST_0_i_2/I4 SLICE_X31Y898 SLICE_X31Y898/H3
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][31]_INST_0_i_7/I5 SLICE_X30Y899 SLICE_X30Y899/C3
+    end connections
+  end input
+  begin input
+    name dataInArray_0[17]
+    netname dataInArray_0_net[17]
+    numprims 0
+    type input signal
+    maxdelay 1.034
+    begin connections
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][24]_INST_0_i_2/I4 SLICE_X28Y898 SLICE_X28Y898/D1
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][31]_INST_0_i_11/I5 SLICE_X27Y898 SLICE_X27Y898/D6
+    end connections
+  end input
+  begin input
+    name dataInArray_0[18]
+    netname dataInArray_0_net[18]
+    numprims 0
+    type input signal
+    maxdelay 0.976
+    begin connections
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][25]_INST_0_i_2/I4 SLICE_X31Y899 SLICE_X31Y899/D3
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][31]_INST_0_i_6/I5 SLICE_X32Y899 SLICE_X32Y899/G4
+    end connections
+  end input
+  begin input
+    name dataInArray_0[19]
+    netname dataInArray_0_net[19]
+    numprims 0
+    type input signal
+    maxdelay 0.975
+    begin connections
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][26]_INST_0_i_2/I4 SLICE_X29Y899 SLICE_X29Y899/D1
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][31]_INST_0_i_9/I5 SLICE_X29Y899 SLICE_X29Y899/C5
+    end connections
+  end input
+  begin input
+    name dataInArray_0[1]
+    netname dataInArray_0_net[1]
+    numprims 0
+    type input signal
+    maxdelay 1.083
+    begin connections
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][16]_INST_0_i_2/I0 SLICE_X28Y898 SLICE_X28Y898/D4
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][4]_INST_0_i_1/I0 SLICE_X30Y898 SLICE_X30Y898/E1
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][8]_INST_0_i_1/I0 SLICE_X29Y898 SLICE_X29Y898/G6
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][2]_INST_0/I1 SLICE_X30Y898 SLICE_X30Y898/G6
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][12]_INST_0_i_2/I2 SLICE_X27Y899 SLICE_X27Y899/H1
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][1]_INST_0/I2 SLICE_X30Y898 SLICE_X30Y898/C2
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][24]_INST_0_i_2/I2 SLICE_X28Y898 SLICE_X28Y898/D4
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][6]_INST_0_i_1/I2 SLICE_X29Y899 SLICE_X29Y899/B3
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][31]_INST_0_i_11/I3 SLICE_X27Y898 SLICE_X27Y898/D2
+    end connections
+  end input
+  begin input
+    name dataInArray_0[20]
+    netname dataInArray_0_net[20]
+    numprims 0
+    type input signal
+    maxdelay 0.956
+    begin connections
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][27]_INST_0_i_2/I4 SLICE_X31Y898 SLICE_X31Y898/D2
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][31]_INST_0_i_8/I5 SLICE_X30Y899 SLICE_X30Y899/B6
+    end connections
+  end input
+  begin input
+    name dataInArray_0[21]
+    netname dataInArray_0_net[21]
+    numprims 0
+    type input signal
+    maxdelay 0.959
+    begin connections
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][28]_INST_0_i_2/I4 SLICE_X27Y898 SLICE_X27Y898/H3
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][31]_INST_0_i_12/I5 SLICE_X27Y898 SLICE_X27Y898/C6
+    end connections
+  end input
+  begin input
+    name dataInArray_0[22]
+    netname dataInArray_0_net[22]
+    numprims 0
+    type input signal
+    maxdelay 1.003
+    begin connections
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][29]_INST_0_i_2/I4 SLICE_X30Y899 SLICE_X30Y899/H1
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][31]_INST_0_i_5/I5 SLICE_X27Y899 SLICE_X27Y899/G5
+    end connections
+  end input
+  begin input
+    name dataInArray_0[23]
+    netname dataInArray_0_net[23]
+    numprims 0
+    type input signal
+    maxdelay 0.962
+    begin connections
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][30]_INST_0_i_2/I4 SLICE_X27Y898 SLICE_X27Y898/G5
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][31]_INST_0_i_10/I5 SLICE_X27Y898 SLICE_X27Y898/E4
+    end connections
+  end input
+  begin input
+    name dataInArray_0[24]
+    netname dataInArray_0_net[24]
+    numprims 0
+    type input signal
+    maxdelay 0.618
+    begin connections
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][31]_INST_0_i_7/I0 SLICE_X30Y899 SLICE_X30Y899/C4
+    end connections
+  end input
+  begin input
+    name dataInArray_0[25]
+    netname dataInArray_0_net[25]
+    numprims 0
+    type input signal
+    maxdelay 1.014
+    begin connections
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][31]_INST_0_i_11/I0 SLICE_X27Y898 SLICE_X27Y898/D1
+    end connections
+  end input
+  begin input
+    name dataInArray_0[26]
+    netname dataInArray_0_net[26]
+    numprims 0
+    type input signal
+    maxdelay 0.746
+    begin connections
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][31]_INST_0_i_6/I0 SLICE_X32Y899 SLICE_X32Y899/G3
+    end connections
+  end input
+  begin input
+    name dataInArray_0[27]
+    netname dataInArray_0_net[27]
+    numprims 0
+    type input signal
+    maxdelay 0.941
+    begin connections
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][31]_INST_0_i_9/I0 SLICE_X29Y899 SLICE_X29Y899/C1
+    end connections
+  end input
+  begin input
+    name dataInArray_0[28]
+    netname dataInArray_0_net[28]
+    numprims 0
+    type input signal
+    maxdelay 0.556
+    begin connections
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][31]_INST_0_i_8/I0 SLICE_X30Y899 SLICE_X30Y899/B5
+    end connections
+  end input
+  begin input
+    name dataInArray_0[29]
+    netname dataInArray_0_net[29]
+    numprims 0
+    type input signal
+    maxdelay 0.795
+    begin connections
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][31]_INST_0_i_12/I0 SLICE_X27Y898 SLICE_X27Y898/C1
+    end connections
+  end input
+  begin input
+    name dataInArray_0[2]
+    netname dataInArray_0_net[2]
+    numprims 0
+    type input signal
+    maxdelay 1.007
+    begin connections
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][17]_INST_0_i_2/I0 SLICE_X31Y899 SLICE_X31Y899/D2
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][5]_INST_0_i_1/I0 SLICE_X31Y898 SLICE_X31Y898/A6
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][7]_INST_0_i_2/I0 SLICE_X32Y899 SLICE_X32Y899/D4
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][9]_INST_0_i_1/I0 SLICE_X29Y898 SLICE_X29Y898/F1
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][11]_INST_0_i_2/I2 SLICE_X32Y898 SLICE_X32Y898/F2
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][25]_INST_0_i_2/I2 SLICE_X31Y899 SLICE_X31Y899/D2
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][31]_INST_0_i_6/I3 SLICE_X32Y899 SLICE_X32Y899/G1
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][3]_INST_0_i_1/I3 SLICE_X30Y898 SLICE_X30Y898/F2
+    end connections
+  end input
+  begin input
+    name dataInArray_0[30]
+    netname dataInArray_0_net[30]
+    numprims 0
+    type input signal
+    maxdelay 0.820
+    begin connections
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][31]_INST_0_i_5/I0 SLICE_X27Y899 SLICE_X27Y899/G3
+    end connections
+  end input
+  begin input
+    name dataInArray_0[31]
+    netname dataInArray_0_net[31]
+    numprims 0
+    type input signal
+    maxdelay 0.540
+    begin connections
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][31]_INST_0_i_10/I0 SLICE_X27Y898 SLICE_X27Y898/E2
+    end connections
+  end input
+  begin input
+    name dataInArray_0[3]
+    netname dataInArray_0_net[3]
+    numprims 0
+    type input signal
+    maxdelay 0.946
+    begin connections
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][10]_INST_0_i_1/I0 SLICE_X29Y898 SLICE_X29Y898/C6
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][18]_INST_0_i_2/I0 SLICE_X29Y899 SLICE_X29Y899/D2
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][6]_INST_0_i_1/I0 SLICE_X29Y899 SLICE_X29Y899/B4
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][8]_INST_0_i_2/I0 SLICE_X29Y898 SLICE_X29Y898/B6
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][14]_INST_0_i_2/I2 SLICE_X29Y898 SLICE_X29Y898/H2
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][26]_INST_0_i_2/I2 SLICE_X29Y899 SLICE_X29Y899/D2
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][31]_INST_0_i_9/I3 SLICE_X29Y899 SLICE_X29Y899/C6
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][4]_INST_0_i_1/I3 SLICE_X30Y898 SLICE_X30Y898/E2
+    end connections
+  end input
+  begin input
+    name dataInArray_0[4]
+    netname dataInArray_0_net[4]
+    numprims 0
+    type input signal
+    maxdelay 0.984
+    begin connections
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][11]_INST_0_i_1/I0 SLICE_X32Y898 SLICE_X32Y898/G1
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][19]_INST_0_i_2/I0 SLICE_X31Y898 SLICE_X31Y898/D1
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][27]_INST_0_i_2/I2 SLICE_X31Y898 SLICE_X31Y898/D1
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][31]_INST_0_i_8/I3 SLICE_X30Y899 SLICE_X30Y899/B4
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][7]_INST_0_i_1/I3 SLICE_X32Y899 SLICE_X32Y899/F2
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][5]_INST_0_i_1/I5 SLICE_X31Y898 SLICE_X31Y898/A2
+    end connections
+  end input
+  begin input
+    name dataInArray_0[5]
+    netname dataInArray_0_net[5]
+    numprims 0
+    type input signal
+    maxdelay 1.052
+    begin connections
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][12]_INST_0_i_2/I0 SLICE_X27Y899 SLICE_X27Y899/H2
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][20]_INST_0_i_2/I0 SLICE_X27Y898 SLICE_X27Y898/H1
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][28]_INST_0_i_2/I2 SLICE_X27Y898 SLICE_X27Y898/H1
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][31]_INST_0_i_12/I3 SLICE_X27Y898 SLICE_X27Y898/C3
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][8]_INST_0_i_1/I3 SLICE_X29Y898 SLICE_X29Y898/G1
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][6]_INST_0_i_1/I5 SLICE_X29Y899 SLICE_X29Y899/B2
+    end connections
+  end input
+  begin input
+    name dataInArray_0[6]
+    netname dataInArray_0_net[6]
+    numprims 0
+    type input signal
+    maxdelay 0.920
+    begin connections
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][11]_INST_0_i_2/I0 SLICE_X32Y898 SLICE_X32Y898/F1
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][21]_INST_0_i_2/I0 SLICE_X30Y899 SLICE_X30Y899/H5
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][29]_INST_0_i_2/I2 SLICE_X30Y899 SLICE_X30Y899/H5
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][31]_INST_0_i_5/I3 SLICE_X27Y899 SLICE_X27Y899/G2
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][9]_INST_0_i_1/I3 SLICE_X29Y898 SLICE_X29Y898/F2
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][7]_INST_0_i_2/I4 SLICE_X32Y899 SLICE_X32Y899/D1
+    end connections
+  end input
+  begin input
+    name dataInArray_0[7]
+    netname dataInArray_0_net[7]
+    numprims 0
+    type input signal
+    maxdelay 1.079
+    begin connections
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][14]_INST_0_i_2/I0 SLICE_X29Y898 SLICE_X29Y898/H1
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][22]_INST_0_i_2/I0 SLICE_X27Y898 SLICE_X27Y898/G1
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][30]_INST_0_i_2/I2 SLICE_X27Y898 SLICE_X27Y898/G1
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][10]_INST_0_i_1/I3 SLICE_X29Y898 SLICE_X29Y898/C5
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][31]_INST_0_i_10/I3 SLICE_X27Y898 SLICE_X27Y898/E1
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][8]_INST_0_i_2/I4 SLICE_X29Y898 SLICE_X29Y898/B1
+    end connections
+  end input
+  begin input
+    name dataInArray_0[8]
+    netname dataInArray_0_net[8]
+    numprims 0
+    type input signal
+    maxdelay 0.978
+    begin connections
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][23]_INST_0_i_2/I0 SLICE_X31Y898 SLICE_X31Y898/H1
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][15]_INST_0_i_2/I1 SLICE_X31Y898 SLICE_X31Y898/H1
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][31]_INST_0_i_7/I1 SLICE_X30Y899 SLICE_X30Y899/C2
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][11]_INST_0_i_1/I3 SLICE_X32Y898 SLICE_X32Y898/G3
+    end connections
+  end input
+  begin input
+    name dataInArray_0[9]
+    netname dataInArray_0_net[9]
+    numprims 0
+    type input signal
+    maxdelay 1.018
+    begin connections
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][24]_INST_0_i_2/I0 SLICE_X28Y898 SLICE_X28Y898/D3
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][16]_INST_0_i_2/I1 SLICE_X28Y898 SLICE_X28Y898/D3
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][31]_INST_0_i_11/I1 SLICE_X27Y898 SLICE_X27Y898/D4
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][12]_INST_0_i_2/I3 SLICE_X27Y899 SLICE_X27Y899/H3
+    end connections
+  end input
+  begin input
+    name dataInArray_1[0]
+    netname dataInArray_1_net[0]
+    numprims 0
+    type input signal
+    maxdelay 0.240
+    begin connections
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][0]_INST_0/I0 SLICE_X32Y899 SLICE_X32Y899/H6
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][12]_INST_0/I3 SLICE_X31Y899 SLICE_X31Y899/H2
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][13]_INST_0/I3 SLICE_X31Y899 SLICE_X31Y899/H2
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][14]_INST_0/I3 SLICE_X31Y899 SLICE_X31Y899/C1
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][15]_INST_0/I3 SLICE_X31Y899 SLICE_X31Y899/C1
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][16]_INST_0/I3 SLICE_X32Y899 SLICE_X32Y899/C1
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][17]_INST_0/I3 SLICE_X32Y899 SLICE_X32Y899/C1
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][18]_INST_0/I3 SLICE_X31Y899 SLICE_X31Y899/B2
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][19]_INST_0/I3 SLICE_X31Y899 SLICE_X31Y899/B2
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][20]_INST_0/I3 SLICE_X28Y898 SLICE_X28Y898/C3
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][21]_INST_0/I3 SLICE_X28Y898 SLICE_X28Y898/C3
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][22]_INST_0/I3 SLICE_X29Y899 SLICE_X29Y899/E2
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][23]_INST_0/I3 SLICE_X29Y899 SLICE_X29Y899/E2
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][24]_INST_0/I3 SLICE_X30Y899 SLICE_X30Y899/G2
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][25]_INST_0/I3 SLICE_X30Y899 SLICE_X30Y899/G2
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][26]_INST_0/I3 SLICE_X29Y898 SLICE_X29Y898/D3
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][27]_INST_0/I3 SLICE_X29Y898 SLICE_X29Y898/D3
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][28]_INST_0/I3 SLICE_X31Y898 SLICE_X31Y898/G1
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][29]_INST_0/I3 SLICE_X31Y898 SLICE_X31Y898/G1
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][30]_INST_0/I3 SLICE_X27Y899 SLICE_X27Y899/F3
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][3]_INST_0/I3 SLICE_X30Y898 SLICE_X30Y898/D3
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][4]_INST_0/I3 SLICE_X30Y898 SLICE_X30Y898/D3
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][5]_INST_0/I3 SLICE_X32Y899 SLICE_X32Y899/B1
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][6]_INST_0/I3 SLICE_X32Y899 SLICE_X32Y899/B1
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][7]_INST_0/I3 SLICE_X29Y899 SLICE_X29Y899/H1
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][8]_INST_0/I3 SLICE_X29Y899 SLICE_X29Y899/H1
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][9]_INST_0/I3 SLICE_X28Y899 SLICE_X28Y899/A3
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][10]_INST_0/I5 SLICE_X28Y899 SLICE_X28Y899/C2
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][11]_INST_0/I5 SLICE_X32Y898 SLICE_X32Y898/H1
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][1]_INST_0/I5 SLICE_X30Y898 SLICE_X30Y898/C4
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][2]_INST_0/I5 SLICE_X30Y898 SLICE_X30Y898/G4
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][31]_INST_0/I5 SLICE_X28Y898 SLICE_X28Y898/E4
+    end connections
+  end input
+  begin input
+    name dataInArray_1[10]
+    netname dataInArray_1_net[10]
+    numprims 0
+    type input signal
+    maxdelay 0.741
+    begin connections
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][31]_INST_0_i_16/I2 SLICE_X28Y899 SLICE_X28Y899/F2
+    end connections
+  end input
+  begin input
+    name dataInArray_1[11]
+    netname dataInArray_1_net[11]
+    numprims 0
+    type input signal
+    maxdelay 0.770
+    begin connections
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][31]_INST_0_i_16/I1 SLICE_X28Y899 SLICE_X28Y899/F1
+    end connections
+  end input
+  begin input
+    name dataInArray_1[12]
+    netname dataInArray_1_net[12]
+    numprims 0
+    type input signal
+    maxdelay 0.706
+    begin connections
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][31]_INST_0_i_16/I0 SLICE_X28Y899 SLICE_X28Y899/F3
+    end connections
+  end input
+  begin input
+    name dataInArray_1[13]
+    netname dataInArray_1_net[13]
+    numprims 0
+    type input signal
+    maxdelay 0.937
+    begin connections
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][31]_INST_0_i_14/I3 SLICE_X29Y899 SLICE_X29Y899/F1
+    end connections
+  end input
+  begin input
+    name dataInArray_1[14]
+    netname dataInArray_1_net[14]
+    numprims 0
+    type input signal
+    maxdelay 0.858
+    begin connections
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][31]_INST_0_i_14/I2 SLICE_X29Y899 SLICE_X29Y899/F4
+    end connections
+  end input
+  begin input
+    name dataInArray_1[15]
+    netname dataInArray_1_net[15]
+    numprims 0
+    type input signal
+    maxdelay 0.874
+    begin connections
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][31]_INST_0_i_14/I1 SLICE_X29Y899 SLICE_X29Y899/F3
+    end connections
+  end input
+  begin input
+    name dataInArray_1[16]
+    netname dataInArray_1_net[16]
+    numprims 0
+    type input signal
+    maxdelay 0.799
+    begin connections
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][31]_INST_0_i_14/I0 SLICE_X29Y899 SLICE_X29Y899/F6
+    end connections
+  end input
+  begin input
+    name dataInArray_1[17]
+    netname dataInArray_1_net[17]
+    numprims 0
+    type input signal
+    maxdelay 0.867
+    begin connections
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][31]_INST_0_i_13/I3 SLICE_X30Y899 SLICE_X30Y899/A6
+    end connections
+  end input
+  begin input
+    name dataInArray_1[18]
+    netname dataInArray_1_net[18]
+    numprims 0
+    type input signal
+    maxdelay 0.891
+    begin connections
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][31]_INST_0_i_13/I2 SLICE_X30Y899 SLICE_X30Y899/A5
+    end connections
+  end input
+  begin input
+    name dataInArray_1[19]
+    netname dataInArray_1_net[19]
+    numprims 0
+    type input signal
+    maxdelay 0.927
+    begin connections
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][31]_INST_0_i_13/I1 SLICE_X30Y899 SLICE_X30Y899/A4
+    end connections
+  end input
+  begin input
+    name dataInArray_1[1]
+    netname dataInArray_1_net[1]
+    numprims 0
+    type input signal
+    maxdelay 0.642
+    begin connections
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][2]_INST_0_i_1/I0 SLICE_X31Y898 SLICE_X31Y898/C4
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][10]_INST_0/I1 SLICE_X28Y899 SLICE_X28Y899/C1
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][11]_INST_0/I1 SLICE_X32Y898 SLICE_X32Y898/H4
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][12]_INST_0_i_1/I1 SLICE_X32Y898 SLICE_X32Y898/D1
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][13]_INST_0_i_1/I1 SLICE_X31Y898 SLICE_X31Y898/C4
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][14]_INST_0_i_1/I1 SLICE_X29Y898 SLICE_X29Y898/E3
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][5]_INST_0_i_1/I1 SLICE_X31Y898 SLICE_X31Y898/A3
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][6]_INST_0_i_1/I1 SLICE_X29Y899 SLICE_X29Y899/B6
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][15]_INST_0_i_1/I2 SLICE_X31Y899 SLICE_X31Y899/G2
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][16]_INST_0_i_1/I2 SLICE_X29Y899 SLICE_X29Y899/G1
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][17]_INST_0_i_1/I2 SLICE_X31Y899 SLICE_X31Y899/F4
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][18]_INST_0_i_1/I2 SLICE_X28Y899 SLICE_X28Y899/H2
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][19]_INST_0_i_1/I2 SLICE_X31Y899 SLICE_X31Y899/E5
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][20]_INST_0_i_1/I2 SLICE_X28Y898 SLICE_X28Y898/H1
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][21]_INST_0_i_1/I2 SLICE_X30Y898 SLICE_X30Y898/H1
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][22]_INST_0_i_1/I2 SLICE_X28Y898 SLICE_X28Y898/G1
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][23]_INST_0_i_1/I2 SLICE_X31Y898 SLICE_X31Y898/B3
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][24]_INST_0_i_1/I2 SLICE_X28Y898 SLICE_X28Y898/F5
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][25]_INST_0_i_1/I2 SLICE_X30Y899 SLICE_X30Y899/F4
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][26]_INST_0_i_1/I2 SLICE_X28Y898 SLICE_X28Y898/B6
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][27]_INST_0_i_1/I2 SLICE_X30Y898 SLICE_X30Y898/B1
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][28]_INST_0_i_1/I2 SLICE_X28Y898 SLICE_X28Y898/A3
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][29]_INST_0_i_1/I2 SLICE_X31Y898 SLICE_X31Y898/F2
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][30]_INST_0_i_1/I2 SLICE_X27Y898 SLICE_X27Y898/F4
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][31]_INST_0/I2 SLICE_X28Y898 SLICE_X28Y898/E1
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][31]_INST_0_i_1/I2 SLICE_X30Y899 SLICE_X30Y899/D3
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][31]_INST_0_i_2/I2 SLICE_X27Y898 SLICE_X27Y898/B1
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][0]_INST_0/I4 SLICE_X32Y899 SLICE_X32Y899/H5
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][10]_INST_0_i_1/I4 SLICE_X29Y898 SLICE_X29Y898/C1
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][3]_INST_0_i_1/I4 SLICE_X30Y898 SLICE_X30Y898/F3
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][4]_INST_0_i_1/I4 SLICE_X30Y898 SLICE_X30Y898/E3
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][7]_INST_0_i_1/I4 SLICE_X32Y899 SLICE_X32Y899/F3
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][8]_INST_0_i_1/I4 SLICE_X29Y898 SLICE_X29Y898/G2
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][9]_INST_0_i_1/I4 SLICE_X29Y898 SLICE_X29Y898/F5
+    end connections
+  end input
+  begin input
+    name dataInArray_1[20]
+    netname dataInArray_1_net[20]
+    numprims 0
+    type input signal
+    maxdelay 0.943
+    begin connections
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][31]_INST_0_i_13/I0 SLICE_X30Y899 SLICE_X30Y899/A3
+    end connections
+  end input
+  begin input
+    name dataInArray_1[21]
+    netname dataInArray_1_net[21]
+    numprims 0
+    type input signal
+    maxdelay 0.799
+    begin connections
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][31]_INST_0_i_18/I4 SLICE_X28Y899 SLICE_X28Y899/B2
+    end connections
+  end input
+  begin input
+    name dataInArray_1[22]
+    netname dataInArray_1_net[22]
+    numprims 0
+    type input signal
+    maxdelay 0.827
+    begin connections
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][31]_INST_0_i_18/I5 SLICE_X28Y899 SLICE_X28Y899/B1
+    end connections
+  end input
+  begin input
+    name dataInArray_1[23]
+    netname dataInArray_1_net[23]
+    numprims 0
+    type input signal
+    maxdelay 0.780
+    begin connections
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][31]_INST_0_i_17/I0 SLICE_X27Y899 SLICE_X27Y899/E5
+    end connections
+  end input
+  begin input
+    name dataInArray_1[24]
+    netname dataInArray_1_net[24]
+    numprims 0
+    type input signal
+    maxdelay 0.865
+    begin connections
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][31]_INST_0_i_17/I1 SLICE_X27Y899 SLICE_X27Y899/E2
+    end connections
+  end input
+  begin input
+    name dataInArray_1[25]
+    netname dataInArray_1_net[25]
+    numprims 0
+    type input signal
+    maxdelay 0.818
+    begin connections
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][31]_INST_0_i_17/I2 SLICE_X27Y899 SLICE_X27Y899/E4
+    end connections
+  end input
+  begin input
+    name dataInArray_1[26]
+    netname dataInArray_1_net[26]
+    numprims 0
+    type input signal
+    maxdelay 0.756
+    begin connections
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][31]_INST_0_i_17/I3 SLICE_X27Y899 SLICE_X27Y899/E6
+    end connections
+  end input
+  begin input
+    name dataInArray_1[27]
+    netname dataInArray_1_net[27]
+    numprims 0
+    type input signal
+    maxdelay 0.712
+    begin connections
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][31]_INST_0_i_18/I3 SLICE_X28Y899 SLICE_X28Y899/B5
+    end connections
+  end input
+  begin input
+    name dataInArray_1[28]
+    netname dataInArray_1_net[28]
+    numprims 0
+    type input signal
+    maxdelay 0.749
+    begin connections
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][31]_INST_0_i_18/I2 SLICE_X28Y899 SLICE_X28Y899/B4
+    end connections
+  end input
+  begin input
+    name dataInArray_1[29]
+    netname dataInArray_1_net[29]
+    numprims 0
+    type input signal
+    maxdelay 0.765
+    begin connections
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][31]_INST_0_i_18/I1 SLICE_X28Y899 SLICE_X28Y899/B3
+    end connections
+  end input
+  begin input
+    name dataInArray_1[2]
+    netname dataInArray_1_net[2]
+    numprims 0
+    type input signal
+    maxdelay 1.001
+    begin connections
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][10]_INST_0_i_1/I1 SLICE_X29Y898 SLICE_X29Y898/C2
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][11]_INST_0_i_1/I1 SLICE_X32Y898 SLICE_X32Y898/G6
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][11]_INST_0_i_2/I1 SLICE_X32Y898 SLICE_X32Y898/F4
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][12]_INST_0_i_2/I1 SLICE_X27Y899 SLICE_X27Y899/H4
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][14]_INST_0_i_2/I1 SLICE_X29Y898 SLICE_X29Y898/H5
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][2]_INST_0_i_1/I1 SLICE_X31Y898 SLICE_X31Y898/C2
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][31]_INST_0_i_3/I1 SLICE_X27Y898 SLICE_X27Y898/A6
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][7]_INST_0_i_1/I1 SLICE_X32Y899 SLICE_X32Y899/F4
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][7]_INST_0_i_2/I1 SLICE_X32Y899 SLICE_X32Y899/D3
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][8]_INST_0_i_1/I1 SLICE_X29Y898 SLICE_X29Y898/G4
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][8]_INST_0_i_2/I1 SLICE_X29Y898 SLICE_X29Y898/B3
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][9]_INST_0_i_1/I1 SLICE_X29Y898 SLICE_X29Y898/F3
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][13]_INST_0_i_1/I3 SLICE_X31Y898 SLICE_X31Y898/C2
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][14]_INST_0_i_1/I3 SLICE_X29Y898 SLICE_X29Y898/E2
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][31]_INST_0_i_2/I3 SLICE_X27Y898 SLICE_X27Y898/B6
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][5]_INST_0_i_1/I3 SLICE_X31Y898 SLICE_X31Y898/A4
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][6]_INST_0_i_1/I3 SLICE_X29Y899 SLICE_X29Y899/B1
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][15]_INST_0_i_1/I4 SLICE_X31Y899 SLICE_X31Y899/G1
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][16]_INST_0_i_1/I4 SLICE_X29Y899 SLICE_X29Y899/G5
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][17]_INST_0_i_1/I4 SLICE_X31Y899 SLICE_X31Y899/F1
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][18]_INST_0_i_1/I4 SLICE_X28Y899 SLICE_X28Y899/H1
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][19]_INST_0_i_1/I4 SLICE_X31Y899 SLICE_X31Y899/E1
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][20]_INST_0_i_1/I4 SLICE_X28Y898 SLICE_X28Y898/H5
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][21]_INST_0_i_1/I4 SLICE_X30Y898 SLICE_X30Y898/H3
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][22]_INST_0_i_1/I4 SLICE_X28Y898 SLICE_X28Y898/G5
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][23]_INST_0_i_1/I4 SLICE_X31Y898 SLICE_X31Y898/B2
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][24]_INST_0_i_1/I4 SLICE_X28Y898 SLICE_X28Y898/F2
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][25]_INST_0_i_1/I4 SLICE_X30Y899 SLICE_X30Y899/F1
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][26]_INST_0_i_1/I4 SLICE_X28Y898 SLICE_X28Y898/B1
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][27]_INST_0_i_1/I4 SLICE_X30Y898 SLICE_X30Y898/B2
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][28]_INST_0_i_1/I4 SLICE_X28Y898 SLICE_X28Y898/A1
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][29]_INST_0_i_1/I4 SLICE_X31Y898 SLICE_X31Y898/F4
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][30]_INST_0_i_1/I4 SLICE_X27Y898 SLICE_X27Y898/F1
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][31]_INST_0_i_1/I4 SLICE_X30Y899 SLICE_X30Y899/D1
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][0]_INST_0/I5 SLICE_X32Y899 SLICE_X32Y899/H1
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][3]_INST_0_i_1/I5 SLICE_X30Y898 SLICE_X30Y898/F5
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][4]_INST_0_i_1/I5 SLICE_X30Y898 SLICE_X30Y898/E5
+    end connections
+  end input
+  begin input
+    name dataInArray_1[30]
+    netname dataInArray_1_net[30]
+    numprims 0
+    type input signal
+    maxdelay 0.688
+    begin connections
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][31]_INST_0_i_18/I0 SLICE_X28Y899 SLICE_X28Y899/B6
+    end connections
+  end input
+  begin input
+    name dataInArray_1[31]
+    netname dataInArray_1_net[31]
+    numprims 0
+    type input signal
+    maxdelay 0.000
+    begin connections
+    end connections
+  end input
+  begin input
+    name dataInArray_1[3]
+    netname dataInArray_1_net[3]
+    numprims 0
+    type input signal
+    maxdelay 1.000
+    begin connections
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][2]_INST_0_i_2/I0 SLICE_X32Y899 SLICE_X32Y899/D5
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][23]_INST_0_i_2/I1 SLICE_X31Y898 SLICE_X31Y898/H4
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][24]_INST_0_i_2/I1 SLICE_X28Y898 SLICE_X28Y898/D5
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][25]_INST_0_i_2/I1 SLICE_X31Y899 SLICE_X31Y899/D5
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][26]_INST_0_i_2/I1 SLICE_X29Y899 SLICE_X29Y899/D4
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][27]_INST_0_i_2/I1 SLICE_X31Y898 SLICE_X31Y898/D4
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][28]_INST_0_i_2/I1 SLICE_X27Y898 SLICE_X27Y898/H4
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][29]_INST_0_i_2/I1 SLICE_X30Y899 SLICE_X30Y899/H3
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][30]_INST_0_i_2/I1 SLICE_X27Y898 SLICE_X27Y898/G4
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][15]_INST_0_i_2/I2 SLICE_X31Y898 SLICE_X31Y898/H4
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][16]_INST_0_i_2/I2 SLICE_X28Y898 SLICE_X28Y898/D5
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][17]_INST_0_i_2/I2 SLICE_X31Y899 SLICE_X31Y899/D5
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][18]_INST_0_i_2/I2 SLICE_X29Y899 SLICE_X29Y899/D4
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][19]_INST_0_i_2/I2 SLICE_X31Y898 SLICE_X31Y898/D4
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][20]_INST_0_i_2/I2 SLICE_X27Y898 SLICE_X27Y898/H4
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][21]_INST_0_i_2/I2 SLICE_X30Y899 SLICE_X30Y899/H3
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][22]_INST_0_i_2/I2 SLICE_X27Y898 SLICE_X27Y898/G4
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][31]_INST_0_i_10/I2 SLICE_X27Y898 SLICE_X27Y898/E6
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][31]_INST_0_i_11/I2 SLICE_X27Y898 SLICE_X27Y898/D3
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][31]_INST_0_i_12/I2 SLICE_X27Y898 SLICE_X27Y898/C5
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][31]_INST_0_i_5/I2 SLICE_X27Y899 SLICE_X27Y899/G4
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][31]_INST_0_i_6/I2 SLICE_X32Y899 SLICE_X32Y899/G5
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][31]_INST_0_i_7/I2 SLICE_X30Y899 SLICE_X30Y899/C1
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][31]_INST_0_i_8/I2 SLICE_X30Y899 SLICE_X30Y899/B2
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][31]_INST_0_i_9/I2 SLICE_X29Y899 SLICE_X29Y899/C4
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][3]_INST_0_i_1/I2 SLICE_X30Y898 SLICE_X30Y898/F6
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][4]_INST_0_i_1/I2 SLICE_X30Y898 SLICE_X30Y898/E6
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][7]_INST_0_i_2/I3 SLICE_X32Y899 SLICE_X32Y899/D5
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][8]_INST_0_i_2/I3 SLICE_X29Y898 SLICE_X29Y898/B2
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][11]_INST_0_i_1/I4 SLICE_X32Y898 SLICE_X32Y898/G4
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][11]_INST_0_i_2/I4 SLICE_X32Y898 SLICE_X32Y898/F6
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][12]_INST_0_i_2/I4 SLICE_X27Y899 SLICE_X27Y899/H5
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][14]_INST_0_i_2/I4 SLICE_X29Y898 SLICE_X29Y898/H4
+    end connections
+  end input
+  begin input
+    name dataInArray_1[4]
+    netname dataInArray_1_net[4]
+    numprims 0
+    type input signal
+    maxdelay 1.048
+    begin connections
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][2]_INST_0_i_2/I1 SLICE_X32Y899 SLICE_X32Y899/D2
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][3]_INST_0_i_1/I1 SLICE_X30Y898 SLICE_X30Y898/F4
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][4]_INST_0_i_1/I1 SLICE_X30Y898 SLICE_X30Y898/E4
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][7]_INST_0_i_2/I2 SLICE_X32Y899 SLICE_X32Y899/D2
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][8]_INST_0_i_2/I2 SLICE_X29Y898 SLICE_X29Y898/B5
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][15]_INST_0_i_2/I3 SLICE_X31Y898 SLICE_X31Y898/H5
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][16]_INST_0_i_2/I3 SLICE_X28Y898 SLICE_X28Y898/D2
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][17]_INST_0_i_2/I3 SLICE_X31Y899 SLICE_X31Y899/D4
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][18]_INST_0_i_2/I3 SLICE_X29Y899 SLICE_X29Y899/D5
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][19]_INST_0_i_2/I3 SLICE_X31Y898 SLICE_X31Y898/D3
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][20]_INST_0_i_2/I3 SLICE_X27Y898 SLICE_X27Y898/H2
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][21]_INST_0_i_2/I3 SLICE_X30Y899 SLICE_X30Y899/H4
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][22]_INST_0_i_2/I3 SLICE_X27Y898 SLICE_X27Y898/G2
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][23]_INST_0_i_2/I3 SLICE_X31Y898 SLICE_X31Y898/H5
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][24]_INST_0_i_2/I3 SLICE_X28Y898 SLICE_X28Y898/D2
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][25]_INST_0_i_2/I3 SLICE_X31Y899 SLICE_X31Y899/D4
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][26]_INST_0_i_2/I3 SLICE_X29Y899 SLICE_X29Y899/D5
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][27]_INST_0_i_2/I3 SLICE_X31Y898 SLICE_X31Y898/D3
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][28]_INST_0_i_2/I3 SLICE_X27Y898 SLICE_X27Y898/H2
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][29]_INST_0_i_2/I3 SLICE_X30Y899 SLICE_X30Y899/H4
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][30]_INST_0_i_2/I3 SLICE_X27Y898 SLICE_X27Y898/G2
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][31]_INST_0_i_10/I4 SLICE_X27Y898 SLICE_X27Y898/E5
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][31]_INST_0_i_11/I4 SLICE_X27Y898 SLICE_X27Y898/D5
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][31]_INST_0_i_12/I4 SLICE_X27Y898 SLICE_X27Y898/C4
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][31]_INST_0_i_5/I4 SLICE_X27Y899 SLICE_X27Y899/G6
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][31]_INST_0_i_6/I4 SLICE_X32Y899 SLICE_X32Y899/G6
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][31]_INST_0_i_7/I4 SLICE_X30Y899 SLICE_X30Y899/C5
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][31]_INST_0_i_8/I4 SLICE_X30Y899 SLICE_X30Y899/B3
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][31]_INST_0_i_9/I4 SLICE_X29Y899 SLICE_X29Y899/C2
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][11]_INST_0_i_1/I5 SLICE_X32Y898 SLICE_X32Y898/G2
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][11]_INST_0_i_2/I5 SLICE_X32Y898 SLICE_X32Y898/F5
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][12]_INST_0_i_2/I5 SLICE_X27Y899 SLICE_X27Y899/H6
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][14]_INST_0_i_2/I5 SLICE_X29Y898 SLICE_X29Y898/H6
+    end connections
+  end input
+  begin input
+    name dataInArray_1[5]
+    netname dataInArray_1_net[5]
+    numprims 0
+    type input signal
+    maxdelay 1.014
+    begin connections
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][31]_INST_0_i_15/I1 SLICE_X29Y899 SLICE_X29Y899/A2
+    end connections
+  end input
+  begin input
+    name dataInArray_1[6]
+    netname dataInArray_1_net[6]
+    numprims 0
+    type input signal
+    maxdelay 0.904
+    begin connections
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][31]_INST_0_i_15/I0 SLICE_X29Y899 SLICE_X29Y899/A6
+    end connections
+  end input
+  begin input
+    name dataInArray_1[7]
+    netname dataInArray_1_net[7]
+    numprims 0
+    type input signal
+    maxdelay 0.929
+    begin connections
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][31]_INST_0_i_15/I3 SLICE_X29Y899 SLICE_X29Y899/A5
+    end connections
+  end input
+  begin input
+    name dataInArray_1[8]
+    netname dataInArray_1_net[8]
+    numprims 0
+    type input signal
+    maxdelay 0.980
+    begin connections
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][31]_INST_0_i_15/I2 SLICE_X29Y899 SLICE_X29Y899/A3
+    end connections
+  end input
+  begin input
+    name dataInArray_1[9]
+    netname dataInArray_1_net[9]
+    numprims 0
+    type input signal
+    maxdelay 0.631
+    begin connections
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][31]_INST_0_i_16/I3 SLICE_X28Y899 SLICE_X28Y899/F6
+    end connections
+  end input
+  begin input
+    name nReadyArray_0
+    netname nReadyArray_0_net
+    numprims 0
+    type input signal
+    maxdelay 0.127
+    begin connections
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/join_write_temp/readyArray[0]_INST_0/I1 SLICE_X28Y899 SLICE_X28Y899/D5
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/join_write_temp/readyArray[1]_INST_0/I1 SLICE_X28Y899 SLICE_X28Y899/D5
+    end connections
+  end input
+  begin input
+    name pValidArray_0
+    netname pValidArray_0_net
+    numprims 0
+    type input signal
+    maxdelay 0.165
+    begin connections
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/join_write_temp/readyArray[0]_INST_0/I0 SLICE_X28Y899 SLICE_X28Y899/D4
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/join_write_temp/allPValidAndGate/res_INST_0/I1 SLICE_X28Y899 SLICE_X28Y899/E2
+    end connections
+  end input
+  begin input
+    name pValidArray_1
+    netname pValidArray_1_net
+    numprims 0
+    type input signal
+    maxdelay 0.114
+    begin connections
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/join_write_temp/readyArray[1]_INST_0/I0 SLICE_X28Y899 SLICE_X28Y899/D3
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/join_write_temp/allPValidAndGate/res_INST_0/I0 SLICE_X28Y899 SLICE_X28Y899/E5
+    end connections
+  end input
+  begin input
+    name rst
+    netname rst
+    numprims 0
+    type input signal
+    maxdelay 0.000
+    begin connections
+    end connections
+  end input
+
+  begin output
+    name dataOutArray_0[0]
+    netname dataOutArray_0_net[0]
+    numprims 0
+    type output signal
+    maxdelay 0.872
+    begin connections
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][0]_INST_0/O SLICE_X32Y899 SLICE_X32Y899/HMUX SLICE_X32Y899/H_O
+    end connections
+  end output
+  begin output
+    name dataOutArray_0[10]
+    netname dataOutArray_0_net[10]
+    numprims 0
+    type output signal
+    maxdelay 0.827
+    begin connections
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][10]_INST_0/O SLICE_X28Y899 SLICE_X28Y899/CMUX SLICE_X28Y899/C_O
+    end connections
+  end output
+  begin output
+    name dataOutArray_0[11]
+    netname dataOutArray_0_net[11]
+    numprims 0
+    type output signal
+    maxdelay 0.908
+    begin connections
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][11]_INST_0/O SLICE_X32Y898 SLICE_X32Y898/HMUX SLICE_X32Y898/H_O
+    end connections
+  end output
+  begin output
+    name dataOutArray_0[12]
+    netname dataOutArray_0_net[12]
+    numprims 0
+    type output signal
+    maxdelay 1.083
+    begin connections
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][12]_INST_0/O SLICE_X31Y899 SLICE_X31Y899/HMUX
+    end connections
+  end output
+  begin output
+    name dataOutArray_0[13]
+    netname dataOutArray_0_net[13]
+    numprims 0
+    type output signal
+    maxdelay 0.957
+    begin connections
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][13]_INST_0/O SLICE_X31Y899 SLICE_X31Y899/H_O
+    end connections
+  end output
+  begin output
+    name dataOutArray_0[14]
+    netname dataOutArray_0_net[14]
+    numprims 0
+    type output signal
+    maxdelay 0.856
+    begin connections
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][14]_INST_0/O SLICE_X31Y899 SLICE_X31Y899/C_O
+    end connections
+  end output
+  begin output
+    name dataOutArray_0[15]
+    netname dataOutArray_0_net[15]
+    numprims 0
+    type output signal
+    maxdelay 1.021
+    begin connections
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][15]_INST_0/O SLICE_X31Y899 SLICE_X31Y899/CMUX
+    end connections
+  end output
+  begin output
+    name dataOutArray_0[16]
+    netname dataOutArray_0_net[16]
+    numprims 0
+    type output signal
+    maxdelay 0.945
+    begin connections
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][16]_INST_0/O SLICE_X32Y899 SLICE_X32Y899/C_O
+    end connections
+  end output
+  begin output
+    name dataOutArray_0[17]
+    netname dataOutArray_0_net[17]
+    numprims 0
+    type output signal
+    maxdelay 0.965
+    begin connections
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][17]_INST_0/O SLICE_X32Y899 SLICE_X32Y899/CMUX
+    end connections
+  end output
+  begin output
+    name dataOutArray_0[18]
+    netname dataOutArray_0_net[18]
+    numprims 0
+    type output signal
+    maxdelay 0.946
+    begin connections
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][18]_INST_0/O SLICE_X31Y899 SLICE_X31Y899/B_O
+    end connections
+  end output
+  begin output
+    name dataOutArray_0[19]
+    netname dataOutArray_0_net[19]
+    numprims 0
+    type output signal
+    maxdelay 1.034
+    begin connections
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][19]_INST_0/O SLICE_X31Y899 SLICE_X31Y899/BMUX
+    end connections
+  end output
+  begin output
+    name dataOutArray_0[1]
+    netname dataOutArray_0_net[1]
+    numprims 0
+    type output signal
+    maxdelay 0.844
+    begin connections
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][1]_INST_0/O SLICE_X30Y898 SLICE_X30Y898/CMUX SLICE_X30Y898/C_O
+    end connections
+  end output
+  begin output
+    name dataOutArray_0[20]
+    netname dataOutArray_0_net[20]
+    numprims 0
+    type output signal
+    maxdelay 0.918
+    begin connections
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][20]_INST_0/O SLICE_X28Y898 SLICE_X28Y898/C_O
+    end connections
+  end output
+  begin output
+    name dataOutArray_0[21]
+    netname dataOutArray_0_net[21]
+    numprims 0
+    type output signal
+    maxdelay 0.984
+    begin connections
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][21]_INST_0/O SLICE_X28Y898 SLICE_X28Y898/CMUX
+    end connections
+  end output
+  begin output
+    name dataOutArray_0[22]
+    netname dataOutArray_0_net[22]
+    numprims 0
+    type output signal
+    maxdelay 0.980
+    begin connections
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][22]_INST_0/O SLICE_X29Y899 SLICE_X29Y899/E_O
+    end connections
+  end output
+  begin output
+    name dataOutArray_0[23]
+    netname dataOutArray_0_net[23]
+    numprims 0
+    type output signal
+    maxdelay 1.035
+    begin connections
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][23]_INST_0/O SLICE_X29Y899 SLICE_X29Y899/EMUX
+    end connections
+  end output
+  begin output
+    name dataOutArray_0[24]
+    netname dataOutArray_0_net[24]
+    numprims 0
+    type output signal
+    maxdelay 0.886
+    begin connections
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][24]_INST_0/O SLICE_X30Y899 SLICE_X30Y899/G_O
+    end connections
+  end output
+  begin output
+    name dataOutArray_0[25]
+    netname dataOutArray_0_net[25]
+    numprims 0
+    type output signal
+    maxdelay 1.079
+    begin connections
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][25]_INST_0/O SLICE_X30Y899 SLICE_X30Y899/GMUX
+    end connections
+  end output
+  begin output
+    name dataOutArray_0[26]
+    netname dataOutArray_0_net[26]
+    numprims 0
+    type output signal
+    maxdelay 0.877
+    begin connections
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][26]_INST_0/O SLICE_X29Y898 SLICE_X29Y898/D_O
+    end connections
+  end output
+  begin output
+    name dataOutArray_0[27]
+    netname dataOutArray_0_net[27]
+    numprims 0
+    type output signal
+    maxdelay 0.903
+    begin connections
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][27]_INST_0/O SLICE_X29Y898 SLICE_X29Y898/DMUX
+    end connections
+  end output
+  begin output
+    name dataOutArray_0[28]
+    netname dataOutArray_0_net[28]
+    numprims 0
+    type output signal
+    maxdelay 0.915
+    begin connections
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][28]_INST_0/O SLICE_X31Y898 SLICE_X31Y898/G_O
+    end connections
+  end output
+  begin output
+    name dataOutArray_0[29]
+    netname dataOutArray_0_net[29]
+    numprims 0
+    type output signal
+    maxdelay 1.048
+    begin connections
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][29]_INST_0/O SLICE_X31Y898 SLICE_X31Y898/GMUX
+    end connections
+  end output
+  begin output
+    name dataOutArray_0[2]
+    netname dataOutArray_0_net[2]
+    numprims 0
+    type output signal
+    maxdelay 0.894
+    begin connections
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][2]_INST_0/O SLICE_X30Y898 SLICE_X30Y898/GMUX SLICE_X30Y898/G_O
+    end connections
+  end output
+  begin output
+    name dataOutArray_0[30]
+    netname dataOutArray_0_net[30]
+    numprims 0
+    type output signal
+    maxdelay 0.883
+    begin connections
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][30]_INST_0/O SLICE_X27Y899 SLICE_X27Y899/FMUX SLICE_X27Y899/F_O
+    end connections
+  end output
+  begin output
+    name dataOutArray_0[31]
+    netname dataOutArray_0_net[31]
+    numprims 0
+    type output signal
+    maxdelay 0.792
+    begin connections
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][31]_INST_0/O SLICE_X28Y898 SLICE_X28Y898/EMUX SLICE_X28Y898/E_O
+    end connections
+  end output
+  begin output
+    name dataOutArray_0[3]
+    netname dataOutArray_0_net[3]
+    numprims 0
+    type output signal
+    maxdelay 0.844
+    begin connections
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][3]_INST_0/O SLICE_X30Y898 SLICE_X30Y898/D_O
+    end connections
+  end output
+  begin output
+    name dataOutArray_0[4]
+    netname dataOutArray_0_net[4]
+    numprims 0
+    type output signal
+    maxdelay 0.909
+    begin connections
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][4]_INST_0/O SLICE_X30Y898 SLICE_X30Y898/DMUX
+    end connections
+  end output
+  begin output
+    name dataOutArray_0[5]
+    netname dataOutArray_0_net[5]
+    numprims 0
+    type output signal
+    maxdelay 0.906
+    begin connections
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][5]_INST_0/O SLICE_X32Y899 SLICE_X32Y899/B_O
+    end connections
+  end output
+  begin output
+    name dataOutArray_0[6]
+    netname dataOutArray_0_net[6]
+    numprims 0
+    type output signal
+    maxdelay 0.963
+    begin connections
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][6]_INST_0/O SLICE_X32Y899 SLICE_X32Y899/BMUX
+    end connections
+  end output
+  begin output
+    name dataOutArray_0[7]
+    netname dataOutArray_0_net[7]
+    numprims 0
+    type output signal
+    maxdelay 0.931
+    begin connections
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][7]_INST_0/O SLICE_X29Y899 SLICE_X29Y899/H_O
+    end connections
+  end output
+  begin output
+    name dataOutArray_0[8]
+    netname dataOutArray_0_net[8]
+    numprims 0
+    type output signal
+    maxdelay 0.962
+    begin connections
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][8]_INST_0/O SLICE_X29Y899 SLICE_X29Y899/HMUX
+    end connections
+  end output
+  begin output
+    name dataOutArray_0[9]
+    netname dataOutArray_0_net[9]
+    numprims 0
+    type output signal
+    maxdelay 0.893
+    begin connections
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/dataOutArray[0][9]_INST_0/O SLICE_X28Y899 SLICE_X28Y899/AMUX SLICE_X28Y899/A_O
+    end connections
+  end output
+  begin output
+    name readyArray_0
+    netname readyArray_0_net
+    numprims 0
+    type output signal
+    maxdelay 0.114
+    begin connections
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/join_write_temp/readyArray[1]_INST_0/O SLICE_X28Y899 SLICE_X28Y899/D_O
+    end connections
+  end output
+  begin output
+    name readyArray_1
+    netname readyArray_1_net
+    numprims 0
+    type output signal
+    maxdelay 0.165
+    begin connections
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/join_write_temp/readyArray[0]_INST_0/O SLICE_X28Y899 SLICE_X28Y899/DMUX
+    end connections
+  end output
+  begin output
+    name validArray_0
+    netname validArray_0_net
+    numprims 0
+    type output signal
+    maxdelay 0.148
+    begin connections
+      pin shl_op_2_1_32_32_I60_J17_R2_C4_cell/shl_op/join_write_temp/allPValidAndGate/res_INST_0/O SLICE_X28Y899 SLICE_X28Y899/EMUX SLICE_X28Y899/E_O
+    end connections
+  end output
+
+end block

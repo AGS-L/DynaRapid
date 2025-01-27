@@ -1,0 +1,104 @@
+begin block
+  name Buffer_1_1_0_0_I60_J146_R1_C1_placedRouted
+  pblocks 1
+  clocks 1
+  inputs 5
+  outputs 3
+
+  begin pblock
+    name pblock_1 
+    grid_ranges SLICE_X230Y899:SLICE_X231Y899
+  end pblock
+  begin clock
+    name clk 
+    period 2.500
+  end clock
+
+  begin input
+    name clk
+    netname clk
+    numprims 2
+    type input clock local
+    maxdelay 0.000
+    begin connections
+      pin Buffer_1_1_0_0_I60_J146_R1_C1_cell/elasticBuffer_sub/oehb1/validArray_reg[0]/C SLICE_X231Y899 SLICE_X231Y899/CLK2
+      pin Buffer_1_1_0_0_I60_J146_R1_C1_cell/elasticBuffer_sub/tehb1/full_reg_reg/C SLICE_X231Y899 SLICE_X231Y899/CLK2
+    end connections
+  end input
+  begin input
+    name dataInArray_0
+    netname dataInArray_0_net
+    numprims 0
+    type input signal
+    maxdelay 0.000
+    begin connections
+    end connections
+  end input
+  begin input
+    name nReadyArray_0
+    netname nReadyArray_0_net
+    numprims 0
+    type input signal
+    maxdelay 0.848
+    begin connections
+      pin Buffer_1_1_0_0_I60_J146_R1_C1_cell/elasticBuffer_sub/oehb1/readyArray[0]_INST_0/I0 SLICE_X231Y899 SLICE_X231Y899/D4
+      pin Buffer_1_1_0_0_I60_J146_R1_C1_cell/elasticBuffer_sub/oehb1/validArray[0]_i_1/I2 SLICE_X231Y899 SLICE_X231Y899/D4
+    end connections
+  end input
+  begin input
+    name pValidArray_0
+    netname pValidArray_0_net
+    numprims 0
+    type input signal
+    maxdelay 0.631
+    begin connections
+      pin Buffer_1_1_0_0_I60_J146_R1_C1_cell/elasticBuffer_sub/tehb1/validArray[0]_INST_0/I0 SLICE_X231Y899 SLICE_X231Y899/C2
+      pin Buffer_1_1_0_0_I60_J146_R1_C1_cell/elasticBuffer_sub/tehb1/full_reg_i_1/I1 SLICE_X231Y899 SLICE_X231Y899/C2
+    end connections
+  end input
+  begin input
+    name rst
+    netname rst
+    numprims 2
+    type input signal
+    maxdelay 0.000
+    begin connections
+      pin Buffer_1_1_0_0_I60_J146_R1_C1_cell/elasticBuffer_sub/oehb1/validArray_reg[0]/CLR SLICE_X231Y899 SLICE_X231Y899/SRST2
+      pin Buffer_1_1_0_0_I60_J146_R1_C1_cell/elasticBuffer_sub/tehb1/full_reg_reg/CLR SLICE_X231Y899 SLICE_X231Y899/SRST2
+    end connections
+  end input
+
+  begin output
+    name dataOutArray_0
+    netname dataOutArray_0_net
+    numprims 0
+    type output ground
+    maxdelay 0.000
+    begin connections
+      pin Buffer_1_1_0_0_I60_J146_R1_C1_cell/GND/G  
+    end connections
+  end output
+  begin output
+    name readyArray_0
+    netname readyArray_0_net
+    numprims 0
+    type output signal
+    maxdelay 0.452
+    begin connections
+      pin Buffer_1_1_0_0_I60_J146_R1_C1_cell/elasticBuffer_sub/tehb1/readyArray[0]_INST_0/O SLICE_X231Y899 SLICE_X231Y899/HMUX SLICE_X231Y899/H_O
+    end connections
+  end output
+  begin output
+    name validArray_0
+    netname validArray_0_net
+    numprims 0
+    type output signal
+    maxdelay 0.096
+    begin connections
+      pin Buffer_1_1_0_0_I60_J146_R1_C1_cell/elasticBuffer_sub/oehb1/readyArray[0]_INST_0/I1 SLICE_X231Y899 SLICE_X231Y899/D3
+      pin Buffer_1_1_0_0_I60_J146_R1_C1_cell/elasticBuffer_sub/oehb1/validArray[0]_i_1/I1 SLICE_X231Y899 SLICE_X231Y899/D3
+      pin Buffer_1_1_0_0_I60_J146_R1_C1_cell/elasticBuffer_sub/oehb1/validArray_reg[0]/Q SLICE_X231Y899 SLICE_X231Y899/EQ
+    end connections
+  end output
+
+end block

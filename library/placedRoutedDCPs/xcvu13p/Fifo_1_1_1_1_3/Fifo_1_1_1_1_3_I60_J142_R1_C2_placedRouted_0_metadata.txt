@@ -1,0 +1,122 @@
+begin block
+  name Fifo_1_1_1_1_3_I60_J142_R1_C2_placedRouted
+  pblocks 1
+  clocks 1
+  inputs 5
+  outputs 3
+
+  begin pblock
+    name pblock_1 
+    grid_ranges SLICE_X224Y899:SLICE_X226Y899
+  end pblock
+  begin clock
+    name clk 
+    period 2.500
+  end clock
+
+  begin input
+    name clk
+    netname clk
+    numprims 7
+    type input clock local
+    maxdelay 0.000
+    begin connections
+      pin Fifo_1_1_1_1_3_I60_J142_R1_C2_cell/elasticFifoInner_sub/Empty_reg/C SLICE_X226Y899 SLICE_X226Y899/CLK1
+      pin Fifo_1_1_1_1_3_I60_J142_R1_C2_cell/elasticFifoInner_sub/Full_reg/C SLICE_X226Y899 SLICE_X226Y899/CLK1
+      pin Fifo_1_1_1_1_3_I60_J142_R1_C2_cell/elasticFifoInner_sub/Head_reg[0]/C SLICE_X225Y899 SLICE_X225Y899/CLK2
+      pin Fifo_1_1_1_1_3_I60_J142_R1_C2_cell/elasticFifoInner_sub/Head_reg[1]/C SLICE_X225Y899 SLICE_X225Y899/CLK2
+      pin Fifo_1_1_1_1_3_I60_J142_R1_C2_cell/elasticFifoInner_sub/Tail_reg[0]/C SLICE_X225Y899 SLICE_X225Y899/CLK1
+      pin Fifo_1_1_1_1_3_I60_J142_R1_C2_cell/elasticFifoInner_sub/Tail_reg[1]/C SLICE_X225Y899 SLICE_X225Y899/CLK1
+      pin Fifo_1_1_1_1_3_I60_J142_R1_C2_cell/elasticFifoInner_sub/Memory_reg_0_3_0_0/DP/CLK SLICE_X225Y899 SLICE_X225Y899/LCLK
+      pin Fifo_1_1_1_1_3_I60_J142_R1_C2_cell/elasticFifoInner_sub/Memory_reg_0_3_0_0/SP/CLK SLICE_X225Y899 SLICE_X225Y899/LCLK
+    end connections
+  end input
+  begin input
+    name dataInArray_0
+    netname dataInArray_0_net
+    numprims 0
+    type input signal
+    maxdelay 0.000
+    begin connections
+      pin Fifo_1_1_1_1_3_I60_J142_R1_C2_cell/elasticFifoInner_sub/Memory_reg_0_3_0_0/DP/I SLICE_X225Y899 SLICE_X225Y899/GX
+      pin Fifo_1_1_1_1_3_I60_J142_R1_C2_cell/elasticFifoInner_sub/Memory_reg_0_3_0_0/SP/I SLICE_X225Y899 SLICE_X225Y899/HX
+    end connections
+  end input
+  begin input
+    name nReadyArray_0
+    netname nReadyArray_0_net
+    numprims 0
+    type input signal
+    maxdelay 0.434
+    begin connections
+      pin Fifo_1_1_1_1_3_I60_J142_R1_C2_cell/elasticFifoInner_sub/Head[1]_i_1/I0 SLICE_X225Y899 SLICE_X225Y899/B1
+      pin Fifo_1_1_1_1_3_I60_J142_R1_C2_cell/elasticFifoInner_sub/readyArray[0]_INST_0/I0 SLICE_X226Y899 SLICE_X226Y899/B1
+      pin Fifo_1_1_1_1_3_I60_J142_R1_C2_cell/elasticFifoInner_sub/Full_i_1/I1 SLICE_X226Y899 SLICE_X226Y899/C2
+      pin Fifo_1_1_1_1_3_I60_J142_R1_C2_cell/elasticFifoInner_sub/Memory_reg_0_3_0_0_i_1/I1 SLICE_X226Y899 SLICE_X226Y899/B1
+      pin Fifo_1_1_1_1_3_I60_J142_R1_C2_cell/elasticFifoInner_sub/Tail[1]_i_1/I1 SLICE_X225Y899 SLICE_X225Y899/B1
+      pin Fifo_1_1_1_1_3_I60_J142_R1_C2_cell/elasticFifoInner_sub/Empty_i_1/I2 SLICE_X226Y899 SLICE_X226Y899/D2
+      pin Fifo_1_1_1_1_3_I60_J142_R1_C2_cell/elasticFifoInner_sub/Empty_i_2/I5 SLICE_X225Y899 SLICE_X225Y899/E6
+    end connections
+  end input
+  begin input
+    name pValidArray_0
+    netname pValidArray_0_net
+    numprims 0
+    type input signal
+    maxdelay 0.314
+    begin connections
+      pin Fifo_1_1_1_1_3_I60_J142_R1_C2_cell/elasticFifoInner_sub/Empty_i_1/I0 SLICE_X226Y899 SLICE_X226Y899/D4
+      pin Fifo_1_1_1_1_3_I60_J142_R1_C2_cell/elasticFifoInner_sub/Memory_reg_0_3_0_0_i_1/I0 SLICE_X226Y899 SLICE_X226Y899/B2
+      pin Fifo_1_1_1_1_3_I60_J142_R1_C2_cell/elasticFifoInner_sub/Full_i_1/I2 SLICE_X226Y899 SLICE_X226Y899/C3
+      pin Fifo_1_1_1_1_3_I60_J142_R1_C2_cell/elasticFifoInner_sub/Tail[1]_i_1/I2 SLICE_X225Y899 SLICE_X225Y899/B3
+    end connections
+  end input
+  begin input
+    name rst
+    netname rst
+    numprims 7
+    type input signal
+    maxdelay 0.229
+    begin connections
+      pin Fifo_1_1_1_1_3_I60_J142_R1_C2_cell/elasticFifoInner_sub/Memory_reg_0_3_0_0_i_1/I3 SLICE_X226Y899 SLICE_X226Y899/B5
+      pin Fifo_1_1_1_1_3_I60_J142_R1_C2_cell/elasticFifoInner_sub/Empty_i_1/I5 SLICE_X226Y899 SLICE_X226Y899/D6
+      pin Fifo_1_1_1_1_3_I60_J142_R1_C2_cell/elasticFifoInner_sub/Full_i_1/I5 SLICE_X226Y899 SLICE_X226Y899/C6
+      pin Fifo_1_1_1_1_3_I60_J142_R1_C2_cell/elasticFifoInner_sub/Head_reg[0]/R SLICE_X225Y899 SLICE_X225Y899/SRST2
+      pin Fifo_1_1_1_1_3_I60_J142_R1_C2_cell/elasticFifoInner_sub/Head_reg[1]/R SLICE_X225Y899 SLICE_X225Y899/SRST2
+      pin Fifo_1_1_1_1_3_I60_J142_R1_C2_cell/elasticFifoInner_sub/Tail_reg[0]/R SLICE_X225Y899 SLICE_X225Y899/SRST1
+      pin Fifo_1_1_1_1_3_I60_J142_R1_C2_cell/elasticFifoInner_sub/Tail_reg[1]/R SLICE_X225Y899 SLICE_X225Y899/SRST1
+    end connections
+  end input
+
+  begin output
+    name dataOutArray_0
+    netname dataOutArray_0_net
+    numprims 0
+    type output signal
+    maxdelay 0.689
+    begin connections
+      pin Fifo_1_1_1_1_3_I60_J142_R1_C2_cell/elasticFifoInner_sub/Memory_reg_0_3_0_0/DP/O SLICE_X225Y899 SLICE_X225Y899/GMUX SLICE_X225Y899/G_O
+    end connections
+  end output
+  begin output
+    name readyArray_0
+    netname readyArray_0_net
+    numprims 0
+    type output signal
+    maxdelay 0.322
+    begin connections
+      pin Fifo_1_1_1_1_3_I60_J142_R1_C2_cell/elasticFifoInner_sub/readyArray[0]_INST_0/O SLICE_X226Y899 SLICE_X226Y899/BMUX
+    end connections
+  end output
+  begin output
+    name validArray_0
+    netname validArray_0_net
+    numprims 0
+    type output signal
+    maxdelay 0.334
+    begin connections
+      pin Fifo_1_1_1_1_3_I60_J142_R1_C2_cell/elasticFifoInner_sub/validArray[0]_INST_0/O SLICE_X224Y899 SLICE_X224Y899/HMUX SLICE_X224Y899/H_O
+    end connections
+  end output
+
+end block

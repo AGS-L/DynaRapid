@@ -1,0 +1,1091 @@
+begin block
+  name add_op_2_1_32_32_I60_J145_R5_C1_placedRouted
+  pblocks 1
+  clocks 1
+  inputs 69
+  outputs 35
+
+  begin pblock
+    name pblock_1 
+    grid_ranges SLICE_X229Y895:SLICE_X229Y899
+  end pblock
+  begin clock
+    name clk 
+    period 2.500
+  end clock
+
+  begin input
+    name clk
+    netname clk
+    numprims 0
+    type input signal
+    maxdelay 0.000
+    begin connections
+    end connections
+  end input
+  begin input
+    name dataInArray_0[0]
+    netname dataInArray_0_net[0]
+    numprims 0
+    type input signal
+    maxdelay 0.634
+    begin connections
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/dataOutArray[0][0]_INST_0/DI[0] SLICE_X229Y895 SLICE_X229Y895/AX
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/dataOutArray[0][0]_INST_0_i_8/I0 SLICE_X229Y895 SLICE_X229Y895/A5
+    end connections
+  end input
+  begin input
+    name dataInArray_0[10]
+    netname dataInArray_0_net[10]
+    numprims 0
+    type input signal
+    maxdelay 0.528
+    begin connections
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/dataOutArray[0][8]_INST_0/DI[2] SLICE_X229Y896 SLICE_X229Y896/CX
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/dataOutArray[0][8]_INST_0_i_6/I0 SLICE_X229Y896 SLICE_X229Y896/C6
+    end connections
+  end input
+  begin input
+    name dataInArray_0[11]
+    netname dataInArray_0_net[11]
+    numprims 0
+    type input signal
+    maxdelay 0.534
+    begin connections
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/dataOutArray[0][8]_INST_0/DI[3] SLICE_X229Y896 SLICE_X229Y896/DX
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/dataOutArray[0][8]_INST_0_i_5/I0 SLICE_X229Y896 SLICE_X229Y896/D6
+    end connections
+  end input
+  begin input
+    name dataInArray_0[12]
+    netname dataInArray_0_net[12]
+    numprims 0
+    type input signal
+    maxdelay 0.592
+    begin connections
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/dataOutArray[0][8]_INST_0/DI[4] SLICE_X229Y896 SLICE_X229Y896/EX
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/dataOutArray[0][8]_INST_0_i_4/I0 SLICE_X229Y896 SLICE_X229Y896/E3
+    end connections
+  end input
+  begin input
+    name dataInArray_0[13]
+    netname dataInArray_0_net[13]
+    numprims 0
+    type input signal
+    maxdelay 0.638
+    begin connections
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/dataOutArray[0][8]_INST_0/DI[5] SLICE_X229Y896 SLICE_X229Y896/FX
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/dataOutArray[0][8]_INST_0_i_3/I0 SLICE_X229Y896 SLICE_X229Y896/F2
+    end connections
+  end input
+  begin input
+    name dataInArray_0[14]
+    netname dataInArray_0_net[14]
+    numprims 0
+    type input signal
+    maxdelay 0.495
+    begin connections
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/dataOutArray[0][8]_INST_0/DI[6] SLICE_X229Y896 SLICE_X229Y896/GX
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/dataOutArray[0][8]_INST_0_i_2/I0 SLICE_X229Y896 SLICE_X229Y896/G5
+    end connections
+  end input
+  begin input
+    name dataInArray_0[15]
+    netname dataInArray_0_net[15]
+    numprims 0
+    type input signal
+    maxdelay 0.531
+    begin connections
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/dataOutArray[0][8]_INST_0/DI[7] SLICE_X229Y896 SLICE_X229Y896/HX
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/dataOutArray[0][8]_INST_0_i_1/I0 SLICE_X229Y896 SLICE_X229Y896/H4
+    end connections
+  end input
+  begin input
+    name dataInArray_0[16]
+    netname dataInArray_0_net[16]
+    numprims 0
+    type input signal
+    maxdelay 0.647
+    begin connections
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/dataOutArray[0][16]_INST_0/DI[0] SLICE_X229Y897 SLICE_X229Y897/AX
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/dataOutArray[0][16]_INST_0_i_8/I0 SLICE_X229Y897 SLICE_X229Y897/A1
+    end connections
+  end input
+  begin input
+    name dataInArray_0[17]
+    netname dataInArray_0_net[17]
+    numprims 0
+    type input signal
+    maxdelay 0.647
+    begin connections
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/dataOutArray[0][16]_INST_0/DI[1] SLICE_X229Y897 SLICE_X229Y897/BX
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/dataOutArray[0][16]_INST_0_i_7/I0 SLICE_X229Y897 SLICE_X229Y897/B1
+    end connections
+  end input
+  begin input
+    name dataInArray_0[18]
+    netname dataInArray_0_net[18]
+    numprims 0
+    type input signal
+    maxdelay 0.613
+    begin connections
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/dataOutArray[0][16]_INST_0/DI[2] SLICE_X229Y897 SLICE_X229Y897/CX
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/dataOutArray[0][16]_INST_0_i_6/I0 SLICE_X229Y897 SLICE_X229Y897/C1
+    end connections
+  end input
+  begin input
+    name dataInArray_0[19]
+    netname dataInArray_0_net[19]
+    numprims 0
+    type input signal
+    maxdelay 0.507
+    begin connections
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/dataOutArray[0][16]_INST_0/DI[3] SLICE_X229Y897 SLICE_X229Y897/DX
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/dataOutArray[0][16]_INST_0_i_5/I0 SLICE_X229Y897 SLICE_X229Y897/D5
+    end connections
+  end input
+  begin input
+    name dataInArray_0[1]
+    netname dataInArray_0_net[1]
+    numprims 0
+    type input signal
+    maxdelay 0.634
+    begin connections
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/dataOutArray[0][0]_INST_0/DI[1] SLICE_X229Y895 SLICE_X229Y895/BX
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/dataOutArray[0][0]_INST_0_i_7/I0 SLICE_X229Y895 SLICE_X229Y895/B5
+    end connections
+  end input
+  begin input
+    name dataInArray_0[20]
+    netname dataInArray_0_net[20]
+    numprims 0
+    type input signal
+    maxdelay 0.574
+    begin connections
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/dataOutArray[0][16]_INST_0/DI[4] SLICE_X229Y897 SLICE_X229Y897/EX
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/dataOutArray[0][16]_INST_0_i_4/I0 SLICE_X229Y897 SLICE_X229Y897/E2
+    end connections
+  end input
+  begin input
+    name dataInArray_0[21]
+    netname dataInArray_0_net[21]
+    numprims 0
+    type input signal
+    maxdelay 0.537
+    begin connections
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/dataOutArray[0][16]_INST_0/DI[5] SLICE_X229Y897 SLICE_X229Y897/FX
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/dataOutArray[0][16]_INST_0_i_3/I0 SLICE_X229Y897 SLICE_X229Y897/F4
+    end connections
+  end input
+  begin input
+    name dataInArray_0[22]
+    netname dataInArray_0_net[22]
+    numprims 0
+    type input signal
+    maxdelay 0.444
+    begin connections
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/dataOutArray[0][16]_INST_0/DI[6] SLICE_X229Y897 SLICE_X229Y897/GX
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/dataOutArray[0][16]_INST_0_i_2/I0 SLICE_X229Y897 SLICE_X229Y897/G5
+    end connections
+  end input
+  begin input
+    name dataInArray_0[23]
+    netname dataInArray_0_net[23]
+    numprims 0
+    type input signal
+    maxdelay 0.446
+    begin connections
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/dataOutArray[0][16]_INST_0/DI[7] SLICE_X229Y897 SLICE_X229Y897/HX
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/dataOutArray[0][16]_INST_0_i_1/I0 SLICE_X229Y897 SLICE_X229Y897/H5
+    end connections
+  end input
+  begin input
+    name dataInArray_0[24]
+    netname dataInArray_0_net[24]
+    numprims 0
+    type input signal
+    maxdelay 0.452
+    begin connections
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/dataOutArray[0][24]_INST_0/DI[0] SLICE_X229Y898 SLICE_X229Y898/AX
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/dataOutArray[0][24]_INST_0_i_8/I0 SLICE_X229Y898 SLICE_X229Y898/A4
+    end connections
+  end input
+  begin input
+    name dataInArray_0[25]
+    netname dataInArray_0_net[25]
+    numprims 0
+    type input signal
+    maxdelay 0.416
+    begin connections
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/dataOutArray[0][24]_INST_0/DI[1] SLICE_X229Y898 SLICE_X229Y898/BX
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/dataOutArray[0][24]_INST_0_i_7/I0 SLICE_X229Y898 SLICE_X229Y898/B5
+    end connections
+  end input
+  begin input
+    name dataInArray_0[26]
+    netname dataInArray_0_net[26]
+    numprims 0
+    type input signal
+    maxdelay 0.427
+    begin connections
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/dataOutArray[0][24]_INST_0/DI[2] SLICE_X229Y898 SLICE_X229Y898/CX
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/dataOutArray[0][24]_INST_0_i_6/I0 SLICE_X229Y898 SLICE_X229Y898/C3
+    end connections
+  end input
+  begin input
+    name dataInArray_0[27]
+    netname dataInArray_0_net[27]
+    numprims 0
+    type input signal
+    maxdelay 0.397
+    begin connections
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/dataOutArray[0][24]_INST_0/DI[3] SLICE_X229Y898 SLICE_X229Y898/DX
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/dataOutArray[0][24]_INST_0_i_5/I0 SLICE_X229Y898 SLICE_X229Y898/D4
+    end connections
+  end input
+  begin input
+    name dataInArray_0[28]
+    netname dataInArray_0_net[28]
+    numprims 0
+    type input signal
+    maxdelay 0.340
+    begin connections
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/dataOutArray[0][24]_INST_0/DI[4] SLICE_X229Y898 SLICE_X229Y898/EX
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/dataOutArray[0][24]_INST_0_i_4/I0 SLICE_X229Y898 SLICE_X229Y898/E3
+    end connections
+  end input
+  begin input
+    name dataInArray_0[29]
+    netname dataInArray_0_net[29]
+    numprims 0
+    type input signal
+    maxdelay 0.384
+    begin connections
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/dataOutArray[0][24]_INST_0/DI[5] SLICE_X229Y898 SLICE_X229Y898/FX
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/dataOutArray[0][24]_INST_0_i_3/I0 SLICE_X229Y898 SLICE_X229Y898/F2
+    end connections
+  end input
+  begin input
+    name dataInArray_0[2]
+    netname dataInArray_0_net[2]
+    numprims 0
+    type input signal
+    maxdelay 0.579
+    begin connections
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/dataOutArray[0][0]_INST_0/DI[2] SLICE_X229Y895 SLICE_X229Y895/CX
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/dataOutArray[0][0]_INST_0_i_6/I0 SLICE_X229Y895 SLICE_X229Y895/C6
+    end connections
+  end input
+  begin input
+    name dataInArray_0[30]
+    netname dataInArray_0_net[30]
+    numprims 0
+    type input signal
+    maxdelay 0.202
+    begin connections
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/dataOutArray[0][24]_INST_0/DI[6] SLICE_X229Y898 SLICE_X229Y898/GX
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/dataOutArray[0][24]_INST_0_i_2/I0 SLICE_X229Y898 SLICE_X229Y898/G6
+    end connections
+  end input
+  begin input
+    name dataInArray_0[31]
+    netname dataInArray_0_net[31]
+    numprims 0
+    type input signal
+    maxdelay 0.244
+    begin connections
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/dataOutArray[0][24]_INST_0_i_1/I0 SLICE_X229Y898 SLICE_X229Y898/H3
+    end connections
+  end input
+  begin input
+    name dataInArray_0[3]
+    netname dataInArray_0_net[3]
+    numprims 0
+    type input signal
+    maxdelay 0.645
+    begin connections
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/dataOutArray[0][0]_INST_0/DI[3] SLICE_X229Y895 SLICE_X229Y895/DX
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/dataOutArray[0][0]_INST_0_i_5/I0 SLICE_X229Y895 SLICE_X229Y895/D4
+    end connections
+  end input
+  begin input
+    name dataInArray_0[4]
+    netname dataInArray_0_net[4]
+    numprims 0
+    type input signal
+    maxdelay 0.705
+    begin connections
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/dataOutArray[0][0]_INST_0/DI[4] SLICE_X229Y895 SLICE_X229Y895/EX
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/dataOutArray[0][0]_INST_0_i_4/I0 SLICE_X229Y895 SLICE_X229Y895/E1
+    end connections
+  end input
+  begin input
+    name dataInArray_0[5]
+    netname dataInArray_0_net[5]
+    numprims 0
+    type input signal
+    maxdelay 0.579
+    begin connections
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/dataOutArray[0][0]_INST_0/DI[5] SLICE_X229Y895 SLICE_X229Y895/FX
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/dataOutArray[0][0]_INST_0_i_3/I0 SLICE_X229Y895 SLICE_X229Y895/F6
+    end connections
+  end input
+  begin input
+    name dataInArray_0[6]
+    netname dataInArray_0_net[6]
+    numprims 0
+    type input signal
+    maxdelay 0.582
+    begin connections
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/dataOutArray[0][0]_INST_0/DI[6] SLICE_X229Y895 SLICE_X229Y895/GX
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/dataOutArray[0][0]_INST_0_i_2/I0 SLICE_X229Y895 SLICE_X229Y895/G4
+    end connections
+  end input
+  begin input
+    name dataInArray_0[7]
+    netname dataInArray_0_net[7]
+    numprims 0
+    type input signal
+    maxdelay 0.664
+    begin connections
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/dataOutArray[0][0]_INST_0/DI[7] SLICE_X229Y895 SLICE_X229Y895/HX
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/dataOutArray[0][0]_INST_0_i_1/I0 SLICE_X229Y895 SLICE_X229Y895/H1
+    end connections
+  end input
+  begin input
+    name dataInArray_0[8]
+    netname dataInArray_0_net[8]
+    numprims 0
+    type input signal
+    maxdelay 0.559
+    begin connections
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/dataOutArray[0][8]_INST_0/DI[0] SLICE_X229Y896 SLICE_X229Y896/AX
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/dataOutArray[0][8]_INST_0_i_8/I0 SLICE_X229Y896 SLICE_X229Y896/A6
+    end connections
+  end input
+  begin input
+    name dataInArray_0[9]
+    netname dataInArray_0_net[9]
+    numprims 0
+    type input signal
+    maxdelay 0.670
+    begin connections
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/dataOutArray[0][8]_INST_0/DI[1] SLICE_X229Y896 SLICE_X229Y896/BX
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/dataOutArray[0][8]_INST_0_i_7/I0 SLICE_X229Y896 SLICE_X229Y896/B2
+    end connections
+  end input
+  begin input
+    name dataInArray_1[0]
+    netname dataInArray_1_net[0]
+    numprims 0
+    type input signal
+    maxdelay 0.720
+    begin connections
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/dataOutArray[0][0]_INST_0_i_8/I1 SLICE_X229Y895 SLICE_X229Y895/A2
+    end connections
+  end input
+  begin input
+    name dataInArray_1[10]
+    netname dataInArray_1_net[10]
+    numprims 0
+    type input signal
+    maxdelay 0.637
+    begin connections
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/dataOutArray[0][8]_INST_0_i_6/I1 SLICE_X229Y896 SLICE_X229Y896/C2
+    end connections
+  end input
+  begin input
+    name dataInArray_1[11]
+    netname dataInArray_1_net[11]
+    numprims 0
+    type input signal
+    maxdelay 0.594
+    begin connections
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/dataOutArray[0][8]_INST_0_i_5/I1 SLICE_X229Y896 SLICE_X229Y896/D4
+    end connections
+  end input
+  begin input
+    name dataInArray_1[12]
+    netname dataInArray_1_net[12]
+    numprims 0
+    type input signal
+    maxdelay 0.578
+    begin connections
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/dataOutArray[0][8]_INST_0_i_4/I1 SLICE_X229Y896 SLICE_X229Y896/E4
+    end connections
+  end input
+  begin input
+    name dataInArray_1[13]
+    netname dataInArray_1_net[13]
+    numprims 0
+    type input signal
+    maxdelay 0.667
+    begin connections
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/dataOutArray[0][8]_INST_0_i_3/I1 SLICE_X229Y896 SLICE_X229Y896/F1
+    end connections
+  end input
+  begin input
+    name dataInArray_1[14]
+    netname dataInArray_1_net[14]
+    numprims 0
+    type input signal
+    maxdelay 0.547
+    begin connections
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/dataOutArray[0][8]_INST_0_i_2/I1 SLICE_X229Y896 SLICE_X229Y896/G3
+    end connections
+  end input
+  begin input
+    name dataInArray_1[15]
+    netname dataInArray_1_net[15]
+    numprims 0
+    type input signal
+    maxdelay 0.472
+    begin connections
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/dataOutArray[0][8]_INST_0_i_1/I1 SLICE_X229Y896 SLICE_X229Y896/H6
+    end connections
+  end input
+  begin input
+    name dataInArray_1[16]
+    netname dataInArray_1_net[16]
+    numprims 0
+    type input signal
+    maxdelay 0.618
+    begin connections
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/dataOutArray[0][16]_INST_0_i_8/I1 SLICE_X229Y897 SLICE_X229Y897/A2
+    end connections
+  end input
+  begin input
+    name dataInArray_1[17]
+    netname dataInArray_1_net[17]
+    numprims 0
+    type input signal
+    maxdelay 0.585
+    begin connections
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/dataOutArray[0][16]_INST_0_i_7/I1 SLICE_X229Y897 SLICE_X229Y897/B3
+    end connections
+  end input
+  begin input
+    name dataInArray_1[18]
+    netname dataInArray_1_net[18]
+    numprims 0
+    type input signal
+    maxdelay 0.501
+    begin connections
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/dataOutArray[0][16]_INST_0_i_6/I1 SLICE_X229Y897 SLICE_X229Y897/C5
+    end connections
+  end input
+  begin input
+    name dataInArray_1[19]
+    netname dataInArray_1_net[19]
+    numprims 0
+    type input signal
+    maxdelay 0.592
+    begin connections
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/dataOutArray[0][16]_INST_0_i_5/I1 SLICE_X229Y897 SLICE_X229Y897/D2
+    end connections
+  end input
+  begin input
+    name dataInArray_1[1]
+    netname dataInArray_1_net[1]
+    numprims 0
+    type input signal
+    maxdelay 0.721
+    begin connections
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/dataOutArray[0][0]_INST_0_i_7/I1 SLICE_X229Y895 SLICE_X229Y895/B2
+    end connections
+  end input
+  begin input
+    name dataInArray_1[20]
+    netname dataInArray_1_net[20]
+    numprims 0
+    type input signal
+    maxdelay 0.541
+    begin connections
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/dataOutArray[0][16]_INST_0_i_4/I1 SLICE_X229Y897 SLICE_X229Y897/E3
+    end connections
+  end input
+  begin input
+    name dataInArray_1[21]
+    netname dataInArray_1_net[21]
+    numprims 0
+    type input signal
+    maxdelay 0.477
+    begin connections
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/dataOutArray[0][16]_INST_0_i_3/I1 SLICE_X229Y897 SLICE_X229Y897/F6
+    end connections
+  end input
+  begin input
+    name dataInArray_1[22]
+    netname dataInArray_1_net[22]
+    numprims 0
+    type input signal
+    maxdelay 0.480
+    begin connections
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/dataOutArray[0][16]_INST_0_i_2/I1 SLICE_X229Y897 SLICE_X229Y897/G4
+    end connections
+  end input
+  begin input
+    name dataInArray_1[23]
+    netname dataInArray_1_net[23]
+    numprims 0
+    type input signal
+    maxdelay 0.480
+    begin connections
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/dataOutArray[0][16]_INST_0_i_1/I1 SLICE_X229Y897 SLICE_X229Y897/H4
+    end connections
+  end input
+  begin input
+    name dataInArray_1[24]
+    netname dataInArray_1_net[24]
+    numprims 0
+    type input signal
+    maxdelay 0.468
+    begin connections
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/dataOutArray[0][24]_INST_0_i_8/I1 SLICE_X229Y898 SLICE_X229Y898/A3
+    end connections
+  end input
+  begin input
+    name dataInArray_1[25]
+    netname dataInArray_1_net[25]
+    numprims 0
+    type input signal
+    maxdelay 0.503
+    begin connections
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/dataOutArray[0][24]_INST_0_i_7/I1 SLICE_X229Y898 SLICE_X229Y898/B2
+    end connections
+  end input
+  begin input
+    name dataInArray_1[26]
+    netname dataInArray_1_net[26]
+    numprims 0
+    type input signal
+    maxdelay 0.461
+    begin connections
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/dataOutArray[0][24]_INST_0_i_6/I1 SLICE_X229Y898 SLICE_X229Y898/C2
+    end connections
+  end input
+  begin input
+    name dataInArray_1[27]
+    netname dataInArray_1_net[27]
+    numprims 0
+    type input signal
+    maxdelay 0.337
+    begin connections
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/dataOutArray[0][24]_INST_0_i_5/I1 SLICE_X229Y898 SLICE_X229Y898/D6
+    end connections
+  end input
+  begin input
+    name dataInArray_1[28]
+    netname dataInArray_1_net[28]
+    numprims 0
+    type input signal
+    maxdelay 0.326
+    begin connections
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/dataOutArray[0][24]_INST_0_i_4/I1 SLICE_X229Y898 SLICE_X229Y898/E4
+    end connections
+  end input
+  begin input
+    name dataInArray_1[29]
+    netname dataInArray_1_net[29]
+    numprims 0
+    type input signal
+    maxdelay 0.334
+    begin connections
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/dataOutArray[0][24]_INST_0_i_3/I1 SLICE_X229Y898 SLICE_X229Y898/F4
+    end connections
+  end input
+  begin input
+    name dataInArray_1[2]
+    netname dataInArray_1_net[2]
+    numprims 0
+    type input signal
+    maxdelay 0.603
+    begin connections
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/dataOutArray[0][0]_INST_0_i_6/I1 SLICE_X229Y895 SLICE_X229Y895/C5
+    end connections
+  end input
+  begin input
+    name dataInArray_1[30]
+    netname dataInArray_1_net[30]
+    numprims 0
+    type input signal
+    maxdelay 0.263
+    begin connections
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/dataOutArray[0][24]_INST_0_i_2/I1 SLICE_X229Y898 SLICE_X229Y898/G4
+    end connections
+  end input
+  begin input
+    name dataInArray_1[31]
+    netname dataInArray_1_net[31]
+    numprims 0
+    type input signal
+    maxdelay 0.309
+    begin connections
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/dataOutArray[0][24]_INST_0_i_1/I1 SLICE_X229Y898 SLICE_X229Y898/H1
+    end connections
+  end input
+  begin input
+    name dataInArray_1[3]
+    netname dataInArray_1_net[3]
+    numprims 0
+    type input signal
+    maxdelay 0.694
+    begin connections
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/dataOutArray[0][0]_INST_0_i_5/I1 SLICE_X229Y895 SLICE_X229Y895/D2
+    end connections
+  end input
+  begin input
+    name dataInArray_1[4]
+    netname dataInArray_1_net[4]
+    numprims 0
+    type input signal
+    maxdelay 0.567
+    begin connections
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/dataOutArray[0][0]_INST_0_i_4/I1 SLICE_X229Y895 SLICE_X229Y895/E6
+    end connections
+  end input
+  begin input
+    name dataInArray_1[5]
+    netname dataInArray_1_net[5]
+    numprims 0
+    type input signal
+    maxdelay 0.654
+    begin connections
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/dataOutArray[0][0]_INST_0_i_3/I1 SLICE_X229Y895 SLICE_X229Y895/F3
+    end connections
+  end input
+  begin input
+    name dataInArray_1[6]
+    netname dataInArray_1_net[6]
+    numprims 0
+    type input signal
+    maxdelay 0.661
+    begin connections
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/dataOutArray[0][0]_INST_0_i_2/I1 SLICE_X229Y895 SLICE_X229Y895/G1
+    end connections
+  end input
+  begin input
+    name dataInArray_1[7]
+    netname dataInArray_1_net[7]
+    numprims 0
+    type input signal
+    maxdelay 0.548
+    begin connections
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/dataOutArray[0][0]_INST_0_i_1/I1 SLICE_X229Y895 SLICE_X229Y895/H5
+    end connections
+  end input
+  begin input
+    name dataInArray_1[8]
+    netname dataInArray_1_net[8]
+    numprims 0
+    type input signal
+    maxdelay 0.583
+    begin connections
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/dataOutArray[0][8]_INST_0_i_8/I1 SLICE_X229Y896 SLICE_X229Y896/A5
+    end connections
+  end input
+  begin input
+    name dataInArray_1[9]
+    netname dataInArray_1_net[9]
+    numprims 0
+    type input signal
+    maxdelay 0.559
+    begin connections
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/dataOutArray[0][8]_INST_0_i_7/I1 SLICE_X229Y896 SLICE_X229Y896/B6
+    end connections
+  end input
+  begin input
+    name nReadyArray_0
+    netname nReadyArray_0_net
+    numprims 0
+    type input signal
+    maxdelay 0.165
+    begin connections
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/join_write_temp/readyArray[0]_INST_0/I1 SLICE_X229Y899 SLICE_X229Y899/D4
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/join_write_temp/readyArray[1]_INST_0/I1 SLICE_X229Y899 SLICE_X229Y899/D4
+    end connections
+  end input
+  begin input
+    name pValidArray_0
+    netname pValidArray_0_net
+    numprims 0
+    type input signal
+    maxdelay 0.174
+    begin connections
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/join_write_temp/readyArray[1]_INST_0/I0 SLICE_X229Y899 SLICE_X229Y899/D1
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/join_write_temp/allPValidAndGate/res_INST_0/I0 SLICE_X229Y899 SLICE_X229Y899/H3
+    end connections
+  end input
+  begin input
+    name pValidArray_1
+    netname pValidArray_1_net
+    numprims 0
+    type input signal
+    maxdelay 0.212
+    begin connections
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/join_write_temp/readyArray[0]_INST_0/I0 SLICE_X229Y899 SLICE_X229Y899/D2
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/join_write_temp/allPValidAndGate/res_INST_0/I1 SLICE_X229Y899 SLICE_X229Y899/H4
+    end connections
+  end input
+  begin input
+    name rst
+    netname rst
+    numprims 0
+    type input signal
+    maxdelay 0.000
+    begin connections
+    end connections
+  end input
+
+  begin output
+    name dataOutArray_0[0]
+    netname dataOutArray_0_net[0]
+    numprims 0
+    type output signal
+    maxdelay 0.273
+    begin connections
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/dataOutArray[0][0]_INST_0/O[0] SLICE_X229Y895 SLICE_X229Y895/AMUX
+    end connections
+  end output
+  begin output
+    name dataOutArray_0[10]
+    netname dataOutArray_0_net[10]
+    numprims 0
+    type output signal
+    maxdelay 0.561
+    begin connections
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/dataOutArray[0][8]_INST_0/O[2] SLICE_X229Y896 SLICE_X229Y896/CMUX
+    end connections
+  end output
+  begin output
+    name dataOutArray_0[11]
+    netname dataOutArray_0_net[11]
+    numprims 0
+    type output signal
+    maxdelay 0.576
+    begin connections
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/dataOutArray[0][8]_INST_0/O[3] SLICE_X229Y896 SLICE_X229Y896/DMUX
+    end connections
+  end output
+  begin output
+    name dataOutArray_0[12]
+    netname dataOutArray_0_net[12]
+    numprims 0
+    type output signal
+    maxdelay 0.581
+    begin connections
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/dataOutArray[0][8]_INST_0/O[4] SLICE_X229Y896 SLICE_X229Y896/EMUX
+    end connections
+  end output
+  begin output
+    name dataOutArray_0[13]
+    netname dataOutArray_0_net[13]
+    numprims 0
+    type output signal
+    maxdelay 0.619
+    begin connections
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/dataOutArray[0][8]_INST_0/O[5] SLICE_X229Y896 SLICE_X229Y896/FMUX
+    end connections
+  end output
+  begin output
+    name dataOutArray_0[14]
+    netname dataOutArray_0_net[14]
+    numprims 0
+    type output signal
+    maxdelay 0.603
+    begin connections
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/dataOutArray[0][8]_INST_0/O[6] SLICE_X229Y896 SLICE_X229Y896/GMUX
+    end connections
+  end output
+  begin output
+    name dataOutArray_0[15]
+    netname dataOutArray_0_net[15]
+    numprims 0
+    type output signal
+    maxdelay 0.618
+    begin connections
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/dataOutArray[0][8]_INST_0/O[7] SLICE_X229Y896 SLICE_X229Y896/HMUX
+    end connections
+  end output
+  begin output
+    name dataOutArray_0[16]
+    netname dataOutArray_0_net[16]
+    numprims 0
+    type output signal
+    maxdelay 0.596
+    begin connections
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/dataOutArray[0][16]_INST_0/O[0] SLICE_X229Y897 SLICE_X229Y897/AMUX
+    end connections
+  end output
+  begin output
+    name dataOutArray_0[17]
+    netname dataOutArray_0_net[17]
+    numprims 0
+    type output signal
+    maxdelay 0.622
+    begin connections
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/dataOutArray[0][16]_INST_0/O[1] SLICE_X229Y897 SLICE_X229Y897/BMUX
+    end connections
+  end output
+  begin output
+    name dataOutArray_0[18]
+    netname dataOutArray_0_net[18]
+    numprims 0
+    type output signal
+    maxdelay 0.612
+    begin connections
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/dataOutArray[0][16]_INST_0/O[2] SLICE_X229Y897 SLICE_X229Y897/CMUX
+    end connections
+  end output
+  begin output
+    name dataOutArray_0[19]
+    netname dataOutArray_0_net[19]
+    numprims 0
+    type output signal
+    maxdelay 0.627
+    begin connections
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/dataOutArray[0][16]_INST_0/O[3] SLICE_X229Y897 SLICE_X229Y897/DMUX
+    end connections
+  end output
+  begin output
+    name dataOutArray_0[1]
+    netname dataOutArray_0_net[1]
+    numprims 0
+    type output signal
+    maxdelay 0.325
+    begin connections
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/dataOutArray[0][0]_INST_0/O[1] SLICE_X229Y895 SLICE_X229Y895/BMUX
+    end connections
+  end output
+  begin output
+    name dataOutArray_0[20]
+    netname dataOutArray_0_net[20]
+    numprims 0
+    type output signal
+    maxdelay 0.632
+    begin connections
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/dataOutArray[0][16]_INST_0/O[4] SLICE_X229Y897 SLICE_X229Y897/EMUX
+    end connections
+  end output
+  begin output
+    name dataOutArray_0[21]
+    netname dataOutArray_0_net[21]
+    numprims 0
+    type output signal
+    maxdelay 0.670
+    begin connections
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/dataOutArray[0][16]_INST_0/O[5] SLICE_X229Y897 SLICE_X229Y897/FMUX
+    end connections
+  end output
+  begin output
+    name dataOutArray_0[22]
+    netname dataOutArray_0_net[22]
+    numprims 0
+    type output signal
+    maxdelay 0.654
+    begin connections
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/dataOutArray[0][16]_INST_0/O[6] SLICE_X229Y897 SLICE_X229Y897/GMUX
+    end connections
+  end output
+  begin output
+    name dataOutArray_0[23]
+    netname dataOutArray_0_net[23]
+    numprims 0
+    type output signal
+    maxdelay 0.669
+    begin connections
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/dataOutArray[0][16]_INST_0/O[7] SLICE_X229Y897 SLICE_X229Y897/HMUX
+    end connections
+  end output
+  begin output
+    name dataOutArray_0[24]
+    netname dataOutArray_0_net[24]
+    numprims 0
+    type output signal
+    maxdelay 0.647
+    begin connections
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/dataOutArray[0][24]_INST_0/O[0] SLICE_X229Y898 SLICE_X229Y898/AMUX
+    end connections
+  end output
+  begin output
+    name dataOutArray_0[25]
+    netname dataOutArray_0_net[25]
+    numprims 0
+    type output signal
+    maxdelay 0.673
+    begin connections
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/dataOutArray[0][24]_INST_0/O[1] SLICE_X229Y898 SLICE_X229Y898/BMUX
+    end connections
+  end output
+  begin output
+    name dataOutArray_0[26]
+    netname dataOutArray_0_net[26]
+    numprims 0
+    type output signal
+    maxdelay 0.663
+    begin connections
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/dataOutArray[0][24]_INST_0/O[2] SLICE_X229Y898 SLICE_X229Y898/CMUX
+    end connections
+  end output
+  begin output
+    name dataOutArray_0[27]
+    netname dataOutArray_0_net[27]
+    numprims 0
+    type output signal
+    maxdelay 0.678
+    begin connections
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/dataOutArray[0][24]_INST_0/O[3] SLICE_X229Y898 SLICE_X229Y898/DMUX
+    end connections
+  end output
+  begin output
+    name dataOutArray_0[28]
+    netname dataOutArray_0_net[28]
+    numprims 0
+    type output signal
+    maxdelay 0.683
+    begin connections
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/dataOutArray[0][24]_INST_0/O[4] SLICE_X229Y898 SLICE_X229Y898/EMUX
+    end connections
+  end output
+  begin output
+    name dataOutArray_0[29]
+    netname dataOutArray_0_net[29]
+    numprims 0
+    type output signal
+    maxdelay 0.721
+    begin connections
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/dataOutArray[0][24]_INST_0/O[5] SLICE_X229Y898 SLICE_X229Y898/FMUX
+    end connections
+  end output
+  begin output
+    name dataOutArray_0[2]
+    netname dataOutArray_0_net[2]
+    numprims 0
+    type output signal
+    maxdelay 0.372
+    begin connections
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/dataOutArray[0][0]_INST_0/O[2] SLICE_X229Y895 SLICE_X229Y895/CMUX
+    end connections
+  end output
+  begin output
+    name dataOutArray_0[30]
+    netname dataOutArray_0_net[30]
+    numprims 0
+    type output signal
+    maxdelay 0.705
+    begin connections
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/dataOutArray[0][24]_INST_0/O[6] SLICE_X229Y898 SLICE_X229Y898/GMUX
+    end connections
+  end output
+  begin output
+    name dataOutArray_0[31]
+    netname dataOutArray_0_net[31]
+    numprims 0
+    type output signal
+    maxdelay 0.720
+    begin connections
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/dataOutArray[0][24]_INST_0/O[7] SLICE_X229Y898 SLICE_X229Y898/HMUX
+    end connections
+  end output
+  begin output
+    name dataOutArray_0[3]
+    netname dataOutArray_0_net[3]
+    numprims 0
+    type output signal
+    maxdelay 0.377
+    begin connections
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/dataOutArray[0][0]_INST_0/O[3] SLICE_X229Y895 SLICE_X229Y895/DMUX
+    end connections
+  end output
+  begin output
+    name dataOutArray_0[4]
+    netname dataOutArray_0_net[4]
+    numprims 0
+    type output signal
+    maxdelay 0.461
+    begin connections
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/dataOutArray[0][0]_INST_0/O[4] SLICE_X229Y895 SLICE_X229Y895/EMUX
+    end connections
+  end output
+  begin output
+    name dataOutArray_0[5]
+    netname dataOutArray_0_net[5]
+    numprims 0
+    type output signal
+    maxdelay 0.503
+    begin connections
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/dataOutArray[0][0]_INST_0/O[5] SLICE_X229Y895 SLICE_X229Y895/FMUX
+    end connections
+  end output
+  begin output
+    name dataOutArray_0[6]
+    netname dataOutArray_0_net[6]
+    numprims 0
+    type output signal
+    maxdelay 0.487
+    begin connections
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/dataOutArray[0][0]_INST_0/O[6] SLICE_X229Y895 SLICE_X229Y895/GMUX
+    end connections
+  end output
+  begin output
+    name dataOutArray_0[7]
+    netname dataOutArray_0_net[7]
+    numprims 0
+    type output signal
+    maxdelay 0.503
+    begin connections
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/dataOutArray[0][0]_INST_0/O[7] SLICE_X229Y895 SLICE_X229Y895/HMUX
+    end connections
+  end output
+  begin output
+    name dataOutArray_0[8]
+    netname dataOutArray_0_net[8]
+    numprims 0
+    type output signal
+    maxdelay 0.545
+    begin connections
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/dataOutArray[0][8]_INST_0/O[0] SLICE_X229Y896 SLICE_X229Y896/AMUX
+    end connections
+  end output
+  begin output
+    name dataOutArray_0[9]
+    netname dataOutArray_0_net[9]
+    numprims 0
+    type output signal
+    maxdelay 0.571
+    begin connections
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/dataOutArray[0][8]_INST_0/O[1] SLICE_X229Y896 SLICE_X229Y896/BMUX
+    end connections
+  end output
+  begin output
+    name readyArray_0
+    netname readyArray_0_net
+    numprims 0
+    type output signal
+    maxdelay 0.212
+    begin connections
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/join_write_temp/readyArray[0]_INST_0/O SLICE_X229Y899 SLICE_X229Y899/DMUX
+    end connections
+  end output
+  begin output
+    name readyArray_1
+    netname readyArray_1_net
+    numprims 0
+    type output signal
+    maxdelay 0.174
+    begin connections
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/join_write_temp/readyArray[1]_INST_0/O SLICE_X229Y899 SLICE_X229Y899/D_O
+    end connections
+  end output
+  begin output
+    name validArray_0
+    netname validArray_0_net
+    numprims 0
+    type output signal
+    maxdelay 0.117
+    begin connections
+      pin add_op_2_1_32_32_I60_J145_R5_C1_cell/add_op_sub/join_write_temp/allPValidAndGate/res_INST_0/O SLICE_X229Y899 SLICE_X229Y899/HMUX SLICE_X229Y899/H_O
+    end connections
+  end output
+
+end block

@@ -1,0 +1,790 @@
+begin block
+  name Fifo_1_1_32_32_5_I60_J146_R5_C1_placedRouted
+  pblocks 1
+  clocks 1
+  inputs 36
+  outputs 34
+
+  begin pblock
+    name pblock_1 
+    grid_ranges SLICE_X230Y895:SLICE_X231Y899
+  end pblock
+  begin clock
+    name clk 
+    period 2.500
+  end clock
+
+  begin input
+    name clk
+    netname clk
+    numprims 11
+    type input clock local
+    maxdelay 0.000
+    begin connections
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Empty_reg/C SLICE_X230Y896 SLICE_X230Y896/CLK1
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Full_reg/C SLICE_X230Y896 SLICE_X230Y896/CLK1
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Head_reg[0]/C SLICE_X231Y896 SLICE_X231Y896/CLK1
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Head_reg[1]/C SLICE_X231Y896 SLICE_X231Y896/CLK1
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Head_reg[2]/C SLICE_X231Y896 SLICE_X231Y896/CLK1
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Tail_reg[0]/C SLICE_X230Y896 SLICE_X230Y896/CLK2
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Tail_reg[1]/C SLICE_X231Y896 SLICE_X231Y896/CLK2
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Tail_reg[2]/C SLICE_X231Y896 SLICE_X231Y896/CLK2
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Memory_reg_0_7_0_13/RAMA/CLK SLICE_X230Y898 SLICE_X230Y898/LCLK
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Memory_reg_0_7_0_13/RAMA_D1/CLK SLICE_X230Y898 SLICE_X230Y898/LCLK
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Memory_reg_0_7_0_13/RAMB/CLK SLICE_X230Y898 SLICE_X230Y898/LCLK
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Memory_reg_0_7_0_13/RAMB_D1/CLK SLICE_X230Y898 SLICE_X230Y898/LCLK
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Memory_reg_0_7_0_13/RAMC/CLK SLICE_X230Y898 SLICE_X230Y898/LCLK
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Memory_reg_0_7_0_13/RAMC_D1/CLK SLICE_X230Y898 SLICE_X230Y898/LCLK
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Memory_reg_0_7_0_13/RAMD/CLK SLICE_X230Y898 SLICE_X230Y898/LCLK
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Memory_reg_0_7_0_13/RAMD_D1/CLK SLICE_X230Y898 SLICE_X230Y898/LCLK
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Memory_reg_0_7_0_13/RAME/CLK SLICE_X230Y898 SLICE_X230Y898/LCLK
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Memory_reg_0_7_0_13/RAME_D1/CLK SLICE_X230Y898 SLICE_X230Y898/LCLK
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Memory_reg_0_7_0_13/RAMF/CLK SLICE_X230Y898 SLICE_X230Y898/LCLK
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Memory_reg_0_7_0_13/RAMF_D1/CLK SLICE_X230Y898 SLICE_X230Y898/LCLK
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Memory_reg_0_7_0_13/RAMG/CLK SLICE_X230Y898 SLICE_X230Y898/LCLK
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Memory_reg_0_7_0_13/RAMG_D1/CLK SLICE_X230Y898 SLICE_X230Y898/LCLK
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Memory_reg_0_7_0_13/RAMH/CLK SLICE_X230Y898 SLICE_X230Y898/LCLK
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Memory_reg_0_7_0_13/RAMH_D1/CLK SLICE_X230Y898 SLICE_X230Y898/LCLK
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Memory_reg_0_7_14_27/RAMA/CLK SLICE_X230Y899 SLICE_X230Y899/LCLK
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Memory_reg_0_7_14_27/RAMA_D1/CLK SLICE_X230Y899 SLICE_X230Y899/LCLK
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Memory_reg_0_7_14_27/RAMB/CLK SLICE_X230Y899 SLICE_X230Y899/LCLK
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Memory_reg_0_7_14_27/RAMB_D1/CLK SLICE_X230Y899 SLICE_X230Y899/LCLK
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Memory_reg_0_7_14_27/RAMC/CLK SLICE_X230Y899 SLICE_X230Y899/LCLK
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Memory_reg_0_7_14_27/RAMC_D1/CLK SLICE_X230Y899 SLICE_X230Y899/LCLK
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Memory_reg_0_7_14_27/RAMD/CLK SLICE_X230Y899 SLICE_X230Y899/LCLK
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Memory_reg_0_7_14_27/RAMD_D1/CLK SLICE_X230Y899 SLICE_X230Y899/LCLK
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Memory_reg_0_7_14_27/RAME/CLK SLICE_X230Y899 SLICE_X230Y899/LCLK
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Memory_reg_0_7_14_27/RAME_D1/CLK SLICE_X230Y899 SLICE_X230Y899/LCLK
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Memory_reg_0_7_14_27/RAMF/CLK SLICE_X230Y899 SLICE_X230Y899/LCLK
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Memory_reg_0_7_14_27/RAMF_D1/CLK SLICE_X230Y899 SLICE_X230Y899/LCLK
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Memory_reg_0_7_14_27/RAMG/CLK SLICE_X230Y899 SLICE_X230Y899/LCLK
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Memory_reg_0_7_14_27/RAMG_D1/CLK SLICE_X230Y899 SLICE_X230Y899/LCLK
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Memory_reg_0_7_14_27/RAMH/CLK SLICE_X230Y899 SLICE_X230Y899/LCLK
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Memory_reg_0_7_14_27/RAMH_D1/CLK SLICE_X230Y899 SLICE_X230Y899/LCLK
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Memory_reg_0_7_28_31/RAMA/CLK SLICE_X230Y897 SLICE_X230Y897/LCLK
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Memory_reg_0_7_28_31/RAMA_D1/CLK SLICE_X230Y897 SLICE_X230Y897/LCLK
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Memory_reg_0_7_28_31/RAMB/CLK SLICE_X230Y897 SLICE_X230Y897/LCLK
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Memory_reg_0_7_28_31/RAMB_D1/CLK SLICE_X230Y897 SLICE_X230Y897/LCLK
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Memory_reg_0_7_28_31/RAMC/CLK SLICE_X230Y897 SLICE_X230Y897/LCLK
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Memory_reg_0_7_28_31/RAMC_D1/CLK SLICE_X230Y897 SLICE_X230Y897/LCLK
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Memory_reg_0_7_28_31/RAMD/CLK SLICE_X230Y897 SLICE_X230Y897/LCLK
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Memory_reg_0_7_28_31/RAMD_D1/CLK SLICE_X230Y897 SLICE_X230Y897/LCLK
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Memory_reg_0_7_28_31/RAME/CLK SLICE_X230Y897 SLICE_X230Y897/LCLK
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Memory_reg_0_7_28_31/RAME_D1/CLK SLICE_X230Y897 SLICE_X230Y897/LCLK
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Memory_reg_0_7_28_31/RAMF/CLK SLICE_X230Y897 SLICE_X230Y897/LCLK
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Memory_reg_0_7_28_31/RAMF_D1/CLK SLICE_X230Y897 SLICE_X230Y897/LCLK
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Memory_reg_0_7_28_31/RAMG/CLK SLICE_X230Y897 SLICE_X230Y897/LCLK
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Memory_reg_0_7_28_31/RAMG_D1/CLK SLICE_X230Y897 SLICE_X230Y897/LCLK
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Memory_reg_0_7_28_31/RAMH/CLK SLICE_X230Y897 SLICE_X230Y897/LCLK
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Memory_reg_0_7_28_31/RAMH_D1/CLK SLICE_X230Y897 SLICE_X230Y897/LCLK
+    end connections
+  end input
+  begin input
+    name dataInArray_0[0]
+    netname dataInArray_0_net[0]
+    numprims 0
+    type input signal
+    maxdelay 0.000
+    begin connections
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Memory_reg_0_7_0_13/RAMA/I SLICE_X230Y898 SLICE_X230Y898/A_I
+    end connections
+  end input
+  begin input
+    name dataInArray_0[10]
+    netname dataInArray_0_net[10]
+    numprims 0
+    type input signal
+    maxdelay 0.000
+    begin connections
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Memory_reg_0_7_0_13/RAMF/I SLICE_X230Y898 SLICE_X230Y898/F_I
+    end connections
+  end input
+  begin input
+    name dataInArray_0[11]
+    netname dataInArray_0_net[11]
+    numprims 0
+    type input signal
+    maxdelay 0.000
+    begin connections
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Memory_reg_0_7_0_13/RAMF_D1/I SLICE_X230Y898 SLICE_X230Y898/FX
+    end connections
+  end input
+  begin input
+    name dataInArray_0[12]
+    netname dataInArray_0_net[12]
+    numprims 0
+    type input signal
+    maxdelay 0.000
+    begin connections
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Memory_reg_0_7_0_13/RAMG/I SLICE_X230Y898 SLICE_X230Y898/G_I
+    end connections
+  end input
+  begin input
+    name dataInArray_0[13]
+    netname dataInArray_0_net[13]
+    numprims 0
+    type input signal
+    maxdelay 0.000
+    begin connections
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Memory_reg_0_7_0_13/RAMG_D1/I SLICE_X230Y898 SLICE_X230Y898/GX
+    end connections
+  end input
+  begin input
+    name dataInArray_0[14]
+    netname dataInArray_0_net[14]
+    numprims 0
+    type input signal
+    maxdelay 0.000
+    begin connections
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Memory_reg_0_7_14_27/RAMA/I SLICE_X230Y899 SLICE_X230Y899/A_I
+    end connections
+  end input
+  begin input
+    name dataInArray_0[15]
+    netname dataInArray_0_net[15]
+    numprims 0
+    type input signal
+    maxdelay 0.000
+    begin connections
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Memory_reg_0_7_14_27/RAMA_D1/I SLICE_X230Y899 SLICE_X230Y899/AX
+    end connections
+  end input
+  begin input
+    name dataInArray_0[16]
+    netname dataInArray_0_net[16]
+    numprims 0
+    type input signal
+    maxdelay 0.000
+    begin connections
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Memory_reg_0_7_14_27/RAMB/I SLICE_X230Y899 SLICE_X230Y899/B_I
+    end connections
+  end input
+  begin input
+    name dataInArray_0[17]
+    netname dataInArray_0_net[17]
+    numprims 0
+    type input signal
+    maxdelay 0.000
+    begin connections
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Memory_reg_0_7_14_27/RAMB_D1/I SLICE_X230Y899 SLICE_X230Y899/BX
+    end connections
+  end input
+  begin input
+    name dataInArray_0[18]
+    netname dataInArray_0_net[18]
+    numprims 0
+    type input signal
+    maxdelay 0.000
+    begin connections
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Memory_reg_0_7_14_27/RAMC/I SLICE_X230Y899 SLICE_X230Y899/C_I
+    end connections
+  end input
+  begin input
+    name dataInArray_0[19]
+    netname dataInArray_0_net[19]
+    numprims 0
+    type input signal
+    maxdelay 0.000
+    begin connections
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Memory_reg_0_7_14_27/RAMC_D1/I SLICE_X230Y899 SLICE_X230Y899/CX
+    end connections
+  end input
+  begin input
+    name dataInArray_0[1]
+    netname dataInArray_0_net[1]
+    numprims 0
+    type input signal
+    maxdelay 0.000
+    begin connections
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Memory_reg_0_7_0_13/RAMA_D1/I SLICE_X230Y898 SLICE_X230Y898/AX
+    end connections
+  end input
+  begin input
+    name dataInArray_0[20]
+    netname dataInArray_0_net[20]
+    numprims 0
+    type input signal
+    maxdelay 0.000
+    begin connections
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Memory_reg_0_7_14_27/RAMD/I SLICE_X230Y899 SLICE_X230Y899/D_I
+    end connections
+  end input
+  begin input
+    name dataInArray_0[21]
+    netname dataInArray_0_net[21]
+    numprims 0
+    type input signal
+    maxdelay 0.000
+    begin connections
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Memory_reg_0_7_14_27/RAMD_D1/I SLICE_X230Y899 SLICE_X230Y899/DX
+    end connections
+  end input
+  begin input
+    name dataInArray_0[22]
+    netname dataInArray_0_net[22]
+    numprims 0
+    type input signal
+    maxdelay 0.000
+    begin connections
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Memory_reg_0_7_14_27/RAME/I SLICE_X230Y899 SLICE_X230Y899/E_I
+    end connections
+  end input
+  begin input
+    name dataInArray_0[23]
+    netname dataInArray_0_net[23]
+    numprims 0
+    type input signal
+    maxdelay 0.000
+    begin connections
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Memory_reg_0_7_14_27/RAME_D1/I SLICE_X230Y899 SLICE_X230Y899/EX
+    end connections
+  end input
+  begin input
+    name dataInArray_0[24]
+    netname dataInArray_0_net[24]
+    numprims 0
+    type input signal
+    maxdelay 0.000
+    begin connections
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Memory_reg_0_7_14_27/RAMF/I SLICE_X230Y899 SLICE_X230Y899/F_I
+    end connections
+  end input
+  begin input
+    name dataInArray_0[25]
+    netname dataInArray_0_net[25]
+    numprims 0
+    type input signal
+    maxdelay 0.000
+    begin connections
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Memory_reg_0_7_14_27/RAMF_D1/I SLICE_X230Y899 SLICE_X230Y899/FX
+    end connections
+  end input
+  begin input
+    name dataInArray_0[26]
+    netname dataInArray_0_net[26]
+    numprims 0
+    type input signal
+    maxdelay 0.000
+    begin connections
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Memory_reg_0_7_14_27/RAMG/I SLICE_X230Y899 SLICE_X230Y899/G_I
+    end connections
+  end input
+  begin input
+    name dataInArray_0[27]
+    netname dataInArray_0_net[27]
+    numprims 0
+    type input signal
+    maxdelay 0.000
+    begin connections
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Memory_reg_0_7_14_27/RAMG_D1/I SLICE_X230Y899 SLICE_X230Y899/GX
+    end connections
+  end input
+  begin input
+    name dataInArray_0[28]
+    netname dataInArray_0_net[28]
+    numprims 0
+    type input signal
+    maxdelay 0.000
+    begin connections
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Memory_reg_0_7_28_31/RAMA/I SLICE_X230Y897 SLICE_X230Y897/A_I
+    end connections
+  end input
+  begin input
+    name dataInArray_0[29]
+    netname dataInArray_0_net[29]
+    numprims 0
+    type input signal
+    maxdelay 0.000
+    begin connections
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Memory_reg_0_7_28_31/RAMA_D1/I SLICE_X230Y897 SLICE_X230Y897/AX
+    end connections
+  end input
+  begin input
+    name dataInArray_0[2]
+    netname dataInArray_0_net[2]
+    numprims 0
+    type input signal
+    maxdelay 0.000
+    begin connections
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Memory_reg_0_7_0_13/RAMB/I SLICE_X230Y898 SLICE_X230Y898/B_I
+    end connections
+  end input
+  begin input
+    name dataInArray_0[30]
+    netname dataInArray_0_net[30]
+    numprims 0
+    type input signal
+    maxdelay 0.000
+    begin connections
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Memory_reg_0_7_28_31/RAMB/I SLICE_X230Y897 SLICE_X230Y897/B_I
+    end connections
+  end input
+  begin input
+    name dataInArray_0[31]
+    netname dataInArray_0_net[31]
+    numprims 0
+    type input signal
+    maxdelay 0.000
+    begin connections
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Memory_reg_0_7_28_31/RAMB_D1/I SLICE_X230Y897 SLICE_X230Y897/BX
+    end connections
+  end input
+  begin input
+    name dataInArray_0[3]
+    netname dataInArray_0_net[3]
+    numprims 0
+    type input signal
+    maxdelay 0.000
+    begin connections
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Memory_reg_0_7_0_13/RAMB_D1/I SLICE_X230Y898 SLICE_X230Y898/BX
+    end connections
+  end input
+  begin input
+    name dataInArray_0[4]
+    netname dataInArray_0_net[4]
+    numprims 0
+    type input signal
+    maxdelay 0.000
+    begin connections
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Memory_reg_0_7_0_13/RAMC/I SLICE_X230Y898 SLICE_X230Y898/C_I
+    end connections
+  end input
+  begin input
+    name dataInArray_0[5]
+    netname dataInArray_0_net[5]
+    numprims 0
+    type input signal
+    maxdelay 0.000
+    begin connections
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Memory_reg_0_7_0_13/RAMC_D1/I SLICE_X230Y898 SLICE_X230Y898/CX
+    end connections
+  end input
+  begin input
+    name dataInArray_0[6]
+    netname dataInArray_0_net[6]
+    numprims 0
+    type input signal
+    maxdelay 0.000
+    begin connections
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Memory_reg_0_7_0_13/RAMD/I SLICE_X230Y898 SLICE_X230Y898/D_I
+    end connections
+  end input
+  begin input
+    name dataInArray_0[7]
+    netname dataInArray_0_net[7]
+    numprims 0
+    type input signal
+    maxdelay 0.000
+    begin connections
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Memory_reg_0_7_0_13/RAMD_D1/I SLICE_X230Y898 SLICE_X230Y898/DX
+    end connections
+  end input
+  begin input
+    name dataInArray_0[8]
+    netname dataInArray_0_net[8]
+    numprims 0
+    type input signal
+    maxdelay 0.000
+    begin connections
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Memory_reg_0_7_0_13/RAME/I SLICE_X230Y898 SLICE_X230Y898/E_I
+    end connections
+  end input
+  begin input
+    name dataInArray_0[9]
+    netname dataInArray_0_net[9]
+    numprims 0
+    type input signal
+    maxdelay 0.000
+    begin connections
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Memory_reg_0_7_0_13/RAME_D1/I SLICE_X230Y898 SLICE_X230Y898/EX
+    end connections
+  end input
+  begin input
+    name nReadyArray_0
+    netname nReadyArray_0_net
+    numprims 0
+    type input signal
+    maxdelay 0.794
+    begin connections
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Head[2]_i_1/I0 SLICE_X230Y896 SLICE_X230Y896/B3
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/readyArray[0]_INST_0/I0 SLICE_X230Y896 SLICE_X230Y896/H5
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Full_i_1/I1 SLICE_X230Y896 SLICE_X230Y896/C1
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Memory_reg_0_7_28_31_i_1/I1 SLICE_X230Y896 SLICE_X230Y896/A3
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Tail[2]_i_1/I1 SLICE_X230Y896 SLICE_X230Y896/A3
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Empty_i_1/I2 SLICE_X230Y896 SLICE_X230Y896/D1
+    end connections
+  end input
+  begin input
+    name pValidArray_0
+    netname pValidArray_0_net
+    numprims 0
+    type input signal
+    maxdelay 0.855
+    begin connections
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Empty_i_1/I0 SLICE_X230Y896 SLICE_X230Y896/D2
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Memory_reg_0_7_28_31_i_1/I0 SLICE_X230Y896 SLICE_X230Y896/A1
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Full_i_1/I2 SLICE_X230Y896 SLICE_X230Y896/C2
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Tail[2]_i_1/I2 SLICE_X230Y896 SLICE_X230Y896/A1
+    end connections
+  end input
+  begin input
+    name rst
+    netname rst
+    numprims 9
+    type input signal
+    maxdelay 0.458
+    begin connections
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Memory_reg_0_7_28_31_i_1/I3 SLICE_X230Y896 SLICE_X230Y896/A5
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Empty_i_1/I5 SLICE_X230Y896 SLICE_X230Y896/D6
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Full_i_1/I5 SLICE_X230Y896 SLICE_X230Y896/C6
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Head_reg[0]/R SLICE_X231Y896 SLICE_X231Y896/SRST1
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Head_reg[1]/R SLICE_X231Y896 SLICE_X231Y896/SRST1
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Head_reg[2]/R SLICE_X231Y896 SLICE_X231Y896/SRST1
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Tail_reg[0]/R SLICE_X230Y896 SLICE_X230Y896/SRST2
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Tail_reg[1]/R SLICE_X231Y896 SLICE_X231Y896/SRST2
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Tail_reg[2]/R SLICE_X231Y896 SLICE_X231Y896/SRST2
+    end connections
+  end input
+
+  begin output
+    name dataOutArray_0[0]
+    netname dataOutArray_0_net[0]
+    numprims 0
+    type output signal
+    maxdelay 0.870
+    begin connections
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Memory_reg_0_7_0_13/RAMA/O SLICE_X230Y898 SLICE_X230Y898/AMUX
+    end connections
+  end output
+  begin output
+    name dataOutArray_0[10]
+    netname dataOutArray_0_net[10]
+    numprims 0
+    type output signal
+    maxdelay 1.011
+    begin connections
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Memory_reg_0_7_0_13/RAMF/O SLICE_X230Y898 SLICE_X230Y898/FMUX
+    end connections
+  end output
+  begin output
+    name dataOutArray_0[11]
+    netname dataOutArray_0_net[11]
+    numprims 0
+    type output signal
+    maxdelay 0.933
+    begin connections
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Memory_reg_0_7_0_13/RAMF_D1/O SLICE_X230Y898 SLICE_X230Y898/F_O
+    end connections
+  end output
+  begin output
+    name dataOutArray_0[12]
+    netname dataOutArray_0_net[12]
+    numprims 0
+    type output signal
+    maxdelay 0.828
+    begin connections
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Memory_reg_0_7_0_13/RAMG/O SLICE_X230Y898 SLICE_X230Y898/GMUX
+    end connections
+  end output
+  begin output
+    name dataOutArray_0[13]
+    netname dataOutArray_0_net[13]
+    numprims 0
+    type output signal
+    maxdelay 0.767
+    begin connections
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Memory_reg_0_7_0_13/RAMG_D1/O SLICE_X230Y898 SLICE_X230Y898/G_O
+    end connections
+  end output
+  begin output
+    name dataOutArray_0[14]
+    netname dataOutArray_0_net[14]
+    numprims 0
+    type output signal
+    maxdelay 1.049
+    begin connections
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Memory_reg_0_7_14_27/RAMA/O SLICE_X230Y899 SLICE_X230Y899/AMUX
+    end connections
+  end output
+  begin output
+    name dataOutArray_0[15]
+    netname dataOutArray_0_net[15]
+    numprims 0
+    type output signal
+    maxdelay 0.988
+    begin connections
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Memory_reg_0_7_14_27/RAMA_D1/O SLICE_X230Y899 SLICE_X230Y899/A_O
+    end connections
+  end output
+  begin output
+    name dataOutArray_0[16]
+    netname dataOutArray_0_net[16]
+    numprims 0
+    type output signal
+    maxdelay 1.054
+    begin connections
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Memory_reg_0_7_14_27/RAMB/O SLICE_X230Y899 SLICE_X230Y899/BMUX
+    end connections
+  end output
+  begin output
+    name dataOutArray_0[17]
+    netname dataOutArray_0_net[17]
+    numprims 0
+    type output signal
+    maxdelay 0.987
+    begin connections
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Memory_reg_0_7_14_27/RAMB_D1/O SLICE_X230Y899 SLICE_X230Y899/B_O
+    end connections
+  end output
+  begin output
+    name dataOutArray_0[18]
+    netname dataOutArray_0_net[18]
+    numprims 0
+    type output signal
+    maxdelay 1.081
+    begin connections
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Memory_reg_0_7_14_27/RAMC/O SLICE_X230Y899 SLICE_X230Y899/CMUX
+    end connections
+  end output
+  begin output
+    name dataOutArray_0[19]
+    netname dataOutArray_0_net[19]
+    numprims 0
+    type output signal
+    maxdelay 1.014
+    begin connections
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Memory_reg_0_7_14_27/RAMC_D1/O SLICE_X230Y899 SLICE_X230Y899/C_O
+    end connections
+  end output
+  begin output
+    name dataOutArray_0[1]
+    netname dataOutArray_0_net[1]
+    numprims 0
+    type output signal
+    maxdelay 0.811
+    begin connections
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Memory_reg_0_7_0_13/RAMA_D1/O SLICE_X230Y898 SLICE_X230Y898/A_O
+    end connections
+  end output
+  begin output
+    name dataOutArray_0[20]
+    netname dataOutArray_0_net[20]
+    numprims 0
+    type output signal
+    maxdelay 1.085
+    begin connections
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Memory_reg_0_7_14_27/RAMD/O SLICE_X230Y899 SLICE_X230Y899/DMUX
+    end connections
+  end output
+  begin output
+    name dataOutArray_0[21]
+    netname dataOutArray_0_net[21]
+    numprims 0
+    type output signal
+    maxdelay 1.018
+    begin connections
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Memory_reg_0_7_14_27/RAMD_D1/O SLICE_X230Y899 SLICE_X230Y899/D_O
+    end connections
+  end output
+  begin output
+    name dataOutArray_0[22]
+    netname dataOutArray_0_net[22]
+    numprims 0
+    type output signal
+    maxdelay 0.864
+    begin connections
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Memory_reg_0_7_14_27/RAME/O SLICE_X230Y899 SLICE_X230Y899/EMUX
+    end connections
+  end output
+  begin output
+    name dataOutArray_0[23]
+    netname dataOutArray_0_net[23]
+    numprims 0
+    type output signal
+    maxdelay 0.799
+    begin connections
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Memory_reg_0_7_14_27/RAME_D1/O SLICE_X230Y899 SLICE_X230Y899/E_O
+    end connections
+  end output
+  begin output
+    name dataOutArray_0[24]
+    netname dataOutArray_0_net[24]
+    numprims 0
+    type output signal
+    maxdelay 0.866
+    begin connections
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Memory_reg_0_7_14_27/RAMF/O SLICE_X230Y899 SLICE_X230Y899/FMUX
+    end connections
+  end output
+  begin output
+    name dataOutArray_0[25]
+    netname dataOutArray_0_net[25]
+    numprims 0
+    type output signal
+    maxdelay 0.788
+    begin connections
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Memory_reg_0_7_14_27/RAMF_D1/O SLICE_X230Y899 SLICE_X230Y899/F_O
+    end connections
+  end output
+  begin output
+    name dataOutArray_0[26]
+    netname dataOutArray_0_net[26]
+    numprims 0
+    type output signal
+    maxdelay 0.756
+    begin connections
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Memory_reg_0_7_14_27/RAMG/O SLICE_X230Y899 SLICE_X230Y899/GMUX
+    end connections
+  end output
+  begin output
+    name dataOutArray_0[27]
+    netname dataOutArray_0_net[27]
+    numprims 0
+    type output signal
+    maxdelay 0.695
+    begin connections
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Memory_reg_0_7_14_27/RAMG_D1/O SLICE_X230Y899 SLICE_X230Y899/G_O
+    end connections
+  end output
+  begin output
+    name dataOutArray_0[28]
+    netname dataOutArray_0_net[28]
+    numprims 0
+    type output signal
+    maxdelay 0.912
+    begin connections
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Memory_reg_0_7_28_31/RAMA/O SLICE_X230Y897 SLICE_X230Y897/AMUX
+    end connections
+  end output
+  begin output
+    name dataOutArray_0[29]
+    netname dataOutArray_0_net[29]
+    numprims 0
+    type output signal
+    maxdelay 0.853
+    begin connections
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Memory_reg_0_7_28_31/RAMA_D1/O SLICE_X230Y897 SLICE_X230Y897/A_O
+    end connections
+  end output
+  begin output
+    name dataOutArray_0[2]
+    netname dataOutArray_0_net[2]
+    numprims 0
+    type output signal
+    maxdelay 0.877
+    begin connections
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Memory_reg_0_7_0_13/RAMB/O SLICE_X230Y898 SLICE_X230Y898/BMUX
+    end connections
+  end output
+  begin output
+    name dataOutArray_0[30]
+    netname dataOutArray_0_net[30]
+    numprims 0
+    type output signal
+    maxdelay 1.117
+    begin connections
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Memory_reg_0_7_28_31/RAMB/O SLICE_X230Y897 SLICE_X230Y897/BMUX
+    end connections
+  end output
+  begin output
+    name dataOutArray_0[31]
+    netname dataOutArray_0_net[31]
+    numprims 0
+    type output signal
+    maxdelay 1.049
+    begin connections
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Memory_reg_0_7_28_31/RAMB_D1/O SLICE_X230Y897 SLICE_X230Y897/B_O
+    end connections
+  end output
+  begin output
+    name dataOutArray_0[3]
+    netname dataOutArray_0_net[3]
+    numprims 0
+    type output signal
+    maxdelay 0.809
+    begin connections
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Memory_reg_0_7_0_13/RAMB_D1/O SLICE_X230Y898 SLICE_X230Y898/B_O
+    end connections
+  end output
+  begin output
+    name dataOutArray_0[4]
+    netname dataOutArray_0_net[4]
+    numprims 0
+    type output signal
+    maxdelay 0.840
+    begin connections
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Memory_reg_0_7_0_13/RAMC/O SLICE_X230Y898 SLICE_X230Y898/CMUX
+    end connections
+  end output
+  begin output
+    name dataOutArray_0[5]
+    netname dataOutArray_0_net[5]
+    numprims 0
+    type output signal
+    maxdelay 0.774
+    begin connections
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Memory_reg_0_7_0_13/RAMC_D1/O SLICE_X230Y898 SLICE_X230Y898/C_O
+    end connections
+  end output
+  begin output
+    name dataOutArray_0[6]
+    netname dataOutArray_0_net[6]
+    numprims 0
+    type output signal
+    maxdelay 0.993
+    begin connections
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Memory_reg_0_7_0_13/RAMD/O SLICE_X230Y898 SLICE_X230Y898/DMUX
+    end connections
+  end output
+  begin output
+    name dataOutArray_0[7]
+    netname dataOutArray_0_net[7]
+    numprims 0
+    type output signal
+    maxdelay 0.927
+    begin connections
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Memory_reg_0_7_0_13/RAMD_D1/O SLICE_X230Y898 SLICE_X230Y898/D_O
+    end connections
+  end output
+  begin output
+    name dataOutArray_0[8]
+    netname dataOutArray_0_net[8]
+    numprims 0
+    type output signal
+    maxdelay 0.849
+    begin connections
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Memory_reg_0_7_0_13/RAME/O SLICE_X230Y898 SLICE_X230Y898/EMUX
+    end connections
+  end output
+  begin output
+    name dataOutArray_0[9]
+    netname dataOutArray_0_net[9]
+    numprims 0
+    type output signal
+    maxdelay 0.784
+    begin connections
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/Memory_reg_0_7_0_13/RAME_D1/O SLICE_X230Y898 SLICE_X230Y898/E_O
+    end connections
+  end output
+  begin output
+    name readyArray_0
+    netname readyArray_0_net
+    numprims 0
+    type output signal
+    maxdelay 0.433
+    begin connections
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/readyArray[0]_INST_0/O SLICE_X230Y896 SLICE_X230Y896/HMUX SLICE_X230Y896/H_O
+    end connections
+  end output
+  begin output
+    name validArray_0
+    netname validArray_0_net
+    numprims 0
+    type output signal
+    maxdelay 0.220
+    begin connections
+      pin Fifo_1_1_32_32_5_I60_J146_R5_C1_cell/elasticFifoInner_sub/validArray[0]_INST_0/O SLICE_X230Y896 SLICE_X230Y896/B_O
+    end connections
+  end output
+
+end block

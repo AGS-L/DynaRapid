@@ -1,0 +1,114 @@
+begin block
+  name Buffer_1_1_1_1_I60_J139_R1_C1_placedRouted
+  pblocks 1
+  clocks 1
+  inputs 5
+  outputs 3
+
+  begin pblock
+    name pblock_1 
+    grid_ranges SLICE_X220Y899:SLICE_X220Y899
+  end pblock
+  begin clock
+    name clk 
+    period 2.500
+  end clock
+
+  begin input
+    name clk
+    netname clk
+    numprims 4
+    type input clock local
+    maxdelay 0.000
+    begin connections
+      pin Buffer_1_1_1_1_I60_J139_R1_C1_cell/elasticBuffer_sub/oehb1/data_reg_reg[0]/C SLICE_X220Y899 SLICE_X220Y899/CLK1
+      pin Buffer_1_1_1_1_I60_J139_R1_C1_cell/elasticBuffer_sub/oehb1/validArray_reg[0]/C SLICE_X220Y899 SLICE_X220Y899/CLK1
+      pin Buffer_1_1_1_1_I60_J139_R1_C1_cell/elasticBuffer_sub/tehb1/data_reg_reg[0]/C SLICE_X220Y899 SLICE_X220Y899/CLK1
+      pin Buffer_1_1_1_1_I60_J139_R1_C1_cell/elasticBuffer_sub/tehb1/full_reg_reg/C SLICE_X220Y899 SLICE_X220Y899/CLK1
+    end connections
+  end input
+  begin input
+    name dataInArray_0
+    netname dataInArray_0_net
+    numprims 0
+    type input signal
+    maxdelay 0.595
+    begin connections
+      pin Buffer_1_1_1_1_I60_J139_R1_C1_cell/elasticBuffer_sub/tehb1/data_reg[0]_i_1/I0 SLICE_X220Y899 SLICE_X220Y899/C5
+      pin Buffer_1_1_1_1_I60_J139_R1_C1_cell/elasticBuffer_sub/tehb1/dataOutArray[0][0]_INST_0/I2 SLICE_X220Y899 SLICE_X220Y899/B1
+    end connections
+  end input
+  begin input
+    name nReadyArray_0
+    netname nReadyArray_0_net
+    numprims 0
+    type input signal
+    maxdelay 0.464
+    begin connections
+      pin Buffer_1_1_1_1_I60_J139_R1_C1_cell/elasticBuffer_sub/oehb1/readyArray[0]_INST_0/I0 SLICE_X220Y899 SLICE_X220Y899/H1
+      pin Buffer_1_1_1_1_I60_J139_R1_C1_cell/elasticBuffer_sub/oehb1/data_reg[0]_i_1/I2 SLICE_X220Y899 SLICE_X220Y899/D3
+      pin Buffer_1_1_1_1_I60_J139_R1_C1_cell/elasticBuffer_sub/oehb1/validArray[0]_i_1/I2 SLICE_X220Y899 SLICE_X220Y899/D3
+    end connections
+  end input
+  begin input
+    name pValidArray_0
+    netname pValidArray_0_net
+    numprims 0
+    type input signal
+    maxdelay 0.444
+    begin connections
+      pin Buffer_1_1_1_1_I60_J139_R1_C1_cell/elasticBuffer_sub/tehb1/validArray[0]_INST_0/I0 SLICE_X220Y899 SLICE_X220Y899/B5
+      pin Buffer_1_1_1_1_I60_J139_R1_C1_cell/elasticBuffer_sub/tehb1/full_reg_i_1/I1 SLICE_X220Y899 SLICE_X220Y899/C1
+      pin Buffer_1_1_1_1_I60_J139_R1_C1_cell/elasticBuffer_sub/tehb1/data_reg[0]_i_1/I2 SLICE_X220Y899 SLICE_X220Y899/C1
+    end connections
+  end input
+  begin input
+    name rst
+    netname rst
+    numprims 4
+    type input signal
+    maxdelay 0.000
+    begin connections
+      pin Buffer_1_1_1_1_I60_J139_R1_C1_cell/elasticBuffer_sub/oehb1/data_reg_reg[0]/CLR SLICE_X220Y899 SLICE_X220Y899/SRST1
+      pin Buffer_1_1_1_1_I60_J139_R1_C1_cell/elasticBuffer_sub/oehb1/validArray_reg[0]/CLR SLICE_X220Y899 SLICE_X220Y899/SRST1
+      pin Buffer_1_1_1_1_I60_J139_R1_C1_cell/elasticBuffer_sub/tehb1/data_reg_reg[0]/CLR SLICE_X220Y899 SLICE_X220Y899/SRST1
+      pin Buffer_1_1_1_1_I60_J139_R1_C1_cell/elasticBuffer_sub/tehb1/full_reg_reg/CLR SLICE_X220Y899 SLICE_X220Y899/SRST1
+    end connections
+  end input
+
+  begin output
+    name dataOutArray_0
+    netname dataOutArray_0_net
+    numprims 0
+    type output signal
+    maxdelay 0.096
+    begin connections
+      pin Buffer_1_1_1_1_I60_J139_R1_C1_cell/elasticBuffer_sub/oehb1/data_reg[0]_i_1/I4 SLICE_X220Y899 SLICE_X220Y899/D4
+      pin Buffer_1_1_1_1_I60_J139_R1_C1_cell/elasticBuffer_sub/oehb1/data_reg_reg[0]/Q SLICE_X220Y899 SLICE_X220Y899/DQ
+    end connections
+  end output
+  begin output
+    name readyArray_0
+    netname readyArray_0_net
+    numprims 0
+    type output signal
+    maxdelay 0.474
+    begin connections
+      pin Buffer_1_1_1_1_I60_J139_R1_C1_cell/elasticBuffer_sub/tehb1/readyArray[0]_INST_0/O SLICE_X220Y899 SLICE_X220Y899/GMUX SLICE_X220Y899/G_O
+    end connections
+  end output
+  begin output
+    name validArray_0
+    netname validArray_0_net
+    numprims 0
+    type output signal
+    maxdelay 0.098
+    begin connections
+      pin Buffer_1_1_1_1_I60_J139_R1_C1_cell/elasticBuffer_sub/oehb1/data_reg[0]_i_1/I1 SLICE_X220Y899 SLICE_X220Y899/D2
+      pin Buffer_1_1_1_1_I60_J139_R1_C1_cell/elasticBuffer_sub/oehb1/readyArray[0]_INST_0/I1 SLICE_X220Y899 SLICE_X220Y899/H4
+      pin Buffer_1_1_1_1_I60_J139_R1_C1_cell/elasticBuffer_sub/oehb1/validArray[0]_i_1/I1 SLICE_X220Y899 SLICE_X220Y899/D2
+      pin Buffer_1_1_1_1_I60_J139_R1_C1_cell/elasticBuffer_sub/oehb1/validArray_reg[0]/Q SLICE_X220Y899 SLICE_X220Y899/DQ2
+    end connections
+  end output
+
+end block

@@ -1,0 +1,827 @@
+begin block
+  name icmp_ult_op_2_1_32_1_I60_J146_R2_C1_placedRouted
+  pblocks 1
+  clocks 1
+  inputs 69
+  outputs 4
+
+  begin pblock
+    name pblock_1 
+    grid_ranges SLICE_X230Y898:SLICE_X231Y899
+  end pblock
+  begin clock
+    name clk 
+    period 2.500
+  end clock
+
+  begin input
+    name clk
+    netname clk
+    numprims 4
+    type input clock local
+    maxdelay 0.000
+    begin connections
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/Buffer_1_1_1_1_s/elasticBuffer_sub/oehb1/data_reg_reg[0]/C SLICE_X231Y899 SLICE_X231Y899/CLK1
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/Buffer_1_1_1_1_s/elasticBuffer_sub/oehb1/validArray_reg[0]/C SLICE_X231Y899 SLICE_X231Y899/CLK1
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/Buffer_1_1_1_1_s/elasticBuffer_sub/tehb1/data_reg_reg[0]/C SLICE_X231Y899 SLICE_X231Y899/CLK1
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/Buffer_1_1_1_1_s/elasticBuffer_sub/tehb1/full_reg_reg/C SLICE_X231Y899 SLICE_X231Y899/CLK1
+    end connections
+  end input
+  begin input
+    name dataInArray_0[0]
+    netname dataInArray_0_net[0]
+    numprims 0
+    type input signal
+    maxdelay 1.126
+    begin connections
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/dataOutArray[0][0]_INST_0_i_25/I1 SLICE_X230Y898 SLICE_X230Y898/A4
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/dataOutArray[0][0]_INST_0_i_33/I1 SLICE_X230Y898 SLICE_X230Y898/A4
+    end connections
+  end input
+  begin input
+    name dataInArray_0[10]
+    netname dataInArray_0_net[10]
+    numprims 0
+    type input signal
+    maxdelay 1.110
+    begin connections
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/dataOutArray[0][0]_INST_0_i_20/I1 SLICE_X230Y898 SLICE_X230Y898/F3
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/dataOutArray[0][0]_INST_0_i_28/I1 SLICE_X230Y898 SLICE_X230Y898/F3
+    end connections
+  end input
+  begin input
+    name dataInArray_0[11]
+    netname dataInArray_0_net[11]
+    numprims 0
+    type input signal
+    maxdelay 1.059
+    begin connections
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/dataOutArray[0][0]_INST_0_i_20/I2 SLICE_X230Y898 SLICE_X230Y898/F5
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/dataOutArray[0][0]_INST_0_i_28/I3 SLICE_X230Y898 SLICE_X230Y898/F5
+    end connections
+  end input
+  begin input
+    name dataInArray_0[12]
+    netname dataInArray_0_net[12]
+    numprims 0
+    type input signal
+    maxdelay 1.086
+    begin connections
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/dataOutArray[0][0]_INST_0_i_19/I1 SLICE_X230Y898 SLICE_X230Y898/G2
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/dataOutArray[0][0]_INST_0_i_27/I1 SLICE_X230Y898 SLICE_X230Y898/G2
+    end connections
+  end input
+  begin input
+    name dataInArray_0[13]
+    netname dataInArray_0_net[13]
+    numprims 0
+    type input signal
+    maxdelay 1.117
+    begin connections
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/dataOutArray[0][0]_INST_0_i_19/I2 SLICE_X230Y898 SLICE_X230Y898/G1
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/dataOutArray[0][0]_INST_0_i_27/I3 SLICE_X230Y898 SLICE_X230Y898/G1
+    end connections
+  end input
+  begin input
+    name dataInArray_0[14]
+    netname dataInArray_0_net[14]
+    numprims 0
+    type input signal
+    maxdelay 1.004
+    begin connections
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/dataOutArray[0][0]_INST_0_i_18/I1 SLICE_X230Y898 SLICE_X230Y898/H5
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/dataOutArray[0][0]_INST_0_i_26/I1 SLICE_X230Y898 SLICE_X230Y898/H5
+    end connections
+  end input
+  begin input
+    name dataInArray_0[15]
+    netname dataInArray_0_net[15]
+    numprims 0
+    type input signal
+    maxdelay 1.038
+    begin connections
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/dataOutArray[0][0]_INST_0_i_18/I2 SLICE_X230Y898 SLICE_X230Y898/H4
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/dataOutArray[0][0]_INST_0_i_26/I3 SLICE_X230Y898 SLICE_X230Y898/H4
+    end connections
+  end input
+  begin input
+    name dataInArray_0[16]
+    netname dataInArray_0_net[16]
+    numprims 0
+    type input signal
+    maxdelay 1.154
+    begin connections
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/dataOutArray[0][0]_INST_0_i_17/I1 SLICE_X230Y899 SLICE_X230Y899/A1
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/dataOutArray[0][0]_INST_0_i_9/I1 SLICE_X230Y899 SLICE_X230Y899/A1
+    end connections
+  end input
+  begin input
+    name dataInArray_0[17]
+    netname dataInArray_0_net[17]
+    numprims 0
+    type input signal
+    maxdelay 1.039
+    begin connections
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/dataOutArray[0][0]_INST_0_i_9/I2 SLICE_X230Y899 SLICE_X230Y899/A5
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/dataOutArray[0][0]_INST_0_i_17/I3 SLICE_X230Y899 SLICE_X230Y899/A5
+    end connections
+  end input
+  begin input
+    name dataInArray_0[18]
+    netname dataInArray_0_net[18]
+    numprims 0
+    type input signal
+    maxdelay 1.126
+    begin connections
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/dataOutArray[0][0]_INST_0_i_16/I1 SLICE_X230Y899 SLICE_X230Y899/B2
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/dataOutArray[0][0]_INST_0_i_8/I1 SLICE_X230Y899 SLICE_X230Y899/B2
+    end connections
+  end input
+  begin input
+    name dataInArray_0[19]
+    netname dataInArray_0_net[19]
+    numprims 0
+    type input signal
+    maxdelay 1.039
+    begin connections
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/dataOutArray[0][0]_INST_0_i_8/I2 SLICE_X230Y899 SLICE_X230Y899/B5
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/dataOutArray[0][0]_INST_0_i_16/I3 SLICE_X230Y899 SLICE_X230Y899/B5
+    end connections
+  end input
+  begin input
+    name dataInArray_0[1]
+    netname dataInArray_0_net[1]
+    numprims 0
+    type input signal
+    maxdelay 1.090
+    begin connections
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/dataOutArray[0][0]_INST_0_i_25/I2 SLICE_X230Y898 SLICE_X230Y898/A5
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/dataOutArray[0][0]_INST_0_i_33/I3 SLICE_X230Y898 SLICE_X230Y898/A5
+    end connections
+  end input
+  begin input
+    name dataInArray_0[20]
+    netname dataInArray_0_net[20]
+    numprims 0
+    type input signal
+    maxdelay 1.059
+    begin connections
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/dataOutArray[0][0]_INST_0_i_15/I1 SLICE_X230Y899 SLICE_X230Y899/C3
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/dataOutArray[0][0]_INST_0_i_7/I1 SLICE_X230Y899 SLICE_X230Y899/C3
+    end connections
+  end input
+  begin input
+    name dataInArray_0[21]
+    netname dataInArray_0_net[21]
+    numprims 0
+    type input signal
+    maxdelay 1.093
+    begin connections
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/dataOutArray[0][0]_INST_0_i_7/I2 SLICE_X230Y899 SLICE_X230Y899/C2
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/dataOutArray[0][0]_INST_0_i_15/I3 SLICE_X230Y899 SLICE_X230Y899/C2
+    end connections
+  end input
+  begin input
+    name dataInArray_0[22]
+    netname dataInArray_0_net[22]
+    numprims 0
+    type input signal
+    maxdelay 1.014
+    begin connections
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/dataOutArray[0][0]_INST_0_i_14/I1 SLICE_X230Y899 SLICE_X230Y899/D5
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/dataOutArray[0][0]_INST_0_i_6/I1 SLICE_X230Y899 SLICE_X230Y899/D5
+    end connections
+  end input
+  begin input
+    name dataInArray_0[23]
+    netname dataInArray_0_net[23]
+    numprims 0
+    type input signal
+    maxdelay 1.050
+    begin connections
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/dataOutArray[0][0]_INST_0_i_6/I2 SLICE_X230Y899 SLICE_X230Y899/D4
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/dataOutArray[0][0]_INST_0_i_14/I3 SLICE_X230Y899 SLICE_X230Y899/D4
+    end connections
+  end input
+  begin input
+    name dataInArray_0[24]
+    netname dataInArray_0_net[24]
+    numprims 0
+    type input signal
+    maxdelay 1.048
+    begin connections
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/dataOutArray[0][0]_INST_0_i_13/I1 SLICE_X230Y899 SLICE_X230Y899/E3
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/dataOutArray[0][0]_INST_0_i_5/I1 SLICE_X230Y899 SLICE_X230Y899/E3
+    end connections
+  end input
+  begin input
+    name dataInArray_0[25]
+    netname dataInArray_0_net[25]
+    numprims 0
+    type input signal
+    maxdelay 1.034
+    begin connections
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/dataOutArray[0][0]_INST_0_i_5/I2 SLICE_X230Y899 SLICE_X230Y899/E4
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/dataOutArray[0][0]_INST_0_i_13/I3 SLICE_X230Y899 SLICE_X230Y899/E4
+    end connections
+  end input
+  begin input
+    name dataInArray_0[26]
+    netname dataInArray_0_net[26]
+    numprims 0
+    type input signal
+    maxdelay 1.094
+    begin connections
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/dataOutArray[0][0]_INST_0_i_12/I1 SLICE_X230Y899 SLICE_X230Y899/F2
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/dataOutArray[0][0]_INST_0_i_4/I1 SLICE_X230Y899 SLICE_X230Y899/F2
+    end connections
+  end input
+  begin input
+    name dataInArray_0[27]
+    netname dataInArray_0_net[27]
+    numprims 0
+    type input signal
+    maxdelay 1.044
+    begin connections
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/dataOutArray[0][0]_INST_0_i_4/I2 SLICE_X230Y899 SLICE_X230Y899/F4
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/dataOutArray[0][0]_INST_0_i_12/I3 SLICE_X230Y899 SLICE_X230Y899/F4
+    end connections
+  end input
+  begin input
+    name dataInArray_0[28]
+    netname dataInArray_0_net[28]
+    numprims 0
+    type input signal
+    maxdelay 1.035
+    begin connections
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/dataOutArray[0][0]_INST_0_i_11/I1 SLICE_X230Y899 SLICE_X230Y899/G2
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/dataOutArray[0][0]_INST_0_i_3/I1 SLICE_X230Y899 SLICE_X230Y899/G2
+    end connections
+  end input
+  begin input
+    name dataInArray_0[29]
+    netname dataInArray_0_net[29]
+    numprims 0
+    type input signal
+    maxdelay 0.951
+    begin connections
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/dataOutArray[0][0]_INST_0_i_3/I2 SLICE_X230Y899 SLICE_X230Y899/G5
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/dataOutArray[0][0]_INST_0_i_11/I3 SLICE_X230Y899 SLICE_X230Y899/G5
+    end connections
+  end input
+  begin input
+    name dataInArray_0[2]
+    netname dataInArray_0_net[2]
+    numprims 0
+    type input signal
+    maxdelay 1.205
+    begin connections
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/dataOutArray[0][0]_INST_0_i_24/I1 SLICE_X230Y898 SLICE_X230Y898/B1
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/dataOutArray[0][0]_INST_0_i_32/I1 SLICE_X230Y898 SLICE_X230Y898/B1
+    end connections
+  end input
+  begin input
+    name dataInArray_0[30]
+    netname dataInArray_0_net[30]
+    numprims 0
+    type input signal
+    maxdelay 0.987
+    begin connections
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/dataOutArray[0][0]_INST_0_i_10/I1 SLICE_X230Y899 SLICE_X230Y899/H4
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/dataOutArray[0][0]_INST_0_i_2/I1 SLICE_X230Y899 SLICE_X230Y899/H4
+    end connections
+  end input
+  begin input
+    name dataInArray_0[31]
+    netname dataInArray_0_net[31]
+    numprims 0
+    type input signal
+    maxdelay 1.004
+    begin connections
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/dataOutArray[0][0]_INST_0_i_2/I2 SLICE_X230Y899 SLICE_X230Y899/H3
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/dataOutArray[0][0]_INST_0_i_10/I3 SLICE_X230Y899 SLICE_X230Y899/H3
+    end connections
+  end input
+  begin input
+    name dataInArray_0[3]
+    netname dataInArray_0_net[3]
+    numprims 0
+    type input signal
+    maxdelay 1.143
+    begin connections
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/dataOutArray[0][0]_INST_0_i_24/I2 SLICE_X230Y898 SLICE_X230Y898/B3
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/dataOutArray[0][0]_INST_0_i_32/I3 SLICE_X230Y898 SLICE_X230Y898/B3
+    end connections
+  end input
+  begin input
+    name dataInArray_0[4]
+    netname dataInArray_0_net[4]
+    numprims 0
+    type input signal
+    maxdelay 1.171
+    begin connections
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/dataOutArray[0][0]_INST_0_i_23/I1 SLICE_X230Y898 SLICE_X230Y898/C1
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/dataOutArray[0][0]_INST_0_i_31/I1 SLICE_X230Y898 SLICE_X230Y898/C1
+    end connections
+  end input
+  begin input
+    name dataInArray_0[5]
+    netname dataInArray_0_net[5]
+    numprims 0
+    type input signal
+    maxdelay 1.059
+    begin connections
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/dataOutArray[0][0]_INST_0_i_23/I2 SLICE_X230Y898 SLICE_X230Y898/C5
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/dataOutArray[0][0]_INST_0_i_31/I3 SLICE_X230Y898 SLICE_X230Y898/C5
+    end connections
+  end input
+  begin input
+    name dataInArray_0[6]
+    netname dataInArray_0_net[6]
+    numprims 0
+    type input signal
+    maxdelay 1.150
+    begin connections
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/dataOutArray[0][0]_INST_0_i_22/I1 SLICE_X230Y898 SLICE_X230Y898/D2
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/dataOutArray[0][0]_INST_0_i_30/I1 SLICE_X230Y898 SLICE_X230Y898/D2
+    end connections
+  end input
+  begin input
+    name dataInArray_0[7]
+    netname dataInArray_0_net[7]
+    numprims 0
+    type input signal
+    maxdelay 1.065
+    begin connections
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/dataOutArray[0][0]_INST_0_i_22/I2 SLICE_X230Y898 SLICE_X230Y898/D5
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/dataOutArray[0][0]_INST_0_i_30/I3 SLICE_X230Y898 SLICE_X230Y898/D5
+    end connections
+  end input
+  begin input
+    name dataInArray_0[8]
+    netname dataInArray_0_net[8]
+    numprims 0
+    type input signal
+    maxdelay 1.161
+    begin connections
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/dataOutArray[0][0]_INST_0_i_21/I1 SLICE_X230Y898 SLICE_X230Y898/E1
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/dataOutArray[0][0]_INST_0_i_29/I1 SLICE_X230Y898 SLICE_X230Y898/E1
+    end connections
+  end input
+  begin input
+    name dataInArray_0[9]
+    netname dataInArray_0_net[9]
+    numprims 0
+    type input signal
+    maxdelay 1.099
+    begin connections
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/dataOutArray[0][0]_INST_0_i_21/I2 SLICE_X230Y898 SLICE_X230Y898/E3
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/dataOutArray[0][0]_INST_0_i_29/I3 SLICE_X230Y898 SLICE_X230Y898/E3
+    end connections
+  end input
+  begin input
+    name dataInArray_1[0]
+    netname dataInArray_1_net[0]
+    numprims 0
+    type input signal
+    maxdelay 1.205
+    begin connections
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/dataOutArray[0][0]_INST_0_i_25/I0 SLICE_X230Y898 SLICE_X230Y898/A1
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/dataOutArray[0][0]_INST_0_i_33/I0 SLICE_X230Y898 SLICE_X230Y898/A1
+    end connections
+  end input
+  begin input
+    name dataInArray_1[10]
+    netname dataInArray_1_net[10]
+    numprims 0
+    type input signal
+    maxdelay 1.145
+    begin connections
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/dataOutArray[0][0]_INST_0_i_20/I0 SLICE_X230Y898 SLICE_X230Y898/F2
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/dataOutArray[0][0]_INST_0_i_28/I0 SLICE_X230Y898 SLICE_X230Y898/F2
+    end connections
+  end input
+  begin input
+    name dataInArray_1[11]
+    netname dataInArray_1_net[11]
+    numprims 0
+    type input signal
+    maxdelay 1.174
+    begin connections
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/dataOutArray[0][0]_INST_0_i_28/I2 SLICE_X230Y898 SLICE_X230Y898/F1
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/dataOutArray[0][0]_INST_0_i_20/I3 SLICE_X230Y898 SLICE_X230Y898/F1
+    end connections
+  end input
+  begin input
+    name dataInArray_1[12]
+    netname dataInArray_1_net[12]
+    numprims 0
+    type input signal
+    maxdelay 1.054
+    begin connections
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/dataOutArray[0][0]_INST_0_i_19/I0 SLICE_X230Y898 SLICE_X230Y898/G3
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/dataOutArray[0][0]_INST_0_i_27/I0 SLICE_X230Y898 SLICE_X230Y898/G3
+    end connections
+  end input
+  begin input
+    name dataInArray_1[13]
+    netname dataInArray_1_net[13]
+    numprims 0
+    type input signal
+    maxdelay 1.002
+    begin connections
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/dataOutArray[0][0]_INST_0_i_27/I2 SLICE_X230Y898 SLICE_X230Y898/G5
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/dataOutArray[0][0]_INST_0_i_19/I3 SLICE_X230Y898 SLICE_X230Y898/G5
+    end connections
+  end input
+  begin input
+    name dataInArray_1[14]
+    netname dataInArray_1_net[14]
+    numprims 0
+    type input signal
+    maxdelay 1.089
+    begin connections
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/dataOutArray[0][0]_INST_0_i_18/I0 SLICE_X230Y898 SLICE_X230Y898/H2
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/dataOutArray[0][0]_INST_0_i_26/I0 SLICE_X230Y898 SLICE_X230Y898/H2
+    end connections
+  end input
+  begin input
+    name dataInArray_1[15]
+    netname dataInArray_1_net[15]
+    numprims 0
+    type input signal
+    maxdelay 1.120
+    begin connections
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/dataOutArray[0][0]_INST_0_i_26/I2 SLICE_X230Y898 SLICE_X230Y898/H1
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/dataOutArray[0][0]_INST_0_i_18/I3 SLICE_X230Y898 SLICE_X230Y898/H1
+    end connections
+  end input
+  begin input
+    name dataInArray_1[16]
+    netname dataInArray_1_net[16]
+    numprims 0
+    type input signal
+    maxdelay 1.091
+    begin connections
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/dataOutArray[0][0]_INST_0_i_17/I0 SLICE_X230Y899 SLICE_X230Y899/A3
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/dataOutArray[0][0]_INST_0_i_9/I0 SLICE_X230Y899 SLICE_X230Y899/A3
+    end connections
+  end input
+  begin input
+    name dataInArray_1[17]
+    netname dataInArray_1_net[17]
+    numprims 0
+    type input signal
+    maxdelay 1.075
+    begin connections
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/dataOutArray[0][0]_INST_0_i_17/I2 SLICE_X230Y899 SLICE_X230Y899/A4
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/dataOutArray[0][0]_INST_0_i_9/I3 SLICE_X230Y899 SLICE_X230Y899/A4
+    end connections
+  end input
+  begin input
+    name dataInArray_1[18]
+    netname dataInArray_1_net[18]
+    numprims 0
+    type input signal
+    maxdelay 1.154
+    begin connections
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/dataOutArray[0][0]_INST_0_i_16/I0 SLICE_X230Y899 SLICE_X230Y899/B1
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/dataOutArray[0][0]_INST_0_i_8/I0 SLICE_X230Y899 SLICE_X230Y899/B1
+    end connections
+  end input
+  begin input
+    name dataInArray_1[19]
+    netname dataInArray_1_net[19]
+    numprims 0
+    type input signal
+    maxdelay 1.076
+    begin connections
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/dataOutArray[0][0]_INST_0_i_16/I2 SLICE_X230Y899 SLICE_X230Y899/B4
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/dataOutArray[0][0]_INST_0_i_8/I3 SLICE_X230Y899 SLICE_X230Y899/B4
+    end connections
+  end input
+  begin input
+    name dataInArray_1[1]
+    netname dataInArray_1_net[1]
+    numprims 0
+    type input signal
+    maxdelay 1.176
+    begin connections
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/dataOutArray[0][0]_INST_0_i_33/I2 SLICE_X230Y898 SLICE_X230Y898/A2
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/dataOutArray[0][0]_INST_0_i_25/I3 SLICE_X230Y898 SLICE_X230Y898/A2
+    end connections
+  end input
+  begin input
+    name dataInArray_1[20]
+    netname dataInArray_1_net[20]
+    numprims 0
+    type input signal
+    maxdelay 1.008
+    begin connections
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/dataOutArray[0][0]_INST_0_i_15/I0 SLICE_X230Y899 SLICE_X230Y899/C5
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/dataOutArray[0][0]_INST_0_i_7/I0 SLICE_X230Y899 SLICE_X230Y899/C5
+    end connections
+  end input
+  begin input
+    name dataInArray_1[21]
+    netname dataInArray_1_net[21]
+    numprims 0
+    type input signal
+    maxdelay 1.120
+    begin connections
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/dataOutArray[0][0]_INST_0_i_15/I2 SLICE_X230Y899 SLICE_X230Y899/C1
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/dataOutArray[0][0]_INST_0_i_7/I3 SLICE_X230Y899 SLICE_X230Y899/C1
+    end connections
+  end input
+  begin input
+    name dataInArray_1[22]
+    netname dataInArray_1_net[22]
+    numprims 0
+    type input signal
+    maxdelay 1.099
+    begin connections
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/dataOutArray[0][0]_INST_0_i_14/I0 SLICE_X230Y899 SLICE_X230Y899/D2
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/dataOutArray[0][0]_INST_0_i_6/I0 SLICE_X230Y899 SLICE_X230Y899/D2
+    end connections
+  end input
+  begin input
+    name dataInArray_1[23]
+    netname dataInArray_1_net[23]
+    numprims 0
+    type input signal
+    maxdelay 1.066
+    begin connections
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/dataOutArray[0][0]_INST_0_i_14/I2 SLICE_X230Y899 SLICE_X230Y899/D3
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/dataOutArray[0][0]_INST_0_i_6/I3 SLICE_X230Y899 SLICE_X230Y899/D3
+    end connections
+  end input
+  begin input
+    name dataInArray_1[24]
+    netname dataInArray_1_net[24]
+    numprims 0
+    type input signal
+    maxdelay 1.081
+    begin connections
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/dataOutArray[0][0]_INST_0_i_13/I0 SLICE_X230Y899 SLICE_X230Y899/E2
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/dataOutArray[0][0]_INST_0_i_5/I0 SLICE_X230Y899 SLICE_X230Y899/E2
+    end connections
+  end input
+  begin input
+    name dataInArray_1[25]
+    netname dataInArray_1_net[25]
+    numprims 0
+    type input signal
+    maxdelay 1.110
+    begin connections
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/dataOutArray[0][0]_INST_0_i_13/I2 SLICE_X230Y899 SLICE_X230Y899/E1
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/dataOutArray[0][0]_INST_0_i_5/I3 SLICE_X230Y899 SLICE_X230Y899/E1
+    end connections
+  end input
+  begin input
+    name dataInArray_1[26]
+    netname dataInArray_1_net[26]
+    numprims 0
+    type input signal
+    maxdelay 1.059
+    begin connections
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/dataOutArray[0][0]_INST_0_i_12/I0 SLICE_X230Y899 SLICE_X230Y899/F3
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/dataOutArray[0][0]_INST_0_i_4/I0 SLICE_X230Y899 SLICE_X230Y899/F3
+    end connections
+  end input
+  begin input
+    name dataInArray_1[27]
+    netname dataInArray_1_net[27]
+    numprims 0
+    type input signal
+    maxdelay 1.008
+    begin connections
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/dataOutArray[0][0]_INST_0_i_12/I2 SLICE_X230Y899 SLICE_X230Y899/F5
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/dataOutArray[0][0]_INST_0_i_4/I3 SLICE_X230Y899 SLICE_X230Y899/F5
+    end connections
+  end input
+  begin input
+    name dataInArray_1[28]
+    netname dataInArray_1_net[28]
+    numprims 0
+    type input signal
+    maxdelay 1.066
+    begin connections
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/dataOutArray[0][0]_INST_0_i_11/I0 SLICE_X230Y899 SLICE_X230Y899/G1
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/dataOutArray[0][0]_INST_0_i_3/I0 SLICE_X230Y899 SLICE_X230Y899/G1
+    end connections
+  end input
+  begin input
+    name dataInArray_1[29]
+    netname dataInArray_1_net[29]
+    numprims 0
+    type input signal
+    maxdelay 0.987
+    begin connections
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/dataOutArray[0][0]_INST_0_i_11/I2 SLICE_X230Y899 SLICE_X230Y899/G4
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/dataOutArray[0][0]_INST_0_i_3/I3 SLICE_X230Y899 SLICE_X230Y899/G4
+    end connections
+  end input
+  begin input
+    name dataInArray_1[2]
+    netname dataInArray_1_net[2]
+    numprims 0
+    type input signal
+    maxdelay 1.090
+    begin connections
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/dataOutArray[0][0]_INST_0_i_24/I0 SLICE_X230Y898 SLICE_X230Y898/B5
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/dataOutArray[0][0]_INST_0_i_32/I0 SLICE_X230Y898 SLICE_X230Y898/B5
+    end connections
+  end input
+  begin input
+    name dataInArray_1[30]
+    netname dataInArray_1_net[30]
+    numprims 0
+    type input signal
+    maxdelay 0.953
+    begin connections
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/dataOutArray[0][0]_INST_0_i_10/I0 SLICE_X230Y899 SLICE_X230Y899/H5
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/dataOutArray[0][0]_INST_0_i_2/I0 SLICE_X230Y899 SLICE_X230Y899/H5
+    end connections
+  end input
+  begin input
+    name dataInArray_1[31]
+    netname dataInArray_1_net[31]
+    numprims 0
+    type input signal
+    maxdelay 1.038
+    begin connections
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/dataOutArray[0][0]_INST_0_i_10/I2 SLICE_X230Y899 SLICE_X230Y899/H2
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/dataOutArray[0][0]_INST_0_i_2/I3 SLICE_X230Y899 SLICE_X230Y899/H2
+    end connections
+  end input
+  begin input
+    name dataInArray_1[3]
+    netname dataInArray_1_net[3]
+    numprims 0
+    type input signal
+    maxdelay 1.177
+    begin connections
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/dataOutArray[0][0]_INST_0_i_32/I2 SLICE_X230Y898 SLICE_X230Y898/B2
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/dataOutArray[0][0]_INST_0_i_24/I3 SLICE_X230Y898 SLICE_X230Y898/B2
+    end connections
+  end input
+  begin input
+    name dataInArray_1[4]
+    netname dataInArray_1_net[4]
+    numprims 0
+    type input signal
+    maxdelay 1.095
+    begin connections
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/dataOutArray[0][0]_INST_0_i_23/I0 SLICE_X230Y898 SLICE_X230Y898/C4
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/dataOutArray[0][0]_INST_0_i_31/I0 SLICE_X230Y898 SLICE_X230Y898/C4
+    end connections
+  end input
+  begin input
+    name dataInArray_1[5]
+    netname dataInArray_1_net[5]
+    numprims 0
+    type input signal
+    maxdelay 1.110
+    begin connections
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/dataOutArray[0][0]_INST_0_i_31/I2 SLICE_X230Y898 SLICE_X230Y898/C3
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/dataOutArray[0][0]_INST_0_i_23/I3 SLICE_X230Y898 SLICE_X230Y898/C3
+    end connections
+  end input
+  begin input
+    name dataInArray_1[6]
+    netname dataInArray_1_net[6]
+    numprims 0
+    type input signal
+    maxdelay 1.177
+    begin connections
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/dataOutArray[0][0]_INST_0_i_22/I0 SLICE_X230Y898 SLICE_X230Y898/D1
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/dataOutArray[0][0]_INST_0_i_30/I0 SLICE_X230Y898 SLICE_X230Y898/D1
+    end connections
+  end input
+  begin input
+    name dataInArray_1[7]
+    netname dataInArray_1_net[7]
+    numprims 0
+    type input signal
+    maxdelay 1.101
+    begin connections
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/dataOutArray[0][0]_INST_0_i_30/I2 SLICE_X230Y898 SLICE_X230Y898/D4
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/dataOutArray[0][0]_INST_0_i_22/I3 SLICE_X230Y898 SLICE_X230Y898/D4
+    end connections
+  end input
+  begin input
+    name dataInArray_1[8]
+    netname dataInArray_1_net[8]
+    numprims 0
+    type input signal
+    maxdelay 1.132
+    begin connections
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/dataOutArray[0][0]_INST_0_i_21/I0 SLICE_X230Y898 SLICE_X230Y898/E2
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/dataOutArray[0][0]_INST_0_i_29/I0 SLICE_X230Y898 SLICE_X230Y898/E2
+    end connections
+  end input
+  begin input
+    name dataInArray_1[9]
+    netname dataInArray_1_net[9]
+    numprims 0
+    type input signal
+    maxdelay 1.047
+    begin connections
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/dataOutArray[0][0]_INST_0_i_29/I2 SLICE_X230Y898 SLICE_X230Y898/E5
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/dataOutArray[0][0]_INST_0_i_21/I3 SLICE_X230Y898 SLICE_X230Y898/E5
+    end connections
+  end input
+  begin input
+    name nReadyArray_0
+    netname nReadyArray_0_net
+    numprims 0
+    type input signal
+    maxdelay 0.362
+    begin connections
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/Buffer_1_1_1_1_s/elasticBuffer_sub/oehb1/readyArray[0]_INST_0/I0 SLICE_X231Y899 SLICE_X231Y899/H4
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/Buffer_1_1_1_1_s/elasticBuffer_sub/oehb1/data_reg[0]_i_1/I2 SLICE_X231Y899 SLICE_X231Y899/D5
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/Buffer_1_1_1_1_s/elasticBuffer_sub/oehb1/validArray[0]_i_1/I2 SLICE_X231Y899 SLICE_X231Y899/D5
+    end connections
+  end input
+  begin input
+    name pValidArray_0
+    netname pValidArray_0_net
+    numprims 0
+    type input signal
+    maxdelay 0.643
+    begin connections
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/join_write_temp/readyArray[1]_INST_0/I0 SLICE_X231Y899 SLICE_X231Y899/A2
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/join_write_temp/allPValidAndGate/res_INST_0/I0 SLICE_X231Y899 SLICE_X231Y899/G3
+    end connections
+  end input
+  begin input
+    name pValidArray_1
+    netname pValidArray_1_net
+    numprims 0
+    type input signal
+    maxdelay 0.592
+    begin connections
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/join_write_temp/readyArray[0]_INST_0/I0 SLICE_X231Y899 SLICE_X231Y899/A3
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/join_write_temp/allPValidAndGate/res_INST_0/I1 SLICE_X231Y899 SLICE_X231Y899/G5
+    end connections
+  end input
+  begin input
+    name rst
+    netname rst
+    numprims 4
+    type input signal
+    maxdelay 0.000
+    begin connections
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/Buffer_1_1_1_1_s/elasticBuffer_sub/oehb1/data_reg_reg[0]/CLR SLICE_X231Y899 SLICE_X231Y899/SRST1
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/Buffer_1_1_1_1_s/elasticBuffer_sub/oehb1/validArray_reg[0]/CLR SLICE_X231Y899 SLICE_X231Y899/SRST1
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/Buffer_1_1_1_1_s/elasticBuffer_sub/tehb1/data_reg_reg[0]/CLR SLICE_X231Y899 SLICE_X231Y899/SRST1
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/Buffer_1_1_1_1_s/elasticBuffer_sub/tehb1/full_reg_reg/CLR SLICE_X231Y899 SLICE_X231Y899/SRST1
+    end connections
+  end input
+
+  begin output
+    name dataOutArray_0
+    netname dataOutArray_0_net
+    numprims 0
+    type output signal
+    maxdelay 0.096
+    begin connections
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/Buffer_1_1_1_1_s/elasticBuffer_sub/oehb1/data_reg[0]_i_1/I4 SLICE_X231Y899 SLICE_X231Y899/D1
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/Buffer_1_1_1_1_s/elasticBuffer_sub/oehb1/data_reg_reg[0]/Q SLICE_X231Y899 SLICE_X231Y899/DQ
+    end connections
+  end output
+  begin output
+    name readyArray_0
+    netname readyArray_0_net
+    numprims 0
+    type output signal
+    maxdelay 0.690
+    begin connections
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/join_write_temp/readyArray[0]_INST_0/O SLICE_X231Y899 SLICE_X231Y899/AMUX
+    end connections
+  end output
+  begin output
+    name readyArray_1
+    netname readyArray_1_net
+    numprims 0
+    type output signal
+    maxdelay 0.637
+    begin connections
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/icmp_ult_op_2_1_32_1_s/icmp_ult_op_sub/join_write_temp/readyArray[1]_INST_0/O SLICE_X231Y899 SLICE_X231Y899/A_O
+    end connections
+  end output
+  begin output
+    name validArray_0
+    netname validArray_0_net
+    numprims 0
+    type output signal
+    maxdelay 0.098
+    begin connections
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/Buffer_1_1_1_1_s/elasticBuffer_sub/oehb1/data_reg[0]_i_1/I1 SLICE_X231Y899 SLICE_X231Y899/D3
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/Buffer_1_1_1_1_s/elasticBuffer_sub/oehb1/readyArray[0]_INST_0/I1 SLICE_X231Y899 SLICE_X231Y899/H1
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/Buffer_1_1_1_1_s/elasticBuffer_sub/oehb1/validArray[0]_i_1/I1 SLICE_X231Y899 SLICE_X231Y899/D3
+      pin icmp_ult_op_2_1_32_1_I60_J146_R2_C1_cell/Buffer_1_1_1_1_s/elasticBuffer_sub/oehb1/validArray_reg[0]/Q SLICE_X231Y899 SLICE_X231Y899/DQ2
+    end connections
+  end output
+
+end block

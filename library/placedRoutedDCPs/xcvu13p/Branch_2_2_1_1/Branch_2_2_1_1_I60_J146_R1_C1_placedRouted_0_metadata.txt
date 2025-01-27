@@ -1,0 +1,164 @@
+begin block
+  name Branch_2_2_1_1_I60_J146_R1_C1_placedRouted
+  pblocks 1
+  clocks 1
+  inputs 8
+  outputs 6
+
+  begin pblock
+    name pblock_1 
+    grid_ranges SLICE_X230Y899:SLICE_X231Y899
+  end pblock
+  begin clock
+    name clk 
+    period 2.500
+  end clock
+
+  begin input
+    name clk
+    netname clk
+    numprims 0
+    type input signal
+    maxdelay 0.000
+    begin connections
+    end connections
+  end input
+  begin input
+    name dataInArray_0
+    netname dataInArray_0_net
+    numprims 0
+    type input signal
+    maxdelay 0.000
+    begin connections
+      port dataOutArray_0
+      port dataOutArray_1
+    end connections
+  end input
+  begin input
+    name dataInArray_1
+    netname dataInArray_1_net
+    numprims 0
+    type input signal
+    maxdelay 0.465
+    begin connections
+      pin Branch_2_2_1_1_I60_J146_R1_C1_cell/Branch_sub/br/validArray[0]_INST_0/I0 SLICE_X231Y899 SLICE_X231Y899/D4
+      pin Branch_2_2_1_1_I60_J146_R1_C1_cell/Branch_sub/br/ready_INST_0/I1 SLICE_X231Y899 SLICE_X231Y899/D4
+      pin Branch_2_2_1_1_I60_J146_R1_C1_cell/Branch_sub/br/validArray[1]_INST_0/I1 SLICE_X231Y899 SLICE_X231Y899/H1
+    end connections
+  end input
+  begin input
+    name nReadyArray_0
+    netname nReadyArray_0_net
+    numprims 0
+    type input signal
+    maxdelay 0.540
+    begin connections
+      pin Branch_2_2_1_1_I60_J146_R1_C1_cell/Branch_sub/br/ready_INST_0/I2 SLICE_X231Y899 SLICE_X231Y899/D1
+    end connections
+  end input
+  begin input
+    name nReadyArray_1
+    netname nReadyArray_1_net
+    numprims 0
+    type input signal
+    maxdelay 0.511
+    begin connections
+      pin Branch_2_2_1_1_I60_J146_R1_C1_cell/Branch_sub/br/ready_INST_0/I0 SLICE_X231Y899 SLICE_X231Y899/D2
+    end connections
+  end input
+  begin input
+    name pValidArray_0
+    netname pValidArray_0_net
+    numprims 0
+    type input signal
+    maxdelay 0.287
+    begin connections
+      pin Branch_2_2_1_1_I60_J146_R1_C1_cell/Branch_sub/j/readyArray[1]_INST_0/I0 SLICE_X231Y899 SLICE_X231Y899/C2
+      pin Branch_2_2_1_1_I60_J146_R1_C1_cell/Branch_sub/j/allPValidAndGate/res_INST_0/I0 SLICE_X231Y899 SLICE_X231Y899/G3
+    end connections
+  end input
+  begin input
+    name pValidArray_1
+    netname pValidArray_1_net
+    numprims 0
+    type input signal
+    maxdelay 0.236
+    begin connections
+      pin Branch_2_2_1_1_I60_J146_R1_C1_cell/Branch_sub/j/readyArray[0]_INST_0/I0 SLICE_X231Y899 SLICE_X231Y899/C4
+      pin Branch_2_2_1_1_I60_J146_R1_C1_cell/Branch_sub/j/allPValidAndGate/res_INST_0/I1 SLICE_X231Y899 SLICE_X231Y899/G5
+    end connections
+  end input
+  begin input
+    name rst
+    netname rst
+    numprims 0
+    type input signal
+    maxdelay 0.000
+    begin connections
+    end connections
+  end input
+
+  begin output
+    name dataOutArray_0
+    netname dataOutArray_0_net
+    numprims 0
+    type output signal
+    maxdelay 0.000
+    begin connections
+      port dataInArray_0
+      port dataOutArray_1
+    end connections
+  end output
+  begin output
+    name dataOutArray_1
+    netname dataOutArray_1_net
+    numprims 0
+    type output signal
+    maxdelay 0.000
+    begin connections
+      port dataInArray_0
+      port dataOutArray_0
+    end connections
+  end output
+  begin output
+    name readyArray_0
+    netname readyArray_0_net
+    numprims 0
+    type output signal
+    maxdelay 0.540
+    begin connections
+      pin Branch_2_2_1_1_I60_J146_R1_C1_cell/Branch_sub/j/readyArray[0]_INST_0/O SLICE_X231Y899 SLICE_X231Y899/CMUX
+    end connections
+  end output
+  begin output
+    name readyArray_1
+    netname readyArray_1_net
+    numprims 0
+    type output signal
+    maxdelay 0.488
+    begin connections
+      pin Branch_2_2_1_1_I60_J146_R1_C1_cell/Branch_sub/j/readyArray[1]_INST_0/O SLICE_X231Y899 SLICE_X231Y899/C_O
+    end connections
+  end output
+  begin output
+    name validArray_0
+    netname validArray_0_net
+    numprims 0
+    type output signal
+    maxdelay 0.285
+    begin connections
+      pin Branch_2_2_1_1_I60_J146_R1_C1_cell/Branch_sub/br/validArray[0]_INST_0/O SLICE_X231Y899 SLICE_X231Y899/D_O
+    end connections
+  end output
+  begin output
+    name validArray_1
+    netname validArray_1_net
+    numprims 0
+    type output signal
+    maxdelay 0.287
+    begin connections
+      pin Branch_2_2_1_1_I60_J146_R1_C1_cell/Branch_sub/br/validArray[1]_INST_0/O SLICE_X231Y899 SLICE_X231Y899/HMUX SLICE_X231Y899/H_O
+    end connections
+  end output
+
+end block

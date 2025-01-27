@@ -1,0 +1,125 @@
+begin block
+  name nonTranspFIFO_1_1_1_1_3_I60_J36_R1_C3_placedRouted
+  pblocks 1
+  clocks 1
+  inputs 5
+  outputs 3
+
+  begin pblock
+    name pblock_1 
+    grid_ranges SLICE_X50Y179:SLICE_X53Y179
+  end pblock
+  begin clock
+    name clk 
+    period 2.500
+  end clock
+
+  begin input
+    name clk
+    netname clk
+    numprims 9
+    type input clock local
+    maxdelay 0.000
+    begin connections
+      pin nonTranspFIFO_1_1_1_1_3_I60_J36_R1_C3_cell/nontranspFifo/fifo/Empty_reg/C SLICE_X52Y179 SLICE_X52Y179/CLK2
+      pin nonTranspFIFO_1_1_1_1_3_I60_J36_R1_C3_cell/nontranspFifo/fifo/Full_reg/C SLICE_X52Y179 SLICE_X52Y179/CLK2
+      pin nonTranspFIFO_1_1_1_1_3_I60_J36_R1_C3_cell/nontranspFifo/fifo/Head_reg[0]/C SLICE_X53Y179 SLICE_X53Y179/CLK1
+      pin nonTranspFIFO_1_1_1_1_3_I60_J36_R1_C3_cell/nontranspFifo/fifo/Head_reg[1]/C SLICE_X53Y179 SLICE_X53Y179/CLK2
+      pin nonTranspFIFO_1_1_1_1_3_I60_J36_R1_C3_cell/nontranspFifo/fifo/Tail_reg[0]/C SLICE_X52Y179 SLICE_X52Y179/CLK1
+      pin nonTranspFIFO_1_1_1_1_3_I60_J36_R1_C3_cell/nontranspFifo/fifo/Tail_reg[1]/C SLICE_X52Y179 SLICE_X52Y179/CLK1
+      pin nonTranspFIFO_1_1_1_1_3_I60_J36_R1_C3_cell/nontranspFifo/fifo/Memory_reg_0_3_0_0/DP/CLK SLICE_X53Y179 SLICE_X53Y179/LCLK
+      pin nonTranspFIFO_1_1_1_1_3_I60_J36_R1_C3_cell/nontranspFifo/fifo/Memory_reg_0_3_0_0/SP/CLK SLICE_X53Y179 SLICE_X53Y179/LCLK
+      pin nonTranspFIFO_1_1_1_1_3_I60_J36_R1_C3_cell/nontranspFifo/tehb/data_reg_reg[0]/C SLICE_X51Y179 SLICE_X51Y179/CLK1
+      pin nonTranspFIFO_1_1_1_1_3_I60_J36_R1_C3_cell/nontranspFifo/tehb/full_reg_reg/C SLICE_X51Y179 SLICE_X51Y179/CLK1
+    end connections
+  end input
+  begin input
+    name dataInArray_0
+    netname dataInArray_0_net
+    numprims 0
+    type input signal
+    maxdelay 0.639
+    begin connections
+      pin nonTranspFIFO_1_1_1_1_3_I60_J36_R1_C3_cell/nontranspFifo/tehb/data_reg[0]_i_1/I0 SLICE_X51Y179 SLICE_X51Y179/D1
+      pin nonTranspFIFO_1_1_1_1_3_I60_J36_R1_C3_cell/nontranspFifo/tehb/dataOutArray[0][0]_INST_0/I2 SLICE_X51Y179 SLICE_X51Y179/H3
+    end connections
+  end input
+  begin input
+    name nReadyArray_0
+    netname nReadyArray_0_net
+    numprims 0
+    type input signal
+    maxdelay 0.695
+    begin connections
+      pin nonTranspFIFO_1_1_1_1_3_I60_J36_R1_C3_cell/nontranspFifo/fifo/Head[1]_i_1/I0 SLICE_X52Y179 SLICE_X52Y179/C4
+      pin nonTranspFIFO_1_1_1_1_3_I60_J36_R1_C3_cell/nontranspFifo/fifo/readyArray[0]_INST_0/I0 SLICE_X52Y179 SLICE_X52Y179/C4
+      pin nonTranspFIFO_1_1_1_1_3_I60_J36_R1_C3_cell/nontranspFifo/fifo/Full_i_1/I1 SLICE_X52Y179 SLICE_X52Y179/G4
+      pin nonTranspFIFO_1_1_1_1_3_I60_J36_R1_C3_cell/nontranspFifo/fifo/Memory_reg_0_3_0_0_i_1/I1 SLICE_X52Y179 SLICE_X52Y179/B1
+      pin nonTranspFIFO_1_1_1_1_3_I60_J36_R1_C3_cell/nontranspFifo/fifo/Tail[1]_i_1/I1 SLICE_X52Y179 SLICE_X52Y179/B1
+      pin nonTranspFIFO_1_1_1_1_3_I60_J36_R1_C3_cell/nontranspFifo/fifo/Empty_i_1/I2 SLICE_X52Y179 SLICE_X52Y179/H4
+      pin nonTranspFIFO_1_1_1_1_3_I60_J36_R1_C3_cell/nontranspFifo/fifo/Empty_i_2/I5 SLICE_X52Y179 SLICE_X52Y179/F2
+    end connections
+  end input
+  begin input
+    name pValidArray_0
+    netname pValidArray_0_net
+    numprims 0
+    type input signal
+    maxdelay 0.868
+    begin connections
+      pin nonTranspFIFO_1_1_1_1_3_I60_J36_R1_C3_cell/nontranspFifo/tehb/validArray[0]_INST_0/I0 SLICE_X51Y179 SLICE_X51Y179/C4
+      pin nonTranspFIFO_1_1_1_1_3_I60_J36_R1_C3_cell/nontranspFifo/tehb/full_reg_i_1/I1 SLICE_X51Y179 SLICE_X51Y179/D5
+      pin nonTranspFIFO_1_1_1_1_3_I60_J36_R1_C3_cell/nontranspFifo/tehb/data_reg[0]_i_1/I2 SLICE_X51Y179 SLICE_X51Y179/D5
+    end connections
+  end input
+  begin input
+    name rst
+    netname rst
+    numprims 9
+    type input signal
+    maxdelay 0.318
+    begin connections
+      pin nonTranspFIFO_1_1_1_1_3_I60_J36_R1_C3_cell/nontranspFifo/fifo/Memory_reg_0_3_0_0_i_1/I3 SLICE_X52Y179 SLICE_X52Y179/B5
+      pin nonTranspFIFO_1_1_1_1_3_I60_J36_R1_C3_cell/nontranspFifo/fifo/Empty_i_1/I5 SLICE_X52Y179 SLICE_X52Y179/H6
+      pin nonTranspFIFO_1_1_1_1_3_I60_J36_R1_C3_cell/nontranspFifo/fifo/Full_i_1/I5 SLICE_X52Y179 SLICE_X52Y179/G6
+      pin nonTranspFIFO_1_1_1_1_3_I60_J36_R1_C3_cell/nontranspFifo/fifo/Head_reg[0]/R SLICE_X53Y179 SLICE_X53Y179/SRST1
+      pin nonTranspFIFO_1_1_1_1_3_I60_J36_R1_C3_cell/nontranspFifo/fifo/Head_reg[1]/R SLICE_X53Y179 SLICE_X53Y179/SRST2
+      pin nonTranspFIFO_1_1_1_1_3_I60_J36_R1_C3_cell/nontranspFifo/fifo/Tail_reg[0]/R SLICE_X52Y179 SLICE_X52Y179/SRST1
+      pin nonTranspFIFO_1_1_1_1_3_I60_J36_R1_C3_cell/nontranspFifo/fifo/Tail_reg[1]/R SLICE_X52Y179 SLICE_X52Y179/SRST1
+      pin nonTranspFIFO_1_1_1_1_3_I60_J36_R1_C3_cell/nontranspFifo/tehb/data_reg_reg[0]/CLR SLICE_X51Y179 SLICE_X51Y179/SRST1
+      pin nonTranspFIFO_1_1_1_1_3_I60_J36_R1_C3_cell/nontranspFifo/tehb/full_reg_reg/CLR SLICE_X51Y179 SLICE_X51Y179/SRST1
+    end connections
+  end input
+
+  begin output
+    name dataOutArray_0
+    netname dataOutArray_0_net
+    numprims 0
+    type output signal
+    maxdelay 0.754
+    begin connections
+      pin nonTranspFIFO_1_1_1_1_3_I60_J36_R1_C3_cell/nontranspFifo/fifo/Memory_reg_0_3_0_0/DP/O SLICE_X53Y179 SLICE_X53Y179/GMUX SLICE_X53Y179/G_O
+    end connections
+  end output
+  begin output
+    name readyArray_0
+    netname readyArray_0_net
+    numprims 0
+    type output signal
+    maxdelay 0.638
+    begin connections
+      pin nonTranspFIFO_1_1_1_1_3_I60_J36_R1_C3_cell/nontranspFifo/tehb/readyArray[0]_INST_0/O SLICE_X51Y179 SLICE_X51Y179/CMUX
+    end connections
+  end output
+  begin output
+    name validArray_0
+    netname validArray_0_net
+    numprims 0
+    type output signal
+    maxdelay 0.352
+    begin connections
+      pin nonTranspFIFO_1_1_1_1_3_I60_J36_R1_C3_cell/nontranspFifo/fifo/validArray[0]_INST_0/O SLICE_X51Y179 SLICE_X51Y179/GMUX SLICE_X51Y179/G_O
+    end connections
+  end output
+
+end block

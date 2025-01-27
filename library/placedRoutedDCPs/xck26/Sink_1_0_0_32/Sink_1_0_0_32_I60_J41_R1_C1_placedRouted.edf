@@ -1,0 +1,147 @@
+(edif Sink_1_0_0_32_I60_J41_R1_C1
+  (edifversion 2 0 0)
+  (edifLevel 0)
+  (keywordmap (keywordlevel 0))
+(status
+ (written
+  (timeStamp 2024 12 15 11 33 25)
+  (program "Vivado" (version "2023.1"))
+  (comment "Built on 'Sun May  7 15:04:56 MDT 2023'")
+  (comment "Built by 'xbuild'")
+ )
+)
+  (Library hdi_primitives
+    (edifLevel 0)
+    (technology (numberDefinition ))
+   (cell LUT1 (celltype GENERIC)
+     (view netlist (viewtype NETLIST)
+       (interface 
+        (port O (direction OUTPUT))
+        (port I0 (direction INPUT))
+       )
+     )
+   )
+   (cell INV (celltype GENERIC)
+     (view netlist (viewtype NETLIST)
+       (interface
+         (port I (direction INPUT))
+         (port O (direction OUTPUT))
+       )
+     )
+   )
+  )
+  (Library work
+    (edifLevel 0)
+    (technology (numberDefinition ))
+   (cell sink (celltype GENERIC)
+     (view sink (viewtype NETLIST)
+       (interface 
+        (port clk (direction INPUT))
+        (port rst (direction INPUT))
+        (port (rename pValidArray_0_ "pValidArray[0]") (direction INPUT))
+        (port (rename readyArray_0_ "readyArray[0]") (direction OUTPUT))
+       )
+       (contents
+         (instance (rename readyArray_0__INST_0 "readyArray[0]_INST_0") (viewref netlist (cellref LUT1 (libraryref hdi_primitives)))
+           (property INIT (string "2'h1"))
+         )
+         (net (rename readyArray_0_ "readyArray[0]") (joined
+          (portref O (instanceref readyArray_0__INST_0))
+          (portref readyArray_0_)
+          )
+         )
+         (net rst (joined
+          (portref I0 (instanceref readyArray_0__INST_0))
+          (portref rst)
+          )
+         )
+       )
+
+           (property INPUT_COUNT (integer 1))
+           (property DATA_SIZE_OUT (integer 0))
+           (property DATA_SIZE_IN (integer 0))
+           (property OUTPUT_COUNT (integer 0))
+     )
+   )
+   (cell Sink_1_0_0_32 (celltype GENERIC)
+     (view netlist (viewtype NETLIST)
+       (interface 
+        (port clk (direction INPUT))
+        (port pValidArray_0 (direction INPUT))
+        (port readyArray_0 (direction OUTPUT))
+        (port rst (direction INPUT))
+       )
+       (contents
+         (instance sink (viewref sink (cellref sink (libraryref work))))
+         (net clk (joined
+          (portref clk (instanceref sink))
+          (portref clk)
+          )
+         )
+         (net pValidArray_0 (joined
+          (portref pValidArray_0_ (instanceref sink))
+          (portref pValidArray_0)
+          )
+         )
+         (net readyArray_0 (joined
+          (portref readyArray_0_ (instanceref sink))
+          (portref readyArray_0)
+          )
+         )
+         (net rst (joined
+          (portref rst (instanceref sink))
+          (portref rst)
+          )
+         )
+       )
+     )
+   )
+   (cell Sink_1_0_0_32_I60_J41_R1_C1 (celltype GENERIC)
+     (view netlist (viewtype NETLIST)
+       (interface 
+        (port clk (direction INPUT))
+        (port pValidArray_0 (direction INPUT))
+        (port readyArray_0 (direction OUTPUT))
+        (port rst (direction INPUT))
+       )
+       (contents
+         (instance Sink_1_0_0_32_I60_J41_R1_C1_cell (viewref netlist (cellref Sink_1_0_0_32 (libraryref work))))
+         (net clk (joined
+          (portref clk (instanceref Sink_1_0_0_32_I60_J41_R1_C1_cell))
+          (portref clk)
+          )
+         )
+         (net pValidArray_0_net (joined
+          (portref pValidArray_0 (instanceref Sink_1_0_0_32_I60_J41_R1_C1_cell))
+          (portref pValidArray_0)
+          )
+
+           (property IOSTANDARD (string "LVCMOS18"))
+         )
+         (net readyArray_0_net (joined
+          (portref readyArray_0 (instanceref Sink_1_0_0_32_I60_J41_R1_C1_cell))
+          (portref readyArray_0)
+          )
+
+           (property IOSTANDARD (string "LVCMOS18"))
+         )
+         (net rst (joined
+          (portref rst (instanceref Sink_1_0_0_32_I60_J41_R1_C1_cell))
+          (portref rst)
+          )
+         )
+       )
+
+           (property ECO_CHECKSUM (string "d8368d37"))
+     )
+   )
+  )
+(comment "Reference To The Cell Of Highest Level")
+
+  (design Sink_1_0_0_32_I60_J41_R1_C1
+    (cellref Sink_1_0_0_32_I60_J41_R1_C1 (libraryref work))
+    (property PART (string "xck26-sfvc784-2LV-c"))
+    (property ENABLE_NOC_NETLIST_VIEW (boolean (true)))
+    (property ENABLE_AIE_NETLIST_VIEW (boolean (true)))
+  )
+)

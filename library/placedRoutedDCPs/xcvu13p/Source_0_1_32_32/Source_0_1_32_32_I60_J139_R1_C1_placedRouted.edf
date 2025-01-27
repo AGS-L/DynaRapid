@@ -1,0 +1,355 @@
+(edif Source_0_1_32_32_I60_J139_R1_C1
+  (edifversion 2 0 0)
+  (edifLevel 0)
+  (keywordmap (keywordlevel 0))
+(status
+ (written
+  (timeStamp 2023 06 09 15 36 53)
+  (program "Vivado" (version "2020.2"))
+  (comment "Built on 'Wed Nov 18 09:12:47 MST 2020'")
+  (comment "Built by 'xbuild'")
+ )
+)
+  (Library hdi_primitives
+    (edifLevel 0)
+    (technology (numberDefinition ))
+   (cell VCC (celltype GENERIC)
+     (view netlist (viewtype NETLIST)
+       (interface 
+        (port P (direction OUTPUT))
+       )
+     )
+   )
+   (cell LUT1 (celltype GENERIC)
+     (view netlist (viewtype NETLIST)
+       (interface 
+        (port O (direction OUTPUT))
+        (port I0 (direction INPUT))
+       )
+     )
+   )
+   (cell INV (celltype GENERIC)
+     (view netlist (viewtype NETLIST)
+       (interface
+         (port I (direction INPUT))
+         (port O (direction OUTPUT))
+       )
+     )
+   )
+  )
+  (Library work
+    (edifLevel 0)
+    (technology (numberDefinition ))
+   (cell Source_0_1_32_32 (celltype GENERIC)
+     (view Source_0_1_32_32 (viewtype NETLIST)
+       (interface 
+        (port clk (direction INPUT))
+        (port nReadyArray_0 (direction INPUT))
+        (port rst (direction INPUT))
+        (port useless_net (direction OUTPUT))
+        (port validArray_0 (direction OUTPUT))
+        (port (array (rename dataOutArray_0 "dataOutArray_0[31:0]") 32) (direction OUTPUT))
+       )
+       (contents
+         (instance VCC (viewref netlist (cellref VCC (libraryref hdi_primitives))))
+         (instance useless_net_INST_0 (viewref netlist (cellref LUT1 (libraryref hdi_primitives)))
+           (property INIT (string "2'h1"))
+         )
+         (net (rename &_const1_ "<const1>") (joined
+          (portref P (instanceref VCC))
+          (portref validArray_0)
+          )
+         )
+         (net rst (joined
+          (portref I0 (instanceref useless_net_INST_0))
+          (portref rst)
+          )
+         )
+         (net useless_net (joined
+          (portref O (instanceref useless_net_INST_0))
+          (portref useless_net)
+          )
+         )
+       )
+     )
+   )
+   (cell Source_0_1_32_32_I60_J139_R1_C1 (celltype GENERIC)
+     (view netlist (viewtype NETLIST)
+       (interface 
+        (port clk (direction INPUT))
+        (port nReadyArray_0 (direction INPUT))
+        (port rst (direction INPUT))
+        (port useless_net (direction OUTPUT))
+        (port validArray_0 (direction OUTPUT))
+        (port (array (rename dataOutArray_0 "dataOutArray_0[31:0]") 32) (direction OUTPUT))
+       )
+       (contents
+         (instance Source_0_1_32_32_I60_J139_R1_C1_cell (viewref Source_0_1_32_32 (cellref Source_0_1_32_32 (libraryref work))))
+         (net clk (joined
+          (portref clk (instanceref Source_0_1_32_32_I60_J139_R1_C1_cell))
+          (portref clk)
+          )
+         )
+         (net (rename dataOutArray_0_net_0_ "dataOutArray_0_net[0]") (joined
+          (portref (member dataOutArray_0 31) (instanceref Source_0_1_32_32_I60_J139_R1_C1_cell))
+          (portref (member dataOutArray_0 31))
+          )
+
+           (property IOSTANDARD (string "LVCMOS18"))
+         )
+         (net (rename dataOutArray_0_net_10_ "dataOutArray_0_net[10]") (joined
+          (portref (member dataOutArray_0 21) (instanceref Source_0_1_32_32_I60_J139_R1_C1_cell))
+          (portref (member dataOutArray_0 21))
+          )
+
+           (property IOSTANDARD (string "LVCMOS18"))
+         )
+         (net (rename dataOutArray_0_net_11_ "dataOutArray_0_net[11]") (joined
+          (portref (member dataOutArray_0 20) (instanceref Source_0_1_32_32_I60_J139_R1_C1_cell))
+          (portref (member dataOutArray_0 20))
+          )
+
+           (property IOSTANDARD (string "LVCMOS18"))
+         )
+         (net (rename dataOutArray_0_net_12_ "dataOutArray_0_net[12]") (joined
+          (portref (member dataOutArray_0 19) (instanceref Source_0_1_32_32_I60_J139_R1_C1_cell))
+          (portref (member dataOutArray_0 19))
+          )
+
+           (property IOSTANDARD (string "LVCMOS18"))
+         )
+         (net (rename dataOutArray_0_net_13_ "dataOutArray_0_net[13]") (joined
+          (portref (member dataOutArray_0 18) (instanceref Source_0_1_32_32_I60_J139_R1_C1_cell))
+          (portref (member dataOutArray_0 18))
+          )
+
+           (property IOSTANDARD (string "LVCMOS18"))
+         )
+         (net (rename dataOutArray_0_net_14_ "dataOutArray_0_net[14]") (joined
+          (portref (member dataOutArray_0 17) (instanceref Source_0_1_32_32_I60_J139_R1_C1_cell))
+          (portref (member dataOutArray_0 17))
+          )
+
+           (property IOSTANDARD (string "LVCMOS18"))
+         )
+         (net (rename dataOutArray_0_net_15_ "dataOutArray_0_net[15]") (joined
+          (portref (member dataOutArray_0 16) (instanceref Source_0_1_32_32_I60_J139_R1_C1_cell))
+          (portref (member dataOutArray_0 16))
+          )
+
+           (property IOSTANDARD (string "LVCMOS18"))
+         )
+         (net (rename dataOutArray_0_net_16_ "dataOutArray_0_net[16]") (joined
+          (portref (member dataOutArray_0 15) (instanceref Source_0_1_32_32_I60_J139_R1_C1_cell))
+          (portref (member dataOutArray_0 15))
+          )
+
+           (property IOSTANDARD (string "LVCMOS18"))
+         )
+         (net (rename dataOutArray_0_net_17_ "dataOutArray_0_net[17]") (joined
+          (portref (member dataOutArray_0 14) (instanceref Source_0_1_32_32_I60_J139_R1_C1_cell))
+          (portref (member dataOutArray_0 14))
+          )
+
+           (property IOSTANDARD (string "LVCMOS18"))
+         )
+         (net (rename dataOutArray_0_net_18_ "dataOutArray_0_net[18]") (joined
+          (portref (member dataOutArray_0 13) (instanceref Source_0_1_32_32_I60_J139_R1_C1_cell))
+          (portref (member dataOutArray_0 13))
+          )
+
+           (property IOSTANDARD (string "LVCMOS18"))
+         )
+         (net (rename dataOutArray_0_net_19_ "dataOutArray_0_net[19]") (joined
+          (portref (member dataOutArray_0 12) (instanceref Source_0_1_32_32_I60_J139_R1_C1_cell))
+          (portref (member dataOutArray_0 12))
+          )
+
+           (property IOSTANDARD (string "LVCMOS18"))
+         )
+         (net (rename dataOutArray_0_net_1_ "dataOutArray_0_net[1]") (joined
+          (portref (member dataOutArray_0 30) (instanceref Source_0_1_32_32_I60_J139_R1_C1_cell))
+          (portref (member dataOutArray_0 30))
+          )
+
+           (property IOSTANDARD (string "LVCMOS18"))
+         )
+         (net (rename dataOutArray_0_net_20_ "dataOutArray_0_net[20]") (joined
+          (portref (member dataOutArray_0 11) (instanceref Source_0_1_32_32_I60_J139_R1_C1_cell))
+          (portref (member dataOutArray_0 11))
+          )
+
+           (property IOSTANDARD (string "LVCMOS18"))
+         )
+         (net (rename dataOutArray_0_net_21_ "dataOutArray_0_net[21]") (joined
+          (portref (member dataOutArray_0 10) (instanceref Source_0_1_32_32_I60_J139_R1_C1_cell))
+          (portref (member dataOutArray_0 10))
+          )
+
+           (property IOSTANDARD (string "LVCMOS18"))
+         )
+         (net (rename dataOutArray_0_net_22_ "dataOutArray_0_net[22]") (joined
+          (portref (member dataOutArray_0 9) (instanceref Source_0_1_32_32_I60_J139_R1_C1_cell))
+          (portref (member dataOutArray_0 9))
+          )
+
+           (property IOSTANDARD (string "LVCMOS18"))
+         )
+         (net (rename dataOutArray_0_net_23_ "dataOutArray_0_net[23]") (joined
+          (portref (member dataOutArray_0 8) (instanceref Source_0_1_32_32_I60_J139_R1_C1_cell))
+          (portref (member dataOutArray_0 8))
+          )
+
+           (property IOSTANDARD (string "LVCMOS18"))
+         )
+         (net (rename dataOutArray_0_net_24_ "dataOutArray_0_net[24]") (joined
+          (portref (member dataOutArray_0 7) (instanceref Source_0_1_32_32_I60_J139_R1_C1_cell))
+          (portref (member dataOutArray_0 7))
+          )
+
+           (property IOSTANDARD (string "LVCMOS18"))
+         )
+         (net (rename dataOutArray_0_net_25_ "dataOutArray_0_net[25]") (joined
+          (portref (member dataOutArray_0 6) (instanceref Source_0_1_32_32_I60_J139_R1_C1_cell))
+          (portref (member dataOutArray_0 6))
+          )
+
+           (property IOSTANDARD (string "LVCMOS18"))
+         )
+         (net (rename dataOutArray_0_net_26_ "dataOutArray_0_net[26]") (joined
+          (portref (member dataOutArray_0 5) (instanceref Source_0_1_32_32_I60_J139_R1_C1_cell))
+          (portref (member dataOutArray_0 5))
+          )
+
+           (property IOSTANDARD (string "LVCMOS18"))
+         )
+         (net (rename dataOutArray_0_net_27_ "dataOutArray_0_net[27]") (joined
+          (portref (member dataOutArray_0 4) (instanceref Source_0_1_32_32_I60_J139_R1_C1_cell))
+          (portref (member dataOutArray_0 4))
+          )
+
+           (property IOSTANDARD (string "LVCMOS18"))
+         )
+         (net (rename dataOutArray_0_net_28_ "dataOutArray_0_net[28]") (joined
+          (portref (member dataOutArray_0 3) (instanceref Source_0_1_32_32_I60_J139_R1_C1_cell))
+          (portref (member dataOutArray_0 3))
+          )
+
+           (property IOSTANDARD (string "LVCMOS18"))
+         )
+         (net (rename dataOutArray_0_net_29_ "dataOutArray_0_net[29]") (joined
+          (portref (member dataOutArray_0 2) (instanceref Source_0_1_32_32_I60_J139_R1_C1_cell))
+          (portref (member dataOutArray_0 2))
+          )
+
+           (property IOSTANDARD (string "LVCMOS18"))
+         )
+         (net (rename dataOutArray_0_net_2_ "dataOutArray_0_net[2]") (joined
+          (portref (member dataOutArray_0 29) (instanceref Source_0_1_32_32_I60_J139_R1_C1_cell))
+          (portref (member dataOutArray_0 29))
+          )
+
+           (property IOSTANDARD (string "LVCMOS18"))
+         )
+         (net (rename dataOutArray_0_net_30_ "dataOutArray_0_net[30]") (joined
+          (portref (member dataOutArray_0 1) (instanceref Source_0_1_32_32_I60_J139_R1_C1_cell))
+          (portref (member dataOutArray_0 1))
+          )
+
+           (property IOSTANDARD (string "LVCMOS18"))
+         )
+         (net (rename dataOutArray_0_net_31_ "dataOutArray_0_net[31]") (joined
+          (portref (member dataOutArray_0 0) (instanceref Source_0_1_32_32_I60_J139_R1_C1_cell))
+          (portref (member dataOutArray_0 0))
+          )
+
+           (property IOSTANDARD (string "LVCMOS18"))
+         )
+         (net (rename dataOutArray_0_net_3_ "dataOutArray_0_net[3]") (joined
+          (portref (member dataOutArray_0 28) (instanceref Source_0_1_32_32_I60_J139_R1_C1_cell))
+          (portref (member dataOutArray_0 28))
+          )
+
+           (property IOSTANDARD (string "LVCMOS18"))
+         )
+         (net (rename dataOutArray_0_net_4_ "dataOutArray_0_net[4]") (joined
+          (portref (member dataOutArray_0 27) (instanceref Source_0_1_32_32_I60_J139_R1_C1_cell))
+          (portref (member dataOutArray_0 27))
+          )
+
+           (property IOSTANDARD (string "LVCMOS18"))
+         )
+         (net (rename dataOutArray_0_net_5_ "dataOutArray_0_net[5]") (joined
+          (portref (member dataOutArray_0 26) (instanceref Source_0_1_32_32_I60_J139_R1_C1_cell))
+          (portref (member dataOutArray_0 26))
+          )
+
+           (property IOSTANDARD (string "LVCMOS18"))
+         )
+         (net (rename dataOutArray_0_net_6_ "dataOutArray_0_net[6]") (joined
+          (portref (member dataOutArray_0 25) (instanceref Source_0_1_32_32_I60_J139_R1_C1_cell))
+          (portref (member dataOutArray_0 25))
+          )
+
+           (property IOSTANDARD (string "LVCMOS18"))
+         )
+         (net (rename dataOutArray_0_net_7_ "dataOutArray_0_net[7]") (joined
+          (portref (member dataOutArray_0 24) (instanceref Source_0_1_32_32_I60_J139_R1_C1_cell))
+          (portref (member dataOutArray_0 24))
+          )
+
+           (property IOSTANDARD (string "LVCMOS18"))
+         )
+         (net (rename dataOutArray_0_net_8_ "dataOutArray_0_net[8]") (joined
+          (portref (member dataOutArray_0 23) (instanceref Source_0_1_32_32_I60_J139_R1_C1_cell))
+          (portref (member dataOutArray_0 23))
+          )
+
+           (property IOSTANDARD (string "LVCMOS18"))
+         )
+         (net (rename dataOutArray_0_net_9_ "dataOutArray_0_net[9]") (joined
+          (portref (member dataOutArray_0 22) (instanceref Source_0_1_32_32_I60_J139_R1_C1_cell))
+          (portref (member dataOutArray_0 22))
+          )
+
+           (property IOSTANDARD (string "LVCMOS18"))
+         )
+         (net nReadyArray_0_net (joined
+          (portref nReadyArray_0 (instanceref Source_0_1_32_32_I60_J139_R1_C1_cell))
+          (portref nReadyArray_0)
+          )
+
+           (property IOSTANDARD (string "LVCMOS18"))
+         )
+         (net rst (joined
+          (portref rst (instanceref Source_0_1_32_32_I60_J139_R1_C1_cell))
+          (portref rst)
+          )
+         )
+         (net useless_net_net (joined
+          (portref useless_net (instanceref Source_0_1_32_32_I60_J139_R1_C1_cell))
+          (portref useless_net)
+          )
+
+           (property IOSTANDARD (string "LVCMOS18"))
+         )
+         (net validArray_0_net (joined
+          (portref validArray_0 (instanceref Source_0_1_32_32_I60_J139_R1_C1_cell))
+          (portref validArray_0)
+          )
+
+           (property IOSTANDARD (string "LVCMOS18"))
+         )
+       )
+
+           (property ECO_CHECKSUM (string "dc12ed83"))
+     )
+   )
+  )
+(comment "Reference To The Cell Of Highest Level")
+
+  (design Source_0_1_32_32_I60_J139_R1_C1
+    (cellref Source_0_1_32_32_I60_J139_R1_C1 (libraryref work))
+    (property PART (string "xcvu13p-fsga2577-1-i"))
+  )
+)
