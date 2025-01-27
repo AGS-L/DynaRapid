@@ -43,7 +43,8 @@ import java.util.regex.Pattern;
 public class GenerateDesign {
 
     public static String fpga_part = "xcvu13p-fsga2577-1-i";
-    
+    public static String part= "xcvu13p";
+
     public static void deleteDirectory(File sourceDir)
     {
         for (File subfile : sourceDir.listFiles()) 
@@ -148,21 +149,22 @@ public class GenerateDesign {
             System.out.println("-placer <args> - Name of the placer. Options are:");
             System.out.println("\trudimentary");
             System.out.println("\tgreedy");
+            System.out.println("-parts <args> - Device part number. Options are:");
+            System.out.println("\txcvu13p");
+            System.out.println("\txck26");
             System.out.println("-center <arg> - Center of the design.");
             System.out.println("\t<arg> : Can be the name of SLICE site like SLICE_X#_Y#");
             System.out.println("\t<arg> : Can be R<row_number>_C<column_number>_Side<side>. The side can be -1 for left and +1 for right");
             System.out.println("-bit <arg> - Use Vivado (if on PATH) to generate a bitstream");
             return;
         }
-
-        if(!Start.start("Design Generation"))
-            return;
-
+    
         String dotLoc = args[StringUtils.findInArray("-f", args) + 1];
         String graphName = StringUtils.getGraphName(dotLoc);
 
         String placeLoc = "";
         String placerName = "";
+        //String part= "";
         int threads = 16;
 
         if(StringUtils.findInArray("-place", args) != -1)
@@ -200,6 +202,39 @@ public class GenerateDesign {
             }
         }
 
+
+        if(StringUtils.findInArray("-part", args) != -1)
+        {
+            GenerateDesign.part = args[StringUtils.findInArray("-part", args) + 1];
+
+            switch(part) {
+                case "xczu3eg":
+                    System.out.println("xczu3eg");
+                    GenerateDesign.fpga_part = "xczu3eg-sbva484-1-e"; //Utra96
+                    break;
+                case "xck26":
+                    System.out.println("xck26");
+                    GenerateDesign.fpga_part = "xck26-sfvc784-2LV-c"; //Kria
+                    break;
+                case "xcvu13p":
+                    System.out.println("xcvu13p");
+                    GenerateDesign.fpga_part = "xcvu13p-fsga2577-1-i";
+                    break;
+                default:
+                    System.out.println("Using default part-number xcvu13p");
+                    GenerateDesign.fpga_part = "xcvu13p-fsga2577-1-i";
+            }
+
+            if(part.equals(""))
+            {
+                System.out.println("ERROR: Part number not currently supported");
+                return;
+            }
+        }
+
+        if(!Start.start("Design Generation"))
+        return;
+
         boolean noClock = (StringUtils.findInArray("-noClock", args) != -1);
         boolean complete = (StringUtils.findInArray("-complete", args) != -1);
         boolean debug = (StringUtils.findInArray("-debug", args) != -1);
@@ -210,6 +245,7 @@ public class GenerateDesign {
         constrainCoordinates[1] = MapElement.map.size()-1;
         constrainCoordinates[2] = 0;
         constrainCoordinates[3] = MapElement.map.get(0).size()-1;
+        
 
         boolean isCenterSpecified = false;
         String centerSiteName = "";
@@ -252,6 +288,8 @@ public class GenerateDesign {
                 return;
             }
         }
+
+        
 
         File sourceDir = new File(LocationParser.designs + graphName + "/");
 

@@ -7,6 +7,7 @@
 */
 
 package ch.agsl.dynarapid.parser;
+import ch.agsl.dynarapid.GenerateDesign;
 import ch.agsl.dynarapid.databasegenerator.*;
 import ch.agsl.dynarapid.debug.*;
 import ch.agsl.dynarapid.entry.*;
@@ -84,13 +85,13 @@ public class LocationParser {
             case 1: exportLicense = s; break;
             case 2: sourceVivado = s; break;
             case 3: sourceRW = s; break;
-            case 4: map = s; break;
+            case 4: map = s + GenerateDesign.part + "/"; break;
             case 5: preSynthDCPs = s; break;
             case 6: genericSynthDCPs = s; break;
             case 7: vhdlSynthDCPs = s; break;
             case 8: preExposedDCPs = s; break;
             case 9: exposedDCPs = s; break;
-            case 10: placedRoutedDCPs = s; break;
+            case 10: placedRoutedDCPs = s + GenerateDesign.part + "/"; break;
             case 11: vivadoRun = s; break;
             case 12: dotFiles = s; break;
             case 13: designs = s; break;

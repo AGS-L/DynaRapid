@@ -28,7 +28,7 @@ import ch.agsl.dynarapid.vivado.*;
 
 public class Start {
     
-    //This starts all the processis in the code. This does not nequire the root time element name. 
+    //This starts all the process in the code. This does not nequire the root time element name. 
     //This does not measure the time required for execution
     public static boolean start()
     {
