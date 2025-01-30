@@ -149,7 +149,7 @@ public class GenerateDesign {
             System.out.println("-placer <args> - Name of the placer. Options are:");
             System.out.println("\trudimentary");
             System.out.println("\tgreedy");
-            System.out.println("-parts <args> - Device part number. Options are:");
+            System.out.println("-part <args> - Device part number. Options are:");
             System.out.println("\txcvu13p");
             System.out.println("\txck26");
             System.out.println("-center <arg> - Center of the design.");
