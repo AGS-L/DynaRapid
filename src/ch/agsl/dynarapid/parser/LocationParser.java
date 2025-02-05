@@ -7,35 +7,14 @@
 */
 
 package ch.agsl.dynarapid.parser;
-import ch.agsl.dynarapid.GenerateDesign;
-import ch.agsl.dynarapid.databasegenerator.*;
-import ch.agsl.dynarapid.debug.*;
-import ch.agsl.dynarapid.entry.*;
-import ch.agsl.dynarapid.error.*;
-import ch.agsl.dynarapid.graphgenerator.*;
-import ch.agsl.dynarapid.graphplacer.*;
-import ch.agsl.dynarapid.interrouting.*;
-import ch.agsl.dynarapid.map.*;
-import ch.agsl.dynarapid.modules.*;
-import ch.agsl.dynarapid.parser.*;
-import ch.agsl.dynarapid.pblockgenerator.*;
-import ch.agsl.dynarapid.placer.*;
-     
-import ch.agsl.dynarapid.strings.*;
-import ch.agsl.dynarapid.synthesizer.*;
-import ch.agsl.dynarapid.tclgenerator.*;
-import ch.agsl.dynarapid.vivado.*;
+import java.io.File;
+import java.util.Arrays;
+import java.util.Scanner;
 
-import java.util.*;
-import java.io.*;
-
-import org.python.antlr.PythonParser.continue_stmt_return;
-
-/*
- * This class parses through the locations file and gives the location of the different files.
- * Makes the code relocatable
+/**
+ * This class parses through the locations file and gives the location of the
+ * different files. Makes the code relocatable
  */
-
 public class LocationParser {
     static final String checkStrings [] = {
         "./settings.env",  //Has the location of the locations file. Must be always be like this
@@ -76,22 +55,22 @@ public class LocationParser {
     public static String bin;
     public static String terminal;
 
-    static void setVariable(String s, int i)
-    {
+    public static final String DYNARAPID_ROOT = getDynaRapidRoot();
+
+    static void setVariable(String s, int i) {
         s = s.substring(s.indexOf(": ") + 2);
 
-        switch(i)
-        {
+        switch (i) {
             case 1: exportLicense = s; break;
             case 2: sourceVivado = s; break;
             case 3: sourceRW = s; break;
-            case 4: map = s + GenerateDesign.part + "/"; break;
+            case 4: map = s; break;
             case 5: preSynthDCPs = s; break;
             case 6: genericSynthDCPs = s; break;
             case 7: vhdlSynthDCPs = s; break;
             case 8: preExposedDCPs = s; break;
             case 9: exposedDCPs = s; break;
-            case 10: placedRoutedDCPs = s + GenerateDesign.part + "/"; break;
+            case 10: placedRoutedDCPs = s; break;
             case 11: vivadoRun = s; break;
             case 12: dotFiles = s; break;
             case 13: designs = s; break;
@@ -103,34 +82,44 @@ public class LocationParser {
         }
     }
 
-    public static void locationParser()
-    {
+    /**
+     * Gets the location of where DynaRapid is located.
+     * 
+     * @return The path to DynaRapid's root directory
+     */
+    private static String getDynaRapidRoot() {
+        File f = new File(LocationParser.class.getProtectionDomain().getCodeSource().getLocation().getPath());
+        while (f.isDirectory() && !Arrays.stream(f.list()).anyMatch(s -> s.equals("dynarapid_setup.sh"))) {
+            f = f.getParentFile();
+        }
+        return f == null ? "" : f.getAbsolutePath();
+    }
+
+    public static void locationParser() {
         int i = 0;
-        String loc = checkStrings[i++];
+        String loc = DYNARAPID_ROOT + File.separator + checkStrings[i++];
 
-        try{
-            File file = new File(loc);
-            Scanner in = new Scanner(file);
-
-            while(in.hasNextLine() && i < checkStrings.length)
-            {
+        try (Scanner in = new Scanner(new File(loc))) {
+            while (in.hasNextLine() && i < checkStrings.length) {
                 String s = in.nextLine();
-                if((s.length() < 2) || (s.charAt(0) == '#'))
+                if ((s.length() < 2) || (s.charAt(0) == '#'))
                     continue;
 
-                if(s.startsWith(checkStrings[i]))
-                {
-                    setVariable(s, i);
+                if (s.startsWith(checkStrings[i])) {
+                    // Check if it is a file path that isn't set properly
+                    String possiblePath = s.substring(s.indexOf(": ") + 2);
+                    if (i < 4 || i > 16 || new File(possiblePath).exists()) {
+                        setVariable(s, i);
+                    } else {
+                        // settings.env is likely not set correctly, let's use the default from the root
+                        // directory
+                        setVariable(s.replace(": ", ": " + DYNARAPID_ROOT + File.separator), i);
+                    }
                     i++;
                 }
             }
-
-
-        }
-
-        catch (Exception e)
-        {
-            e.printStackTrace();;
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 }
