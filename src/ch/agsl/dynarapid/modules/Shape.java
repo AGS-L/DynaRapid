@@ -9,52 +9,20 @@
 package ch.agsl.dynarapid.modules;
 
 
-import ch.agsl.dynarapid.databasegenerator.*;
-import ch.agsl.dynarapid.debug.*;
-import ch.agsl.dynarapid.entry.*;
-import ch.agsl.dynarapid.error.*;
-import ch.agsl.dynarapid.graphgenerator.*;
-import ch.agsl.dynarapid.graphplacer.*;
-import ch.agsl.dynarapid.interrouting.*;
-import ch.agsl.dynarapid.map.*;
-import ch.agsl.dynarapid.modules.*;
-import ch.agsl.dynarapid.parser.*;
-import ch.agsl.dynarapid.pblockgenerator.*;
-import ch.agsl.dynarapid.placer.*;
-     
-import ch.agsl.dynarapid.strings.*;
-import ch.agsl.dynarapid.synthesizer.*;
-import ch.agsl.dynarapid.tclgenerator.*;
-import ch.agsl.dynarapid.vivado.*;
-//This holds all the shapes of a perticular component. Filled by the DatabaseParser
-
-import com.google.protobuf.MapEntryLite;
+import ch.agsl.dynarapid.map.MapElement;
+import ch.agsl.dynarapid.map.ResourceElement;
+import ch.agsl.dynarapid.parser.LocationParser;
+import ch.agsl.dynarapid.parser.PblockUtilizationParser;
 import com.xilinx.rapidwright.design.Design;
 import com.xilinx.rapidwright.design.Module;
-import com.xilinx.rapidwright.design.ModuleInst;
-import com.xilinx.rapidwright.design.SiteInst;
 import com.xilinx.rapidwright.device.Device;
 import com.xilinx.rapidwright.device.Site;
 import com.xilinx.rapidwright.device.Tile;
-import com.xilinx.rapidwright.device.SiteTypeEnum;
-import com.xilinx.rapidwright.device.TileTypeEnum;
-import com.xilinx.rapidwright.device.helper.TileColumnPattern;
-import com.xilinx.rapidwright.edif.EDIFCell;
-import com.xilinx.rapidwright.edif.EDIFDirection;
-import com.xilinx.rapidwright.edif.EDIFNet;
-import com.xilinx.rapidwright.edif.EDIFNetlist;
-import com.xilinx.rapidwright.tests.CodePerfTracker;
-import com.xilinx.rapidwright.examples.SLRCrosserGenerator;
-import com.xilinx.rapidwright.design.blocks.PBlock;
-import com.xilinx.rapidwright.router.Router;
-import com.xilinx.rapidwright.placer.handplacer.HandPlacer;
-import com.xilinx.rapidwright.rwroute.RWRoute;
-
-import java.io.*;
-import java.util.*;
-import java.lang.*;
-
-import org.python.antlr.PythonParser.else_clause_return;
+import java.io.Serializable;
+import java.nio.file.Path;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
 
 
 public class Shape implements Serializable
@@ -177,8 +145,9 @@ public class Shape implements Serializable
 
         design = des;
 
-        String dcpLoc = LocationParser.placedRoutedDCPs + component.dcpName + "/" + pblockName + "_placedRouted.dcp";
-        String metaLoc = LocationParser.placedRoutedDCPs + component.dcpName + "/" + pblockName + "_placedRouted_0_metadata.txt";
+        Path dcpPath = LocationParser.getPlacedRoutedDCPsPath().resolve(component.dcpName);
+        Path dcpLoc = dcpPath.resolve(pblockName + "_placedRouted.dcp");
+        String metaLoc = dcpPath.resolve(pblockName + "_placedRouted_0_metadata.txt").toString();
 
         module = new Module(Design.readCheckpoint(dcpLoc), metaLoc);
         design.getNetlist().migrateCellAndSubCells(module.getNetlist().getTopCell(), true);
@@ -200,8 +169,9 @@ public class Shape implements Serializable
             return module;
         }
 
-        String dcpLoc = LocationParser.placedRoutedDCPs + component.dcpName + "/" + pblockName + "_placedRouted.dcp";
-        String metaLoc = LocationParser.placedRoutedDCPs + component.dcpName + "/" + pblockName + "_placedRouted_0_metadata.txt";
+        Path dcpPath = LocationParser.getPlacedRoutedDCPsPath().resolve(component.dcpName);
+        Path dcpLoc = dcpPath.resolve(pblockName + "_placedRouted.dcp");
+        String metaLoc = dcpPath.resolve(pblockName + "_placedRouted_0_metadata.txt").toString();
 
         return new Module(Design.readCheckpoint(dcpLoc), metaLoc);
     }
@@ -260,7 +230,8 @@ public class Shape implements Serializable
         if(resourceUtilization != null)
             return resourceUtilization;
 
-        String utilLoc = LocationParser.placedRoutedDCPs + component.dcpName + "/" + pblockName + ".util";
+        String utilLoc = LocationParser.getPlacedRoutedDCPsPath().resolve(component.dcpName)
+                .resolve(pblockName + ".util").toString();
         PblockUtilizationParser obj = new PblockUtilizationParser(utilLoc);
         if(!obj.status)
             return resourceUtilization;

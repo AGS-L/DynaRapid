@@ -7,7 +7,13 @@
 */
 
 package ch.agsl.dynarapid.parser;
+
+import ch.agsl.dynarapid.GenerateDesign;
+import com.xilinx.rapidwright.util.FileTools;
+import com.xilinx.rapidwright.util.Installer;
 import java.io.File;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -46,7 +52,7 @@ public class LocationParser {
     public static String vhdlSynthDCPs;
     public static String preExposedDCPs;
     public static String exposedDCPs; //This has all the dcps and the tcl scripts with flops / LUTs added to it.
-    public static String placedRoutedDCPs;
+    private static String placedRoutedDCPs;
     public static String vivadoRun;
     public static String dotFiles;
     public static String designs;
@@ -56,6 +62,12 @@ public class LocationParser {
     public static String terminal;
 
     public static final String DYNARAPID_ROOT = getDynaRapidRoot();
+
+    public static final String RELEASE_VERSION = "0.1.0";
+
+    public static final String GH_RELEASE_DIR_URL = "https://github.com/clavin-xlnx/DynaRapid/releases/download/";
+
+    private static Path placedRoutedDCPsPath = null;
 
     static void setVariable(String s, int i) {
         s = s.substring(s.indexOf(": ") + 2);
@@ -121,5 +133,39 @@ public class LocationParser {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    public static synchronized Path getPlacedRoutedDCPsPath() {
+        if (placedRoutedDCPsPath == null) {
+            String dirName = placedRoutedDCPs + File.separator + GenerateDesign.part + "-" + RELEASE_VERSION;
+            if (!new File(dirName).exists()) {
+                // We need to download the placed and routed DCPs from GitHub
+                String zipFile = GenerateDesign.part + "-" + RELEASE_VERSION + ".zip";
+                String dstZipFile = placedRoutedDCPs + File.separator + zipFile;
+                Installer.downloadFile(GH_RELEASE_DIR_URL + "v" + RELEASE_VERSION + "/" + zipFile, dstZipFile);
+                String md5File = RELEASE_VERSION + ".md5";
+                String dstMD5File = placedRoutedDCPs + File.separator + md5File;
+                Installer.downloadFile(GH_RELEASE_DIR_URL + "v" + RELEASE_VERSION + "/" + md5File, dstMD5File);
+                String md5 = Installer.calculateMD5OfFile(placedRoutedDCPs + File.separator + zipFile);
+                if (validateMD5(md5, zipFile, dstMD5File)) {
+                    Installer.unzipFile(dstZipFile, placedRoutedDCPs);
+                } else {
+                    throw new RuntimeException("ERROR: Couldn't validate " + zipFile + " download.  Please try again.");
+                }
+            }
+            placedRoutedDCPsPath = Paths.get(dirName);
+        }
+        return placedRoutedDCPsPath;
+    }
+
+    private static boolean validateMD5(String md5, String fileName, String md5File) {
+        for (String line : FileTools.getLinesFromTextFile(md5File)) {
+            String[] parts = line.split("\\s+");
+            if (parts[1].equals(fileName)) {
+                return md5.equals(parts[0]);
+            }
+        }
+        System.err.println("ERROR: The MD5 file " + md5File + " does not contain an entry for " + fileName);
+        return false;
     }
 }

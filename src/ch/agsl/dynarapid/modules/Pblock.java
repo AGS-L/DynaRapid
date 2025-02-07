@@ -8,59 +8,29 @@
 
 package ch.agsl.dynarapid.modules;
 
-import  ch.agsl.dynarapid.*;
-import ch.agsl.dynarapid.databasegenerator.*;
-import ch.agsl.dynarapid.debug.*;
-import ch.agsl.dynarapid.entry.*;
-import ch.agsl.dynarapid.error.*;
-import ch.agsl.dynarapid.graphgenerator.*;
-import ch.agsl.dynarapid.graphplacer.*;
-import ch.agsl.dynarapid.interrouting.*;
-import ch.agsl.dynarapid.interrouting.algorithms.*;
-import ch.agsl.dynarapid.map.*;
-import ch.agsl.dynarapid.modules.*;
-import ch.agsl.dynarapid.parser.*;
-import ch.agsl.dynarapid.pblockgenerator.*;
-import ch.agsl.dynarapid.placer.*;
-     
-import ch.agsl.dynarapid.strings.*;
-import ch.agsl.dynarapid.synthesizer.*;
-import ch.agsl.dynarapid.tclgenerator.*;
-import ch.agsl.dynarapid.vivado.*;
-
-//This holds and generates the pblock by placing the flops and then removing them. 
-
- //////////////////////////////////////////////////
- //NOTE: ONLY MEANT FOR PBLOCK_1 AND NOT PBLOCK_2
- //////////////////////////////////////////////////
-
-import com.google.protobuf.MapEntryLite;
+import ch.agsl.dynarapid.GenerateDesign;
+import ch.agsl.dynarapid.interrouting.algorithms.Circular;
+import ch.agsl.dynarapid.interrouting.algorithms.PinExposer;
+import ch.agsl.dynarapid.map.MapElement;
+import ch.agsl.dynarapid.map.ResourceElement;
+import ch.agsl.dynarapid.parser.LocationParser;
+import ch.agsl.dynarapid.parser.PlacedRoutedLogParser;
+import ch.agsl.dynarapid.strings.StringUtils;
+import ch.agsl.dynarapid.tclgenerator.PreExposedTclGenerator;
+import ch.agsl.dynarapid.vivado.VivadoRun;
 import com.xilinx.rapidwright.design.Design;
 import com.xilinx.rapidwright.design.Module;
 import com.xilinx.rapidwright.design.ModuleInst;
-import com.xilinx.rapidwright.design.SiteInst;
 import com.xilinx.rapidwright.device.Device;
 import com.xilinx.rapidwright.device.Site;
 import com.xilinx.rapidwright.device.Tile;
-import com.xilinx.rapidwright.device.SiteTypeEnum;
-import com.xilinx.rapidwright.device.TileTypeEnum;
-import com.xilinx.rapidwright.device.helper.TileColumnPattern;
-import com.xilinx.rapidwright.edif.EDIFCell;
-import com.xilinx.rapidwright.edif.EDIFDirection;
-import com.xilinx.rapidwright.edif.EDIFNet;
 import com.xilinx.rapidwright.edif.EDIFNetlist;
-import com.xilinx.rapidwright.tests.CodePerfTracker;
-import com.xilinx.rapidwright.examples.SLRCrosserGenerator;
-import com.xilinx.rapidwright.design.blocks.PBlock;
-import com.xilinx.rapidwright.router.Router;
-import com.xilinx.rapidwright.placer.handplacer.HandPlacer;
-import com.xilinx.rapidwright.rwroute.RWRoute;
-
-import java.io.*;
-import java.util.*;
-import java.lang.*;
-
-import org.python.antlr.PythonParser.else_clause_return;
+import java.io.File;
+import java.io.Serializable;
+import java.nio.file.Path;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Pblock implements Serializable
 {
@@ -210,10 +180,11 @@ public class Pblock implements Serializable
         fileLocs.add(LocationParser.exposedDCPs + component.dcpName + "/" + pblockName + "_postRoute.tcl");
         fileLocs.add(LocationParser.exposedDCPs + component.dcpName + "/" + pblockName + ".report");
 
-        fileLocs.add(LocationParser.placedRoutedDCPs + component.dcpName + "/" + pblockName + "_placedRouted.dcp");
-        fileLocs.add(LocationParser.placedRoutedDCPs + component.dcpName + "/" + pblockName + "_placedRouted.edf");
-        fileLocs.add(LocationParser.placedRoutedDCPs + component.dcpName + "/" + pblockName + "_placedRouted_0_metadata.txt");
-        fileLocs.add(LocationParser.placedRoutedDCPs + component.dcpName + "/" + pblockName + ".report");
+        Path dcpPath = LocationParser.getPlacedRoutedDCPsPath().resolve(component.dcpName);
+        fileLocs.add(dcpPath.resolve(pblockName + "_placedRouted.dcp").toString());
+        fileLocs.add(dcpPath.resolve(pblockName + "_placedRouted.edf").toString());
+        fileLocs.add(dcpPath.resolve(pblockName + "_placedRouted_0_metadata.txt").toString());
+        fileLocs.add(dcpPath.resolve(pblockName + ".report").toString());
 
         String notPresent = " : File not present";
         String notDeleted = " : File could not be deleted";
@@ -246,15 +217,13 @@ public class Pblock implements Serializable
         return true;
     }
 
-    public void setAnchorPosition()
-    {
+    public void setAnchorPosition() {
         Design design = new Design("test", GenerateDesign.fpga_part);
-        Device device = design.getDevice();
 		EDIFNetlist netlist = design.getNetlist();
-		EDIFCell top = netlist.getTopCell();
 
-        String dcp = LocationParser.placedRoutedDCPs + component.dcpName + "/" + pblockName + "_placedRouted.dcp";
-        String meta = LocationParser.placedRoutedDCPs + component.dcpName + "/" + pblockName + "_placedRouted_0_metadata.txt";
+        Path dcpPath = LocationParser.getPlacedRoutedDCPsPath().resolve(component.dcpName);
+        Path dcp = dcpPath.resolve(pblockName + "_placedRouted.dcp");
+        String meta = dcpPath.resolve(pblockName + "_placedRouted_0_metadata.txt").toString();
 
         Module m = new Module(Design.readCheckpoint(dcp), meta);
         netlist.migrateCellAndSubCells(m.getNetlist().getTopCell(), true);
@@ -345,7 +314,8 @@ public class Pblock implements Serializable
             System.out.println("Pblock: " + pblockName + " placed and routed successfully. Going on to repairing the pblock");
             
             tclLoc = LocationParser.exposedDCPs + component.dcpName + "/" + pblockName + "_postRoute.tcl";
-            logsLoc = LocationParser.placedRoutedDCPs + component.dcpName + "/" + pblockName + ".report";
+            logsLoc = LocationParser.getPlacedRoutedDCPsPath().resolve(component.dcpName)
+                    .resolve(pblockName + ".report").toString();
             errorReference = "post-exposed: " + pblockName;
             errorCode = 1;
 

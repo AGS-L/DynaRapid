@@ -7,80 +7,23 @@
 */
 
 package ch.agsl.dynarapid.databasegenerator;
-import ch.agsl.dynarapid.*;
-import ch.agsl.dynarapid.databasegenerator.*;
-import ch.agsl.dynarapid.debug.*;
-import ch.agsl.dynarapid.entry.*;
-import ch.agsl.dynarapid.error.*;
-import ch.agsl.dynarapid.graphgenerator.*;
-import ch.agsl.dynarapid.graphplacer.*;
-import ch.agsl.dynarapid.interrouting.*;
-import ch.agsl.dynarapid.map.*;
-import ch.agsl.dynarapid.modules.*;
-import ch.agsl.dynarapid.parser.*;
-import ch.agsl.dynarapid.pblockgenerator.*;
-import ch.agsl.dynarapid.placer.*;
-     
-import ch.agsl.dynarapid.strings.*;
-import ch.agsl.dynarapid.synthesizer.*;
-import ch.agsl.dynarapid.tclgenerator.*;
-import ch.agsl.dynarapid.vivado.*;
-
-//This prints the lines for a given pblock.
-//Requires the name of the pblock, dcp name
-
-/*
- * Format of the pblock database ---
- * <leave 1 lines above last printed line>
- * 
- * Pblock Name: <pblockName>
- * Top-left Coordinates: <starti> <startj>
- * Bottom-right Coordinates: <endi> <endj>
- * # of Rows: <rows>
- * # of Columns: <cols>
- * Anchor Site: <anchorSiteName>
- * Anchor Tile: <anchorTileName>
- * Relative Position of Anchor Tile: <reli> <relj> <side>
- * Anchor Site Index: <index of the RW anchor site in the RW anchor tile>
- * Density: <density>
- * # of valid places: <# of valid placement sites>
- * # of postion lines: <# of following lines>
- * <all valid positions with 10 in one line>
- * Pblock Name: <pblockName>
- * 
- * <leave 1 lines above last printed line>
- */
-
-import com.google.protobuf.MapEntryLite;
+import ch.agsl.dynarapid.GenerateDesign;
+import ch.agsl.dynarapid.map.MapElement;
+import ch.agsl.dynarapid.parser.LocationParser;
 import com.xilinx.rapidwright.design.Design;
 import com.xilinx.rapidwright.design.Module;
 import com.xilinx.rapidwright.design.ModuleInst;
-import com.xilinx.rapidwright.design.SiteInst;
-import com.xilinx.rapidwright.device.Device;
 import com.xilinx.rapidwright.device.Site;
 import com.xilinx.rapidwright.device.Tile;
-import com.xilinx.rapidwright.device.SiteTypeEnum;
-import com.xilinx.rapidwright.device.TileTypeEnum;
-import com.xilinx.rapidwright.device.helper.TileColumnPattern;
-import com.xilinx.rapidwright.edif.EDIFCell;
-import com.xilinx.rapidwright.edif.EDIFDirection;
-import com.xilinx.rapidwright.edif.EDIFNet;
 import com.xilinx.rapidwright.edif.EDIFNetlist;
-import com.xilinx.rapidwright.tests.CodePerfTracker;
-import com.xilinx.rapidwright.examples.SLRCrosserGenerator;
-import com.xilinx.rapidwright.design.blocks.PBlock;
-import com.xilinx.rapidwright.router.Router;
-import com.xilinx.rapidwright.placer.handplacer.HandPlacer;
-import com.xilinx.rapidwright.rwroute.RWRoute;
-
-import java.io.*;
-import java.util.*;
-import java.lang.*;
-
-import org.python.antlr.PythonParser.else_clause_return;
+import java.io.File;
+import java.io.FileWriter;
+import java.util.HashSet;
 
 public class PblockDatabase {
+
     static final String sep = " : ";
+
     public static final String checkStrings[] = {
         "Pblock Name", //0
         "Top-left Coordinates", //1
@@ -99,20 +42,18 @@ public class PblockDatabase {
 
     //Gets the value which starts after c and ends before "_"
     //give the c as _I or _J or _R and _C
-    public static int getValue(String s, String c)
-    {
+    public static int getValue(String s, String c) {
         int startIndex = s.indexOf(c) + 2;
         int endIndex = s.indexOf("_", startIndex);
 
-        if(endIndex == -1)
+        if (endIndex == -1)
             endIndex = s.length();
 
         String val = s.substring(startIndex, endIndex);
         return Integer.parseInt(val);
     }
 
-    public static int[] getCoordinatesFromName(String pblockName)
-    {
+    public static int[] getCoordinatesFromName(String pblockName) {
         int coord[] = new int [4];
         coord[0] = getValue(pblockName, "_I");
         coord[1] = getValue (pblockName, "_J");
@@ -122,40 +63,38 @@ public class PblockDatabase {
     }
 
 
-    public static int getAnchorIndex(Site s, Tile t)
-    {
+    public static int getAnchorIndex(Site s, Tile t) {
         Site sites[] = t.getSites();
-        for(int i = 0; i < sites.length; i++)
-            if(sites[i].getName().equals(s.getName()))
+        for (int i = 0; i < sites.length; i++)
+            if (sites[i].getName().equals(s.getName()))
                 return i;
         
         return -1;
     }
 
     //This returns a list of all the valid locations in R#_C# format which is in the (si, sj) and (ei, ej)
-    public static HashSet<String> getActualValidLocations(HashSet<Site> validPlaces, int si, int sj, int ei, int ej, int reli, int relj)
-    {
+    public static HashSet<String> getActualValidLocations(HashSet<Site> validPlaces, int si, int sj, int ei, int ej,
+            int reli, int relj) {
         HashSet<String> actualValidLocations = new HashSet<>();
-        for(Site s : validPlaces)
-        {
+        for (Site s : validPlaces) {
             Tile tile = s.getTile();
             String coord = MapElement.findInMap(tile.getName());
             int starti = Integer.parseInt(coord.substring(0, coord.indexOf(":"))) - reli;
             int startj = Integer.parseInt(coord.substring(coord.indexOf(":") + 1)) - relj;
 
-            if((starti >= si) && (starti <= ei) && (startj >= sj) && (startj <= ej))
+            if ((starti >= si) && (starti <= ei) && (startj >= sj) && (startj <= ej))
                 actualValidLocations.add("R" + starti + "_C" + startj);
         }
 
         return actualValidLocations;
     }
 
-    public static boolean printDatabase(FileWriter dataWriter, String pblockName, String dcpName, int si, int sj, int ei, int ej) throws Exception
-    {
+    public static boolean printDatabase(FileWriter dataWriter, String pblockName, String dcpName, int si, int sj,
+            int ei, int ej) throws Exception {
         System.out.println("\nWriting database for pblock: " + pblockName);
-        File file = new File(LocationParser.placedRoutedDCPs + dcpName + "/" + pblockName + "_placedRouted.dcp");
-        if(!file.exists())
-        {
+        File file = LocationParser.getPlacedRoutedDCPsPath().resolve(dcpName)
+                .resolve(pblockName + "_placedRouted.dcp").toFile();
+        if (!file.exists()) {
             System.out.println("ERROR: Could not trace dcp: " + pblockName);
             return false;
         }
@@ -163,12 +102,11 @@ public class PblockDatabase {
         int coordinates[] = getCoordinatesFromName(pblockName); //The values are {starti}, {startj}, {endi}, {endj}
 
         Design design = new Design("test", GenerateDesign.fpga_part);
-        Device device = design.getDevice();
 		EDIFNetlist netlist = design.getNetlist();
-		EDIFCell top = netlist.getTopCell();
 
-        String dcp = LocationParser.placedRoutedDCPs + dcpName + "/" + pblockName + "_placedRouted.dcp";
-        String meta = LocationParser.placedRoutedDCPs + dcpName + "/" + pblockName + "_placedRouted_0_metadata.txt";
+        String dcp = file.getAbsolutePath();
+        String meta = LocationParser.getPlacedRoutedDCPsPath().resolve(dcpName)
+                .resolve(pblockName + "_placedRouted_0_metadata.txt").toString();
 
         Module m = new Module(Design.readCheckpoint(dcp), meta);
         netlist.migrateCellAndSubCells(m.getNetlist().getTopCell(), true);
@@ -187,18 +125,17 @@ public class PblockDatabase {
         int relj = anchorj - coordinates[1];
         int side;
 
-        if(MapElement.map.get(anchori).get(anchorj).leftElementName.equalsIgnoreCase(anchorTileName))
+        if (MapElement.map.get(anchori).get(anchorj).leftElementName.equalsIgnoreCase(anchorTileName))
             side = -1;
         else
             side = 1;
 
         double density = PblockDensity.density(pblockName, dcpName);
-        if(Math.abs(density + 1.0) <= 0.0000001)
+        if (Math.abs(density + 1.0) <= 0.0000001)
             return false;
 
         HashSet<String> actualValidLocations = getActualValidLocations(new HashSet<>(m1.getAllValidPlacements()), si, sj, ei, ej, reli, relj); //This gets te actual valid places where the shape can be placed.
-        if(actualValidLocations.size() == 0)
-        {
+        if (actualValidLocations.size() == 0) {
             System.out.println("No valid places in the given bounds for pblock: " + pblockName);
             return true;
         }
@@ -220,8 +157,7 @@ public class PblockDatabase {
         dataWriter.write(checkStrings[12] + sep + "Below are all the top-left coordinates where the shape can be placed. (DONOT pass these to RW module placer)" + "\n");
 
         int num = 0;
-        for(String s : actualValidLocations)
-        {
+        for (String s : actualValidLocations) {
             dataWriter.write(s + "\t");
             num++;
             if(num == 10)
@@ -231,7 +167,7 @@ public class PblockDatabase {
             }
         }
 
-        if((actualValidLocations.size() % 10 != 0))
+        if ((actualValidLocations.size() % 10 != 0))
             dataWriter.write("\n");
 
         return true;
