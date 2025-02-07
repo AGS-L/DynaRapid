@@ -63,7 +63,7 @@ public class LocationParser {
 
     public static final String DYNARAPID_ROOT = getDynaRapidRoot();
 
-    public static final String RELEASE_VERSION = "0.1.0";
+    public static final String RELEASE_VERSION = "0.1.1";
 
     public static final String GH_RELEASE_DIR_URL = "https://github.com/clavin-xlnx/DynaRapid/releases/download/";
 
@@ -149,6 +149,8 @@ public class LocationParser {
                 String md5 = Installer.calculateMD5OfFile(placedRoutedDCPs + File.separator + zipFile);
                 if (validateMD5(md5, zipFile, dstMD5File)) {
                     Installer.unzipFile(dstZipFile, placedRoutedDCPs);
+                    FileTools.deleteFile(dstZipFile);
+                    FileTools.deleteFile(dstMD5File);
                 } else {
                     throw new RuntimeException("ERROR: Couldn't validate " + zipFile + " download.  Please try again.");
                 }
