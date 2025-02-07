@@ -8,33 +8,21 @@
 
 package ch.agsl.dynarapid.databasegenerator;
 
-import ch.agsl.dynarapid.databasegenerator.*;
-import ch.agsl.dynarapid.debug.*;
-import ch.agsl.dynarapid.entry.*;
-import ch.agsl.dynarapid.error.*;
-import ch.agsl.dynarapid.graphgenerator.*;
-import ch.agsl.dynarapid.graphplacer.*;
-import ch.agsl.dynarapid.interrouting.*;
-import ch.agsl.dynarapid.map.*;
-import ch.agsl.dynarapid.modules.*;
-import ch.agsl.dynarapid.parser.*;
-import ch.agsl.dynarapid.pblockgenerator.*;
-import ch.agsl.dynarapid.placer.*;
-     
-import ch.agsl.dynarapid.strings.*;
-import ch.agsl.dynarapid.synthesizer.*;
-import ch.agsl.dynarapid.tclgenerator.*;
-import ch.agsl.dynarapid.vivado.*;
-///This function calculates the density of the pblock after reading the utilization report of the given pblock
-//requires the name of the pblock whose density is to be calculated.
+import ch.agsl.dynarapid.parser.LocationParser;
+import ch.agsl.dynarapid.parser.PblockUtilizationParser;
 
+/**
+ * This function calculates the density of the pblock after reading the
+ * utilization report of the given pblock requires the name of the pblock whose
+ * density is to be calculated.
+ */
 public class PblockDensity {
     
-    public static double density(String pblockName, String dcpName)
-    {
-        String utilLoc = LocationParser.placedRoutedDCPs + dcpName + "/" + pblockName + ".util";
+    public static double density(String pblockName, String dcpName) {
+        String utilLoc = LocationParser.getPlacedRoutedDCPsPath().resolve(dcpName)
+                .resolve(pblockName + ".util").toString();
         PblockUtilizationParser obj = new PblockUtilizationParser(utilLoc);
-        if(!obj.status)
+        if (!obj.status)
             return -1.0;
 
         int resourcesUsed[] = obj.resourcesUsed;
@@ -42,8 +30,7 @@ public class PblockDensity {
 
         long totalResourceUsed = 0;
         long totalResourceAvail = 0;
-        for(int i = 0; i < resourcesUsed.length; i++)
-        {
+        for (int i = 0; i < resourcesUsed.length; i++) {
             totalResourceUsed += resourcesUsed[i];
             totalResourceAvail += resourcesAvail[i];
         }
