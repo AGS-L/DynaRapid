@@ -63,7 +63,7 @@ public class LocationParser {
 
     public static final String DYNARAPID_ROOT = getDynaRapidRoot();
 
-    public static final String RELEASE_VERSION = "0.1.1";
+    public static final String RELEASE_VERSION = "0.1.0";
 
     public static final String GH_RELEASE_DIR_URL = "https://github.com/clavin-xlnx/DynaRapid/releases/download/";
 
