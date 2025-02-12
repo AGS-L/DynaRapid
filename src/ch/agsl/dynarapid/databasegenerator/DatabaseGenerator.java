@@ -8,36 +8,13 @@
 
 package ch.agsl.dynarapid.databasegenerator;
 
-import ch.agsl.dynarapid.databasegenerator.*;
-import ch.agsl.dynarapid.debug.*;
-import ch.agsl.dynarapid.entry.*;
-import ch.agsl.dynarapid.error.*;
-import ch.agsl.dynarapid.graphgenerator.*;
-import ch.agsl.dynarapid.graphplacer.*;
-import ch.agsl.dynarapid.interrouting.*;
-import ch.agsl.dynarapid.map.*;
-import ch.agsl.dynarapid.modules.*;
-import ch.agsl.dynarapid.parser.*;
-import ch.agsl.dynarapid.pblockgenerator.*;
-import ch.agsl.dynarapid.placer.*;
-import ch.agsl.dynarapid.parser.*;
-import ch.agsl.dynarapid.strings.*;
-import ch.agsl.dynarapid.synthesizer.*;
-import ch.agsl.dynarapid.tclgenerator.*;
-import ch.agsl.dynarapid.vivado.*;
-//This generates the data base for the given component given that all the pblocks have been generated
-//Also has the main function
-/*
- * Format of the database ---
- * Device Name: <device name>
- * 
- * <component Database>
- * 
- * <all the pblock databases>
- */
-
-import java.io.*;
-import java.util.*;
+import ch.agsl.dynarapid.modules.Component;
+import ch.agsl.dynarapid.parser.LocationParser;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.FileWriter;
+import java.io.ObjectOutputStream;
+import java.util.ArrayList;
 
 public class DatabaseGenerator {
 
@@ -48,7 +25,7 @@ public class DatabaseGenerator {
 
     public static ArrayList<String> getAllPblocks (String dcpName)
     {
-        File file = new File (LocationParser.placedRoutedDCPs + dcpName + "/");
+        File file = new File(LocationParser.getPlacedRoutedDCPsPath().resolve(dcpName) + File.separator);
         if(!file.exists())
         {
             System.out.println("ERROR: Could not find the component " + dcpName + ". Maybe pblocks have not been generated");
@@ -87,7 +64,7 @@ public class DatabaseGenerator {
             if(pblocks == null)
                 throw new Exception();
 
-            String databaseLoc = LocationParser.placedRoutedDCPs + dcpName + ".data";
+            String databaseLoc = LocationParser.getPlacedRoutedDCPsPath().resolve(dcpName + ".data").toString();
             FileWriter dataWriter = new FileWriter(new File(databaseLoc));
 
             dataWriter.write(checkStrings[0] + sep + "xck26\n");
@@ -117,7 +94,8 @@ public class DatabaseGenerator {
     public static boolean generateBinaryDatabase(Component component)
     {
         System.out.println("Generating binary database for the component: " + component.dcpName);
-        String binaryDatabaseLoc = LocationParser.placedRoutedDCPs + component.dcpName + ".bin.data";
+        String binaryDatabaseLoc = LocationParser.getPlacedRoutedDCPsPath()
+                    .resolve(component.dcpName + ".bin.data").toString();
 
         try 
         {

@@ -8,60 +8,18 @@
 
 package ch.agsl.dynarapid.tclgenerator;
 
-import  ch.agsl.dynarapid.*;
-import ch.agsl.dynarapid.databasegenerator.*;
-import ch.agsl.dynarapid.debug.*;
-import ch.agsl.dynarapid.entry.*;
-import ch.agsl.dynarapid.error.*;
-import ch.agsl.dynarapid.graphgenerator.*;
-import ch.agsl.dynarapid.graphplacer.*;
-import ch.agsl.dynarapid.interrouting.*;
-import ch.agsl.dynarapid.map.*;
-import ch.agsl.dynarapid.modules.*;
-import ch.agsl.dynarapid.parser.*;
-import ch.agsl.dynarapid.pblockgenerator.*;
-import ch.agsl.dynarapid.placer.*;
-     
-import ch.agsl.dynarapid.interrouting.algorithms.*;
-import ch.agsl.dynarapid.strings.*;
-import ch.agsl.dynarapid.synthesizer.*;
-import ch.agsl.dynarapid.tclgenerator.*;
-import ch.agsl.dynarapid.vivado.*;
-//This generates the tcl scripts for the pblock
-
-import com.google.protobuf.MapEntryLite;
-import com.google.protobuf.DescriptorProtos.SourceCodeInfo.Location;
-import com.xilinx.rapidwright.design.*;
-import com.xilinx.rapidwright.design.Module;
-import com.xilinx.rapidwright.design.ModuleInst;
-import com.xilinx.rapidwright.design.SiteInst;
-import com.xilinx.rapidwright.device.*;
-import com.xilinx.rapidwright.device.Site;
-import com.xilinx.rapidwright.device.Tile;
-import com.xilinx.rapidwright.device.SiteTypeEnum;
-import com.xilinx.rapidwright.device.TileTypeEnum;
-import com.xilinx.rapidwright.device.helper.TileColumnPattern;
-import com.xilinx.rapidwright.edif.EDIFCell;
-import com.xilinx.rapidwright.edif.EDIFCellInst;
-import com.xilinx.rapidwright.edif.EDIFDirection;
+import ch.agsl.dynarapid.interrouting.RouteSite;
+import ch.agsl.dynarapid.interrouting.algorithms.PinExposer;
+import ch.agsl.dynarapid.modules.ModulePorts;
+import ch.agsl.dynarapid.parser.LocationParser;
+import ch.agsl.dynarapid.strings.StringUtils;
 import com.xilinx.rapidwright.edif.EDIFNet;
-import com.xilinx.rapidwright.edif.EDIFNetlist;
 import com.xilinx.rapidwright.edif.EDIFPort;
-import com.xilinx.rapidwright.edif.EDIFPortInst;
-import com.xilinx.rapidwright.tests.CodePerfTracker;
-import com.xilinx.rapidwright.examples.SLRCrosserGenerator;
-import com.xilinx.rapidwright.design.blocks.PBlock;
-import com.xilinx.rapidwright.router.Router;
-import com.xilinx.rapidwright.router.SATRouter;
-import com.xilinx.rapidwright.placer.handplacer.HandPlacer;
-import com.xilinx.rapidwright.rwroute.RWRoute;
-
-import java.io.*;
-import java.util.*;
-
-import org.python.netty.util.internal.IntegerHolder;
-
-import java.lang.*;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Map;
 
 public class PinExposedTclGenerator {
     
@@ -284,15 +242,16 @@ public class PinExposedTclGenerator {
             tclFileWriter.write("report_route_status\n");
 
             //Export files
-            File f = new File (LocationParser.placedRoutedDCPs + obj.returnPblock().component.dcpName + "/");
+            File f = LocationParser.getPlacedRoutedDCPsPath().resolve(obj.returnPblock().component.dcpName).toFile();
             if(!f.exists())
                 f.mkdirs();
-              
-            tclFileWriter.write("report_utilization -pblocks pblock_1 -packthru -file " + LocationParser.placedRoutedDCPs + obj.returnPblock().component.dcpName + "/" + obj.returnPblock().pblockName + ".util\n");
-            tclFileWriter.write("write_checkpoint -force " + LocationParser.placedRoutedDCPs + obj.returnPblock().component.dcpName + "/" + obj.returnPblock().pblockName + "_placedRouted.dcp\n");
-            tclFileWriter.write("write_edif -force " + LocationParser.placedRoutedDCPs + obj.returnPblock().component.dcpName + "/" + obj.returnPblock().pblockName + "_placedRouted.edf\n");
+
+            String prefix = LocationParser.getPlacedRoutedDCPsPath() + File.separator + obj.returnPblock().component.dcpName;
+            tclFileWriter.write("report_utilization -pblocks pblock_1 -packthru -file " + prefix + "/" + obj.returnPblock().pblockName + ".util\n");
+            tclFileWriter.write("write_checkpoint -force " + prefix + "/" + obj.returnPblock().pblockName + "_placedRouted.dcp\n");
+            tclFileWriter.write("write_edif -force " + prefix + "/" + obj.returnPblock().pblockName + "_placedRouted.edf\n");
             tclFileWriter.write(LocationParser.sourceRW + "\n");
-            tclFileWriter.write("generate_metadata " + LocationParser.placedRoutedDCPs + obj.returnPblock().component.dcpName + "/" + obj.returnPblock().pblockName + "_placedRouted.dcp " + LocationParser.placedRoutedDCPs + obj.returnPblock().component.dcpName + "/ 0\n");
+            tclFileWriter.write("generate_metadata " + prefix + "/" + obj.returnPblock().pblockName + "_placedRouted.dcp " + prefix + "/ 0\n");
 
 
             tclFileWriter.close();
