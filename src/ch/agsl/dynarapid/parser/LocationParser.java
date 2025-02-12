@@ -65,7 +65,7 @@ public class LocationParser {
 
     public static final String RELEASE_VERSION = "0.1.0";
 
-    public static final String GH_RELEASE_DIR_URL = "https://github.com/clavin-xlnx/DynaRapid/releases/download/";
+    public static final String GH_RELEASE_DIR_URL = "https://github.com/AGS-L/DynaRapid/releases/download/";
 
     private static Path placedRoutedDCPsPath = null;
 
