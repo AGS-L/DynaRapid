@@ -145,7 +145,7 @@ public class GreedyPlacer implements Placer {
          {
                 case "xczu3eg-sbva484-1-e":
                 case "xck26-sfvc784-2LV-c":
-                    siteName = "SLICE_X11Y124";
+                    siteName = "SLICE_X25Y29";
                     break;
                 case "xcvu13p-fsga2577-1-i":
                     siteName = "SLICE_X67Y624";
