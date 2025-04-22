@@ -148,6 +148,15 @@ public class DotParser {
 
         inputNode.connectInput(inputIndex, outputNode, outputIndex);
         outputNode.connectOutput(outputIndex, inputNode, inputIndex);
+
+        if (outputNode.name.contains("cst"))
+        {
+            inputNode.constant_input = true;
+            inputNode.constant_value = outputNode.compValue;
+            inputNode.constant_input_index = inputIndex;
+            System.out.println("Node " + inputNode.name + " has constant of value " + inputNode.constant_value + " on input" + inputNode.constant_input_index);
+        }
+
         return true;
     }
 

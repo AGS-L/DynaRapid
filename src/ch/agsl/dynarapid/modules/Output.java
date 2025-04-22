@@ -203,6 +203,12 @@ public class Output implements Serializable
 
     public void createOutputPort()
     {
+        //String Port_name = "_Port";
+        String Port_name = "";
+        String DataOut_name = "dout_";
+        String ValidOut_name = "valid_out_";
+        String ReadyIn_name = "ready_in_";
+
         System.out.println("Creating required output ports for node: " + node.name + " of index: " + index);
         EDIFCell top = node.design.getNetlist().getTopCell();
 
@@ -216,30 +222,69 @@ public class Output implements Serializable
         {
             if(bitSize > 1)
             {
-                top.createPort(node.name + underscore + ModulePorts.DataOut + index + "_Port[" + (bitSize-1) + ":0]", EDIFDirection.OUTPUT, bitSize);
+                if ( node.name.equals("ret0") )
+                {
+                    top.createPort("end" + underscore + "out_" + index + Port_name + "[" + (bitSize-1) + ":0]", EDIFDirection.OUTPUT, bitSize);
+                    for(int j = 0; j < bitSize; j++)
+                        if(dataInArray[j] == null)
+                            node.moduleInst.connect(ModulePorts.DataOut + index, j, null, "end" + underscore + "out_" + index + Port_name, j);
+                
+                }
+                else
+                {
+    
+                //top.createPort(node.name + underscore + ModulePorts.DataOut + index + Port_name + "[" + (bitSize-1) + ":0]", EDIFDirection.OUTPUT, bitSize);
+                top.createPort(node.name + underscore + DataOut_name + index + Port_name + "[" + (bitSize-1) + ":0]", EDIFDirection.OUTPUT, bitSize);
                 for(int j = 0; j < bitSize; j++)
                     if(dataInArray[j] == null)
-                        node.moduleInst.connect(ModulePorts.DataOut + index, j, null, node.name + underscore + ModulePorts.DataOut + index + "_Port", j);
+                        node.moduleInst.connect(ModulePorts.DataOut + index, j, null, node.name + underscore + DataOut_name + index + Port_name, j);
+                }
             }
             else
             {
-                top.createPort(node.name + underscore + ModulePorts.DataOut + index + "_Port", EDIFDirection.OUTPUT, 1);
-                node.moduleInst.connect(ModulePorts.DataOut + index, -1, null, node.name + underscore + ModulePorts.DataOut + index + "_Port", -1);
+                //top.createPort(node.name + underscore + ModulePorts.DataOut + index + Port_name , EDIFDirection.OUTPUT, 1);
+                top.createPort(node.name + underscore + DataOut_name + index + Port_name , EDIFDirection.OUTPUT, 1);
+                //node.moduleInst.connect(ModulePorts.DataOut + index, -1, null, node.name + underscore + ModulePorts.DataOut + index + Port_name , -1);
+                node.moduleInst.connect(ModulePorts.DataOut + index, -1, null, node.name + underscore + DataOut_name + index + Port_name , -1);
             }
         }
 
         //for the validArray
         if(pValidArray == null)
         {
-            top.createPort(node.name + underscore + ModulePorts.ValidOut + index + "_Port", EDIFDirection.OUTPUT, 1);
-            node.moduleInst.connect(ModulePorts.ValidOut + index, -1, null, node.name + underscore + ModulePorts.ValidOut + index + "_Port", -1);
+            if ( node.name.equals("ret0") )
+            {
+                //top.createPort(node.name + underscore + ModulePorts.ValidOut + index + Port_name, EDIFDirection.OUTPUT, 1);
+                top.createPort("end" + underscore + ValidOut_name + index + Port_name, EDIFDirection.OUTPUT, 1);
+                //node.moduleInst.connect(ModulePorts.ValidOut + index, -1, null, node.name + underscore + ModulePorts.ValidOut + index + Port_name, -1);
+                node.moduleInst.connect(ModulePorts.ValidOut + index, -1, null, "end" + underscore + ValidOut_name + index + Port_name, -1);
+            }
+            else
+            {
+                //top.createPort(node.name + underscore + ModulePorts.ValidOut + index + Port_name, EDIFDirection.OUTPUT, 1);
+                top.createPort(node.name + underscore + ValidOut_name + index + Port_name, EDIFDirection.OUTPUT, 1);
+                //node.moduleInst.connect(ModulePorts.ValidOut + index, -1, null, node.name + underscore + ModulePorts.ValidOut + index + Port_name, -1);
+                node.moduleInst.connect(ModulePorts.ValidOut + index, -1, null, node.name + underscore + ValidOut_name + index + Port_name, -1);
+            }
         }
 
         //for the nReadyArray
         if(readyArray == null)
         {
-            top.createPort(node.name + underscore + ModulePorts.ReadyIn + index + "_Port", EDIFDirection.INPUT, 1);
-            node.moduleInst.connect(ModulePorts.ReadyIn + index, -1, null, node.name + underscore + ModulePorts.ReadyIn + index + "_Port", -1);
+            if ( node.name.equals("ret0") )
+            {
+                //top.createPort(node.name + underscore + ModulePorts.ReadyIn + index + Port_name, EDIFDirection.INPUT, 1);
+                top.createPort("end" + underscore + ReadyIn_name + index + Port_name, EDIFDirection.INPUT, 1);
+                //node.moduleInst.connect(ModulePorts.ReadyIn + index, -1, null, node.name + underscore + ModulePorts.ReadyIn + index + Port_name, -1);
+                node.moduleInst.connect(ModulePorts.ReadyIn + index, -1, null, "end" + underscore + ReadyIn_name + index + Port_name, -1);
+            }
+            else
+            {
+                //top.createPort(node.name + underscore + ModulePorts.ReadyIn + index + Port_name, EDIFDirection.INPUT, 1);
+                top.createPort(node.name + underscore + ReadyIn_name + index + Port_name, EDIFDirection.INPUT, 1);
+                //node.moduleInst.connect(ModulePorts.ReadyIn + index, -1, null, node.name + underscore + ModulePorts.ReadyIn + index + Port_name, -1);
+                node.moduleInst.connect(ModulePorts.ReadyIn + index, -1, null, node.name + underscore + ReadyIn_name + index + Port_name, -1);
+            }
         }
     }
 }

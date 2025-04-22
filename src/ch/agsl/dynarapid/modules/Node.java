@@ -120,6 +120,11 @@ public class Node implements Serializable
     //has the VCC / GND input information
     boolean isUnconnected = false;
 
+    //Experimental
+    public boolean constant_input = false;
+    public long constant_input_index;
+    public long constant_value;
+
     public Node(String actualNodeName, String nodeName, Map<String, String> params, String actualStr)
     {
         actualName = actualNodeName;

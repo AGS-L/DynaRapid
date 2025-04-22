@@ -241,11 +241,24 @@ public class GenerateDesign {
 
         boolean constrain = (StringUtils.findInArray("-constrain", args) != -1);
         int[] constrainCoordinates = new int[4]; //This has the coordinates of the constraints applied on the fabric. The order of values are: [topRow, bottomRow, leftCol, rightCol]
-        constrainCoordinates[0] = 0;
-        constrainCoordinates[1] = MapElement.map.size()-1;
-        constrainCoordinates[2] = 0;
-        constrainCoordinates[3] = MapElement.map.get(0).size()-1;
+       
+//        constrainCoordinates[0] = 0;
+//         constrainCoordinates[1] = MapElement.map.size()-1;
+//         constrainCoordinates[2] = 0;
+//         constrainCoordinates[3] = MapElement.map.get(0).size()-1;
         
+        //Constrain for PR_0 DFX
+//         constrainCoordinates[0] = 0;
+//         constrainCoordinates[1] = 120;
+//         constrainCoordinates[2] = 18;
+//         constrainCoordinates[3] = 42;
+
+        //Constrain for PR_1 DFX
+
+       constrainCoordinates[0] = 0;
+        constrainCoordinates[1] = MapElement.map.size()-1;
+        constrainCoordinates[2] = 18;
+        constrainCoordinates[3] = MapElement.map.get(0).size()-1;
 
         boolean isCenterSpecified = false;
         String centerSiteName = "";

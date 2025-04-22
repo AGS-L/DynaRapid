@@ -232,30 +232,36 @@ public class Input implements Serializable
         //throw new IOException("ERROR: " + node.name + " of index: " + index + " has bitwidth mismatch.\nUse Adjustment buffers to rectify dot file.\nExiting design generation.");
 
         //Activating the previous bitwidth mismatch solution
-        for(int i = 0; i < dataOutArray[0].bitSize; i++)
-            dataOutArray[0].dataInArray[i] = null;
+        // for(int i = 0; i < dataOutArray[0].bitSize; i++)
+        //     dataOutArray[0].dataInArray[i] = null;
 
-        for(int i = 0; i < bitSize; i++)
-            dataOutArray[i] = null;
+        // for(int i = 0; i < bitSize; i++)
+        //     dataOutArray[i] = null;
 
         ErrorLogger.addError("Bitwidth Mismatch", 0, node.name + " has bitwidth mismatch at index " + (index + 1));
 
-        //Disabling the new bitwidth mismatch solution
-        // int minBitSize = Math.min(bitSize, dataOutArray[0].bitSize);
+//        Disabling the new bitwidth mismatch solution
+        int minBitSize = Math.min(bitSize, dataOutArray[0].bitSize);
 
-        // if((bitSize != 0) && (bitSize != minBitSize))
-        //     node.isUnconnected = true;
+        if((bitSize != 0) && (bitSize != minBitSize))
+            node.isUnconnected = true;
 
-        // for(int i = minBitSize; i < dataOutArray[0].bitSize; i++)
-        //     dataOutArray[0].dataInArray[i] = Input.dangling;
+        for(int i = minBitSize; i < dataOutArray[0].bitSize; i++)
+            dataOutArray[0].dataInArray[i] = Input.dangling;
 
-        // for(int i = minBitSize; i < bitSize; i++)
-        //     dataOutArray[i] = Output.GND;                
+        for(int i = minBitSize; i < bitSize; i++)
+            dataOutArray[i] = Output.GND;                
     }
 
     //This function creates the ports for the input pins which have not been connected after stitching th input pins
     public void createInputPorts()
     {
+        //String Port_name = "_Port";
+        String Port_name = "";
+        String DataIn_name = "din_";
+        String ValidIn_name = "valid_in_";
+        String ReadyIn_name = "ready_out_";
+        
         System.out.println("Creating input ports: " + node.name + " or index: " + index);
         EDIFCell top = node.design.getNetlist().getTopCell();
 
@@ -269,31 +275,39 @@ public class Input implements Serializable
         {
             if(bitSize > 1)
             {
-                top.createPort(node.name + underscore + ModulePorts.DataIn + index + "_Port[" + (bitSize-1) + ":0]", EDIFDirection.INPUT, bitSize);
+//                top.createPort(node.name + underscore + ModulePorts.DataIn + index + Port_name + "[" + (bitSize-1) + ":0]", EDIFDirection.INPUT, bitSize);
+                top.createPort(node.name + underscore + DataIn_name + index + Port_name + "[" + (bitSize-1) + ":0]", EDIFDirection.INPUT, bitSize);
                 for(int j = 0; j < bitSize; j++)
                     if(dataOutArray[j] == null)
-                        node.moduleInst.connect(ModulePorts.DataIn + index, j, null, node.name + underscore + ModulePorts.DataIn + index + "_Port", j);
+                        //node.moduleInst.connect(ModulePorts.DataIn + index, j, null, node.name + underscore + ModulePorts.DataIn + index + Port_name, j);
+                        node.moduleInst.connect(ModulePorts.DataIn + index, j, null, node.name + underscore + DataIn_name + index + Port_name, j);
             }
 
             else
             {
-                top.createPort(node.name + underscore + ModulePorts.DataIn + index + "_Port", EDIFDirection.INPUT, 1);
-                node.moduleInst.connect(ModulePorts.DataIn + index, -1, null, node.name + underscore + ModulePorts.DataIn + index + "_Port", -1);
+                //top.createPort(node.name + underscore + ModulePorts.DataIn + index + Port_name, EDIFDirection.INPUT, 1);
+                top.createPort(node.name + underscore + DataIn_name + index + Port_name, EDIFDirection.INPUT, 1);
+                node.moduleInst.connect(ModulePorts.DataIn + index, -1, null, node.name + underscore + DataIn_name + index + Port_name, -1);
             }
         }
 
         //For pValidArray
         if(validArray == null)
         {
-            top.createPort(node.name + underscore + ModulePorts.ValidIn + index + "_Port", EDIFDirection.INPUT, 1);
-            node.moduleInst.connect(ModulePorts.ValidIn + index, -1, null, node.name + underscore + ModulePorts.ValidIn + index + "_Port", -1);
+            //top.createPort(node.name + underscore + ModulePorts.ValidIn + index + Port_name, EDIFDirection.INPUT, 1);
+            top.createPort(node.name + underscore + ValidIn_name + index + Port_name, EDIFDirection.INPUT, 1);
+            //node.moduleInst.connect(ModulePorts.ValidIn + index, -1, null, node.name + underscore + ModulePorts.ValidIn + index + Port_name, -1);
+            node.moduleInst.connect(ModulePorts.ValidIn + index, -1, null, node.name + underscore + ValidIn_name + index + Port_name, -1);
         }
-
+        
         //for readyArray
         if(nReadyArray == null)
         {
-            top.createPort(node.name + underscore + ModulePorts.ReadyOut + index + "_Port", EDIFDirection.OUTPUT, 1);
-            node.moduleInst.connect(ModulePorts.ReadyOut + index, -1, null, node.name + underscore + ModulePorts.ReadyOut + index + "_Port", -1);
+            top.createPort(node.name + underscore + ReadyIn_name + index + Port_name, EDIFDirection.OUTPUT, 1);
+            node.moduleInst.connect(ModulePorts.ReadyOut + index, -1, null, node.name + underscore + ReadyIn_name + index + Port_name, -1);
+            //top.createPort(node.name + underscore + ModulePorts.ReadyOut + index + Port_name, EDIFDirection.OUTPUT, 1);
+            //node.moduleInst.connect(ModulePorts.ReadyOut + index, -1, null, node.name + underscore + ModulePorts.ReadyOut + index + Port_name, -1);
+            
         }
     }
 
@@ -311,7 +325,7 @@ public class Input implements Serializable
         for(int i = 0; i < bitSize; i++)
         {
             if((dataOutArray[i] == Output.GND) || (dataOutArray[i] == Output.VCC) || (dataOutArray[i] == null))
-                continue;
+                 continue;
 
             outputModuleInst = dataOutArray[i].node.moduleInst;
 
@@ -324,7 +338,15 @@ public class Input implements Serializable
             else if(dataOutArray[i].bitSize <= i)
                 outputIndex = 0;
 
-            outputModuleInst.connect(ModulePorts.DataOut + dataOutArray[i].index, outputIndex, inputModuleInst, ModulePorts.DataIn + index, inputIndex);
+            if ( node.constant_input && index == node.constant_input_index ) 
+            {
+                System.out.println("Stitching the inputs of the node: " + node.name + " of index: " + index + "to value " + node.constant_value);
+                outputModuleInst.connect(ModulePorts.DataOut + dataOutArray[i].index, outputIndex, inputModuleInst, ModulePorts.DataIn + index, inputIndex);
+            }   
+            else
+            {
+                outputModuleInst.connect(ModulePorts.DataOut + dataOutArray[i].index, outputIndex, inputModuleInst, ModulePorts.DataIn + index, inputIndex);
+           }
         }
 
         //Connecting the pValidArray
