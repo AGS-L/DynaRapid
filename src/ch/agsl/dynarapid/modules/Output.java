@@ -219,7 +219,7 @@ public class Output implements Serializable
                 break;
 
 
-        String node_name="";
+        String node_name = node.name;
 
         if (node.name.contains("MC")) {
             node_name = node.name.replace("MC", "");        
