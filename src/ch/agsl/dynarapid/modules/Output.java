@@ -218,6 +218,14 @@ public class Output implements Serializable
             if(dataInArray[i] == null)
                 break;
 
+
+        String node_name="";
+
+        if (node.name.contains("MC")) {
+            node_name = node.name.replace("MC", "");        
+        }
+        
+                
         if(i != bitSize)
         {
             if(bitSize > 1)
@@ -234,18 +242,18 @@ public class Output implements Serializable
                 {
     
                 //top.createPort(node.name + underscore + ModulePorts.DataOut + index + Port_name + "[" + (bitSize-1) + ":0]", EDIFDirection.OUTPUT, bitSize);
-                top.createPort(node.name + underscore + DataOut_name + index + Port_name + "[" + (bitSize-1) + ":0]", EDIFDirection.OUTPUT, bitSize);
+                top.createPort(node_name + underscore + DataOut_name + index + Port_name + "[" + (bitSize-1) + ":0]", EDIFDirection.OUTPUT, bitSize);
                 for(int j = 0; j < bitSize; j++)
                     if(dataInArray[j] == null)
-                        node.moduleInst.connect(ModulePorts.DataOut + index, j, null, node.name + underscore + DataOut_name + index + Port_name, j);
+                        node.moduleInst.connect(ModulePorts.DataOut + index, j, null, node_name + underscore + DataOut_name + index + Port_name, j);
                 }
             }
             else
             {
                 //top.createPort(node.name + underscore + ModulePorts.DataOut + index + Port_name , EDIFDirection.OUTPUT, 1);
-                top.createPort(node.name + underscore + DataOut_name + index + Port_name , EDIFDirection.OUTPUT, 1);
+                top.createPort(node_name + underscore + DataOut_name + index + Port_name , EDIFDirection.OUTPUT, 1);
                 //node.moduleInst.connect(ModulePorts.DataOut + index, -1, null, node.name + underscore + ModulePorts.DataOut + index + Port_name , -1);
-                node.moduleInst.connect(ModulePorts.DataOut + index, -1, null, node.name + underscore + DataOut_name + index + Port_name , -1);
+                node.moduleInst.connect(ModulePorts.DataOut + index, -1, null, node_name + underscore + DataOut_name + index + Port_name , -1);
             }
         }
 
@@ -262,9 +270,9 @@ public class Output implements Serializable
             else
             {
                 //top.createPort(node.name + underscore + ModulePorts.ValidOut + index + Port_name, EDIFDirection.OUTPUT, 1);
-                top.createPort(node.name + underscore + ValidOut_name + index + Port_name, EDIFDirection.OUTPUT, 1);
+                top.createPort(node_name + underscore + ValidOut_name + index + Port_name, EDIFDirection.OUTPUT, 1);
                 //node.moduleInst.connect(ModulePorts.ValidOut + index, -1, null, node.name + underscore + ModulePorts.ValidOut + index + Port_name, -1);
-                node.moduleInst.connect(ModulePorts.ValidOut + index, -1, null, node.name + underscore + ValidOut_name + index + Port_name, -1);
+                node.moduleInst.connect(ModulePorts.ValidOut + index, -1, null, node_name + underscore + ValidOut_name + index + Port_name, -1);
             }
         }
 
@@ -281,9 +289,9 @@ public class Output implements Serializable
             else
             {
                 //top.createPort(node.name + underscore + ModulePorts.ReadyIn + index + Port_name, EDIFDirection.INPUT, 1);
-                top.createPort(node.name + underscore + ReadyIn_name + index + Port_name, EDIFDirection.INPUT, 1);
+                top.createPort(node_name + underscore + ReadyIn_name + index + Port_name, EDIFDirection.INPUT, 1);
                 //node.moduleInst.connect(ModulePorts.ReadyIn + index, -1, null, node.name + underscore + ModulePorts.ReadyIn + index + Port_name, -1);
-                node.moduleInst.connect(ModulePorts.ReadyIn + index, -1, null, node.name + underscore + ReadyIn_name + index + Port_name, -1);
+                node.moduleInst.connect(ModulePorts.ReadyIn + index, -1, null, node_name + underscore + ReadyIn_name + index + Port_name, -1);
             }
         }
     }

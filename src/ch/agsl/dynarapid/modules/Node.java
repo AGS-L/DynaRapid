@@ -583,6 +583,18 @@ public class Node implements Serializable
         Map<String, ArrayList<Integer>> buses = component.modulePorts.buses;
         EDIFCell top = design.getNetlist().getTopCell();
 
+        
+        String node_name="";
+
+        if (name.contains("MC")) {
+            node_name = name.replace("MC", "");        
+        }
+        else
+        {
+            node_name = name;
+        }
+
+
         //Connect input pins
         for (Map.Entry<String,ArrayList<Integer>> entry : buses.entrySet()) 
         {
@@ -615,15 +627,15 @@ public class Node implements Serializable
 
             if(busWidth > 1)
             {
-                top.createPort(name + underscore + busName + "_Port[" + (busWidth-1) + ":0]", EDIFDirection.INPUT, busWidth);
+                top.createPort(node_name + underscore + busName + "_0[" + (busWidth-1) + ":0]", EDIFDirection.INPUT, busWidth);
                 for(int i = 0; i < busWidth; i++)
-                    moduleInst.connect(busName, i, null, name + underscore + busName + "_Port", i);
+                    moduleInst.connect(busName, i, null, node_name + underscore + busName + "_0", i);
             }
 
             else
             {
-                top.createPort(name + underscore + busName + "_Port", EDIFDirection.INPUT, 1);
-                moduleInst.connect(busName, -1, null, name + underscore + busName + "_Port", -1);
+                top.createPort(node_name + underscore + busName + "_0", EDIFDirection.INPUT, 1);
+                moduleInst.connect(busName, -1, null, node_name + underscore + busName + "_0", -1);
             }
         }
 
@@ -655,15 +667,26 @@ public class Node implements Serializable
 
             if(busWidth > 1)
             {
-                top.createPort(name + underscore + busName + "_Port[" + (busWidth-1) + ":0]", EDIFDirection.OUTPUT, busWidth);
+                top.createPort(node_name + underscore + busName + "_0[" + (busWidth-1) + ":0]", EDIFDirection.OUTPUT, busWidth);
                 for(int i = 0; i < busWidth; i++)
-                    moduleInst.connect(busName, i, null, name + underscore + busName + "_Port", i);
+                    moduleInst.connect(busName, i, null, node_name + underscore + busName + "_0", i);
             }
 
             else
             {
-                top.createPort(name + underscore + busName + "_Port", EDIFDirection.OUTPUT, 1);
-                moduleInst.connect(busName, -1, null, name + underscore + busName + "_Port", -1);
+                if (busName.contains("we")) {
+                    top.createPort(node_name + underscore + "we0" + "_0", EDIFDirection.OUTPUT, 1);
+                    top.createPort(node_name + underscore + "we1" + "_0", EDIFDirection.OUTPUT, 1);
+                    top.createPort(node_name + underscore + "dout1" + "_0[" + (32-1) + ":0]", EDIFDirection.OUTPUT, 32);
+                    top.createPort(node_name + underscore + "din0" + "_0[" + (32-1) + ":0]", EDIFDirection.INPUT, 32);
+                    
+                    moduleInst.connect(busName, -1, null, node_name + underscore + "we0" + "_0", -1);
+            
+                }
+                else{
+                top.createPort(node_name + underscore + busName + "_0", EDIFDirection.OUTPUT, 1);
+                moduleInst.connect(busName, -1, null, node_name + underscore + busName + "_0", -1);
+                }
             }
         }
 
