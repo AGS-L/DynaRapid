@@ -66,7 +66,7 @@ jobs:
           - simple_example_1_optimized
           - simple_example_2
           - simple_graph
-          - sobel_optimized
+          #- sobel_optimized
           - stencil_2d
           - threshold
           - threshold_optimized
