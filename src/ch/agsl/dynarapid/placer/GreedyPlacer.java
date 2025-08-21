@@ -143,7 +143,10 @@ public class GreedyPlacer implements Placer {
         
          switch(GenerateDesign.fpga_part)
          {
-                case "xczu3eg-sbva484-1-e":
+                case "xczu3eg-sfvc784-1-e":
+                    //siteName = "SLICE_X37Y177";
+                    siteName = "SLICE_X37Y29";
+                break;
                 case "xck26-sfvc784-2LV-c":
                     //siteName = "SLICE_X37Y177";
                     siteName = "SLICE_X37Y29"; //PR_1

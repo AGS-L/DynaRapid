@@ -152,6 +152,7 @@ public class GenerateDesign {
             System.out.println("-part <args> - Device part number. Options are:");
             System.out.println("\txcvu13p");
             System.out.println("\txck26");
+            System.out.println("\txczu3eg");
             System.out.println("-center <arg> - Center of the design.");
             System.out.println("\t<arg> : Can be the name of SLICE site like SLICE_X#_Y#");
             System.out.println("\t<arg> : Can be R<row_number>_C<column_number>_Side<side>. The side can be -1 for left and +1 for right");
@@ -210,7 +211,7 @@ public class GenerateDesign {
             switch(part) {
                 case "xczu3eg":
                     System.out.println("xczu3eg");
-                    GenerateDesign.fpga_part = "xczu3eg-sbva484-1-e"; //Utra96
+                    GenerateDesign.fpga_part = "xczu3eg-sfvc784-1-e"; //AUP-ZU3
                     break;
                 case "xck26":
                     System.out.println("xck26");
@@ -242,10 +243,10 @@ public class GenerateDesign {
         boolean constrain = (StringUtils.findInArray("-constrain", args) != -1);
         int[] constrainCoordinates = new int[4]; //This has the coordinates of the constraints applied on the fabric. The order of values are: [topRow, bottomRow, leftCol, rightCol]
        
-//        constrainCoordinates[0] = 0;
-//         constrainCoordinates[1] = MapElement.map.size()-1;
-//         constrainCoordinates[2] = 0;
-//         constrainCoordinates[3] = MapElement.map.get(0).size()-1;
+       constrainCoordinates[0] = 0;
+        constrainCoordinates[1] = MapElement.map.size()-1;
+        constrainCoordinates[2] = 0;
+        constrainCoordinates[3] = MapElement.map.get(0).size()-1;
         
         //Constrain for PR_0 DFX
 //         constrainCoordinates[0] = 0;
@@ -255,10 +256,11 @@ public class GenerateDesign {
 
         //Constrain for PR_1 DFX
 
-       constrainCoordinates[0] = 0;
-        constrainCoordinates[1] = MapElement.map.size()-1;
-        constrainCoordinates[2] = 18;
-        constrainCoordinates[3] = MapElement.map.get(0).size()-1;
+//        constrainCoordinates[0] = 0;
+//         constrainCoordinates[1] = MapElement.map.size()-1;
+//         constrainCoordinates[2] = 18;
+//         constrainCoordinates[3] = MapElement.map.get(0).size()-1;
+
 
         boolean isCenterSpecified = false;
         String centerSiteName = "";
