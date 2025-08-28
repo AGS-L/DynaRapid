@@ -63,7 +63,7 @@ public class LocationParser {
 
     public static final String DYNARAPID_ROOT = getDynaRapidRoot();
 
-    public static final String RELEASE_VERSION = "0.1.2";
+    public static final String RELEASE_VERSION = "0.1.3";
 
     public static final String GH_RELEASE_DIR_URL = "https://github.com/AGS-L/DynaRapid/releases/download/";
 
