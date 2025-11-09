@@ -103,7 +103,7 @@ public class GreedyPlacer implements Placer {
      */
     public GreedyPlacer()
     {
-        setGlobalFields();
+        //setGlobalFields();
         topRow = 0;
         bottomRow = fabric.length;
         leftCol = 0;
@@ -114,9 +114,9 @@ public class GreedyPlacer implements Placer {
      * Constructor is called from the GenerateDesign class to start the placer algorithm
      * This constructor is invoked only when the fabric constrained using the topRow, bottomRow, lowColumn, rightColumn
      */
-    public GreedyPlacer(int tr, int br, int lc, int rc)
+    public GreedyPlacer(int tr, int br, int lc, int rc, int rl)
     {
-        setGlobalFields();
+        setGlobalFields(rl);
         topRow = tr;
         bottomRow = br;
         leftCol = lc;
@@ -127,7 +127,7 @@ public class GreedyPlacer implements Placer {
      * This is a constructor helper function
      * This sets most of the global fields of the placer object
      */
-    public void setGlobalFields()
+    public void setGlobalFields(int rl)
     {
         device = Device.getDevice(GenerateDesign.fpga_part);
         
@@ -145,7 +145,13 @@ public class GreedyPlacer implements Placer {
          {
                 case "xczu3eg-sfvc784-1-e":
                     //siteName = "SLICE_X37Y177";
-                    siteName = "SLICE_X37Y29";
+                    if (rl == 0)
+                        siteName = "SLICE_X9Y29"; //left
+                    else if (rl == 1)
+                        siteName = "SLICE_X40Y29"; //right
+                    else
+                        siteName = "SLICE_X37Y29"; //centered
+                    
                 break;
                 case "xck26-sfvc784-2LV-c":
                     //siteName = "SLICE_X37Y177";

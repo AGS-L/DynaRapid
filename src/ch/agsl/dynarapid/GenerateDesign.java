@@ -305,6 +305,25 @@ public class GenerateDesign {
         }
 
         
+        int region = 2; //Default region
+
+        if(StringUtils.findInArray("-region", args) != -1)
+        {
+            String val = args[StringUtils.findInArray("-region", args) + 1];
+
+            switch(val) {
+                case "0":
+                    region = 0;
+                    break;
+                case "1":
+                    region = 1;
+                    break;
+                default:
+                    System.out.println("Using default location");
+                    region = 2;
+            }
+        }
+        
 
         File sourceDir = new File(LocationParser.designs + graphName + "/");
 
@@ -401,6 +420,7 @@ public class GenerateDesign {
         //////////////////////////////////////////////////////////////////////////////////////////////////////
 
         Placer obj = null;
+        
 
         if(placeLoc.equals(""))
         {
@@ -414,7 +434,7 @@ public class GenerateDesign {
                 obj = new RudimentaryPlacer(constrainCoordinates[0], constrainCoordinates[1], constrainCoordinates[2], constrainCoordinates[3]);
 
             else if(placerName.equals("greedy"))
-                obj = new GreedyPlacer(constrainCoordinates[0], constrainCoordinates[1], constrainCoordinates[2], constrainCoordinates[3]);
+                obj = new GreedyPlacer(constrainCoordinates[0], constrainCoordinates[1], constrainCoordinates[2], constrainCoordinates[3], region);
 
             else
             {
