@@ -314,9 +314,17 @@ public class GenerateDesign {
             switch(val) {
                 case "0":
                     region = 0;
+                    constrainCoordinates[0] = 0;
+                    constrainCoordinates[1] = 60; //MapElement.map.size()-1;
+                    constrainCoordinates[2] = 15;
+                    constrainCoordinates[3] = MapElement.map.get(0).size()-1;
                     break;
                 case "1":
                     region = 1;
+                    constrainCoordinates[0] = 120;
+                    constrainCoordinates[1] = MapElement.map.size()-1;
+                    constrainCoordinates[2] = 15;
+                    constrainCoordinates[3] = MapElement.map.get(0).size()-1;
                     break;
                 default:
                     System.out.println("Using default location");
