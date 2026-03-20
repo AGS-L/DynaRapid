@@ -17,11 +17,8 @@ import ch.agsl.dynarapid.interrouting.*;
 import ch.agsl.dynarapid.map.*;
 import ch.agsl.dynarapid.modules.*;
 import ch.agsl.dynarapid.parser.*;
-import ch.agsl.dynarapid.pblockgenerator.*;
 import ch.agsl.dynarapid.placer.*;
-     
 import ch.agsl.dynarapid.strings.*;
-import ch.agsl.dynarapid.synthesizer.*;
 import ch.agsl.dynarapid.tclgenerator.*;
 import ch.agsl.dynarapid.vivado.*;
 
@@ -239,7 +236,7 @@ public class Output implements Serializable
         }
         
         if ( ! ( node.sink_output[index] && index == node.sink_output_index[index] ) ) {
-                
+                   
         if(i != bitSize)
         {
             if(bitSize > 1)
@@ -271,8 +268,8 @@ public class Output implements Serializable
                 node.moduleInst.connect(ModulePorts.DataOut + index, -1, null, node_name + underscore + DataOut_name + index + Port_name , -1);
 
             }
-            }
         }
+    }
 
         //for the validArray
         if (! ( node.Fork_output_connected_to_cst) ) {
@@ -298,8 +295,8 @@ public class Output implements Serializable
                 node.moduleInst.connect(ModulePorts.ValidOut + index, -1, null, node_name + underscore + ValidOut_name + index + Port_name, -1);
             }
         }
-            }
-        }
+       }
+    }
 
         //for the nReadyArray
         if (! ( node.Fork_output_connected_to_cst) ) {
@@ -324,8 +321,8 @@ public class Output implements Serializable
                 node.moduleInst.connect(ModulePorts.ReadyIn + index, -1, null, node_name + underscore + ReadyIn_name + index + Port_name, -1);
             }
         }
-    }
-}
+        }
+        }
     }
 
 

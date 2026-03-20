@@ -17,11 +17,9 @@ import ch.agsl.dynarapid.interrouting.*;
 import ch.agsl.dynarapid.map.*;
 import ch.agsl.dynarapid.modules.*;
 import ch.agsl.dynarapid.parser.*;
-import ch.agsl.dynarapid.pblockgenerator.*;
 import ch.agsl.dynarapid.placer.*;
      
 import ch.agsl.dynarapid.strings.*;
-import ch.agsl.dynarapid.synthesizer.*;
 import ch.agsl.dynarapid.tclgenerator.*;
 import ch.agsl.dynarapid.vivado.*;
 //This class holds the input pin of a node in the dot graph
@@ -176,7 +174,7 @@ public class Input implements Serializable
         
         for(int i = 0; i < dataOutArray.length; i++)
             dataOutArray[i] = null;
-
+        
         validArray = null;
         nReadyArray = null;
     }
@@ -264,7 +262,7 @@ public class Input implements Serializable
 
         ErrorLogger.addError("Bitwidth Mismatch", 0, node.name + " has bitwidth mismatch at index " + (index + 1));
 
-//        Disabling the new bitwidth mismatch solution
+       //Disabling the new bitwidth mismatch solution
         int minBitSize = Math.min(bitSize, dataOutArray[0].bitSize);
 
         if((bitSize != 0) && (bitSize != minBitSize))
@@ -367,9 +365,9 @@ public class Input implements Serializable
                  continue;
 
             outputModuleInst = dataOutArray[i].node.moduleInst;
-
+           
             int inputIndex = (bitSize > 1) ? i : -1;
-
+            
             int outputIndex = i;
             if(dataOutArray[i].bitSize == 1)
                 outputIndex = -1;
@@ -379,15 +377,15 @@ public class Input implements Serializable
 
            
 
-                outputModuleInst.connect(ModulePorts.DataOut + dataOutArray[i].index, outputIndex, inputModuleInst, ModulePorts.DataIn + index, inputIndex);
+            outputModuleInst.connect(ModulePorts.DataOut + dataOutArray[i].index, outputIndex, inputModuleInst, ModulePorts.DataIn + index, inputIndex);
            
         }
 
         //Connecting the pValidArray
         if(validArray != null){
             
-            outputModuleInst = validArray.node.moduleInst;
-            outputModuleInst.connect(ModulePorts.ValidOut + validArray.index, -1, inputModuleInst, ModulePorts.ValidIn + index, -1);
+                outputModuleInst = validArray.node.moduleInst;
+                outputModuleInst.connect(ModulePorts.ValidOut + validArray.index, -1, inputModuleInst, ModulePorts.ValidIn + index, -1);
         }
         else{
             if ( node.constant_input[index] && index == node.constant_input_index[index] ) {
@@ -402,13 +400,13 @@ public class Input implements Serializable
         //Connecting the readyArray
         if(nReadyArray != null)
         {
-            outputModuleInst = nReadyArray.node.moduleInst;
-            outputModuleInst.connect(ModulePorts.ReadyIn + nReadyArray.index, -1, inputModuleInst, ModulePorts.ReadyOut + index, -1);
+                outputModuleInst = nReadyArray.node.moduleInst;
+                outputModuleInst.connect(ModulePorts.ReadyIn + nReadyArray.index, -1, inputModuleInst, ModulePorts.ReadyOut + index, -1);
         }
 
         if ( ! ( (node.constant_input[index] && index == node.constant_input_index[index] ) || ( node.Fork_output_connected_to_cst) ) ) 
         {
-        createInputPorts();
+            createInputPorts();
         }
     }
 

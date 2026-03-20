@@ -18,11 +18,8 @@ import ch.agsl.dynarapid.interrouting.*;
 import ch.agsl.dynarapid.map.*;
 import ch.agsl.dynarapid.modules.*;
 import ch.agsl.dynarapid.parser.*;
-import ch.agsl.dynarapid.pblockgenerator.*;
 import ch.agsl.dynarapid.placer.*;
-     
 import ch.agsl.dynarapid.strings.*;
-import ch.agsl.dynarapid.synthesizer.*;
 import ch.agsl.dynarapid.tclgenerator.*;
 import ch.agsl.dynarapid.vivado.*;
 //This holds the ports of the module in the post-synthesis flow

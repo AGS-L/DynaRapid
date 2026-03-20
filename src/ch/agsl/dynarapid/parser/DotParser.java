@@ -16,11 +16,8 @@ import ch.agsl.dynarapid.interrouting.*;
 import ch.agsl.dynarapid.map.*;
 import ch.agsl.dynarapid.modules.*;
 import ch.agsl.dynarapid.parser.*;
-import ch.agsl.dynarapid.pblockgenerator.*;
 import ch.agsl.dynarapid.placer.*;
-     
 import ch.agsl.dynarapid.strings.*;
-import ch.agsl.dynarapid.synthesizer.*;
 import ch.agsl.dynarapid.tclgenerator.*;
 import ch.agsl.dynarapid.vivado.*;
 
@@ -152,7 +149,7 @@ public class DotParser {
         if (outputNode.name.contains("cst") || outputNode.name.contains("Cst")){
 
             if (!outputNode.constant_input_connected_to_Fork)
-        {
+            {
                 inputNode.constant_input_connected_to_Fork = false;
             }
             else
@@ -181,7 +178,7 @@ public class DotParser {
             //System.out.println("Andrea Node " + inputNode.name + " index "  + inputIndex + " has input connected to " + outputNode.name + " index " + outputIndex);
             //inputNode.constant_input_connected_to_Fork_name [inputIndex] = outputNode.name;
         }
-
+        
         return true;
     }
 

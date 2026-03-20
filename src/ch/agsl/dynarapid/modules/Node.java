@@ -19,11 +19,9 @@ import ch.agsl.dynarapid.interrouting.*;
 import ch.agsl.dynarapid.map.*;
 import ch.agsl.dynarapid.modules.*;
 import ch.agsl.dynarapid.parser.*;
-import ch.agsl.dynarapid.pblockgenerator.*;
 import ch.agsl.dynarapid.placer.*;
      
 import ch.agsl.dynarapid.strings.*;
-import ch.agsl.dynarapid.synthesizer.*;
 import ch.agsl.dynarapid.tclgenerator.*;
 import ch.agsl.dynarapid.vivado.*;
 //This holds the node of each node in the dot file
@@ -760,7 +758,7 @@ public class Node implements Serializable
 
         System.out.println("Creating ports for non-standard pins of node: " + name);
         stitchRemainingPins();
-    }
+    }      
 
     //This dumps the data of the node. Required for testing and debugging
     public void printNode()
