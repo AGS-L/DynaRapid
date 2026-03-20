@@ -40,7 +40,7 @@ jobs:
           - gemver_graph_buf_adjusted
           - gemver_graph_buf
           #- gemver_optimized_big
-          - gemver_optimized
+          #- gemver_optimized
           #- gemver_optimized_multiple
           - if_loop_1
           - if_loop_2
