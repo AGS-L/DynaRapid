@@ -93,11 +93,13 @@ public class GraphGenerator {
 
             if (notFoundSynth.contains(dcpName)) {
                 dcpNames.remove(dcpName);
+                if (! ( node.name.contains("cst") || node.name.contains("Cst") || node.name.contains("source") || node.name.contains("sink") || node.name.contains("end") ) )
                 ErrorLogger.addError("Node ignored", 0, name + " has been ignored since its dcp: " + dcpName + " has not been synthesized");
                 if (!node.removeItself()) {
                     System.out.println("ERROR: Could not remove node: " + name + ". See above logs");
                     return null;
                 }
+
 
                 toRemove.add(name);
             }
@@ -139,6 +141,25 @@ public class GraphGenerator {
         if (!TimeProfiler.endTimeElement("Parsing Dot File"))
             return null;
 
+
+        //Checking connections for forkC-->cst 
+        //StringUtils.printIntro("Checking connections for forkC-->cst");
+        for (Map.Entry<String,Node> entry : nodes.entrySet()) 
+        {
+            try
+            {
+                entry.getValue().updateConnectionsCst();
+            }
+
+            catch (Exception e)
+            {
+                e.printStackTrace();
+                System.out.println("ERROR");
+                return null;
+            }
+        }
+            
+        //System.exit (0); //Andrea firce exit after parsing graph
         //////////////////////////////////////////////////////////////////////////////////////////////////////
         
         if (!TimeProfiler.addAndStartTimeElement("Checking For Valid Databases", "Graph Generation"))

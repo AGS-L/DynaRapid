@@ -7,6 +7,8 @@
 */
 
 package ch.agsl.dynarapid.modules;
+
+import ch.agsl.dynarapid.*;
 import ch.agsl.dynarapid.databasegenerator.*;
 import ch.agsl.dynarapid.debug.*;
 import ch.agsl.dynarapid.entry.*;
@@ -71,7 +73,7 @@ public class Node implements Serializable
 
     //Donot know use of these
     public String params;
-    public int nodeID;
+    public int nodeID = 0;
 
     //filled by constructor
     public boolean compType; //Can be either genericComponent or constantComponent
@@ -121,9 +123,17 @@ public class Node implements Serializable
     boolean isUnconnected = false;
 
     //Experimental
-    public boolean constant_input = false;
-    public long constant_input_index;
-    public long constant_value;
+    public boolean[] constant_input;
+    public long[] constant_input_index;
+    public long[] constant_value;
+
+
+    public boolean[] sink_output;
+    public long[] sink_output_index;
+
+    public boolean constant_input_connected_to_Fork;
+    public boolean Fork_output_connected_to_cst;
+    public String[] constant_input_connected_to_Fork_name;
 
     public Node(String actualNodeName, String nodeName, Map<String, String> params, String actualStr)
     {
@@ -223,6 +233,18 @@ public class Node implements Serializable
 
         //getting the dcp name of the node
         dcpName = DCPNameGenerator.getDCPName(this);
+
+
+        constant_input_index = new long[256];
+        constant_input = new boolean[256];
+        constant_value = new long[256];
+
+        sink_output = new boolean[256];
+        sink_output_index = new long[256];
+        
+        constant_input_connected_to_Fork_name = new String[256]; 
+
+        nodeID = GenerateDesign.nodes_in_netlist++;
     }
 
     //This changes the name of the componennt if it is a buffer based on the number of slots and transperency
@@ -292,7 +314,7 @@ public class Node implements Serializable
         outputs.get(outputIndex).connectToInput(inputNode, inputIndex);
     }
 
-    //This is called from the graph gneerator
+    //This is called from the graph generator
     //This removes the nodes whose databases have not been found.
     //This also removes all the input traces and output traces.
     //Better to call before bitwidth mismatch
@@ -570,6 +592,40 @@ public class Node implements Serializable
         return adj;
     }
 
+    //This helps to make corrections in the connections
+    public void updateConnectionsForkC() throws IOException
+    {
+        for(Input i : inputs)
+            i.updateConnectionsForkC();
+            
+        for(Output o : outputs)
+            o.updateConnectionsForkC();
+        //}
+    }
+
+    public void updateConnectionsCst() throws IOException
+    {
+        if ( constant_input_connected_to_Fork ){
+            Output predecessorOutput = null;
+            for(Input i : inputs)
+            {
+                predecessorOutput = i.validArray;
+                i.removeOutputConnection();
+                break;
+            }
+
+            Input successorInput = null;
+            for(Output o : outputs)
+            {
+                successorInput = o.pValidArray;
+                o.removeInputConnection();
+                break;
+            }
+            predecessorOutput.connectToInput(successorInput.node, successorInput.index);
+            successorInput.connectToOutput(predecessorOutput.node, predecessorOutput.index);
+        }
+    }
+
     //This helps to make corrections in the connections of the node for bitwidth mismatch
     public void updateConnectionsForBitwidthMismatch() throws IOException
     {
@@ -674,9 +730,9 @@ public class Node implements Serializable
 
 
                     top.createPort(node_name + underscore + "we0" + "_0", EDIFDirection.OUTPUT, 1);
-                    top.createPort(node_name + underscore + "we1" + "_0", EDIFDirection.OUTPUT, 1);
-                    top.createPort(node_name + underscore + "dout1" + "_0[" + (32-1) + ":0]", EDIFDirection.OUTPUT, 32);
-                    top.createPort(node_name + underscore + "din0" + "_0[" + (32-1) + ":0]", EDIFDirection.INPUT, 32);
+                    //top.createPort(node_name + underscore + "we1" + "_0", EDIFDirection.OUTPUT, 1);
+                    //top.createPort(node_name + underscore + "dout1" + "_0[" + (32-1) + ":0]", EDIFDirection.OUTPUT, 32);
+                    //top.createPort(node_name + underscore + "din0" + "_0[" + (32-1) + ":0]", EDIFDirection.INPUT, 32);
 
                     moduleInst.connect(busName, -1, null, node_name + underscore + "we0" + "_0", -1);
             

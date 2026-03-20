@@ -50,6 +50,9 @@ import com.xilinx.rapidwright.router.Router;
 import com.xilinx.rapidwright.placer.handplacer.HandPlacer;
 import com.xilinx.rapidwright.rwroute.RWRoute;
 
+import com.xilinx.rapidwright.design.NetType; 
+
+
 import java.io.*;
 import java.util.*;
 
@@ -168,16 +171,23 @@ public class Output implements Serializable
     //This is useful to disconnect from a nnode which is going to be removed
     public void removeInputConnection()
     {
+        System.out.println("removeInputConnection of node: " + node.name );
+
         for(int i = 0; i < dataInArray.length; i++)
             dataInArray[i] = null;
 
+     if ( ! node.name.contains("start") ) {
         pValidArray = null;
+     }
         readyArray = null;
+        
+
     }
 
     //This removes the output of th enode since it is going to be removed
     public void removeItself()
     {
+
         Input in = null;
         for(int i = 0; i < dataInArray.length; i++)
         {
@@ -186,18 +196,21 @@ public class Output implements Serializable
 
             in = dataInArray[i];
             in.removeOutputConnection();
+            
         }
 
         if((pValidArray != in) && (pValidArray != Input.dangling) && (pValidArray != null))
         {
             in = pValidArray;
             in.removeOutputConnection();
+            
         }
 
         if((readyArray != in) && (readyArray != Input.dangling) && (readyArray != null))
         {
             in = readyArray;
             in.removeOutputConnection();
+            
         }
     }
 
@@ -225,11 +238,13 @@ public class Output implements Serializable
             node_name = node.name.replace("MC", "");        
         }
         
+        if ( ! ( node.sink_output[index] && index == node.sink_output_index[index] ) ) {
                 
         if(i != bitSize)
         {
             if(bitSize > 1)
             {
+                
                 if ( node.name.equals("ret0") )
                 {
                     top.createPort("end" + underscore + "out_" + index + Port_name + "[" + (bitSize-1) + ":0]", EDIFDirection.OUTPUT, bitSize);
@@ -254,12 +269,20 @@ public class Output implements Serializable
                 top.createPort(node_name + underscore + DataOut_name + index + Port_name , EDIFDirection.OUTPUT, 1);
                 //node.moduleInst.connect(ModulePorts.DataOut + index, -1, null, node.name + underscore + ModulePorts.DataOut + index + Port_name , -1);
                 node.moduleInst.connect(ModulePorts.DataOut + index, -1, null, node_name + underscore + DataOut_name + index + Port_name , -1);
+
+            }
             }
         }
 
         //for the validArray
-        if(pValidArray == null)
-        {
+        if (! ( node.Fork_output_connected_to_cst) ) {
+
+        if(pValidArray == null){
+            if ( node.sink_output[index] && index == node.sink_output_index[index] ) {
+           
+                node.moduleInst.connect(NetType.VCC, ModulePorts.ValidIn + index, -1);
+             } else {
+
             if ( node.name.equals("ret0") )
             {
                 //top.createPort(node.name + underscore + ModulePorts.ValidOut + index + Port_name, EDIFDirection.OUTPUT, 1);
@@ -275,10 +298,17 @@ public class Output implements Serializable
                 node.moduleInst.connect(ModulePorts.ValidOut + index, -1, null, node_name + underscore + ValidOut_name + index + Port_name, -1);
             }
         }
+            }
+        }
 
         //for the nReadyArray
-        if(readyArray == null)
-        {
+        if (! ( node.Fork_output_connected_to_cst) ) {
+        if(readyArray == null){
+            if ( node.sink_output[index] && index == node.sink_output_index[index] ) {
+           
+                node.moduleInst.connect(NetType.VCC, ModulePorts.ReadyIn + index, -1);
+             } else {
+
             if ( node.name.equals("ret0") )
             {
                 //top.createPort(node.name + underscore + ModulePorts.ReadyIn + index + Port_name, EDIFDirection.INPUT, 1);
@@ -295,4 +325,17 @@ public class Output implements Serializable
             }
         }
     }
+}
+    }
+
+
+    public void updateConnectionsForkC() throws IOException
+    {
+        if ( node.Fork_output_connected_to_cst ){
+
+            System.out.println("Andrea Checking connections for ForkC. " + node.name + " has cst connected on index: " + index );
+        }
+        
+    }
+
 }

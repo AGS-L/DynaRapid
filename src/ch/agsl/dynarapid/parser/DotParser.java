@@ -149,12 +149,37 @@ public class DotParser {
         inputNode.connectInput(inputIndex, outputNode, outputIndex);
         outputNode.connectOutput(outputIndex, inputNode, inputIndex);
 
-        if (outputNode.name.contains("cst"))
+        if (outputNode.name.contains("cst") || outputNode.name.contains("Cst")){
+
+            if (!outputNode.constant_input_connected_to_Fork)
         {
-            inputNode.constant_input = true;
-            inputNode.constant_value = outputNode.compValue;
-            inputNode.constant_input_index = inputIndex;
-            System.out.println("Node " + inputNode.name + " has constant of value " + inputNode.constant_value + " on input" + inputNode.constant_input_index);
+                inputNode.constant_input_connected_to_Fork = false;
+            }
+            else
+            {
+                inputNode.constant_input_connected_to_Fork_name =  outputNode.constant_input_connected_to_Fork_name;
+            }
+
+            inputNode.constant_input[inputIndex] = true;
+            inputNode.constant_value[inputIndex] = outputNode.compValue;
+            inputNode.constant_input_index[inputIndex] = inputIndex;
+            //System.out.println("Node " + inputNode.name + " has constant of value " + inputNode.constant_value[inputIndex] + " on input" + inputNode.constant_input_index[inputIndex]);
+        }
+
+        if (inputNode.name.contains("sink")){
+            outputNode.sink_output[outputIndex] = true;
+            outputNode.sink_output_index[outputIndex] = outputIndex;
+            //System.out.println("Node " + outputNode.name + " has sink on output" + outputNode.sink_output_index[outputIndex]);
+        }
+
+
+        if ((outputNode.name.contains("forkC") && (inputNode.name.contains("cst") || outputNode.name.contains("Cst") ) ) ) {
+
+            inputNode.constant_input_connected_to_Fork = true;
+            outputNode.Fork_output_connected_to_cst = true;
+            inputNode.constant_input_connected_to_Fork_name[outputIndex] = outputNode.name;
+            //System.out.println("Andrea Node " + inputNode.name + " index "  + inputIndex + " has input connected to " + outputNode.name + " index " + outputIndex);
+            //inputNode.constant_input_connected_to_Fork_name [inputIndex] = outputNode.name;
         }
 
         return true;

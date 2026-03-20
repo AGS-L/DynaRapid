@@ -50,6 +50,8 @@ import com.xilinx.rapidwright.router.Router;
 import com.xilinx.rapidwright.placer.handplacer.HandPlacer;
 import com.xilinx.rapidwright.rwroute.RWRoute;
 
+import com.xilinx.rapidwright.design.NetType; 
+
 import java.io.*;
 import java.util.*;
 import java.lang.*;
@@ -159,10 +161,19 @@ public class Input implements Serializable
         nReadyArray = outputNode.outputs.get(outputIndex);
     }
 
+    //This makes the connection of this input pin with the given output pin and node
+    public void bypassOutput(Node outputNode, int outputIndex)
+    {
+        validArray = outputNode.outputs.get(outputIndex);
+        nReadyArray = outputNode.outputs.get(outputIndex);
+    }
+
     //This helps remove the input connection from the input
     //This helps if the output node is to be removed
     public void removeOutputConnection()
     {
+        System.out.println("removeOutputConnection of node: " + node.name );
+        
         for(int i = 0; i < dataOutArray.length; i++)
             dataOutArray[i] = null;
 
@@ -173,6 +184,9 @@ public class Input implements Serializable
     //This removes the input of the node since the database of this node was not found
     public void removeItself()
     {
+        
+        System.out.println("removeItself node: " + node.name );
+
         Output o = null;
         for(int i = 0; i < dataOutArray.length; i++)
         {
@@ -213,6 +227,16 @@ public class Input implements Serializable
         System.out.println("Created adjustent buffer for input node: " + node.actualName + ". Name of the buffer: _adj_buffer_" + node.actualName+ "_" + index);
         return buffer;
     }
+
+
+    public void updateConnectionsForkC() throws IOException
+    {
+        //if (node.name.contains("cst")){
+        if ( node.constant_input_connected_to_Fork ){
+            System.out.println("Andrea Checking connections for ForkC. " + node.name + " has ForkC connected on index: " + index );
+        }
+    }
+
 
     //This function updates the connection if there is a bitsize mis-matchin the data pins
     public void updateConnectionsForBitwidthMismatch() throws IOException
@@ -316,7 +340,7 @@ public class Input implements Serializable
     //the null pins are to be connected 
     public void stitchToOutput()
     {
-        System.out.println("Stitching the inputs of the node: " + node.name + " of index: " + index);
+        //System.out.println("Stitching the inputs of the node: " + node.name + " of index: " + index + " NodeID: " + node.nodeID );
 
         ModuleInst inputModuleInst = node.moduleInst;
         ModuleInst outputModuleInst;
@@ -324,6 +348,21 @@ public class Input implements Serializable
         //Connecting the dataInArray
         for(int i = 0; i < bitSize; i++)
         {
+           if ( node.constant_input[index] && index == node.constant_input_index[index] ) 
+           {
+               //System.out.println("Stitching the inputs of the node: " + node.name + " of index: " + index + "to value " + node.constant_value[index]);
+                
+               NetType staticNet = ((0x1 << i) & node.constant_value[index]) == 0 ? NetType.GND : NetType.VCC;
+
+               int inputIndex = (bitSize > 1) ? i : -1;
+
+               inputModuleInst.connect(staticNet, ModulePorts.DataIn + index, inputIndex);
+               continue;
+            
+           }
+
+          if ( ! (node.constant_input[index] && index == node.constant_input_index[index] ) )
+
             if((dataOutArray[i] == Output.GND) || (dataOutArray[i] == Output.VCC) || (dataOutArray[i] == null))
                  continue;
 
@@ -338,23 +377,27 @@ public class Input implements Serializable
             else if(dataOutArray[i].bitSize <= i)
                 outputIndex = 0;
 
-            if ( node.constant_input && index == node.constant_input_index ) 
-            {
-                System.out.println("Stitching the inputs of the node: " + node.name + " of index: " + index + "to value " + node.constant_value);
+           
+
                 outputModuleInst.connect(ModulePorts.DataOut + dataOutArray[i].index, outputIndex, inputModuleInst, ModulePorts.DataIn + index, inputIndex);
-            }   
-            else
-            {
-                outputModuleInst.connect(ModulePorts.DataOut + dataOutArray[i].index, outputIndex, inputModuleInst, ModulePorts.DataIn + index, inputIndex);
-           }
+           
         }
 
         //Connecting the pValidArray
-        if(validArray != null)
-        {
+        if(validArray != null){
+            
             outputModuleInst = validArray.node.moduleInst;
             outputModuleInst.connect(ModulePorts.ValidOut + validArray.index, -1, inputModuleInst, ModulePorts.ValidIn + index, -1);
         }
+        else{
+            if ( node.constant_input[index] && index == node.constant_input_index[index] ) {
+
+                inputModuleInst.connect(NetType.VCC, ModulePorts.ValidIn + index, -1);
+   
+           }   
+
+        }
+
 
         //Connecting the readyArray
         if(nReadyArray != null)
@@ -363,7 +406,10 @@ public class Input implements Serializable
             outputModuleInst.connect(ModulePorts.ReadyIn + nReadyArray.index, -1, inputModuleInst, ModulePorts.ReadyOut + index, -1);
         }
 
+        if ( ! ( (node.constant_input[index] && index == node.constant_input_index[index] ) || ( node.Fork_output_connected_to_cst) ) ) 
+        {
         createInputPorts();
+        }
     }
 
 

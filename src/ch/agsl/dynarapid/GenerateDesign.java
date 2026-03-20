@@ -45,6 +45,8 @@ public class GenerateDesign {
     public static String fpga_part = "xcvu13p-fsga2577-1-i";
     public static String part= "xcvu13p";
 
+    public static int nodes_in_netlist = 0;
+
     public static void deleteDirectory(File sourceDir)
     {
         for (File subfile : sourceDir.listFiles()) 
@@ -429,7 +431,6 @@ public class GenerateDesign {
 
         Placer obj = null;
         
-
         if(placeLoc.equals(""))
         {
             if(!TimeProfiler.addAndStartTimeElement("Graph Placement", "Design Generation"))
