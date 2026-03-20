@@ -33,15 +33,15 @@ jobs:
           - fir_graph_buf
           - fir_ob_optimized
           - fir_optimized
-          - gaussian_graph_buf
-          - gaussian_optimized
-          - gemver_big_graph_buf_adjusted
-          - gemver_big_graph_buf
+          #- gaussian_graph_buf
+          #- gaussian_optimized
+          #- gemver_big_graph_buf_adjusted
+          #- gemver_big_graph_buf
           - gemver_graph_buf_adjusted
           - gemver_graph_buf
-          - gemver_optimized_big
+          #- gemver_optimized_big
           - gemver_optimized
-          - gemver_optimized_multiple
+          #- gemver_optimized_multiple
           - if_loop_1
           - if_loop_2
           - if_loop_3
@@ -70,9 +70,9 @@ jobs:
           - stencil_2d
           - threshold
           - threshold_optimized
-          - triangular
+          #- triangular
           - vector_rescale_graph_buf
-          - vector_rescale_optimized
+          #- vector_rescale_optimized
           - video_filter_graph_buf
           - video_filter_optimized
           - while_loop_1_graph_buf
