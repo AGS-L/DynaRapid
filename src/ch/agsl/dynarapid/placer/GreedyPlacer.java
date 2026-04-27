@@ -306,6 +306,9 @@ public class GreedyPlacer implements Placer {
                 String name = nodeList.get(pos);
                 Node node = nodes.get(name);
 
+
+                    if ( ! node.name.contains("start")) {
+                    
                 //checking all the inputs of node
                 for(Input in : node.inputs)
                 {
@@ -334,6 +337,7 @@ public class GreedyPlacer implements Placer {
                         nodeList.add(inputNodeName);
                         visited.add(inputNodeName);
                     }
+                }
                 }
                 pos++;
             }

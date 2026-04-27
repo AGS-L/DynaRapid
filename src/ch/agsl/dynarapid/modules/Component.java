@@ -21,7 +21,6 @@ import ch.agsl.dynarapid.parser.*;
 import ch.agsl.dynarapid.placer.*;
      
 import ch.agsl.dynarapid.strings.*;
-;
 import ch.agsl.dynarapid.tclgenerator.*;
 import ch.agsl.dynarapid.vivado.*;
 
