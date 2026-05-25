@@ -143,10 +143,9 @@ public class GreedyPlacer implements Placer {
                 case "xczu3eg-sfvc784-1-e":
                     //siteName = "SLICE_X37Y177";
                     if (rl == 0)
-                        //siteName = "SLICE_X9Y29"; //left
-                        siteName = "SLICE_X40Y129"; //left
+                    siteName = "SLICE_X33Y112"; // top
                     else if (rl == 1)
-                        siteName = "SLICE_X40Y29"; //right
+                    siteName = "SLICE_X33Y22";  // bottom
                     else
                         siteName = "SLICE_X37Y29"; //centered
                     

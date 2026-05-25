@@ -170,7 +170,7 @@ public class DotParser {
         }
 
 
-        if ((outputNode.name.contains("forkC") && (inputNode.name.contains("cst") || outputNode.name.contains("Cst") ) ) ) {
+        if ((outputNode.name.contains("forkC") && (inputNode.name.contains("cst") || inputNode.name.contains("Cst") ) ) ) {
 
             inputNode.constant_input_connected_to_Fork = true;
             outputNode.Fork_output_connected_to_cst = true;
