@@ -10,6 +10,7 @@ package ch.agsl.dynarapid;
 
 import ch.agsl.dynarapid.debug.PlacementInfo;
 import ch.agsl.dynarapid.debug.TimeProfiler;
+import ch.agsl.dynarapid.entry.InsertBuffers;
 import ch.agsl.dynarapid.entry.Start;
 import ch.agsl.dynarapid.error.ErrorLogger;
 import ch.agsl.dynarapid.graphgenerator.GraphGenerator;
@@ -158,6 +159,8 @@ public class GenerateDesign {
             System.out.println("-center <arg> - Center of the design.");
             System.out.println("\t<arg> : Can be the name of SLICE site like SLICE_X#_Y#");
             System.out.println("\t<arg> : Can be R<row_number>_C<column_number>_Side<side>. The side can be -1 for left and +1 for right");
+            System.out.println("-targetPeriod <arg> - Desired clock period (ns) of the generated design. The minimum clock period depends on the specific design.");
+            System.out.println("-streaming - Enables continuous input processing at a rate of one input per clock cycle. Supported only for linear dataflow designs.");
             System.out.println("-bit <arg> - Use Vivado (if on PATH) to generate a bitstream");
             return;
         }
@@ -316,17 +319,17 @@ public class GenerateDesign {
             switch(val) {
                 case "0":
                     region = 0;
-                    constrainCoordinates[0] = 0;
-                    constrainCoordinates[1] = 60; //MapElement.map.size()-1;
-                    constrainCoordinates[2] = 20;
-                    constrainCoordinates[3] = MapElement.map.get(0).size()-1;
+                    constrainCoordinates[0] = MapElement.map.size() - 1 - 134;  // Top row
+                    constrainCoordinates[1] = MapElement.map.size() - 1 - 90;   // Bottom row
+                    constrainCoordinates[2] = 10;                               // Left column
+                    constrainCoordinates[3] = MapElement.map.get(0).size() - 1; // Right column
                     break;
                 case "1":
                     region = 1;
-                    constrainCoordinates[0] = 120;
-                    constrainCoordinates[1] = MapElement.map.size()-1;
-                    constrainCoordinates[2] = 20;
-                    constrainCoordinates[3] = MapElement.map.get(0).size()-1;
+                    constrainCoordinates[0] = MapElement.map.size() - 1 - 44;   // Top row
+                    constrainCoordinates[1] = MapElement.map.size() - 1;        // Bottom row
+                    constrainCoordinates[2] = 10;                               // Left column
+                    constrainCoordinates[3] = MapElement.map.get(0).size() - 1; // Right column
                     break;
                 default:
                     System.out.println("Using default location");
@@ -404,6 +407,41 @@ public class GenerateDesign {
         }
         if(!TimeProfiler.endTimeElement("Environment Creation"))
             return;
+
+        //////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        int targetPeriodIndex = StringUtils.findInArray("-targetPeriod", args);
+        boolean pipeline = StringUtils.findInArray("-streaming", args) != -1;
+
+        if (targetPeriodIndex != -1 || pipeline) {
+            Double targetPeriod = null;
+
+            if (targetPeriodIndex != -1) {
+                if (args.length <= targetPeriodIndex + 1) {
+                    System.out.println("ERROR: Format of the targetPeriod argument is incorrect. See -help for correct usage.");
+                    return;
+                } else {
+                    targetPeriod = Double.parseDouble(args[targetPeriodIndex + 1]);
+                }
+            }
+
+            if (!TimeProfiler.addAndStartTimeElement("Graph Preprocessing - Buffer Insertion", "Design Generation"))
+                return;
+
+            try {
+                InsertBuffers.bufferInsertion(dotLoc, LocationParser.designs + graphName + "/", graphName, targetPeriod, pipeline, debug);
+            } catch (Exception e) {
+                e.printStackTrace();
+                System.out.println("ERROR: Failed to buffer/pipeline design");
+                deleteDirectory(sourceDir);
+                return;
+            }
+
+            if (!TimeProfiler.endTimeElement("Graph Preprocessing - Buffer Insertion")) {
+                deleteDirectory(sourceDir);
+                return;
+            }
+        }
 
         //////////////////////////////////////////////////////////////////////////////////////////////////////
 
